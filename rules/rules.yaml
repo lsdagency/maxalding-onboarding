@@ -1,0 +1,129 @@
+# Maxalding onboarding rules, machine-readable.
+#
+# Derived from the System Prompt (source of truth) and the Onboarding Feedback
+# Log (live corrections). The agents load this so the prompt can change without
+# losing a rule, and the validator constants in validator/rules.py mirror it.
+# Each rule carries provenance so it is traceable to the client and date.
+#
+# Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
+
+version: "0.9.0"
+
+banned_characters:
+  - id: em-dash
+    description: "No em dashes anywhere, including build-script strings."
+    source: "System Prompt s3; Feedback 2026-05-19 R1, 2026-05-21 R11"
+  - id: en-dash
+    description: "No en dashes anywhere."
+    source: "System Prompt s3; Feedback 2026-05-19 R1"
+  - id: exclamation
+    description: "No exclamation marks."
+    source: "System Prompt s3"
+  - id: ellipsis
+    description: "No ellipses for effect (glyph or three periods)."
+    source: "System Prompt s3"
+
+banned_words:
+  applies_to: "audience-facing copy, not rule-statement cells"
+  words: [structure, framework]
+  note: "Banned only in the programme/plan/approach sense. Replace with approach, method, process, plan, routine, the way it works, way of working."
+  source: "System Prompt s3; Feedback 2026-05-19 R1"
+
+client_word_bans:
+  note: "Pull the live list from the client Brand memory. Example fitness list below."
+  example: [quick fix, miracle, extreme, hack, guaranteed transformation, fear tactics, negative comparisons, unrealistic claims]
+  source: "System Prompt s3"
+
+banned_formula:
+  pattern: "It is not a [X] problem, it is a [Y] problem"
+  note: "Never use this or close variants. State the idea directly."
+  source: "System Prompt s3"
+
+positive_language:
+  rule: "Never frame the problem as a personal failing, even when negating it."
+  avoid: ["you are not lazy", "the gym did not fail you", "you have not been consistent", "stop making excuses", "you know you should"]
+  replace_with:
+    "you are not lazy": "you have been doing this without the right support"
+    "you have not been consistent": "consistency becomes easier when the approach fits your life"
+  applies_to: [hooks, post copy, scripts, vsl, landing page]
+  source: "System Prompt s3; Feedback 2026-05-19 R4"
+
+meta_compliance:
+  rule: "Standing pass on all paid creative before output."
+  banned:
+    - "Asserting or implying the viewer's weight, body, or health."
+    - "Specific weight-loss numbers anywhere, including inside testimonials, unless documented and permitted."
+    - "'you' plus a negative physical trait."
+    - "Body-shaming language: problem areas, belly fat, beach body, hate what you see in the mirror, ashamed, embarrassed, disgusted."
+    - "Idealised, shirtless or shock-contrast before-and-after imagery. Before-and-after must be realistic and modest."
+    - "Medical claims or superiority claims without documented proof."
+  preferred:
+    - "Aspirational, forward-looking benefit language that does not diagnose the viewer."
+    - "Naming an actual service or lead magnet (names an offer, not the viewer's body)."
+    - "Framing any client result as one person's individual experience, no numbers unless documented."
+  source: "System Prompt s4; Feedback 2026-06-18"
+
+premium_framing:
+  rule: "The lead magnet is the way in but must never read as cheap or discounted."
+  banned_in_audience_copy: [free, no cost, no pressure, costs nothing, no obligation]
+  preferred_vocabulary: [private, personalised, complimentary, consultation, expert, tailored]
+  cta_example: "Book My Consultation"
+  source: "System Prompt s5; Feedback 2026-06-18"
+
+length_limits:
+  post_copy_max_chars: 125
+  headline_max_chars: 40
+  description_max_chars: 25
+  video_hook_max_words: 12
+  static_hook_words: "5 to 10"
+  source: "System Prompt s8"
+
+naming_convention:
+  pattern: "MAXALDING - [Client Business Name] - [Deliverable].[ext]"
+  separator: " - "
+  forbid: [em dashes, underscores]
+  deliverables:
+    Creative Plan: xlsx
+    Video Ad Scripts: docx
+    VSL Script: docx
+    Landing Page Copy: docx
+    CRM Automation: docx
+  note: "SCRIPT column in the tracker references the Video Ad Scripts filename."
+  source: "System Prompt s6; Feedback 2026-06-18"
+
+documents:
+  no_date_in_header: true
+  header_fields: [CLIENT, CAMPAIGN, PREPARED BY]
+  logo: "Insert Maxalding Logo.png from the workspace folder at the top of every deck."
+  typography:
+    font: "Helvetica Neue (set on every run)"
+    main_heading_pt: 16
+    subheading_pt: 14
+    body_pt: 10
+    script_line_color: "#787878"
+    direction_note_color: "#505050"
+  source: "System Prompt s7, s9 to s12; Feedback 2026-05-19 R7, 2026-05-20 R8, 2026-06-18"
+
+creative_plan:
+  brand_pack_sections: [CHANNELS, AUDIENCE, TONE OF VOICE, OFFER, BRAND POSITIONING]
+  brand_pack_no_kpis: true
+  tracker_columns: ["#", DATE, FORMAT, RESOLUTION, STATUS, PLATFORM, FILE TYPE, AUDIENCE, CONCEPT, HOOK, BEATS, DETAILS, EDITING DIRECTION, FILMING DIRECTION, SCRIPT, FINAL ASSET]
+  tracker_rows: "5 statics then 8 videos (13 total)"
+  file_type_formula: '=IF(C{row}="STATIC","JPG","MP4")'
+  resolution_string: "1080 x 1350 (4:5) / 1080 x 1920 (9:16)"
+  status_dropdown: [Briefed, Filmed, In Edit, Signed Off, Live]
+  platform_dropdown: ["FACEBOOK + INSTAGRAM", FACEBOOK, INSTAGRAM, TIKTOK]
+  ad_copy_columns: ["#", CONCEPT, POST COPY, CHARS]
+  ad_copy_structure: "distinct concepts only, 5 post variations each, one shared block of 5 headlines, one shared description"
+  source: "System Prompt s8; Feedback 2026-06-18"
+
+workspace:
+  rule: "The package is read-only at runtime. Writable state lives in the workspace folder."
+  contents: [Maxalding Logo.png, Onboarding Feedback Log, per-client brand kits, generated client outputs]
+  env_var: MAXALDING_WORKSPACE
+  source: "System Prompt s7; Improvement Roadmap s6; Feedback 2026-05-19 R5"
+
+feedback_loop:
+  rule: "At end of any session with feedback, append a dated entry to the workspace feedback log."
+  entry_format: "## [YYYY-MM-DD] - [Client name] - [brief summary]"
+  source: "System Prompt s15"

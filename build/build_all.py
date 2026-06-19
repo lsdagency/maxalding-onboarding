@@ -1,0 +1,81 @@
+"""
+Build orchestrator: produce all five Maxalding deliverables from one data file,
+then run the QA gate over the outputs.
+
+Usage:
+    python -m build.build_all CLIENT_DATA.json [--out OUT_DIR] [--workspace WS]
+
+The Video Ad Scripts filename is resolved up front and written into the Creative
+Plan SCRIPT column for the video rows (System Prompt sections 2 and 8), so the
+tracker references the script file even though both are produced in one pass.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+
+from . import template as T
+from .creative_plan import build_creative_plan
+from .video_ad_scripts import build_video_ad_scripts
+from .vsl_script import build_vsl_script
+from .landing_page import build_landing_page
+from .crm_automation import build_crm_automation
+
+
+def build_all(data, out_dir, workspace=None):
+    os.makedirs(out_dir, exist_ok=True)
+
+    # Resolve the Video Ad Scripts filename first so the Creative Plan SCRIPT
+    # column can reference it on the video rows.
+    client = data["client_business_name"]
+    data.setdefault(
+        "video_scripts_filename",
+        T.deliverable_filename(client, "Video Ad Scripts"),
+    )
+
+    outputs = {}
+    outputs["Creative Plan"] = build_creative_plan(data, out_dir)
+    outputs["Video Ad Scripts"] = build_video_ad_scripts(data, out_dir, workspace=workspace)
+    outputs["VSL Script"] = build_vsl_script(data, out_dir, workspace=workspace)
+    outputs["Landing Page Copy"] = build_landing_page(data, out_dir, workspace=workspace)
+    outputs["CRM Automation"] = build_crm_automation(data, out_dir, workspace=workspace)
+    return outputs
+
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description="Build all Maxalding deliverables.")
+    parser.add_argument("data", help="Path to the client data JSON file.")
+    parser.add_argument("--out", default=".", help="Output directory (default: cwd).")
+    parser.add_argument("--workspace", default=None, help="Workspace folder for the logo.")
+    parser.add_argument("--no-validate", action="store_true", help="Skip the QA gate.")
+    args = parser.parse_args(argv)
+
+    with open(args.data, "r", encoding="utf-8") as fh:
+        data = json.load(fh)
+
+    outputs = build_all(data, args.out, workspace=args.workspace)
+    for name, path in outputs.items():
+        print(f"  built {name}: {path}")
+
+    if args.no_validate:
+        return 0
+
+    # Run the QA gate over the produced files.
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from validator.validate import validate_paths
+
+    result = validate_paths(list(outputs.values()))
+    if result.ok:
+        print(f"QA gate passed. 0 errors, {len(result.warnings)} warnings.")
+        return 0
+    for v in result.errors:
+        print(f"  ERROR [{v.rule}] {v.message} at {v.location}")
+    print(f"QA gate FAILED. {len(result.errors)} errors.")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

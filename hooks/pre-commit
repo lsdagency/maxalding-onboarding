@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+# Maxalding QA gate as a git pre-commit hook.
+#
+# Blocks the commit if the deterministic validator finds any error: em or en
+# dashes, exclamation marks, ellipses, banned words, Meta risk patterns, length
+# limits, naming or no-date violations. It scans the in-repo source (build
+# scripts, skill references, rules) for banned characters, and runs the rule
+# and build evals so a rule change cannot silently regress.
+#
+# Install with: scripts/install-hooks.sh
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+PYTHON="${PYTHON:-python3}"
+
+echo "Maxalding QA gate: scanning source for banned characters..."
+"$PYTHON" -m validator.cli build skills rules evals/run_evals.py --no-names --quiet
+
+echo "Maxalding QA gate: running evals..."
+if "$PYTHON" -m evals.run_evals; then
+  echo "QA gate passed."
+else
+  echo "QA gate FAILED. Commit blocked. Fix the issues above and retry."
+  exit 1
+fi

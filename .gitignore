@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/__pycache__/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+
+# Writable workspace state must NEVER live in the package.
+# Keep the agency workspace (logo, feedback log, brand kits, client outputs)
+# outside this repo. These patterns guard against accidental commits.
+maxalding-workspace/
+*.xlsx
+*.docx
+!evals/**/*.xlsx
+!evals/**/*.docx
+Maxalding Logo.png
+*Onboarding Feedback Log.md
+.lock
+~$*
