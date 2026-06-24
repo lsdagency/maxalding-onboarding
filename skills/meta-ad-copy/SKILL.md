@@ -12,8 +12,11 @@ The rules here are the single AD COPY standard, identical to the onboarding deli
 ## Read first, every time
 Read the shared Onboarding Feedback Log in full before writing anything. It lives in the workspace folder, not in this package (resolve with the `MAXALDING_WORKSPACE` env var, default `./maxalding-workspace`). Apply every instruction in it. The most recent feedback wins on conflict. Then read the client's memory files (Audience, Brand, Marketing, KPIs) so the copy uses the real ICP, offer, tagline, words-to-use and banned-copy list. If a client tagline was not defined at onboarding, define a short one now and use it for the description.
 
+## Ask for the upload location
+Before building, ask the user where the file should go in Google Drive. They will send a folder sharing link. Build the file, then upload it to that folder with the Drive integration. Do not guess the location, and do not over-verify the upload afterwards; if it does not open, the user will say so.
+
 ## Read-only package, writable workspace
-This package is read-only at runtime. Save the generated XLSX into the client's workspace folder (or alongside the client's other deliverables) and tell the user to upload it to Google Drive manually. A Drive MCP cannot write Google Sheets.
+This package is read-only at runtime. Save the generated XLSX into the client's workspace folder (or alongside the client's other deliverables), then upload it to the location the user provided.
 
 ## What you produce
 One AD COPY spreadsheet, built with the deterministic build module. Never a chat list, never hand-formatted. Layout, columns and styling are fixed by the builder:
@@ -70,6 +73,13 @@ The JSON shape:
     }
 
 The builder reuses the Creative Plan AD COPY tab generator, names the file `MAXALDING - [Client] - Meta Ad Copy.xlsx`, and runs a structure and character-limit check (5 posts per concept, post <=125, headline <=40, description <=25) before saving. If the client already has a Creative Plan, the same copy can instead be pasted into that file's AD COPY tab.
+
+## Run the QA gate (mandatory)
+After building, run the deterministic validator over the file and fix every error before handing over:
+
+    python -m validator.cli "<output file>.xlsx"
+
+It checks banned characters, banned words, positive-language, Meta personal-attributes compliance, the length limits, and the naming convention. The gate must pass with 0 errors.
 
 ## Before you hand over
 Run this scan and fix anything that fails:

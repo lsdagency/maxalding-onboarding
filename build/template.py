@@ -81,6 +81,8 @@ def deliverable_filename(client_business_name: str, deliverable: str) -> str:
     ext = {
         "Creative Plan": "xlsx",
         "Meta Ad Copy": "xlsx",
+        "Meta Lead Form Copy": "xlsx",
+        "Meta Ad & Lead Form Copy": "xlsx",
         "Video Ad Scripts": "docx",
         "VSL Script": "docx",
         "Landing Page Copy": "docx",

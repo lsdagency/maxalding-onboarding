@@ -84,11 +84,14 @@ naming_convention:
   forbid: [em dashes, underscores]
   deliverables:
     Creative Plan: xlsx
+    Meta Ad Copy: xlsx
+    Meta Lead Form Copy: xlsx
+    Meta Ad & Lead Form Copy: xlsx
     Video Ad Scripts: docx
     VSL Script: docx
     Landing Page Copy: docx
     CRM Automation: docx
-  note: "SCRIPT column in the tracker references the Video Ad Scripts filename."
+  note: "SCRIPT column in the tracker references the Video Ad Scripts filename. Meta Ad Copy / Lead Form deliverables come from the standalone meta-ad-copy and meta-lead-form skills."
   source: "System Prompt s6; Feedback 2026-06-18"
 
 documents:
