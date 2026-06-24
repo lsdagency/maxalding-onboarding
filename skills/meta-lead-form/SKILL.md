@@ -37,6 +37,7 @@ Intro
 
 Questions
 - List the prefilled fields, then one or two custom qualifying questions. Multiple choice qualifies better than free text and is easier to complete. Keep each question clear and under about 80 characters. Phrase questions to qualify (goal, timeframe, suburb), never to interrogate.
+- Data-use description (always include it). This is the small description box that sits with the form fields. Meta's own prompt for it reads: "Let people know how the information that they give you will be used or shared." Write a short, plain-language note that says how the details will be used and reassures the person they are not shared outside the business. Add it as a row in the QUESTIONS section, field name "Data-use description". This is separate from the formal Privacy section: this one is the friendly in-form note, the Privacy section holds the disclaimer and policy URL.
 
 Privacy
 - Include a short privacy line and the client's privacy policy URL. If the URL is not confirmed, flag it as a placeholder to confirm before launch.
@@ -76,7 +77,11 @@ The JSON shape (lead_form is a list of sections, each with FIELD/COPY rows; add 
             {"field": "Intro headline", "copy": "...", "limit": 60},
             {"field": "Intro description", "copy": "..."}
           ]},
-          {"name": "QUESTIONS", "rows": [...]},
+          {"name": "QUESTIONS", "rows": [
+            {"field": "Prefilled fields", "copy": "Full name, Email, Phone number (prefilled by Meta)"},
+            {"field": "Custom question 1 (multiple choice)", "copy": "..."},
+            {"field": "Data-use description", "copy": "How the details will be used; not shared outside the business."}
+          ]},
           {"name": "PRIVACY", "rows": [...]},
           {"name": "COMPLETION SCREEN", "rows": [
             {"field": "Completion headline", "copy": "...", "limit": 60},

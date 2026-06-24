@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.10.1] - 2026-06-24
+
+### Added
+- meta-lead-form: the lead form QUESTIONS section now includes the Meta data-use description, the small box that sits with the form fields and tells people how their information will be used or shared.
+
 ## [0.10.0] - 2026-06-24
 
 ### Added
