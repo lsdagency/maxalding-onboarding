@@ -355,6 +355,26 @@ def check_naming(filename: str) -> list:
 # ---------------------------------------------------------------------------
 # Segment runner: applies the right checks based on kind
 # ---------------------------------------------------------------------------
+def check_post_copy_punctuation(seg: Segment) -> list:
+    """Post copy should not end with a full stop; it reads unnatural in an ad.
+    Ellipsis is handled by the banned-character check, so a trailing '..' is
+    left for that check to flag."""
+    if seg.kind != "post_copy":
+        return []
+    stripped = seg.text.rstrip()
+    if stripped.endswith(".") and not stripped.endswith(".."):
+        return [
+            Violation(
+                rule="post-copy-punctuation",
+                message="post copy should not end with a full stop",
+                location=seg.location,
+                snippet=seg.text[-60:],
+                severity="warn",
+            )
+        ]
+    return []
+
+
 SEGMENT_CHECKS = [
     check_characters,
     check_banned_words,
@@ -366,6 +386,7 @@ SEGMENT_CHECKS = [
     check_lengths,
     check_hooks,
     check_no_date,
+    check_post_copy_punctuation,
 ]
 
 

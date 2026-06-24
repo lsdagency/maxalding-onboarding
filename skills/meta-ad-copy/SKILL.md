@@ -35,6 +35,7 @@ Post copy
 - Each of the five is genuinely unique: a different angle or approach, not a reword of the others.
 - One rhetorical question per post maximum.
 - Speak to a pain point or desire the ICP already holds. No generic hooks.
+- Do not end a post copy with a full stop. It reads unnatural in an ad. End on the last word, a question mark where a question fits, or an emoji.
 
 Headlines
 - Exactly 5, shared across all concepts. No more than 40 characters, ideally around 30.
@@ -46,7 +47,7 @@ Description
 
 Fluid, not patterned (this is the rule that gets missed)
 - Vary length on purpose. Do NOT pad toward 125. Short often reads stronger. The set of lengths across the five should look hand-written, not clustered near the limit.
-- Emoji are optional and intentional. Add one only where it genuinely fits and leave it out everywhere else. Never one-per-row as a pattern. Match the brand tone (no hype emoji for a calm, grounded brand).
+- Emoji are intentional, not decorative, but lean in a little: use a few across the set where they genuinely fit and let some posts carry none. Erring slightly toward more usually reads better than too few. Vary placement, never one-per-row as a pattern. Match the brand tone (no hype emoji for a calm, grounded brand).
 
 Banned copy (zero exceptions, scan every cell including build-script strings)
 - No em dashes or en dashes anywhere. No exclamation marks.

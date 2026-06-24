@@ -78,6 +78,12 @@ length_limits:
   static_hook_words: "5 to 10"
   source: "System Prompt s8"
 
+post_copy_style:
+  no_trailing_full_stop: true
+  note: "Post copy must not end with a full stop; it reads unnatural in an ad. End on the word, a question mark where a question fits, or an emoji. The validator flags a trailing full stop on post copy as a warning."
+  emoji: "Use a few emoji across the set where they genuinely fit and leave some posts with none, leaning slightly toward more rather than too few, never one-per-row as a pattern."
+  source: "Feedback 2026-06-24 (FIT Republik)"
+
 naming_convention:
   pattern: "MAXALDING - [Client Business Name] - [Deliverable].[ext]"
   separator: " - "

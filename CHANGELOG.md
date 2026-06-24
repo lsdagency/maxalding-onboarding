@@ -2,6 +2,14 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.10.2] - 2026-06-24
+
+### Changed
+- Ad copy rules: post copy must not end with a full stop (it reads unnatural in an ad), and lean a little more into emoji (a few across the set where they fit, some posts with none, never one-per-row). Updated in the meta-ad-copy skill and the Creative Plan AD COPY spec.
+
+### Added
+- Validator: post copy ending with a full stop is now flagged as a warning (rule post-copy-punctuation), scoped to the AD COPY POST COPY column.
+
 ## [0.10.1] - 2026-06-24
 
 ### Added
