@@ -49,7 +49,9 @@ Apply ads, ad-creative and copywriting before writing. Columns: number, CONCEPT,
 - 5 post copy variations per concept.
 - One shared block of 5 headlines and one shared description that cover all concepts.
 - CHARS is a live LEN formula on the copy cell.
-- Post copy no longer than 125 characters, lead with the hook or core message in the first line. Each variation unique. Maximum one rhetorical question per post.
-- Headlines no more than 40 characters, ideally 30. Include one audience-addresser variation and one offer variation.
-- Description one only, no more than 25 characters; use the client tagline where it fits and do not repeat the offer.
-- Emoji and length are fluid and intentional, with no pattern.
+- Post copy no longer than 125 characters, built to stop the scroll with a clear hook in the first line. Each of the five is unique: a genuinely different angle or approach, not a reworded version of the others. Maximum one rhetorical question per post.
+- Headlines no more than 40 characters, ideally 30. Always include one audience-addresser variation and one offer variation, plus a few others on different angles.
+- Description one only, no more than 25 characters. Use the client tagline where it fits. It should tie the messaging together, not repeat the offer already carried by the post copy and headlines.
+- Emoji and length are fluid and intentional, never a pattern. Add an emoji only where it genuinely fits and leave it out where it does not. Do not pad copy to reach the character limit: if shorter reads stronger, keep it shorter.
+
+These AD COPY rules are the single standard. They also apply to standalone ad-copy requests made outside a full onboarding, which are handled by the `meta-ad-copy` skill and built with `build/ad_copy.py` (it reuses `_build_ad_copy` here, so the format is identical). Keep this section and that skill in sync; this section is the source of truth.
