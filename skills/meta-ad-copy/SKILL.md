@@ -12,8 +12,8 @@ The rules here are the single AD COPY standard, identical to the onboarding deli
 ## Read first, every time
 Read the shared Onboarding Feedback Log in full before writing anything. It lives in the workspace folder, not in this package (resolve with the `MAXALDING_WORKSPACE` env var, default `./maxalding-workspace`). Apply every instruction in it. The most recent feedback wins on conflict. Then read the client's memory files (Audience, Brand, Marketing, KPIs) so the copy uses the real ICP, offer, tagline, words-to-use and banned-copy list. If a client tagline was not defined at onboarding, define a short one now and use it for the description.
 
-## Ask for the upload location
-Before building, ask the user where the file should go in Google Drive. They will send a folder sharing link. Build the file, then upload it to that folder with the Drive integration. Do not guess the location, and do not over-verify the upload afterwards; if it does not open, the user will say so.
+## Delivering the file (do not hand-encode binaries)
+Build the XLSX and save it into the session outputs directory, then let the user open it with Google Drive (the Cowork native upload moves the real bytes). Never hand-encode the workbook as base64 into a Drive create-file call: reproducing thousands of base64 characters corrupts the xlsx and it will not open. If the user wants it in a specific Drive folder, ask which one, but the file still travels via the outputs directory and the open-with-Google-Drive step, not a pasted blob.
 
 ## Read-only package, writable workspace
 This package is read-only at runtime. Save the generated XLSX into the client's workspace folder (or alongside the client's other deliverables), then upload it to the location the user provided.
