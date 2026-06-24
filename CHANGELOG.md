@@ -2,6 +2,19 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.10.0] - 2026-06-24
+
+### Added
+- meta-ad-copy skill: standalone Meta ad copy requests (outside a full onboarding) now trigger the AD COPY rules and produce the spreadsheet directly. build/ad_copy.py reuses the Creative Plan AD COPY builder, so the format and live =LEN formulas are identical to the onboarding deliverable.
+- meta-lead-form skill: standalone Meta Lead Form (Instant Form) copy, with best practices folded in (higher-intent form type, prefilled fields plus one or two qualifying questions, an expectation-setting intro aligned with the ad, and a completion screen with one CTA). build/lead_form.py builds a branded LEAD FORM tab and a combined Ad & Lead Form workbook.
+- Mandatory QA gate step in both new skills, plus an ask-for-the-upload-location step before any file is uploaded to Google Drive.
+
+### Changed
+- Registered the new deliverables (Meta Ad Copy, Meta Lead Form Copy, Meta Ad & Lead Form Copy) in the filename helper, validator/rules.py and rules/rules.yaml so the QA gate accepts and checks them.
+
+### Folded in from the feedback log
+- Standalone ad copy must be delivered as the AD COPY spreadsheet (never a chat list) and the variations must be fluid, not length-clustered near the limit. Ask for the upload location before uploading (2026-06-24).
+
 ## [0.9.0] - 2026-06-19
 
 First packaged release as an installable Claude Code plugin. Consolidates every rule and correction to date into one read-only package with writable state held in the workspace folder.
