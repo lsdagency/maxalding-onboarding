@@ -1,0 +1,14 @@
+{
+  "name": "maxalding",
+  "owner": {
+    "name": "LSD Agency",
+    "email": "liam@lsdagency.co.uk"
+  },
+  "plugins": [
+    {
+      "name": "maxalding-onboarding",
+      "source": "./",
+      "description": "Maxalding Agency client onboarding: orchestrator plus specialist subagents, the standalone meta-ad-copy and meta-lead-form skills, deterministic build module, and the QA validator gate."
+    }
+  ]
+}
