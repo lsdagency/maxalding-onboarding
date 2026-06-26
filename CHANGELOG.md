@@ -2,6 +2,12 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.11.2] - 2026-06-26
+
+### Changed
+- Ad copy emoji guidance strengthened: lean further into emoji (around a third of posts carry one, varied, never one-per-row, some left bare) and make them premium and on-brand (sparkle, white heart, warm heart, leaf, location pin, house, sun), never hype or loud ones (no fire, 100, rocket, heart-eyes). Updated in rules/rules.yaml, skills/meta-ad-copy/SKILL.md and references/creative-plan-spec.md. Liam had given this before and it was being lost, so it is now codified in all three places plus the feedback log. From the Peak with Hamza run (2026-06-26).
+- Document logo width set to at least 1 inch (build/template.py DEFAULT_LOGO_WIDTH_CM 1.0 to 3.0, about 1.18 inches).
+
 ## [0.11.1] - 2026-06-26
 
 ### Added

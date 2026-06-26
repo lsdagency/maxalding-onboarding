@@ -83,7 +83,8 @@ length_limits:
 post_copy_style:
   no_trailing_full_stop: true
   note: "Post copy must not end with a full stop; it reads unnatural in an ad. End on the word, a question mark where a question fits, or an emoji. The validator flags a trailing full stop on post copy as a warning."
-  emoji: "Use a few emoji across the set where they genuinely fit and leave some posts with none, leaning slightly toward more rather than too few, never one-per-row as a pattern."
+  emoji: "Lean into emoji a bit more than feels obvious, around a third of the posts carrying one, varied and never one-per-row, with some posts left bare. Prefer premium, on-brand emoji (for example sparkle, white heart, warm heart, leaf, location pin, house, sun) and never hype or loud ones (no fire, 100, rocket, heart-eyes), subject to brand tone."
+  emoji_source: "Feedback 2026-06-24 (FIT Republik) and 2026-06-26 (Peak with Hamza): use a few MORE, and make them premium."
   source: "Feedback 2026-06-24 (FIT Republik)"
 
 naming_convention:
