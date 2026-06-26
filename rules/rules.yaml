@@ -65,10 +65,12 @@ meta_compliance:
 
 premium_framing:
   rule: "The lead magnet is the way in but must never read as cheap or discounted."
+  scope: "High-ticket offers only, roughly 300 to 800 dollars and up."
   banned_in_audience_copy: [free, no cost, no pressure, costs nothing, no obligation]
   preferred_vocabulary: [private, personalised, complimentary, consultation, expert, tailored]
   cta_example: "Book My Consultation"
-  source: "System Prompt s5; Feedback 2026-06-18"
+  per_client_flag: "premium_lead_magnet (client data, default true). Set false for a low-ticket local client whose genuine front end is a free trial or session. When false, build.build_all waives the premium-framing rule and the standalone validator can waive it with --skip-rules premium-framing."
+  source: "System Prompt s5; Feedback 2026-06-18, 2026-06-26 (Peak with Hamza)"
 
 length_limits:
   post_copy_max_chars: 125

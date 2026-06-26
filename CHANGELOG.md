@@ -2,6 +2,17 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.11.1] - 2026-06-26
+
+### Added
+- Per-client `premium_lead_magnet` flag (client data, default true). For a low-ticket, local, in-person client whose genuine front end is a free trial or session (for example a $50 to $60 per session PT offering a free starter session), set it to false. build/build_all then waives the premium-framing QA rule for that client so a legitimately named free offer passes the gate, and the standalone validator can waive it with `python -m validator.cli ... --skip-rules premium-framing`. High-ticket clients are unaffected (default true keeps the premium "no free" framing). From the Peak with Hamza run (2026-06-26).
+
+### Changed
+- validator/validate.py: `validate_paths` gains an optional `skip_rules` argument that drops violations of the named rules from the result. validator/cli.py gains `--skip-rules`. rules/rules.yaml and references/premium-positioning.md document the flag and that premium framing is scoped to high-ticket offers only.
+
+### Reaffirmed
+- No KPIs anywhere in the client-facing Creative Plan (section, tab or rows). Already enforced (references/creative-plan-spec.md, rules.yaml brand_pack_no_kpis), recorded as a deliberate standing rule (Peak with Hamza, 2026-06-26).
+
 ## [0.11.0] - 2026-06-26
 
 ### Changed
