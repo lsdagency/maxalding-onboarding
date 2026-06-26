@@ -2,6 +2,15 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.11.0] - 2026-06-26
+
+### Changed
+- CRM Automation deliverable now produces the fixed funnel: four workflows in a set order every time (Lead Follow Up, Booked Call Confirmation, No Show Rebook, Long Term Nurture), with the timing and message type of every step locked to the funnel spec. Replaces the old flexible menu that let the agent pick and rename workflows, which was producing the wrong automation copy. Updated in agents/lifecycle-crm.md and references/automation-copy-guidelines.md.
+- CRM Automation deliverable drops the OVERVIEW section: no overview, no instructions or prompt and no booking-link preamble at the start, just the automation copy. build/crm_automation.py renders straight into AUTOMATION COPY.
+
+### Folded in from the funnel spec
+- Standard funnel automations defined by the Automation Workflow doc: Lead Follow Up (12 steps), Booked Call Confirmation (8 steps), No Show Rebook (6 steps), Long Term Nurture (6 fortnightly emails) (2026-06-26).
+
 ## [0.10.2] - 2026-06-24
 
 ### Changed

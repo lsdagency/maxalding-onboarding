@@ -1,9 +1,10 @@
 """
 Document 4: CRM Automation (.docx) (System Prompt section 12).
 
-A short OVERVIEW (booking link stated once), then straight into AUTOMATION COPY.
-No ClickUp brief, no process steps, no quality-control checklist, no Master Copy
-Prompt. The deliverable is the email and SMS copy for each requested workflow.
+Straight into AUTOMATION COPY: no overview, no instructions or prompt at the
+start, no ClickUp brief, no process steps, no quality-control checklist, no
+Master Copy Prompt. The deliverable is the email and SMS copy itself for each
+funnel workflow.
 
 Emails: numbered, bold subject, Delay, an italic direction note, then Subject /
 Body / single CTA, with body and CTA in grey. SMS: numbered, Delay, italic note,
@@ -30,13 +31,6 @@ def build_crm_automation(data, out_dir, workspace=None):
         prepared_by=data.get("prepared_by", "Maxalding Agency"),
         workspace=workspace,
     )
-
-    doc.add_paragraph()
-    T.add_subheading(doc, "OVERVIEW")
-    for line in crm.get("overview", []):
-        T.add_body(doc, line)
-    if crm.get("booking_link"):
-        T.add_label_line(doc, "Booking link", crm["booking_link"])
 
     doc.add_paragraph()
     T.add_subheading(doc, "AUTOMATION COPY")
