@@ -249,8 +249,17 @@ def _iter_files(paths, skip_dirs):
             yield p
 
 
-def validate_paths(paths, check_names: bool = True, skip_dirs=None) -> Result:
+def validate_paths(paths, check_names: bool = True, skip_dirs=None, skip_rules=None) -> Result:
+    """Scan paths and return a Result.
+
+    skip_rules: an optional iterable of rule ids to waive (their violations are
+    dropped from the result). Used for per-client exceptions, for example a
+    low-ticket free-trial client that legitimately names a "free" offer, which
+    waives "premium-framing". See build.build_all and the premium_lead_magnet
+    client flag.
+    """
     skip_dirs = DEFAULT_SKIP_DIRS if skip_dirs is None else skip_dirs
+    skip_rules = set(skip_rules or ())
     result = Result()
     for path in _iter_files(paths, skip_dirs):
         try:
@@ -258,6 +267,8 @@ def validate_paths(paths, check_names: bool = True, skip_dirs=None) -> Result:
         except Exception as exc:  # keep scanning the rest of the set
             result.violations.append(_scan_error(path, exc))
     result.violations = _dedupe(result.violations)
+    if skip_rules:
+        result.violations = [v for v in result.violations if v.rule not in skip_rules]
     return result
 
 

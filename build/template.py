@@ -47,7 +47,9 @@ XLSX_MIN_ROW_HEIGHT = 45
 XLSX_TRACKER_ROW_HEIGHT = 135  # within the 120 to 150pt band
 
 LOGO_FILENAME = "Maxalding Logo.png"
-DEFAULT_LOGO_WIDTH_CM = 1.0
+# At least 1 inch (2.54 cm) wide. 1 cm rendered too small at the logo's wide
+# 2:1 proportions (Feedback 2026-06-26, Peak with Hamza). 3 cm is about 1.18 in.
+DEFAULT_LOGO_WIDTH_CM = 3.0
 
 
 # ---------------------------------------------------------------------------

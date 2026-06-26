@@ -67,7 +67,14 @@ def main(argv=None) -> int:
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from validator.validate import validate_paths
 
-    result = validate_paths(list(outputs.values()))
+    # Per-client waiver: a low-ticket free-trial client (premium_lead_magnet
+    # false) may name a "free" offer in audience copy, which waives the
+    # premium-framing rule. Default is True (premium framing enforced).
+    skip_rules = set()
+    if not data.get("premium_lead_magnet", True):
+        skip_rules.add("premium-framing")
+        print("  note: premium_lead_magnet is false, waiving premium-framing for this client")
+    result = validate_paths(list(outputs.values()), skip_rules=skip_rules)
     if result.ok:
         print(f"QA gate passed. 0 errors, {len(result.warnings)} warnings.")
         return 0

@@ -32,9 +32,20 @@ def main(argv=None) -> int:
         action="store_true",
         help="Only print the summary line.",
     )
+    parser.add_argument(
+        "--skip-rules",
+        default="",
+        help=(
+            "Comma-separated rule ids to waive, for example premium-framing for a "
+            "low-ticket free-trial client that legitimately names a free offer."
+        ),
+    )
     args = parser.parse_args(argv)
 
-    result = validate_paths(args.paths, check_names=not args.no_names)
+    skip_rules = {r.strip() for r in args.skip_rules.split(",") if r.strip()}
+    result = validate_paths(
+        args.paths, check_names=not args.no_names, skip_rules=skip_rules
+    )
 
     if not args.quiet:
         for v in result.errors:
