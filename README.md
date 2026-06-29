@@ -74,6 +74,8 @@ The validator is the deterministic quality gate. It scans every output and every
 - Meta risk patterns: specific weight figures, body-attribute phrasing, "you" plus a negative trait
 - length limits: post copy 125, headlines 40, description 25, and hook word counts
 - the naming convention and the SCRIPT-column reference
+- the labelled hook format (Hook 1:/Hook 2:/Hook 3:) on every Creative Tracker hook
+- a blank Creative Tracker DATE column (no stamped date)
 - a date in any document header
 - discount language in audience-facing copy (the premium-framing check)
 

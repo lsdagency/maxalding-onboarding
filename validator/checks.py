@@ -375,6 +375,48 @@ def check_post_copy_punctuation(seg: Segment) -> list:
     return []
 
 
+_HOOK_LABEL_RE = re.compile(r"^Hook \d+\b.*:")
+
+
+def check_hook_label(seg: Segment) -> list:
+    """Every HOOK cell line must be labelled 'Hook 1:'/'Hook 2:'/'Hook 3:'
+    (or 'Hook 1 (age):'/'(role):'/'(situation):' for the Audience Addresser).
+    This is the established house format; an unlabelled hook is a regression."""
+    if seg.kind not in ("video_hook", "static_hook"):
+        return []
+    if not _HOOK_LABEL_RE.match(seg.text.strip()):
+        return [
+            Violation(
+                rule="hook-label",
+                message=(
+                    "hook line must be labelled 'Hook 1:'/'Hook 2:'/'Hook 3:' "
+                    "(or 'Hook N (tag):' for the Audience Addresser)"
+                ),
+                location=seg.location,
+                snippet=seg.text[:60],
+            )
+        ]
+    return []
+
+
+def check_tracker_date(seg: Segment) -> list:
+    """The Creative Tracker DATE column must be blank: the agency does not stamp
+    a date on deliverables (no implied deadlines). Any value, including the
+    literal 'today', is a violation."""
+    if seg.kind != "tracker_date":
+        return []
+    if seg.text.strip():
+        return [
+            Violation(
+                rule="tracker-date-blank",
+                message="Creative Tracker DATE column must be blank, no date stamped",
+                location=seg.location,
+                snippet=seg.text[:60],
+            )
+        ]
+    return []
+
+
 SEGMENT_CHECKS = [
     check_characters,
     check_banned_words,
@@ -385,6 +427,8 @@ SEGMENT_CHECKS = [
     check_premium_framing,
     check_lengths,
     check_hooks,
+    check_hook_label,
+    check_tracker_date,
     check_no_date,
     check_post_copy_punctuation,
 ]

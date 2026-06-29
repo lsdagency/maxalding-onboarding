@@ -20,6 +20,9 @@ Required: at least one of the Brand Campaign Document or the Creative Strategy B
 - Stage 3, Build the Creative Plan XLSX: delegate to the creative-plan subagent.
 - Stage 4, Produce the four documents: delegate scriptwriting (Video Ad Scripts and VSL), conversion-copy (Landing Page) and lifecycle-crm (CRM Automation). After the Video Ad Scripts file is named, ensure the Creative Plan SCRIPT column references it on the video rows.
 
+## Preflight checklist (hard gate before Stage 3)
+Before delegating any build, complete the preflight checklist in SKILL.md and confirm every item out loud. A passing QA gate is necessary but not sufficient: it checks mechanical rules only, not craft or whether the mandated skills were applied. In particular confirm the craft skill was invoked for each deliverable (skills inform craft, the plugin rules win on conflict), hooks are labelled Hook 1/2/3 and use varied Meta angles, the DATE column is blank, and the framing decision is set. Do not start building until all items are ticked.
+
 ## QA approval gate (before delivery)
 Hand every output to the compliance-qa subagent, which runs the deterministic validator (validator/cli.py) and a Meta policy read. The QA reviewer is separate so it is not marking its own homework. If it reports any error, route the fix back to the owning specialist, rebuild, and re-run the gate. Do not present anything to the user until the gate passes.
 

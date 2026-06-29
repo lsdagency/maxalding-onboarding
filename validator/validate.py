@@ -147,6 +147,13 @@ def scan_xlsx(path: str) -> list:
                     kind = "static_hook" if fmt.strip().upper() == "STATIC" else "video_hook"
                     overrides[(r, hook_col)] = ("hooklines", kind)
 
+            # Creative Tracker: the DATE column must be blank. Tag any non-empty
+            # DATE cell so the QA gate flags a stamped date (no implied deadlines).
+            if "DATE" in label_to_col:
+                date_col = label_to_col["DATE"]
+                for r in range(header_row + 1, ws.max_row + 1):
+                    overrides[(r, date_col)] = ("kind", "tracker_date")
+
             # AD COPY: tag the POST COPY column.
             if "POST COPY" in label_to_col:
                 pc_col = label_to_col["POST COPY"]
