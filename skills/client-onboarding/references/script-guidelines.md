@@ -17,7 +17,7 @@ Write all eight video concepts (Creative Tracker rows 6 to 13). Each block:
 - A short plain paragraph on what it is and how to film it.
 - Hook Options (film all three): Option A, B, C. All three are filmed and tested; never tell the client to choose one. Hooks under 12 words, at least one statement, specific, never "you" plus a negative attribute.
 - A timestamped script. Add a direction note only where genuinely needed, for example the hook. Content beats are just the timestamp, the section label and the spoken line. Spoken lines are wrapped in quotation marks and rendered in grey; any direction note is italic and grey.
-- Target 15 to 35 seconds, 60 to 95 spoken words, max 14 lines, 6 to 10 words per line, most sentences under 16 words.
+- Write it the way the coach would actually say it to camera: like a voicenote to a mate, not a list of slogans. Full, flowing sentences in plain spoken English, contractions and all (you are saying it out loud, so "it is" can be "it's", "we will" can be "we'll"). Each beat is the timestamp, the section label, and one or two natural spoken sentences that connect to each other. Do NOT chop the script into clipped 6 to 10 word lines, and do not pad or trim to hit a line or word count. Keep it on message and hitting the beats, roughly 20 to 45 seconds spoken, but it must sound like a real person talking. The banned characters, banned words, positive-language and Meta rules still apply.
 - CTA (film this ending): one firm CTA per concept, not three options. A single spoken line that names the offer in premium terms, with no clicking or booking verbs anywhere except this final line, no invented results or deadlines, no marketing terminology.
 - Separate concepts with a dash line.
 
