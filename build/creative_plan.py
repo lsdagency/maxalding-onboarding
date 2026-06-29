@@ -122,7 +122,7 @@ def _build_tracker(wb, data):
         script_value = "" if is_static else (content.get("script") or video_scripts_file)
         values = [
             idx + 1,                                   # A #
-            date_value,                                # B DATE (today)
+            date_value,                                # B DATE (blank by default, no date stamped)
             fmt,                                       # C FORMAT
             RESOLUTION_STRING,                         # D RESOLUTION
             content.get("status", DEFAULT_STATUS),     # E STATUS
