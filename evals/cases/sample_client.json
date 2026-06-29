@@ -6,109 +6,302 @@
   "audience_line": "Busy professionals in their 30s and 40s who want strength and energy that fits a full schedule.",
   "brand_pack": {
     "channels": [
-      ["Platforms", "Facebook and Instagram"],
-      ["Website", "northsidestrength.co"],
-      ["Socials", "instagram.com/northsidestrength"]
+      [
+        "Platforms",
+        "Facebook and Instagram"
+      ],
+      [
+        "Website",
+        "northsidestrength.co"
+      ],
+      [
+        "Socials",
+        "instagram.com/northsidestrength"
+      ]
     ],
     "audience": [
-      ["ICP", "Busy professionals in their 30s and 40s"],
-      ["Demographics", "Desk-based roles, family commitments, limited time"],
-      ["Psychographics", "Value guidance, want a plan that fits real life"],
-      ["Pain points", "Time pressure, low energy, starting and stopping"],
-      ["Locations", "Northside metro and surrounds"],
-      ["Exclusions", "Quick-result seekers and bargain hunters"]
+      [
+        "ICP",
+        "Busy professionals in their 30s and 40s"
+      ],
+      [
+        "Demographics",
+        "Desk-based roles, family commitments, limited time"
+      ],
+      [
+        "Psychographics",
+        "Value guidance, want a plan that fits real life"
+      ],
+      [
+        "Pain points",
+        "Time pressure, low energy, starting and stopping"
+      ],
+      [
+        "Locations",
+        "Northside metro and surrounds"
+      ],
+      [
+        "Exclusions",
+        "Quick-result seekers and bargain hunters"
+      ]
     ],
     "tone_of_voice": [
-      ["Voice", "Warm, expert, direct, calm"],
-      ["Words to use", "private, personalised, tailored, expert, consultation"],
-      ["Emotional direction", "Recognition and capability, never accusation"],
-      ["BANNED IN COPY", "Avoid: em dashes, en dashes, the words structure and framework as nouns, exclamation marks, discount words like free or no cost. Lead with what the person can do."]
+      [
+        "Voice",
+        "Warm, expert, direct, calm"
+      ],
+      [
+        "Words to use",
+        "private, personalised, tailored, expert, consultation"
+      ],
+      [
+        "Emotional direction",
+        "Recognition and capability, never accusation"
+      ],
+      [
+        "BANNED IN COPY",
+        "Avoid: em dashes, en dashes, the words structure and framework as nouns, exclamation marks, discount words like free or no cost. Lead with what the person can do."
+      ]
     ],
     "offer": [
-      ["Primary offer", "Twelve week one to one coaching"],
-      ["Inclusions", "Personalised plan, weekly review, direct coach access"],
-      ["Lead magnet", "Strength and Lifestyle Audit, a private consultation with the coach"],
-      ["Funnel", "Audit consultation to coaching"],
-      ["Guarantee", "A working plan to keep, whether or not you go on to coach with us"]
+      [
+        "Primary offer",
+        "Twelve week one to one coaching"
+      ],
+      [
+        "Inclusions",
+        "Personalised plan, weekly review, direct coach access"
+      ],
+      [
+        "Lead magnet",
+        "Strength and Lifestyle Audit, a private consultation with the coach"
+      ],
+      [
+        "Funnel",
+        "Audit consultation to coaching"
+      ],
+      [
+        "Guarantee",
+        "A working plan to keep, whether or not you go on to coach with us"
+      ]
     ],
     "brand_positioning": [
-      ["Core Message", "Strength that fits the life you already lead"],
-      ["Tagline", "Strength that lasts"],
-      ["Support line", "A private audit, a personalised plan, a coach in your corner"],
-      ["Positioning statement", "Expert coaching built around a full schedule"],
-      ["Unique mechanism", "The weekly review that keeps the plan fitting your week"],
-      ["Hero story", "A coach who rebuilt training around a demanding career"],
-      ["Proof assets", "Client reviews and modest before and after photos, client to supply"],
-      ["Messaging rules", "Premium positioning, one consistent consultation CTA"],
-      ["Meta compliance", "No weight figures, no body-attribute phrasing, modest before and after only"]
+      [
+        "Core Message",
+        "Strength that fits the life you already lead"
+      ],
+      [
+        "Tagline",
+        "Strength that lasts"
+      ],
+      [
+        "Support line",
+        "A private audit, a personalised plan, a coach in your corner"
+      ],
+      [
+        "Positioning statement",
+        "Expert coaching built around a full schedule"
+      ],
+      [
+        "Unique mechanism",
+        "The weekly review that keeps the plan fitting your week"
+      ],
+      [
+        "Hero story",
+        "A coach who rebuilt training around a demanding career"
+      ],
+      [
+        "Proof assets",
+        "Client reviews and modest before and after photos, client to supply"
+      ],
+      [
+        "Messaging rules",
+        "Premium positioning, one consistent consultation CTA"
+      ],
+      [
+        "Meta compliance",
+        "No weight figures, no body-attribute phrasing, modest before and after only"
+      ]
     ]
   },
   "tracker": [
-    {"hook": "Strength that fits a packed week\nTraining built around your schedule\nA plan that survives a busy month", "beats": "Graphic 1: hook top, subline, single CTA button. Graphic 2: same layout, new hook. Graphic 3: same layout, new hook.", "details": "- A clean static that speaks to time-pressed professionals\n- Designed to earn the consultation booking\n- High contrast, one message per variation\n- Builds toward Book My Consultation\n- Names the Strength and Lifestyle Audit", "editing": "- Static graphic design, clean minimal layout\n- One strong message per variation\n- High contrast, readable on mobile at a glance\n- Export as JPG at 1080 x 1350 and 1080 x 1920", "filming": "- Image option 1: coach mid session, candid\n- Image option 2: calm studio detail shot\n- Image option 3: imageless ugly-ad text only, styled like an organic post", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Book a private audit this month\nClaim your Strength and Lifestyle Audit\nStart with a personalised plan", "beats": "Graphic 1, 2, 3: hook only with the consultation CTA, no subline.", "details": "- A direct incentive static for the audit\n- Designed to drive the booking\n- Bold and simple on mobile\n- Builds toward Book My Consultation\n- Names the audit as the way in", "editing": "- Static graphic design, bold and simple\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920", "filming": "- Image option 1: coach welcoming a client\n- Image option 2: clean offer card\n- Image option 3: imageless ugly-ad text only", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "More energy by Friday afternoon\nStrength you can feel at work\nTraining that gives back energy", "beats": "Graphic 1, 2, 3: hook, subline, single CTA. Only the hook changes.", "details": "- A benefit static on energy and capability\n- Designed to connect with daily life\n- Calm, confident visual tone\n- Builds toward Book My Consultation\n- Mentions the coaching outcome", "editing": "- Static graphic design, calm and confident\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920", "filming": "- Image option 1: client walking into the office calm\n- Image option 2: training detail\n- Image option 3: lifestyle shot", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Real words from a real client\nWhat clients say after twelve weeks\nA client on the weekly review", "beats": "Graphic 1, 2, 3: five-star graphic, one client quote, CTA. Layout identical, only the hook changes.", "details": "- A review static that leads with proof\n- Designed to build trust before the booking\n- Clean quote card layout\n- Builds toward Book My Consultation\n- Uses a real client quote, client to supply", "editing": "- Static graphic design, quote card layout\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920", "filming": "- Image format stays identical across variations, only the hook changes\n- Image option 1: five-star quote card\n- Image option 2: client headshot with quote\n- Image option 3: imageless ugly-ad quote, text only", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Twelve weeks of steady progress\nProgress you can see and feel\nA client twelve weeks on", "beats": "Graphic 1, 2, 3: realistic before and after image, subline, CTA. Layout identical, only the hook changes.", "details": "- A modest before and after static\n- Designed to show realistic, believable change\n- Modest, true to life imagery\n- Builds toward Book My Consultation\n- Client to supply approved photos", "editing": "- Static graphic design, modest before and after\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920", "filming": "- Image format stays identical across variations, only the hook changes\n- Realistic and modest before and after only\n- Image option 1: side by side, same lighting\n- Image option 2: progress over time card", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Training keeps falling off your week\nYou start strong then life gets busy\nThere is a way that fits your week", "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.", "details": "- A talk-to-camera video for time-pressed professionals\n- Designed to earn the audit booking\n- Calm, grounded delivery\n- Builds toward Book My Consultation\n- Names the Strength and Lifestyle Audit", "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a clean home or studio space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "A client on what finally changed\nWhat the weekly review did for me\nOne client, twelve honest weeks", "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.", "details": "- A social proof video led by a real client voice\n- Designed to build trust\n- Honest, conversational tone\n- Builds toward Book My Consultation\n- Uses a real client story, client to supply", "editing": "- Interview style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a comfortable, quiet space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Stop scrolling, this one is worth it\nRead this before your next Monday\nHere is a different way to train", "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.", "details": "- A pattern interrupt video to stop the scroll\n- Designed to open with surprise then deliver value\n- Punchy but grounded\n- Builds toward Book My Consultation\n- Names the audit", "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a clean, bright space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "I rebuilt training around a real career\nThe plan I wish I had at thirty five\nHow I learned to train around work", "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.", "details": "- A storytelling video from the coach\n- Designed to build authority and connection\n- Warm, personal tone\n- Builds toward Book My Consultation\n- Sets up the consultation", "editing": "- Documentary style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a meaningful, on-brand location\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Strength you can feel at work\nMore energy through the afternoon\nTraining that gives back time", "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.", "details": "- A benefit video on energy and capability\n- Designed to connect with daily life\n- Calm, confident delivery\n- Builds toward Book My Consultation\n- Mentions the coaching outcome", "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a clean home or studio space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Book your private audit this month\nStart with a personalised plan\nClaim your Strength and Lifestyle Audit", "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.", "details": "- An incentive video for the audit\n- Designed to drive the booking\n- Direct and warm\n- Builds toward Book My Consultation\n- Names the audit as the way in", "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a welcoming space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "A client on the first month back\nWhat changed after twelve weeks\nReal words from a real client", "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.", "details": "- A second social proof video, new angle\n- Designed to deepen trust\n- Honest and specific\n- Builds toward Book My Consultation\n- Uses a real client story, client to supply", "editing": "- Interview style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a comfortable, quiet space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"},
-    {"hook": "Are you in your 30s or 40s and short on time?\nWorking in a desk role and training keeps slipping?\nIf your week runs you, this one is for you", "beats": "Clip 1: direct callout. Clip 2: understand and present the way it works. Clip 3: close and CTA.", "details": "- An audience addresser that calls out the exact person\n- Designed to make the right viewer feel recognised\n- Warm, direct, recognising not targeting\n- Builds toward Book My Consultation\n- Names the audit", "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not", "filming": "- Film at a clean, bright space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone", "platform": "FACEBOOK + INSTAGRAM"}
+    {
+      "hook": "Hook 1: Strength that fits a packed week\nHook 2: Training built around your schedule\nHook 3: A plan that survives a busy month",
+      "beats": "Graphic 1: hook top, subline, single CTA button. Graphic 2: same layout, new hook. Graphic 3: same layout, new hook.",
+      "details": "- A clean static that speaks to time-pressed professionals\n- Designed to earn the consultation booking\n- High contrast, one message per variation\n- Builds toward Book My Consultation\n- Names the Strength and Lifestyle Audit",
+      "editing": "- Static graphic design, clean minimal layout\n- One strong message per variation\n- High contrast, readable on mobile at a glance\n- Export as JPG at 1080 x 1350 and 1080 x 1920",
+      "filming": "- Image option 1: coach mid session, candid\n- Image option 2: calm studio detail shot\n- Image option 3: imageless ugly-ad text only, styled like an organic post",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: Book a private audit this month\nHook 2: Claim your Strength and Lifestyle Audit\nHook 3: Start with a personalised plan",
+      "beats": "Graphic 1, 2, 3: hook only with the consultation CTA, no subline.",
+      "details": "- A direct incentive static for the audit\n- Designed to drive the booking\n- Bold and simple on mobile\n- Builds toward Book My Consultation\n- Names the audit as the way in",
+      "editing": "- Static graphic design, bold and simple\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920",
+      "filming": "- Image option 1: coach welcoming a client\n- Image option 2: clean offer card\n- Image option 3: imageless ugly-ad text only",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: More energy by Friday afternoon\nHook 2: Strength you can feel at work\nHook 3: Training that gives back energy",
+      "beats": "Graphic 1, 2, 3: hook, subline, single CTA. Only the hook changes.",
+      "details": "- A benefit static on energy and capability\n- Designed to connect with daily life\n- Calm, confident visual tone\n- Builds toward Book My Consultation\n- Mentions the coaching outcome",
+      "editing": "- Static graphic design, calm and confident\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920",
+      "filming": "- Image option 1: client walking into the office calm\n- Image option 2: training detail\n- Image option 3: lifestyle shot",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: Real words from a real client\nHook 2: What clients say after twelve weeks\nHook 3: A client on the weekly review",
+      "beats": "Graphic 1, 2, 3: five-star graphic, one client quote, CTA. Layout identical, only the hook changes.",
+      "details": "- A review static that leads with proof\n- Designed to build trust before the booking\n- Clean quote card layout\n- Builds toward Book My Consultation\n- Uses a real client quote, client to supply",
+      "editing": "- Static graphic design, quote card layout\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920",
+      "filming": "- Image format stays identical across variations, only the hook changes\n- Image option 1: five-star quote card\n- Image option 2: client headshot with quote\n- Image option 3: imageless ugly-ad quote, text only",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: Twelve weeks of steady progress\nHook 2: Progress you can see and feel\nHook 3: A client twelve weeks on",
+      "beats": "Graphic 1, 2, 3: realistic before and after image, subline, CTA. Layout identical, only the hook changes.",
+      "details": "- A modest before and after static\n- Designed to show realistic, believable change\n- Modest, true to life imagery\n- Builds toward Book My Consultation\n- Client to supply approved photos",
+      "editing": "- Static graphic design, modest before and after\n- One message per variation\n- High contrast for mobile\n- Export as JPG at 1080 x 1350 and 1080 x 1920",
+      "filming": "- Image format stays identical across variations, only the hook changes\n- Realistic and modest before and after only\n- Image option 1: side by side, same lighting\n- Image option 2: progress over time card",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: Training keeps falling off your week\nHook 2: You start strong then life gets busy\nHook 3: There is a way that fits your week",
+      "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.",
+      "details": "- A talk-to-camera video for time-pressed professionals\n- Designed to earn the audit booking\n- Calm, grounded delivery\n- Builds toward Book My Consultation\n- Names the Strength and Lifestyle Audit",
+      "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a clean home or studio space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: A client on what finally changed\nHook 2: What the weekly review did for me\nHook 3: One client, twelve honest weeks",
+      "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.",
+      "details": "- A social proof video led by a real client voice\n- Designed to build trust\n- Honest, conversational tone\n- Builds toward Book My Consultation\n- Uses a real client story, client to supply",
+      "editing": "- Interview style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a comfortable, quiet space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: Stop scrolling, this one is worth it\nHook 2: Read this before your next Monday\nHook 3: Here is a different way to train",
+      "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.",
+      "details": "- A pattern interrupt video to stop the scroll\n- Designed to open with surprise then deliver value\n- Punchy but grounded\n- Builds toward Book My Consultation\n- Names the audit",
+      "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a clean, bright space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: I rebuilt training around a real career\nHook 2: The plan I wish I had at thirty five\nHook 3: How I learned to train around work",
+      "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.",
+      "details": "- A storytelling video from the coach\n- Designed to build authority and connection\n- Warm, personal tone\n- Builds toward Book My Consultation\n- Sets up the consultation",
+      "editing": "- Documentary style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a meaningful, on-brand location\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: Strength you can feel at work\nHook 2: More energy through the afternoon\nHook 3: Training that gives back time",
+      "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.",
+      "details": "- A benefit video on energy and capability\n- Designed to connect with daily life\n- Calm, confident delivery\n- Builds toward Book My Consultation\n- Mentions the coaching outcome",
+      "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a clean home or studio space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: Book your private audit this month\nHook 2: Start with a personalised plan\nHook 3: Claim your Strength and Lifestyle Audit",
+      "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.",
+      "details": "- An incentive video for the audit\n- Designed to drive the booking\n- Direct and warm\n- Builds toward Book My Consultation\n- Names the audit as the way in",
+      "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a welcoming space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1: A client on the first month back\nHook 2: What changed after twelve weeks\nHook 3: Real words from a real client",
+      "beats": "Clip 1: opening hook. Clip 2: main content. Clip 3: close and CTA.",
+      "details": "- A second social proof video, new angle\n- Designed to deepen trust\n- Honest and specific\n- Builds toward Book My Consultation\n- Uses a real client story, client to supply",
+      "editing": "- Interview style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a comfortable, quiet space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    },
+    {
+      "hook": "Hook 1 (age): In your 30s or 40s, short on time?\nHook 2 (role): Working a desk role and training keeps slipping?\nHook 3 (situation): Your week runs you and training slips?",
+      "beats": "Clip 1: direct callout. Clip 2: understand and present the way it works. Clip 3: close and CTA.",
+      "details": "- An audience addresser that calls out the exact person\n- Designed to make the right viewer feel recognised\n- Warm, direct, recognising not targeting\n- Builds toward Book My Consultation\n- Names the audit",
+      "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a clean, bright space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "platform": "FACEBOOK + INSTAGRAM"
+    }
   ],
   "ad_copy": {
     "concepts": [
-      {"concept": "Problem > Solution", "posts": [
-        "Training keeps slipping when work gets busy. Here is a way that fits your week.",
-        "Start strong, then life takes over. A plan built around a full schedule changes that.",
-        "Busy week, no plan, no progress. A personalised approach makes it stick.",
-        "You do not need more hours. You need training that fits the ones you have.",
-        "When the plan fits your week, consistency takes care of itself."
-      ]},
-      {"concept": "Incentive", "posts": [
-        "Book a private Strength and Lifestyle Audit this month.",
-        "Start with a personalised plan you keep, whatever you decide next.",
-        "A private audit with the coach. Leave with a plan that fits your life.",
-        "Limited audits each month. Claim yours and start with clarity.",
-        "One private session. One clear plan. Book My Consultation."
-      ]},
-      {"concept": "Benefit", "posts": [
-        "Strength you can feel at work and energy that lasts the afternoon.",
-        "Train less by accident, more on purpose. Feel the difference by Friday.",
-        "Get leaner and stronger for good, around the life you already lead.",
-        "More energy, steadier focus, a body that keeps up with your week.",
-        "Build strength and confidence that lasts, on a schedule that works."
-      ]},
-      {"concept": "Social Proof", "posts": [
-        "A client on the weekly review: it kept the plan fitting my week.",
-        "Twelve weeks in and training finally feels like part of life.",
-        "Real words from a real client who runs a full schedule.",
-        "One client, twelve honest weeks, a routine that finally held.",
-        "What clients say after the audit: clear, personal, doable."
-      ]},
-      {"concept": "Pattern Interrupt", "posts": [
-        "Read this before your next Monday reset.",
-        "Stop scrolling. This is a calmer way to get strong.",
-        "Here is a different way to train around a busy career.",
-        "Most plans ignore your calendar. This one starts with it.",
-        "The plan is not the problem. The fit is. Let us fix the fit."
-      ]},
-      {"concept": "Storytelling", "posts": [
-        "The coach rebuilt training around a demanding career. Now he teaches the way.",
-        "The plan he wished he had at thirty five is the one clients get now.",
-        "From skipped sessions to steady progress, here is how it changed.",
-        "He learned to train around work. That lesson became the method.",
-        "A coach in your corner who has lived the busy-week problem."
-      ]},
-      {"concept": "Audience Addresser", "posts": [
-        "In your 30s or 40s with a packed calendar? This is built for you.",
-        "Desk role, long days, training keeps slipping? Start here.",
-        "If your week runs you, here is a plan that fits around it.",
-        "Professionals who want strength without the all-or-nothing grind.",
-        "Built for busy people who are done starting over."
-      ]}
+      {
+        "concept": "Problem > Solution",
+        "posts": [
+          "Training keeps slipping when work gets busy. Here is a way that fits your week.",
+          "Start strong, then life takes over. A plan built around a full schedule changes that.",
+          "Busy week, no plan, no progress. A personalised approach makes it stick.",
+          "You do not need more hours. You need training that fits the ones you have.",
+          "When the plan fits your week, consistency takes care of itself."
+        ]
+      },
+      {
+        "concept": "Incentive",
+        "posts": [
+          "Book a private Strength and Lifestyle Audit this month.",
+          "Start with a personalised plan you keep, whatever you decide next.",
+          "A private audit with the coach. Leave with a plan that fits your life.",
+          "Limited audits each month. Claim yours and start with clarity.",
+          "One private session. One clear plan. Book My Consultation."
+        ]
+      },
+      {
+        "concept": "Benefit",
+        "posts": [
+          "Strength you can feel at work and energy that lasts the afternoon.",
+          "Train less by accident, more on purpose. Feel the difference by Friday.",
+          "Get leaner and stronger for good, around the life you already lead.",
+          "More energy, steadier focus, a body that keeps up with your week.",
+          "Build strength and confidence that lasts, on a schedule that works."
+        ]
+      },
+      {
+        "concept": "Social Proof",
+        "posts": [
+          "A client on the weekly review: it kept the plan fitting my week.",
+          "Twelve weeks in and training finally feels like part of life.",
+          "Real words from a real client who runs a full schedule.",
+          "One client, twelve honest weeks, a routine that finally held.",
+          "What clients say after the audit: clear, personal, doable."
+        ]
+      },
+      {
+        "concept": "Pattern Interrupt",
+        "posts": [
+          "Read this before your next Monday reset.",
+          "Stop scrolling. This is a calmer way to get strong.",
+          "Here is a different way to train around a busy career.",
+          "Most plans ignore your calendar. This one starts with it.",
+          "The plan is not the problem. The fit is. Let us fix the fit."
+        ]
+      },
+      {
+        "concept": "Storytelling",
+        "posts": [
+          "The coach rebuilt training around a demanding career. Now he teaches the way.",
+          "The plan he wished he had at thirty five is the one clients get now.",
+          "From skipped sessions to steady progress, here is how it changed.",
+          "He learned to train around work. That lesson became the method.",
+          "A coach in your corner who has lived the busy-week problem."
+        ]
+      },
+      {
+        "concept": "Audience Addresser",
+        "posts": [
+          "In your 30s or 40s with a packed calendar? This is built for you.",
+          "Desk role, long days, training keeps slipping? Start here.",
+          "If your week runs you, here is a plan that fits around it.",
+          "Professionals who want strength without the all-or-nothing grind.",
+          "Built for busy people who are done starting over."
+        ]
+      }
     ],
     "headlines": [
       "Strength built around your week",
@@ -121,85 +314,694 @@
   },
   "scripts": {
     "concepts": [
-      {"name": "Problem > Solution", "format": "Vertical 9:16", "talent": "Coach", "audience": "Busy professionals in their 30s and 40s", "angle": "Time pressure", "intro": "A calm talk-to-camera piece that names the busy-week problem and points to a plan that fits.", "hooks": ["Training keeps falling off your week", "You start strong then life gets busy", "There is a way that fits your week"], "script": [{"timestamp": "0:00", "label": "Hook", "direction": "Steady delivery, eyes to lens.", "line": "Training keeps falling off your week."}, {"timestamp": "0:05", "label": "Main", "line": "When the plan fits your week, it stops being a fight."}, {"timestamp": "0:18", "label": "Close", "line": "We start with a private audit and a plan you keep."}], "cta": "Book your private Strength and Lifestyle Audit with me."},
-      {"name": "Social Proof", "format": "Vertical 9:16", "talent": "Coach or client", "audience": "Busy professionals in their 30s and 40s", "angle": "Trust", "intro": "A client led piece that builds trust with an honest story.", "hooks": ["A client on what finally changed", "What the weekly review did for me", "One client, twelve honest weeks"], "script": [{"timestamp": "0:00", "label": "Hook", "line": "A client on what finally changed for them."}, {"timestamp": "0:06", "label": "Main", "line": "The weekly review kept the plan fitting a full week."}, {"timestamp": "0:20", "label": "Close", "line": "If that sounds like your week, start with an audit."}], "cta": "Book your private Strength and Lifestyle Audit with me."},
-      {"name": "Pattern Interrupt", "format": "Vertical 9:16", "talent": "Coach", "audience": "Busy professionals in their 30s and 40s", "angle": "Stop the scroll", "intro": "An opener that breaks the pattern then delivers value.", "hooks": ["Stop scrolling, this one is worth it", "Read this before your next Monday", "Here is a different way to train"], "script": [{"timestamp": "0:00", "label": "Hook", "direction": "Quick, direct open.", "line": "Stop scrolling, this one is worth a minute."}, {"timestamp": "0:05", "label": "Main", "line": "Most plans ignore your calendar. We start with it."}, {"timestamp": "0:18", "label": "Close", "line": "Book an audit and leave with a plan that fits."}], "cta": "Book your private Strength and Lifestyle Audit with me."},
-      {"name": "Storytelling", "format": "Vertical 9:16", "talent": "Coach", "audience": "Busy professionals in their 30s and 40s", "angle": "Authority and story", "intro": "The coach shares the story behind the method.", "hooks": ["I rebuilt training around a real career", "The plan I wish I had at thirty five", "How I learned to train around work"], "script": [{"timestamp": "0:00", "label": "Hook", "line": "I rebuilt my training around a real career."}, {"timestamp": "0:07", "label": "Main", "line": "That lesson became the way I coach busy people."}, {"timestamp": "0:22", "label": "Close", "line": "We start with an audit to find your version of it."}], "cta": "Book your private Strength and Lifestyle Audit with me."},
-      {"name": "Benefit", "format": "Vertical 9:16", "talent": "Coach", "audience": "Busy professionals in their 30s and 40s", "angle": "Energy and capability", "intro": "A benefit led piece on energy and capability at work.", "hooks": ["Strength you can feel at work", "More energy through the afternoon", "Training that gives back time"], "script": [{"timestamp": "0:00", "label": "Hook", "line": "Strength you can feel at work, not just at the gym."}, {"timestamp": "0:06", "label": "Main", "line": "Steady energy through the afternoon, week after week."}, {"timestamp": "0:18", "label": "Close", "line": "Start with an audit and a plan built for your day."}], "cta": "Book your private Strength and Lifestyle Audit with me."},
-      {"name": "Incentive", "format": "Vertical 9:16", "talent": "Coach", "audience": "Busy professionals in their 30s and 40s", "angle": "The audit offer", "intro": "A direct, warm push to book the audit.", "hooks": ["Book your private audit this month", "Start with a personalised plan", "Claim your Strength and Lifestyle Audit"], "script": [{"timestamp": "0:00", "label": "Hook", "line": "Book your private audit this month."}, {"timestamp": "0:05", "label": "Main", "line": "We map a plan around your real schedule together."}, {"timestamp": "0:16", "label": "Close", "line": "You leave with a plan to keep, whatever you decide."}], "cta": "Book your private Strength and Lifestyle Audit with me."},
-      {"name": "Social Proof", "format": "Vertical 9:16", "talent": "Client", "audience": "Busy professionals in their 30s and 40s", "angle": "Second proof angle", "intro": "A second client voice, a new angle on the first month.", "hooks": ["A client on the first month back", "What changed after twelve weeks", "Real words from a real client"], "script": [{"timestamp": "0:00", "label": "Hook", "line": "A client on the first month back to training."}, {"timestamp": "0:07", "label": "Main", "line": "Small, steady steps that fit a full week."}, {"timestamp": "0:20", "label": "Close", "line": "Start the same way they did, with an audit."}], "cta": "Book your private Strength and Lifestyle Audit with me."},
-      {"name": "Audience Addresser", "format": "Vertical 9:16", "talent": "Coach", "audience": "Busy professionals in their 30s and 40s", "angle": "Direct callout", "intro": "A direct callout that names age, role and daily situation.", "hooks": ["Are you in your 30s or 40s and short on time?", "Working a desk role and training keeps slipping?", "If your week runs you, this one is for you"], "script": [{"timestamp": "0:00", "label": "Hook", "direction": "Warm, recognising, not targeting.", "line": "Are you in your 30s or 40s and short on time?"}, {"timestamp": "0:06", "label": "Understand", "line": "The early start, the long day, the skipped session."}, {"timestamp": "0:16", "label": "Present", "line": "We build training that fits the week you actually have."}, {"timestamp": "0:26", "label": "Close", "line": "Start with an audit and a plan made for you."}], "cta": "Book your private Strength and Lifestyle Audit with me."}
+      {
+        "name": "Problem > Solution",
+        "format": "Vertical 9:16",
+        "talent": "Coach",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "Time pressure",
+        "intro": "A calm talk-to-camera piece that names the busy-week problem and points to a plan that fits.",
+        "hooks": [
+          "Training keeps falling off your week",
+          "You start strong then life gets busy",
+          "There is a way that fits your week"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "direction": "Steady delivery, eyes to lens.",
+            "line": "Training keeps falling off your week."
+          },
+          {
+            "timestamp": "0:05",
+            "label": "Main",
+            "line": "When the plan fits your week, it stops being a fight."
+          },
+          {
+            "timestamp": "0:18",
+            "label": "Close",
+            "line": "We start with a private audit and a plan you keep."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      },
+      {
+        "name": "Social Proof",
+        "format": "Vertical 9:16",
+        "talent": "Coach or client",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "Trust",
+        "intro": "A client led piece that builds trust with an honest story.",
+        "hooks": [
+          "A client on what finally changed",
+          "What the weekly review did for me",
+          "One client, twelve honest weeks"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "line": "A client on what finally changed for them."
+          },
+          {
+            "timestamp": "0:06",
+            "label": "Main",
+            "line": "The weekly review kept the plan fitting a full week."
+          },
+          {
+            "timestamp": "0:20",
+            "label": "Close",
+            "line": "If that sounds like your week, start with an audit."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      },
+      {
+        "name": "Pattern Interrupt",
+        "format": "Vertical 9:16",
+        "talent": "Coach",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "Stop the scroll",
+        "intro": "An opener that breaks the pattern then delivers value.",
+        "hooks": [
+          "Stop scrolling, this one is worth it",
+          "Read this before your next Monday",
+          "Here is a different way to train"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "direction": "Quick, direct open.",
+            "line": "Stop scrolling, this one is worth a minute."
+          },
+          {
+            "timestamp": "0:05",
+            "label": "Main",
+            "line": "Most plans ignore your calendar. We start with it."
+          },
+          {
+            "timestamp": "0:18",
+            "label": "Close",
+            "line": "Book an audit and leave with a plan that fits."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      },
+      {
+        "name": "Storytelling",
+        "format": "Vertical 9:16",
+        "talent": "Coach",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "Authority and story",
+        "intro": "The coach shares the story behind the method.",
+        "hooks": [
+          "I rebuilt training around a real career",
+          "The plan I wish I had at thirty five",
+          "How I learned to train around work"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "line": "I rebuilt my training around a real career."
+          },
+          {
+            "timestamp": "0:07",
+            "label": "Main",
+            "line": "That lesson became the way I coach busy people."
+          },
+          {
+            "timestamp": "0:22",
+            "label": "Close",
+            "line": "We start with an audit to find your version of it."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      },
+      {
+        "name": "Benefit",
+        "format": "Vertical 9:16",
+        "talent": "Coach",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "Energy and capability",
+        "intro": "A benefit led piece on energy and capability at work.",
+        "hooks": [
+          "Strength you can feel at work",
+          "More energy through the afternoon",
+          "Training that gives back time"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "line": "Strength you can feel at work, not just at the gym."
+          },
+          {
+            "timestamp": "0:06",
+            "label": "Main",
+            "line": "Steady energy through the afternoon, week after week."
+          },
+          {
+            "timestamp": "0:18",
+            "label": "Close",
+            "line": "Start with an audit and a plan built for your day."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      },
+      {
+        "name": "Incentive",
+        "format": "Vertical 9:16",
+        "talent": "Coach",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "The audit offer",
+        "intro": "A direct, warm push to book the audit.",
+        "hooks": [
+          "Book your private audit this month",
+          "Start with a personalised plan",
+          "Claim your Strength and Lifestyle Audit"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "line": "Book your private audit this month."
+          },
+          {
+            "timestamp": "0:05",
+            "label": "Main",
+            "line": "We map a plan around your real schedule together."
+          },
+          {
+            "timestamp": "0:16",
+            "label": "Close",
+            "line": "You leave with a plan to keep, whatever you decide."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      },
+      {
+        "name": "Social Proof",
+        "format": "Vertical 9:16",
+        "talent": "Client",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "Second proof angle",
+        "intro": "A second client voice, a new angle on the first month.",
+        "hooks": [
+          "A client on the first month back",
+          "What changed after twelve weeks",
+          "Real words from a real client"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "line": "A client on the first month back to training."
+          },
+          {
+            "timestamp": "0:07",
+            "label": "Main",
+            "line": "Small, steady steps that fit a full week."
+          },
+          {
+            "timestamp": "0:20",
+            "label": "Close",
+            "line": "Start the same way they did, with an audit."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      },
+      {
+        "name": "Audience Addresser",
+        "format": "Vertical 9:16",
+        "talent": "Coach",
+        "audience": "Busy professionals in their 30s and 40s",
+        "angle": "Direct callout",
+        "intro": "A direct callout that names age, role and daily situation.",
+        "hooks": [
+          "Are you in your 30s or 40s and short on time?",
+          "Working a desk role and training keeps slipping?",
+          "If your week runs you, this one is for you"
+        ],
+        "script": [
+          {
+            "timestamp": "0:00",
+            "label": "Hook",
+            "direction": "Warm, recognising, not targeting.",
+            "line": "Are you in your 30s or 40s and short on time?"
+          },
+          {
+            "timestamp": "0:06",
+            "label": "Understand",
+            "line": "The early start, the long day, the skipped session."
+          },
+          {
+            "timestamp": "0:16",
+            "label": "Present",
+            "line": "We build training that fits the week you actually have."
+          },
+          {
+            "timestamp": "0:26",
+            "label": "Close",
+            "line": "Start with an audit and a plan made for you."
+          }
+        ],
+        "cta": "Book your private Strength and Lifestyle Audit with me."
+      }
     ]
   },
   "vsl": {
     "steps": [
-      {"label": "STEP 1: WHAT IT IS", "timestamp": "0:00", "direction": "Open directly, no warm up.", "lines": ["Northside Strength Co coaches busy professionals to get strong around a full schedule.", "It is one to one coaching that starts with a private audit."]},
-      {"label": "STEP 2: WHY THEY NEED IT", "timestamp": "0:10", "direction": "Empathetic, in their own daily language.", "lines": ["You start strong, then a heavy week takes over and training slips.", "You want a plan that bends with your week instead of breaking."]},
-      {"label": "STEP 3: WHAT THEY GET", "timestamp": "0:35", "direction": "Transformation and feeling, no inclusions.", "lines": ["Picture steady energy through the afternoon and strength you feel at work.", "Training becomes a part of your week that simply holds."]},
-      {"label": "STEP 4: WHY TO TRUST YOU", "timestamp": "1:00", "direction": "Brief, human, one real client result.", "lines": ["The coach rebuilt training around a demanding career and now teaches the way.", "One client kept training steady for the first time in years."]},
-      {"label": "STEP 5: NEXT STEP", "timestamp": "1:25", "direction": "Premium framing, warm, one instruction.", "lines": ["The Strength and Lifestyle Audit is a private session with the coach.", "You leave with a personalised plan, whatever you decide next.", "Book your audit and we will map it together."]}
+      {
+        "label": "STEP 1: WHAT IT IS",
+        "timestamp": "0:00",
+        "direction": "Open directly, no warm up.",
+        "lines": [
+          "Northside Strength Co coaches busy professionals to get strong around a full schedule.",
+          "It is one to one coaching that starts with a private audit."
+        ]
+      },
+      {
+        "label": "STEP 2: WHY THEY NEED IT",
+        "timestamp": "0:10",
+        "direction": "Empathetic, in their own daily language.",
+        "lines": [
+          "You start strong, then a heavy week takes over and training slips.",
+          "You want a plan that bends with your week instead of breaking."
+        ]
+      },
+      {
+        "label": "STEP 3: WHAT THEY GET",
+        "timestamp": "0:35",
+        "direction": "Transformation and feeling, no inclusions.",
+        "lines": [
+          "Picture steady energy through the afternoon and strength you feel at work.",
+          "Training becomes a part of your week that simply holds."
+        ]
+      },
+      {
+        "label": "STEP 4: WHY TO TRUST YOU",
+        "timestamp": "1:00",
+        "direction": "Brief, human, one real client result.",
+        "lines": [
+          "The coach rebuilt training around a demanding career and now teaches the way.",
+          "One client kept training steady for the first time in years."
+        ]
+      },
+      {
+        "label": "STEP 5: NEXT STEP",
+        "timestamp": "1:25",
+        "direction": "Premium framing, warm, one instruction.",
+        "lines": [
+          "The Strength and Lifestyle Audit is a private session with the coach.",
+          "You leave with a personalised plan, whatever you decide next.",
+          "Book your audit and we will map it together."
+        ]
+      }
     ]
   },
   "landing_page": {
     "sections": [
-      {"title": "Top bar", "lines": ["Private coaching for busy professionals. Limited audits each month."]},
-      {"title": "Hero", "lines": ["Strength that fits the life you already lead.", "Private coaching built around a full schedule.", "Book My Consultation"], "placeholders": ["Add rating, client count and any as featured in logos"]},
-      {"title": "Social proof strip", "lines": ["Trusted by busy professionals across the Northside."], "placeholders": ["Add star rating and three short client quotes"]},
-      {"title": "The reality", "lines": ["You start strong, then a heavy week takes over.", "Consistency becomes easier when the approach fits your life."]},
-      {"title": "Why a real coach makes the difference", "lines": ["Built around your week, with expert eyes on your plan every week.", "Accountability that fits real life and progress you can keep."]},
-      {"title": "Real results and transformations", "lines": ["Modest, realistic progress from people with full schedules."], "placeholders": ["Add approved before and after photos with first name and one line result"]},
-      {"title": "Meet the coach", "lines": ["A coach who rebuilt training around a demanding career."], "placeholders": ["Add coach credentials and certifications"]},
-      {"title": "Testimonials grid", "lines": ["Six client stories, name, role or age, result and how it felt."], "placeholders": ["Add six approved testimonials"]},
-      {"title": "Who this is for", "lines": ["You work a full schedule and want strength that lasts.", "You want a plan built around your week.", "You value expert guidance and accountability.", "You are done with all or nothing."]},
-      {"title": "How the consultation works", "lines": ["A private one to one audit with the coach.", "Three simple steps: map your week, build the plan, set the first move.", "It is a genuine working session, not a sales pitch."]},
-      {"title": "FAQ and objections", "lines": ["No time: the plan is built around your week.", "Tried before: we start with what fits, not a reset.", "What it costs: the audit is complimentary and you leave with a plan.", "How soon: you feel the rhythm within the first weeks."]},
-      {"title": "Guarantee", "lines": ["You keep your plan whether or not you go on to coach with us."]},
-      {"title": "Final CTA", "lines": ["A private audit, a personalised plan, a coach in your corner.", "Book My Consultation"]},
-      {"title": "Footer", "lines": ["Northside Strength Co"], "placeholders": ["Add privacy policy link", "Add unsubscribe note"]}
+      {
+        "title": "Top bar",
+        "lines": [
+          "Private coaching for busy professionals. Limited audits each month."
+        ]
+      },
+      {
+        "title": "Hero",
+        "lines": [
+          "Strength that fits the life you already lead.",
+          "Private coaching built around a full schedule.",
+          "Book My Consultation"
+        ],
+        "placeholders": [
+          "Add rating, client count and any as featured in logos"
+        ]
+      },
+      {
+        "title": "Social proof strip",
+        "lines": [
+          "Trusted by busy professionals across the Northside."
+        ],
+        "placeholders": [
+          "Add star rating and three short client quotes"
+        ]
+      },
+      {
+        "title": "The reality",
+        "lines": [
+          "You start strong, then a heavy week takes over.",
+          "Consistency becomes easier when the approach fits your life."
+        ]
+      },
+      {
+        "title": "Why a real coach makes the difference",
+        "lines": [
+          "Built around your week, with expert eyes on your plan every week.",
+          "Accountability that fits real life and progress you can keep."
+        ]
+      },
+      {
+        "title": "Real results and transformations",
+        "lines": [
+          "Modest, realistic progress from people with full schedules."
+        ],
+        "placeholders": [
+          "Add approved before and after photos with first name and one line result"
+        ]
+      },
+      {
+        "title": "Meet the coach",
+        "lines": [
+          "A coach who rebuilt training around a demanding career."
+        ],
+        "placeholders": [
+          "Add coach credentials and certifications"
+        ]
+      },
+      {
+        "title": "Testimonials grid",
+        "lines": [
+          "Six client stories, name, role or age, result and how it felt."
+        ],
+        "placeholders": [
+          "Add six approved testimonials"
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "lines": [
+          "You work a full schedule and want strength that lasts.",
+          "You want a plan built around your week.",
+          "You value expert guidance and accountability.",
+          "You are done with all or nothing."
+        ]
+      },
+      {
+        "title": "How the consultation works",
+        "lines": [
+          "A private one to one audit with the coach.",
+          "Three simple steps: map your week, build the plan, set the first move.",
+          "It is a genuine working session, not a sales pitch."
+        ]
+      },
+      {
+        "title": "FAQ and objections",
+        "lines": [
+          "No time: the plan is built around your week.",
+          "Tried before: we start with what fits, not a reset.",
+          "What it costs: the audit is complimentary and you leave with a plan.",
+          "How soon: you feel the rhythm within the first weeks."
+        ]
+      },
+      {
+        "title": "Guarantee",
+        "lines": [
+          "You keep your plan whether or not you go on to coach with us."
+        ]
+      },
+      {
+        "title": "Final CTA",
+        "lines": [
+          "A private audit, a personalised plan, a coach in your corner.",
+          "Book My Consultation"
+        ]
+      },
+      {
+        "title": "Footer",
+        "lines": [
+          "Northside Strength Co"
+        ],
+        "placeholders": [
+          "Add privacy policy link",
+          "Add unsubscribe note"
+        ]
+      }
     ]
   },
   "crm": {
     "workflows": [
-      {"name": "Lead Follow Up", "trigger": "New lead enquiry", "messages": [
-        {"type": "sms", "delay": "Immediately", "note": "Confirm the enquiry, introduce yourself, no link on the cold send.", "body": "Hi {{contact.first_name}}, this is Coach Sam at Northside Strength. Thanks for reaching out about your audit. I will call you shortly to find a time that works."},
-        {"type": "email", "subject": "Welcome to Northside Strength", "delay": "Immediately", "note": "Warm welcome, set the next step, include the booking link.", "body": "Hi {{contact.first_name}}, thanks for enquiring. Your Strength and Lifestyle Audit is a private session where we map a plan around your real week. Pick a time that suits you and we will take it from there.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "How we coach here", "delay": "6 hours", "note": "Explain the philosophy and what makes it different.", "body": "Hi {{contact.first_name}}, we build training around your life, not the other way round. Small, repeatable steps that hold up on busy weeks. That is what makes the audit worth your time.", "cta": "Book My Audit"},
-        {"type": "sms", "delay": "24 hours", "note": "Friendly nudge with the booking link.", "body": "Hi {{contact.first_name}}, did you get a chance to read my email? Happy to answer anything. Book your audit: northsidestrength.co/audit"},
-        {"type": "email", "subject": "From skipping sessions to steady weeks", "delay": "2 days", "note": "Client success story, real results.", "body": "Hi {{contact.first_name}}, when Mara started she trained twice in a good month. We built a plan around school runs and shift work, and now she trains three times a week without the guilt. Your audit is where we map the same for you.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "The fix for the 6pm energy dip", "delay": "3 days", "note": "Educational, solve one common problem.", "body": "Hi {{contact.first_name}}, most people blame willpower for the evening slump. Usually it is protein and steps earlier in the day. Small change, steady energy. We cover the rest on your audit.", "cta": "Book My Audit"},
-        {"type": "sms", "delay": "4 days", "note": "Zero-pressure check in, offer to help.", "body": "Hi {{contact.first_name}}, just checking in. Any questions about the audit or how we coach? Reply here and I will help."},
-        {"type": "email", "subject": "What the programme involves", "delay": "5 days", "note": "FAQ: pricing, commitment, who it is for.", "body": "Hi {{contact.first_name}}, a few common questions before the audit. Sessions run weekly, you choose two or three slots, and coaching is month to month. It suits people who want a plan that fits a full life. We confirm the details on the call.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "A year of steady progress", "delay": "6 days", "note": "Another transformation story with proof.", "body": "Hi {{contact.first_name}}, Dan came in wanting to keep up with his kids. Twelve months on he is stronger than in his twenties and still training around a full diary. The audit is the first step he took.", "cta": "Book My Audit"},
-        {"type": "sms", "delay": "7 days", "note": "Final short-term follow up before nurture.", "body": "Hi {{contact.first_name}}, I will ease off the messages now. If you want to map your plan, your audit is here: northsidestrength.co/audit"},
-        {"type": "email", "subject": "Last chance to claim your audit", "delay": "8 days", "note": "Clear call to action.", "body": "Hi {{contact.first_name}}, the offer to map your plan is still open. If now is the right time, book your Strength and Lifestyle Audit and we will get you moving.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "Always here when you are ready", "delay": "10 days", "note": "Final follow up, soft close.", "body": "Hi {{contact.first_name}}, I will stop reaching out for now. The door stays open, so whenever you want to map your plan, you are welcome to book.", "cta": "Book My Audit"}
-      ]},
-      {"name": "Booked Call Confirmation", "trigger": "Call booked", "messages": [
-        {"type": "email", "subject": "You are booked", "delay": "Immediately", "note": "Confirm and set expectations, meeting link and calendar invite.", "body": "Hi {{contact.first_name}}, you are booked for {{appointment.start_date}} at {{appointment.start_time}}. Bring a sense of your typical week and we will map the plan together. The invite and link are below.", "cta": "Add to calendar"},
-        {"type": "sms", "delay": "Immediately", "note": "Warm confirmation with the calendar link.", "body": "Hi {{contact.first_name}}, your audit is locked in for {{appointment.start_date}} at {{appointment.start_time}}. Link: {{appointment.meeting_link}}"},
-        {"type": "email", "subject": "Getting ready for tomorrow", "delay": "24 hours before", "note": "Reminder and how to prepare.", "body": "Hi {{contact.first_name}}, we speak tomorrow at {{appointment.start_time}}. Have a rough idea of your week and what you want from training, and we will cover the rest.", "cta": "View meeting details"},
-        {"type": "sms", "delay": "24 hours before", "note": "Short look-ahead.", "body": "Hi {{contact.first_name}}, looking forward to speaking tomorrow at {{appointment.start_time}}. Talk then."},
-        {"type": "email", "subject": "Your audit is in one hour", "delay": "1 hour before", "note": "Quick reminder with the link.", "body": "Hi {{contact.first_name}}, your audit starts at {{appointment.start_time}}. Join from a quiet spot if you can. The link is below.", "cta": "Join the call"},
-        {"type": "sms", "delay": "1 hour before", "note": "Short reminder with link.", "body": "Hi {{contact.first_name}}, see you at {{appointment.start_time}}. Join here: {{appointment.meeting_link}}"},
-        {"type": "email", "subject": "Starting shortly", "delay": "15 minutes before", "note": "Final reminder.", "body": "Hi {{contact.first_name}}, we start in a few minutes. The link is below whenever you are ready.", "cta": "Join the call"},
-        {"type": "sms", "delay": "15 minutes before", "note": "Final SMS nudge.", "body": "Hi {{contact.first_name}}, we are ready whenever you are. Join here: {{appointment.meeting_link}}"}
-      ]},
-      {"name": "No Show Rebook", "trigger": "Booked call missed", "messages": [
-        {"type": "sms", "delay": "15 minutes after", "note": "Check in, no blame.", "body": "Hi {{contact.first_name}}, we had you down for now and missed you. Everything okay? Hope nothing serious came up."},
-        {"type": "email", "subject": "Sorry we missed you", "delay": "30 minutes after", "note": "Easy rebook link.", "body": "Hi {{contact.first_name}}, looks like we missed each other, and life happens. Pick a new time that suits you and we will map your plan.", "cta": "Rebook my audit"},
-        {"type": "sms", "delay": "24 hours", "note": "Gentle nudge with rebook.", "body": "Hi {{contact.first_name}}, still happy to map your plan when you are. Choose another time here: northsidestrength.co/audit"},
-        {"type": "email", "subject": "Why the audit is worth your time", "delay": "2 days", "note": "Reinforce value, booking link.", "body": "Hi {{contact.first_name}}, the audit is where we build a plan around your real week, so training holds up when life gets busy. Worth thirty minutes when the time is right.", "cta": "Rebook my audit"},
-        {"type": "sms", "delay": "5 days", "note": "Final reminder before closing.", "body": "Hi {{contact.first_name}}, last nudge from me for now. If you want to map your plan, rebook here: northsidestrength.co/audit"},
-        {"type": "email", "subject": "Closing your enquiry for now", "delay": "6 days", "note": "Soft close, door open.", "body": "Hi {{contact.first_name}}, I will close your enquiry for now so I am not crowding your inbox. Whenever you are ready, you are welcome to book.", "cta": "Rebook my audit"}
-      ]},
-      {"name": "Long Term Nurture", "trigger": "Lead Follow Up ended with no booking", "messages": [
-        {"type": "email", "subject": "The mistake most people make first", "delay": "2 weeks", "note": "Biggest early mistake.", "body": "Hi {{contact.first_name}}, the most common slip is going too hard in week one and fading by week three. Steady beats heroic. Build the habit first and the results follow.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "Mara's full year", "delay": "4 weeks", "note": "Success story, full journey.", "body": "Hi {{contact.first_name}}, a year ago Mara trained twice a month. Today it is three solid sessions a week, fitted around shifts and school runs. The plan grew with her life.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "Do you need to train every day", "delay": "6 weeks", "note": "Answer a common myth.", "body": "Hi {{contact.first_name}}, a common myth is that progress needs daily training. Two or three focused sessions a week, done consistently, carry most people a long way.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "Why we coach for the long run", "delay": "8 weeks", "note": "Philosophy, sustainable results.", "body": "Hi {{contact.first_name}}, quick fixes fade. We coach for results that hold up across years, built around a life you actually live. That is the difference you feel by month three.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "The numbers behind a steady year", "delay": "10 weeks", "note": "Case study with measurable results.", "body": "Hi {{contact.first_name}}, Dan added real strength across twelve months, kept every session inside a full work diary, and has not looked back. Measured, steady, repeatable.", "cta": "Book My Audit"},
-        {"type": "email", "subject": "Is now a better time", "delay": "12 weeks", "note": "Final check in.", "body": "Hi {{contact.first_name}}, it has been a while. If the timing feels better now, I would still love to map your plan. No rush, just an open door.", "cta": "Book My Audit"}
-      ]}
+      {
+        "name": "Lead Follow Up",
+        "trigger": "New lead enquiry",
+        "messages": [
+          {
+            "type": "sms",
+            "delay": "Immediately",
+            "note": "Confirm the enquiry, introduce yourself, no link on the cold send.",
+            "body": "Hi {{contact.first_name}}, this is Coach Sam at Northside Strength. Thanks for reaching out about your audit. I will call you shortly to find a time that works."
+          },
+          {
+            "type": "email",
+            "subject": "Welcome to Northside Strength",
+            "delay": "Immediately",
+            "note": "Warm welcome, set the next step, include the booking link.",
+            "body": "Hi {{contact.first_name}}, thanks for enquiring. Your Strength and Lifestyle Audit is a private session where we map a plan around your real week. Pick a time that suits you and we will take it from there.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "How we coach here",
+            "delay": "6 hours",
+            "note": "Explain the philosophy and what makes it different.",
+            "body": "Hi {{contact.first_name}}, we build training around your life, not the other way round. Small, repeatable steps that hold up on busy weeks. That is what makes the audit worth your time.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "sms",
+            "delay": "24 hours",
+            "note": "Friendly nudge with the booking link.",
+            "body": "Hi {{contact.first_name}}, did you get a chance to read my email? Happy to answer anything. Book your audit: northsidestrength.co/audit"
+          },
+          {
+            "type": "email",
+            "subject": "From skipping sessions to steady weeks",
+            "delay": "2 days",
+            "note": "Client success story, real results.",
+            "body": "Hi {{contact.first_name}}, when Mara started she trained twice in a good month. We built a plan around school runs and shift work, and now she trains three times a week without the guilt. Your audit is where we map the same for you.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "The fix for the 6pm energy dip",
+            "delay": "3 days",
+            "note": "Educational, solve one common problem.",
+            "body": "Hi {{contact.first_name}}, most people blame willpower for the evening slump. Usually it is protein and steps earlier in the day. Small change, steady energy. We cover the rest on your audit.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "sms",
+            "delay": "4 days",
+            "note": "Zero-pressure check in, offer to help.",
+            "body": "Hi {{contact.first_name}}, just checking in. Any questions about the audit or how we coach? Reply here and I will help."
+          },
+          {
+            "type": "email",
+            "subject": "What the programme involves",
+            "delay": "5 days",
+            "note": "FAQ: pricing, commitment, who it is for.",
+            "body": "Hi {{contact.first_name}}, a few common questions before the audit. Sessions run weekly, you choose two or three slots, and coaching is month to month. It suits people who want a plan that fits a full life. We confirm the details on the call.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "A year of steady progress",
+            "delay": "6 days",
+            "note": "Another transformation story with proof.",
+            "body": "Hi {{contact.first_name}}, Dan came in wanting to keep up with his kids. Twelve months on he is stronger than in his twenties and still training around a full diary. The audit is the first step he took.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "sms",
+            "delay": "7 days",
+            "note": "Final short-term follow up before nurture.",
+            "body": "Hi {{contact.first_name}}, I will ease off the messages now. If you want to map your plan, your audit is here: northsidestrength.co/audit"
+          },
+          {
+            "type": "email",
+            "subject": "Last chance to claim your audit",
+            "delay": "8 days",
+            "note": "Clear call to action.",
+            "body": "Hi {{contact.first_name}}, the offer to map your plan is still open. If now is the right time, book your Strength and Lifestyle Audit and we will get you moving.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "Always here when you are ready",
+            "delay": "10 days",
+            "note": "Final follow up, soft close.",
+            "body": "Hi {{contact.first_name}}, I will stop reaching out for now. The door stays open, so whenever you want to map your plan, you are welcome to book.",
+            "cta": "Book My Audit"
+          }
+        ]
+      },
+      {
+        "name": "Booked Call Confirmation",
+        "trigger": "Call booked",
+        "messages": [
+          {
+            "type": "email",
+            "subject": "You are booked",
+            "delay": "Immediately",
+            "note": "Confirm and set expectations, meeting link and calendar invite.",
+            "body": "Hi {{contact.first_name}}, you are booked for {{appointment.start_date}} at {{appointment.start_time}}. Bring a sense of your typical week and we will map the plan together. The invite and link are below.",
+            "cta": "Add to calendar"
+          },
+          {
+            "type": "sms",
+            "delay": "Immediately",
+            "note": "Warm confirmation with the calendar link.",
+            "body": "Hi {{contact.first_name}}, your audit is locked in for {{appointment.start_date}} at {{appointment.start_time}}. Link: {{appointment.meeting_link}}"
+          },
+          {
+            "type": "email",
+            "subject": "Getting ready for tomorrow",
+            "delay": "24 hours before",
+            "note": "Reminder and how to prepare.",
+            "body": "Hi {{contact.first_name}}, we speak tomorrow at {{appointment.start_time}}. Have a rough idea of your week and what you want from training, and we will cover the rest.",
+            "cta": "View meeting details"
+          },
+          {
+            "type": "sms",
+            "delay": "24 hours before",
+            "note": "Short look-ahead.",
+            "body": "Hi {{contact.first_name}}, looking forward to speaking tomorrow at {{appointment.start_time}}. Talk then."
+          },
+          {
+            "type": "email",
+            "subject": "Your audit is in one hour",
+            "delay": "1 hour before",
+            "note": "Quick reminder with the link.",
+            "body": "Hi {{contact.first_name}}, your audit starts at {{appointment.start_time}}. Join from a quiet spot if you can. The link is below.",
+            "cta": "Join the call"
+          },
+          {
+            "type": "sms",
+            "delay": "1 hour before",
+            "note": "Short reminder with link.",
+            "body": "Hi {{contact.first_name}}, see you at {{appointment.start_time}}. Join here: {{appointment.meeting_link}}"
+          },
+          {
+            "type": "email",
+            "subject": "Starting shortly",
+            "delay": "15 minutes before",
+            "note": "Final reminder.",
+            "body": "Hi {{contact.first_name}}, we start in a few minutes. The link is below whenever you are ready.",
+            "cta": "Join the call"
+          },
+          {
+            "type": "sms",
+            "delay": "15 minutes before",
+            "note": "Final SMS nudge.",
+            "body": "Hi {{contact.first_name}}, we are ready whenever you are. Join here: {{appointment.meeting_link}}"
+          }
+        ]
+      },
+      {
+        "name": "No Show Rebook",
+        "trigger": "Booked call missed",
+        "messages": [
+          {
+            "type": "sms",
+            "delay": "15 minutes after",
+            "note": "Check in, no blame.",
+            "body": "Hi {{contact.first_name}}, we had you down for now and missed you. Everything okay? Hope nothing serious came up."
+          },
+          {
+            "type": "email",
+            "subject": "Sorry we missed you",
+            "delay": "30 minutes after",
+            "note": "Easy rebook link.",
+            "body": "Hi {{contact.first_name}}, looks like we missed each other, and life happens. Pick a new time that suits you and we will map your plan.",
+            "cta": "Rebook my audit"
+          },
+          {
+            "type": "sms",
+            "delay": "24 hours",
+            "note": "Gentle nudge with rebook.",
+            "body": "Hi {{contact.first_name}}, still happy to map your plan when you are. Choose another time here: northsidestrength.co/audit"
+          },
+          {
+            "type": "email",
+            "subject": "Why the audit is worth your time",
+            "delay": "2 days",
+            "note": "Reinforce value, booking link.",
+            "body": "Hi {{contact.first_name}}, the audit is where we build a plan around your real week, so training holds up when life gets busy. Worth thirty minutes when the time is right.",
+            "cta": "Rebook my audit"
+          },
+          {
+            "type": "sms",
+            "delay": "5 days",
+            "note": "Final reminder before closing.",
+            "body": "Hi {{contact.first_name}}, last nudge from me for now. If you want to map your plan, rebook here: northsidestrength.co/audit"
+          },
+          {
+            "type": "email",
+            "subject": "Closing your enquiry for now",
+            "delay": "6 days",
+            "note": "Soft close, door open.",
+            "body": "Hi {{contact.first_name}}, I will close your enquiry for now so I am not crowding your inbox. Whenever you are ready, you are welcome to book.",
+            "cta": "Rebook my audit"
+          }
+        ]
+      },
+      {
+        "name": "Long Term Nurture",
+        "trigger": "Lead Follow Up ended with no booking",
+        "messages": [
+          {
+            "type": "email",
+            "subject": "The mistake most people make first",
+            "delay": "2 weeks",
+            "note": "Biggest early mistake.",
+            "body": "Hi {{contact.first_name}}, the most common slip is going too hard in week one and fading by week three. Steady beats heroic. Build the habit first and the results follow.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "Mara's full year",
+            "delay": "4 weeks",
+            "note": "Success story, full journey.",
+            "body": "Hi {{contact.first_name}}, a year ago Mara trained twice a month. Today it is three solid sessions a week, fitted around shifts and school runs. The plan grew with her life.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "Do you need to train every day",
+            "delay": "6 weeks",
+            "note": "Answer a common myth.",
+            "body": "Hi {{contact.first_name}}, a common myth is that progress needs daily training. Two or three focused sessions a week, done consistently, carry most people a long way.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "Why we coach for the long run",
+            "delay": "8 weeks",
+            "note": "Philosophy, sustainable results.",
+            "body": "Hi {{contact.first_name}}, quick fixes fade. We coach for results that hold up across years, built around a life you actually live. That is the difference you feel by month three.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "The numbers behind a steady year",
+            "delay": "10 weeks",
+            "note": "Case study with measurable results.",
+            "body": "Hi {{contact.first_name}}, Dan added real strength across twelve months, kept every session inside a full work diary, and has not looked back. Measured, steady, repeatable.",
+            "cta": "Book My Audit"
+          },
+          {
+            "type": "email",
+            "subject": "Is now a better time",
+            "delay": "12 weeks",
+            "note": "Final check in.",
+            "body": "Hi {{contact.first_name}}, it has been a while. If the timing feels better now, I would still love to map your plan. No rush, just an open door.",
+            "cta": "Book My Audit"
+          }
+        ]
+      }
     ]
   }
 }
