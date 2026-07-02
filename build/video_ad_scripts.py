@@ -26,6 +26,20 @@ RECORDING_BEST_PRACTICE = [
     "Record 3 takes of every line.",
 ]
 
+# Editing and delivery best practice for paid social / Reels video.
+# Research current best practice before each build and pass a refreshed list as
+# data["scripts"]["editing_best_practice"]; this is the evergreen fallback.
+DEFAULT_EDITING_BEST_PRACTICE = [
+    "Win the first 3 seconds: open on the hook with motion and bold on screen text.",
+    "Design for sound off and sound on: burned in captions on every line, social font.",
+    "Vertical 9:16, keep text and faces inside the safe zones, clear of the top and bottom app UI.",
+    "Cut out dead air, change something visual every 1 to 2 seconds to hold attention.",
+    "Keep on screen text short, large and high contrast, one idea at a time.",
+    "Show a brand cue in the first few seconds, not only at the end.",
+    "Keep it feeling native and handheld, not over produced, around 15 to 30 seconds.",
+    "End on a clean CTA card with the offer.",
+]
+
 
 def build_video_ad_scripts(data, out_dir, workspace=None):
     doc = T.new_document()
@@ -56,6 +70,11 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
     doc.add_paragraph()
     T.add_subheading(doc, "RECORDING BEST PRACTICE")
     for point in RECORDING_BEST_PRACTICE:
+        T.add_body(doc, f"- {point}")
+
+    doc.add_paragraph()
+    T.add_subheading(doc, "EDITING BEST PRACTICE")
+    for point in meta.get("editing_best_practice", DEFAULT_EDITING_BEST_PRACTICE):
         T.add_body(doc, f"- {point}")
 
     for i, concept in enumerate(meta.get("concepts", []), start=1):
