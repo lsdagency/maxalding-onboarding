@@ -87,6 +87,11 @@ post_copy_style:
   emoji_source: "Feedback 2026-06-24 (FIT Republik) and 2026-06-26 (Peak with Hamza): use a few MORE, and make them premium."
   source: "Feedback 2026-06-24 (FIT Republik)"
 
+hook_style:
+  video: "Each of the three video hook options (Creative Tracker video rows and Video Ad Script Option A/B/C) must sound like a voicenote said out loud to camera: natural spoken English, contractions, a real spoken opener where it fits (Okay, Real quick, Here's the thing, Don't scroll past this). Not a written slogan. The three must span DIFFERENT hook types, never three wordings of one idea: mix question, curiosity gap, urgency, bold statement, empathy or relatable and pattern interrupt, with at least one statement. Carry the campaign theme through without making all three sell."
+  note: "Craft rule, not machine-enforceable; the validator still checks hook length and the labelled format."
+  source: "Feedback 2026-07-02 (UBX); extends Built By Brun 2026-06-29 (natural spoken scripts) and (labelled hooks, real Meta hook craft)"
+
 naming_convention:
   pattern: "MAXALDING - [Client Business Name] - [Deliverable].[ext]"
   separator: " - "

@@ -322,9 +322,9 @@
         "angle": "Time pressure",
         "intro": "A calm talk-to-camera piece that names the busy-week problem and points to a plan that fits.",
         "hooks": [
-          "Training keeps falling off your week",
-          "You start strong then life gets busy",
-          "There is a way that fits your week"
+          "Real question, when did training last fit your week?",
+          "You start strong, then a big week hits, right?",
+          "Here's why your plan keeps falling apart"
         ],
         "script": [
           {
@@ -354,9 +354,9 @@
         "angle": "Trust",
         "intro": "A client led piece that builds trust with an honest story.",
         "hooks": [
-          "A client on what finally changed",
-          "What the weekly review did for me",
-          "One client, twelve honest weeks"
+          "Let me tell you about a client of mine",
+          "This one honestly changed how he trains",
+          "Want to know what finally made it stick?"
         ],
         "script": [
           {
@@ -385,9 +385,9 @@
         "angle": "Stop the scroll",
         "intro": "An opener that breaks the pattern then delivers value.",
         "hooks": [
-          "Stop scrolling, this one is worth it",
-          "Read this before your next Monday",
-          "Here is a different way to train"
+          "Don't scroll past this, it'll save your Monday",
+          "Okay, forget everything you've been told about training",
+          "Here's the bit no one mentions"
         ],
         "script": [
           {
@@ -417,9 +417,9 @@
         "angle": "Authority and story",
         "intro": "The coach shares the story behind the method.",
         "hooks": [
-          "I rebuilt training around a real career",
-          "The plan I wish I had at thirty five",
-          "How I learned to train around work"
+          "Honestly, I built this around my own burnout",
+          "Let me tell you why I train differently now",
+          "This is the plan I wish I'd had"
         ],
         "script": [
           {
@@ -448,9 +448,9 @@
         "angle": "Energy and capability",
         "intro": "A benefit led piece on energy and capability at work.",
         "hooks": [
-          "Strength you can feel at work",
-          "More energy through the afternoon",
-          "Training that gives back time"
+          "What would more energy by Friday be worth?",
+          "You know that afternoon slump around three?",
+          "Strength you can actually feel at work"
         ],
         "script": [
           {
@@ -479,9 +479,9 @@
         "angle": "The audit offer",
         "intro": "A direct, warm push to book the audit.",
         "hooks": [
-          "Book your private audit this month",
-          "Start with a personalised plan",
-          "Claim your Strength and Lifestyle Audit"
+          "Okay, this is the easiest way to start",
+          "Only a few audits left this month",
+          "Fancy a plan that's built around your week?"
         ],
         "script": [
           {
@@ -510,9 +510,9 @@
         "angle": "Second proof angle",
         "intro": "A second client voice, a new angle on the first month.",
         "hooks": [
-          "A client on the first month back",
-          "What changed after twelve weeks",
-          "Real words from a real client"
+          "One month in, and here's what changed",
+          "He was sure it wouldn't fit his life",
+          "Real talk, the weekly review does the work"
         ],
         "script": [
           {
@@ -541,9 +541,9 @@
         "angle": "Direct callout",
         "intro": "A direct callout that names age, role and daily situation.",
         "hooks": [
-          "Are you in your 30s or 40s and short on time?",
-          "Working a desk role and training keeps slipping?",
-          "If your week runs you, this one is for you"
+          "In your 30s or 40s and constantly slammed?",
+          "Desk job, long days, training keeps slipping?",
+          "Feel like your week runs you, not the other way?"
         ],
         "script": [
           {
