@@ -24,3 +24,5 @@ If the funnel uses separate pages, also provide a booking page (calendar above t
 
 ## Missing information
 List required social proof, transformations, reviews, credentials, privacy policy and booking link as clearly labelled client-action placeholders. Never invent them. Do not include internal production checklists or direction notes in the client-facing sections.
+
+Also open the document with a prominent, consolidated "Client to provide before this page can go live" section that lists every missing asset in one place (rating and client count, quotes, testimonials, before and after photos, credentials, booking link, privacy policy and unsubscribe). This makes it unmistakable that the client must supply these before the page can go live. Keep the per-section CLIENT ACTION placeholders as well, so each gap is marked both in the summary and where it belongs.

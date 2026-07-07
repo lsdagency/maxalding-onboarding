@@ -63,6 +63,8 @@ For each workflow: the WORKFLOW NAME in caps, a TRIGGER, then each message in or
 ## Copy rules
 Value first, conversational, matches the client tone. Premium positioning of the consultation, with no discount language. Positive-language rule. No banned words or characters. No invented proof.
 
+Every email and every SMS must sign off in the coach's name so the copy has a clear ending, for example "Cheers, Alessandro" on emails and "Cheers, Ale" on SMS. Never leave a message ending mid-thought with nothing closing it.
+
 Use HighLevel custom values naturally: contact first name, appointment start time, appointment start date, appointment meeting link.
 
 SMS under 160 characters where possible, never over 320. One message, one action. The booking link appears only in follow-up messages, not in cold sends.

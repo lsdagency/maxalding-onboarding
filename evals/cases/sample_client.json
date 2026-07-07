@@ -575,55 +575,70 @@
   "vsl": {
     "steps": [
       {
-        "label": "STEP 1: WHAT IT IS",
+        "label": "STEP 1: HOOK, WHO THIS IS FOR",
         "timestamp": "0:00",
-        "direction": "Open directly, no warm up.",
+        "direction": "Straight to camera, direct and warm.",
         "lines": [
-          "Northside Strength Co coaches busy professionals to get strong around a full schedule.",
-          "It is one to one coaching that starts with a private audit."
+          "If you're a busy professional in your 30s or 40s who wants strength that lasts, but your training keeps slipping when work takes over, give me a minute.",
+          "I coach people just like you to get strong around a full schedule, and it starts with a private audit."
         ]
       },
       {
-        "label": "STEP 2: WHY THEY NEED IT",
-        "timestamp": "0:10",
+        "label": "STEP 2: WHY THIS KEEPS HAPPENING",
+        "timestamp": "0:12",
         "direction": "Empathetic, in their own daily language.",
         "lines": [
-          "You start strong, then a heavy week takes over and training slips.",
-          "You want a plan that bends with your week instead of breaking."
+          "I see it all the time. You start strong, then a heavy week takes over and training is the first thing to drop.",
+          "You've had the drive all along, what's been missing is a plan built around your real week."
         ]
       },
       {
-        "label": "STEP 3: WHAT THEY GET",
+        "label": "STEP 3: WHAT YOU GET IN YOUR AUDIT",
         "timestamp": "0:35",
-        "direction": "Transformation and feeling, no inclusions.",
+        "direction": "Sell the audit itself and what they walk out with, not the full program.",
         "lines": [
-          "Picture steady energy through the afternoon and strength you feel at work.",
-          "Training becomes a part of your week that simply holds."
+          "So here's where we start. A private Strength and Lifestyle Audit, one to one with me.",
+          "We go through your week and your training, and I map out a plan built around your real schedule.",
+          "You leave with a personalised plan to keep, whatever you decide to do next."
         ]
       },
       {
-        "label": "STEP 4: WHY TO TRUST YOU",
+        "label": "STEP 4: WHO I AM",
         "timestamp": "1:00",
-        "direction": "Brief, human, one real client result.",
+        "direction": "Brief and human, first person.",
         "lines": [
-          "The coach rebuilt training around a demanding career and now teaches the way.",
-          "One client kept training steady for the first time in years."
+          "I rebuilt my own training around a demanding career, so I know exactly what it takes.",
+          "I've helped busy professionals get strong and keep it up for years, around full diaries and family.",
+          "This is what I do, and I'll show you how it works in your audit."
         ]
       },
       {
-        "label": "STEP 5: NEXT STEP",
+        "label": "STEP 5: HOW TO CLAIM IT",
         "timestamp": "1:25",
-        "direction": "Premium framing, warm, one instruction.",
+        "direction": "One clear instruction, point them to the form below.",
         "lines": [
-          "The Strength and Lifestyle Audit is a private session with the coach.",
-          "You leave with a personalised plan, whatever you decide next.",
-          "Book your audit and we will map it together."
+          "I only take a limited number of audits each month, so if you want one, now is the time.",
+          "Register your details in the form just below this video, and I'll be in touch to book your audit.",
+          "Fill in your details below, and let's map your plan."
         ]
       }
     ]
   },
   "landing_page": {
     "sections": [
+      {
+        "title": "Client to provide before this page can go live",
+        "lines": [
+          "This copy is ready, but the page cannot go live until the coach supplies the items below. Each one is also marked in the page as a CLIENT ACTION.",
+          "Star rating and client count for the hero and the social proof strip.",
+          "Three short client quotes for the social proof strip.",
+          "Six approved testimonials for the testimonials grid, each with a first name and an age or role.",
+          "Approved before and after photos, realistic and modest, each with a first name and a one line result.",
+          "Coach credentials and certifications for the meet the coach section.",
+          "The booking link for every CTA button.",
+          "A privacy policy link and an unsubscribe note for the footer."
+        ]
+      },
       {
         "title": "Top bar",
         "lines": [
@@ -752,14 +767,14 @@
             "type": "sms",
             "delay": "Immediately",
             "note": "Confirm the enquiry, introduce yourself, no link on the cold send.",
-            "body": "Hi {{contact.first_name}}, this is Coach Sam at Northside Strength. Thanks for reaching out about your audit. I will call you shortly to find a time that works."
+            "body": "Hi {{contact.first_name}}, this is Coach Sam at Northside Strength. Thanks for reaching out about your audit. I will call you shortly to find a time that works. Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Welcome to Northside Strength",
             "delay": "Immediately",
             "note": "Warm welcome, set the next step, include the booking link.",
-            "body": "Hi {{contact.first_name}}, thanks for enquiring. Your Strength and Lifestyle Audit is a private session where we map a plan around your real week. Pick a time that suits you and we will take it from there.",
+            "body": "Hi {{contact.first_name}}, thanks for enquiring. Your Strength and Lifestyle Audit is a private session where we map a plan around your real week. Pick a time that suits you and we will take it from there. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -767,21 +782,21 @@
             "subject": "How we coach here",
             "delay": "6 hours",
             "note": "Explain the philosophy and what makes it different.",
-            "body": "Hi {{contact.first_name}}, we build training around your life, not the other way round. Small, repeatable steps that hold up on busy weeks. That is what makes the audit worth your time.",
+            "body": "Hi {{contact.first_name}}, we build training around your life, not the other way round. Small, repeatable steps that hold up on busy weeks. That is what makes the audit worth your time. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
             "type": "sms",
             "delay": "24 hours",
             "note": "Friendly nudge with the booking link.",
-            "body": "Hi {{contact.first_name}}, did you get a chance to read my email? Happy to answer anything. Book your audit: northsidestrength.co/audit"
+            "body": "Hi {{contact.first_name}}, did you get a chance to read my email? Happy to answer anything. Book your audit: northsidestrength.co/audit Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "From skipping sessions to steady weeks",
             "delay": "2 days",
             "note": "Client success story, real results.",
-            "body": "Hi {{contact.first_name}}, when Mara started she trained twice in a good month. We built a plan around school runs and shift work, and now she trains three times a week without the guilt. Your audit is where we map the same for you.",
+            "body": "Hi {{contact.first_name}}, when Mara started she trained twice in a good month. We built a plan around school runs and shift work, and now she trains three times a week without the guilt. Your audit is where we map the same for you. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -789,21 +804,21 @@
             "subject": "The fix for the 6pm energy dip",
             "delay": "3 days",
             "note": "Educational, solve one common problem.",
-            "body": "Hi {{contact.first_name}}, most people blame willpower for the evening slump. Usually it is protein and steps earlier in the day. Small change, steady energy. We cover the rest on your audit.",
+            "body": "Hi {{contact.first_name}}, most people blame willpower for the evening slump. Usually it is protein and steps earlier in the day. Small change, steady energy. We cover the rest on your audit. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
             "type": "sms",
             "delay": "4 days",
             "note": "Zero-pressure check in, offer to help.",
-            "body": "Hi {{contact.first_name}}, just checking in. Any questions about the audit or how we coach? Reply here and I will help."
+            "body": "Hi {{contact.first_name}}, just checking in. Any questions about the audit or how we coach? Reply here and I will help. Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "What the programme involves",
             "delay": "5 days",
             "note": "FAQ: pricing, commitment, who it is for.",
-            "body": "Hi {{contact.first_name}}, a few common questions before the audit. Sessions run weekly, you choose two or three slots, and coaching is month to month. It suits people who want a plan that fits a full life. We confirm the details on the call.",
+            "body": "Hi {{contact.first_name}}, a few common questions before the audit. Sessions run weekly, you choose two or three slots, and coaching is month to month. It suits people who want a plan that fits a full life. We confirm the details on the call. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -811,21 +826,21 @@
             "subject": "A year of steady progress",
             "delay": "6 days",
             "note": "Another transformation story with proof.",
-            "body": "Hi {{contact.first_name}}, Dan came in wanting to keep up with his kids. Twelve months on he is stronger than in his twenties and still training around a full diary. The audit is the first step he took.",
+            "body": "Hi {{contact.first_name}}, Dan came in wanting to keep up with his kids. Twelve months on he is stronger than in his twenties and still training around a full diary. The audit is the first step he took. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
             "type": "sms",
             "delay": "7 days",
             "note": "Final short-term follow up before nurture.",
-            "body": "Hi {{contact.first_name}}, I will ease off the messages now. If you want to map your plan, your audit is here: northsidestrength.co/audit"
+            "body": "Hi {{contact.first_name}}, I will ease off the messages now. If you want to map your plan, your audit is here: northsidestrength.co/audit Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Last chance to claim your audit",
             "delay": "8 days",
             "note": "Clear call to action.",
-            "body": "Hi {{contact.first_name}}, the offer to map your plan is still open. If now is the right time, book your Strength and Lifestyle Audit and we will get you moving.",
+            "body": "Hi {{contact.first_name}}, the offer to map your plan is still open. If now is the right time, book your Strength and Lifestyle Audit and we will get you moving. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -833,7 +848,7 @@
             "subject": "Always here when you are ready",
             "delay": "10 days",
             "note": "Final follow up, soft close.",
-            "body": "Hi {{contact.first_name}}, I will stop reaching out for now. The door stays open, so whenever you want to map your plan, you are welcome to book.",
+            "body": "Hi {{contact.first_name}}, I will stop reaching out for now. The door stays open, so whenever you want to map your plan, you are welcome to book. Cheers, Sam",
             "cta": "Book My Audit"
           }
         ]
@@ -847,56 +862,56 @@
             "subject": "You are booked",
             "delay": "Immediately",
             "note": "Confirm and set expectations, meeting link and calendar invite.",
-            "body": "Hi {{contact.first_name}}, you are booked for {{appointment.start_date}} at {{appointment.start_time}}. Bring a sense of your typical week and we will map the plan together. The invite and link are below.",
+            "body": "Hi {{contact.first_name}}, you are booked for {{appointment.start_date}} at {{appointment.start_time}}. Bring a sense of your typical week and we will map the plan together. The invite and link are below. Cheers, Sam",
             "cta": "Add to calendar"
           },
           {
             "type": "sms",
             "delay": "Immediately",
             "note": "Warm confirmation with the calendar link.",
-            "body": "Hi {{contact.first_name}}, your audit is locked in for {{appointment.start_date}} at {{appointment.start_time}}. Link: {{appointment.meeting_link}}"
+            "body": "Hi {{contact.first_name}}, your audit is locked in for {{appointment.start_date}} at {{appointment.start_time}}. Link: {{appointment.meeting_link}} Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Getting ready for tomorrow",
             "delay": "24 hours before",
             "note": "Reminder and how to prepare.",
-            "body": "Hi {{contact.first_name}}, we speak tomorrow at {{appointment.start_time}}. Have a rough idea of your week and what you want from training, and we will cover the rest.",
+            "body": "Hi {{contact.first_name}}, we speak tomorrow at {{appointment.start_time}}. Have a rough idea of your week and what you want from training, and we will cover the rest. Cheers, Sam",
             "cta": "View meeting details"
           },
           {
             "type": "sms",
             "delay": "24 hours before",
             "note": "Short look-ahead.",
-            "body": "Hi {{contact.first_name}}, looking forward to speaking tomorrow at {{appointment.start_time}}. Talk then."
+            "body": "Hi {{contact.first_name}}, looking forward to speaking tomorrow at {{appointment.start_time}}. Talk then. Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Your audit is in one hour",
             "delay": "1 hour before",
             "note": "Quick reminder with the link.",
-            "body": "Hi {{contact.first_name}}, your audit starts at {{appointment.start_time}}. Join from a quiet spot if you can. The link is below.",
+            "body": "Hi {{contact.first_name}}, your audit starts at {{appointment.start_time}}. Join from a quiet spot if you can. The link is below. Cheers, Sam",
             "cta": "Join the call"
           },
           {
             "type": "sms",
             "delay": "1 hour before",
             "note": "Short reminder with link.",
-            "body": "Hi {{contact.first_name}}, see you at {{appointment.start_time}}. Join here: {{appointment.meeting_link}}"
+            "body": "Hi {{contact.first_name}}, see you at {{appointment.start_time}}. Join here: {{appointment.meeting_link}} Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Starting shortly",
             "delay": "15 minutes before",
             "note": "Final reminder.",
-            "body": "Hi {{contact.first_name}}, we start in a few minutes. The link is below whenever you are ready.",
+            "body": "Hi {{contact.first_name}}, we start in a few minutes. The link is below whenever you are ready. Cheers, Sam",
             "cta": "Join the call"
           },
           {
             "type": "sms",
             "delay": "15 minutes before",
             "note": "Final SMS nudge.",
-            "body": "Hi {{contact.first_name}}, we are ready whenever you are. Join here: {{appointment.meeting_link}}"
+            "body": "Hi {{contact.first_name}}, we are ready whenever you are. Join here: {{appointment.meeting_link}} Cheers, Sam"
           }
         ]
       },
@@ -908,42 +923,42 @@
             "type": "sms",
             "delay": "15 minutes after",
             "note": "Check in, no blame.",
-            "body": "Hi {{contact.first_name}}, we had you down for now and missed you. Everything okay? Hope nothing serious came up."
+            "body": "Hi {{contact.first_name}}, we had you down for now and missed you. Everything okay? Hope nothing serious came up. Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Sorry we missed you",
             "delay": "30 minutes after",
             "note": "Easy rebook link.",
-            "body": "Hi {{contact.first_name}}, looks like we missed each other, and life happens. Pick a new time that suits you and we will map your plan.",
+            "body": "Hi {{contact.first_name}}, looks like we missed each other, and life happens. Pick a new time that suits you and we will map your plan. Cheers, Sam",
             "cta": "Rebook my audit"
           },
           {
             "type": "sms",
             "delay": "24 hours",
             "note": "Gentle nudge with rebook.",
-            "body": "Hi {{contact.first_name}}, still happy to map your plan when you are. Choose another time here: northsidestrength.co/audit"
+            "body": "Hi {{contact.first_name}}, still happy to map your plan when you are. Choose another time here: northsidestrength.co/audit Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Why the audit is worth your time",
             "delay": "2 days",
             "note": "Reinforce value, booking link.",
-            "body": "Hi {{contact.first_name}}, the audit is where we build a plan around your real week, so training holds up when life gets busy. Worth thirty minutes when the time is right.",
+            "body": "Hi {{contact.first_name}}, the audit is where we build a plan around your real week, so training holds up when life gets busy. Worth thirty minutes when the time is right. Cheers, Sam",
             "cta": "Rebook my audit"
           },
           {
             "type": "sms",
             "delay": "5 days",
             "note": "Final reminder before closing.",
-            "body": "Hi {{contact.first_name}}, last nudge from me for now. If you want to map your plan, rebook here: northsidestrength.co/audit"
+            "body": "Hi {{contact.first_name}}, last nudge from me for now. If you want to map your plan, rebook here: northsidestrength.co/audit Cheers, Sam"
           },
           {
             "type": "email",
             "subject": "Closing your enquiry for now",
             "delay": "6 days",
             "note": "Soft close, door open.",
-            "body": "Hi {{contact.first_name}}, I will close your enquiry for now so I am not crowding your inbox. Whenever you are ready, you are welcome to book.",
+            "body": "Hi {{contact.first_name}}, I will close your enquiry for now so I am not crowding your inbox. Whenever you are ready, you are welcome to book. Cheers, Sam",
             "cta": "Rebook my audit"
           }
         ]
@@ -957,7 +972,7 @@
             "subject": "The mistake most people make first",
             "delay": "2 weeks",
             "note": "Biggest early mistake.",
-            "body": "Hi {{contact.first_name}}, the most common slip is going too hard in week one and fading by week three. Steady beats heroic. Build the habit first and the results follow.",
+            "body": "Hi {{contact.first_name}}, the most common slip is going too hard in week one and fading by week three. Steady beats heroic. Build the habit first and the results follow. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -965,7 +980,7 @@
             "subject": "Mara's full year",
             "delay": "4 weeks",
             "note": "Success story, full journey.",
-            "body": "Hi {{contact.first_name}}, a year ago Mara trained twice a month. Today it is three solid sessions a week, fitted around shifts and school runs. The plan grew with her life.",
+            "body": "Hi {{contact.first_name}}, a year ago Mara trained twice a month. Today it is three solid sessions a week, fitted around shifts and school runs. The plan grew with her life. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -973,7 +988,7 @@
             "subject": "Do you need to train every day",
             "delay": "6 weeks",
             "note": "Answer a common myth.",
-            "body": "Hi {{contact.first_name}}, a common myth is that progress needs daily training. Two or three focused sessions a week, done consistently, carry most people a long way.",
+            "body": "Hi {{contact.first_name}}, a common myth is that progress needs daily training. Two or three focused sessions a week, done consistently, carry most people a long way. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -981,7 +996,7 @@
             "subject": "Why we coach for the long run",
             "delay": "8 weeks",
             "note": "Philosophy, sustainable results.",
-            "body": "Hi {{contact.first_name}}, quick fixes fade. We coach for results that hold up across years, built around a life you actually live. That is the difference you feel by month three.",
+            "body": "Hi {{contact.first_name}}, quick fixes fade. We coach for results that hold up across years, built around a life you actually live. That is the difference you feel by month three. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -989,7 +1004,7 @@
             "subject": "The numbers behind a steady year",
             "delay": "10 weeks",
             "note": "Case study with measurable results.",
-            "body": "Hi {{contact.first_name}}, Dan added real strength across twelve months, kept every session inside a full work diary, and has not looked back. Measured, steady, repeatable.",
+            "body": "Hi {{contact.first_name}}, Dan added real strength across twelve months, kept every session inside a full work diary, and has not looked back. Measured, steady, repeatable. Cheers, Sam",
             "cta": "Book My Audit"
           },
           {
@@ -997,7 +1012,7 @@
             "subject": "Is now a better time",
             "delay": "12 weeks",
             "note": "Final check in.",
-            "body": "Hi {{contact.first_name}}, it has been a while. If the timing feels better now, I would still love to map your plan. No rush, just an open door.",
+            "body": "Hi {{contact.first_name}}, it has been a while. If the timing feels better now, I would still love to map your plan. No rush, just an open door. Cheers, Sam",
             "cta": "Book My Audit"
           }
         ]
