@@ -83,8 +83,8 @@ length_limits:
 post_copy_style:
   no_trailing_full_stop: true
   note: "Post copy must not end with a full stop; it reads unnatural in an ad. End on the word, a question mark where a question fits, or an emoji. The validator flags a trailing full stop on post copy as a warning."
-  emoji: "Lean into emoji a bit more than feels obvious, around a third of the posts carrying one, varied and never one-per-row, with some posts left bare. Prefer premium, on-brand emoji (for example sparkle, white heart, warm heart, leaf, location pin, house, sun) and never hype or loud ones (no fire, 100, rocket, heart-eyes), subject to brand tone."
-  emoji_source: "Feedback 2026-06-24 (FIT Republik) and 2026-06-26 (Peak with Hamza): use a few MORE, and make them premium."
+  emoji: "Lean into emoji a bit more than feels obvious, around a third of the posts carrying one, varied and never one-per-row, with some posts left bare. Prefer premium, on-brand emoji (for example sparkle, white heart, warm heart, leaf, location pin, house, sun) and never hype or loud ones (no fire, 100, rocket, heart-eyes), subject to brand tone. Match the emoji to the AUDIENCE, not only the brand: for a male or masculine audience (for example men over 30), avoid soft or feminine-coded emoji such as white heart, warm heart, leaf or sun; use a neutral relevant emoji like a location pin sparingly, or none. The set is a menu, not a mandate; fewer emoji often reads better for a masculine audience."
+  emoji_source: "Feedback 2026-06-24 (FIT Republik) and 2026-06-26 (Peak with Hamza): use a few MORE, and make them premium. 2026-07-07 (Built By Brun): match emoji to the audience; white hearts were wrong for men over 30."
   source: "Feedback 2026-06-24 (FIT Republik)"
 
 hook_style:
