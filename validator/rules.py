@@ -162,8 +162,11 @@ POST_COPY_MAX = 125
 HEADLINE_MAX = 40
 DESCRIPTION_MAX = 25
 
-# Hook word-count limits (System Prompt section 8)
-VIDEO_HOOK_MAX_WORDS = 12        # under 12 words
+# Hook word-count limits (System Prompt section 8; Feedback 2026-07-07 UBX).
+# A video hook is a SPOKEN opening line and may be a full sentence or two (per
+# the ad-hooks skill), so it is capped generously, not clipped to a short
+# fragment. A static hook is an on-screen overlay and stays short.
+VIDEO_HOOK_MAX_WORDS = 25        # a spoken hook can be a sentence or two
 STATIC_HOOK_MIN_WORDS = 5        # 5 to 10 words
 STATIC_HOOK_MAX_WORDS = 10
 

@@ -26,7 +26,7 @@ from . import rules
 #   post_copy     an AD COPY post-copy cell (adds 125 char limit)
 #   headline      an AD COPY headline cell (adds 40 char limit)
 #   description   the AD COPY description cell (adds 25 char limit)
-#   video_hook    a video hook cell (adds < 12 word limit)
+#   video_hook    a video hook cell (spoken line; adds a generous word limit)
 #   static_hook   a static hook cell (adds 5 to 10 word limit)
 #   header        a document header paragraph (adds no-date check)
 

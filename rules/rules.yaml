@@ -76,9 +76,10 @@ length_limits:
   post_copy_max_chars: 125
   headline_max_chars: 40
   description_max_chars: 25
-  video_hook_max_words: 12
+  video_hook_max_words: 25
+  video_hook_note: "A video hook is a SPOKEN opening line and may be a full sentence or two (ad-hooks skill), not a short fragment. Capped generously at 25 words. Static overlay hooks stay 5 to 10 words."
   static_hook_words: "5 to 10"
-  source: "System Prompt s8"
+  source: "System Prompt s8; Feedback 2026-07-07 (UBX)"
 
 post_copy_style:
   no_trailing_full_stop: true

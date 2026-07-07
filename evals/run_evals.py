@@ -48,7 +48,7 @@ BAD_CASES = [
     ("post copy too long", "x" * 130, "post_copy", "length-limit"),
     ("headline too long", "x" * 45, "headline", "length-limit"),
     ("description too long", "x" * 30, "description", "length-limit"),
-    ("video hook too long", "one two three four five six seven eight nine ten eleven twelve", "video_hook", "hook-length"),
+    ("video hook too long", "Hook 1: this spoken video hook is written to run well beyond twenty five words on purpose so the length check still fires for an overlong opening line today", "video_hook", "hook-length"),
     ("static hook too short", "too short", "static_hook", "hook-length"),
     ("date in header", "DATE: 19/06/2026", "header", "no-date-in-header"),
     ("unlabelled video hook", "You start strong then a big week", "video_hook", "hook-label"),
