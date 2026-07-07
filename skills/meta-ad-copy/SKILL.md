@@ -47,7 +47,7 @@ Description
 
 Fluid, not patterned (this is the rule that gets missed)
 - Vary length on purpose. Do NOT pad toward 125. Short often reads stronger. The set of lengths across the five should look hand-written, not clustered near the limit.
-- Emoji are intentional, not decorative, but lean in: aim for around a third of the posts to carry one, varied in placement, never one-per-row as a pattern, with some posts left bare. Prefer premium, on-brand emoji (sparkle, white heart, warm heart, leaf, location pin, house, sun) and never hype or loud ones (no fire, 100, rocket, heart-eyes). Match the brand tone, a calm grounded brand still uses the restrained end of that set.
+- Emoji are intentional, not decorative, but lean in: aim for around a third of the posts to carry one, varied in placement, never one-per-row as a pattern, with some posts left bare. Prefer premium, on-brand emoji (sparkle, white heart, warm heart, leaf, location pin, house, sun) and never hype or loud ones (no fire, 100, rocket, heart-eyes). Match the emoji to the AUDIENCE, not only the brand: for a male or masculine audience (men over 30) avoid soft or feminine-coded emoji (white heart, warm heart, leaf, sun) and use a neutral relevant emoji sparingly or none. Where the client has a defined emoji palette (from the onboarding, in the Brand Pack), draw from it and match the emoji to each post's angle.
 
 Banned copy (zero exceptions, scan every cell including build-script strings)
 - No em dashes or en dashes anywhere. No exclamation marks.

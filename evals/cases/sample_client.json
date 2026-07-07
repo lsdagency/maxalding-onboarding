@@ -59,6 +59,10 @@
         "Recognition and capability, never accusation"
       ],
       [
+        "Emoji palette",
+        "Sparkle for premium, location pin for local, tick for done, chart up for progress, hourglass for time. Calm and premium, fits busy professionals"
+      ],
+      [
         "BANNED IN COPY",
         "Avoid: em dashes, en dashes, the words structure and framework as nouns, exclamation marks, discount words like free or no cost. Lead with what the person can do."
       ]
@@ -1015,5 +1019,19 @@
         ]
       }
     ]
-  }
+  },
+  "existing_posts": [
+    {
+      "format": "EXISTING POST",
+      "concept": "Existing Post Ad (Client Story)",
+      "status": "Signed Off",
+      "platform": "FACEBOOK + INSTAGRAM",
+      "hook": "Proven organic post, run as is",
+      "beats": "Existing organic post, run as an existing post ad\nDo not re-edit or re-film\nKeep the post's comments and engagement",
+      "details": "- A proven organic post to run as a paid existing post ad\n- Ran well organically, worth putting spend behind\n- Boost the exact post so it keeps its social proof\n- In Ads Manager use Use Existing Post and select this post",
+      "editing": "- No editing required, the post already exists",
+      "filming": "- No filming required, existing organic post",
+      "final_asset": "https://www.instagram.com/p/EXAMPLE/"
+    }
+  ]
 }

@@ -144,7 +144,10 @@ def scan_xlsx(path: str) -> list:
                     fmt = ws.cell(row=r, column=fmt_col).value
                     if not isinstance(fmt, str):
                         continue
-                    kind = "static_hook" if fmt.strip().upper() == "STATIC" else "video_hook"
+                    fu = fmt.strip().upper()
+                    if fu not in ("STATIC", "VIDEO"):
+                        continue  # existing-post or other rows are not hook-checked
+                    kind = "static_hook" if fu == "STATIC" else "video_hook"
                     overrides[(r, hook_col)] = ("hooklines", kind)
 
             # Creative Tracker: the DATE column must be blank. Tag any non-empty

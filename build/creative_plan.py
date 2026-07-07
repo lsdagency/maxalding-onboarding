@@ -144,7 +144,37 @@ def _build_tracker(wb, data):
         T.style_body_cell(ws.cell(row=r, column=7))
         ws.row_dimensions[r].height = T.XLSX_TRACKER_ROW_HEIGHT
 
-    last = len(CANONICAL_TRACKER) + 1
+    # Existing post ads: proven organic posts to run as ads (Use Existing Post).
+    # Appended after the canonical rows. Each is a dict of tracker fields.
+    n_canon = len(CANONICAL_TRACKER)
+    existing = data.get("existing_posts", [])
+    for j, post in enumerate(existing):
+        idx = n_canon + j
+        r = idx + 2
+        values = [
+            idx + 1,                                       # A #
+            date_value,                                    # B DATE
+            post.get("format", "EXISTING POST"),           # C FORMAT
+            post.get("resolution", "As posted"),           # D RESOLUTION
+            post.get("status", "Signed Off"),              # E STATUS
+            post.get("platform", DEFAULT_PLATFORM),        # F PLATFORM
+            None,                                          # G FILE TYPE (formula)
+            audience_line,                                 # H AUDIENCE
+            post.get("concept", "Existing Post Ad"),       # I CONCEPT
+            post.get("hook", ""),                          # J HOOK
+            post.get("beats", ""),                         # K BEATS
+            post.get("details", ""),                       # L DETAILS
+            post.get("editing", ""),                       # M EDITING DIRECTION
+            post.get("filming", ""),                       # N FILMING DIRECTION
+            "",                                            # O SCRIPT (blank)
+            post.get("final_asset", ""),                   # P FINAL ASSET (post URL)
+        ]
+        _write_row(ws, r, values)
+        ws.cell(row=r, column=7, value=f'=IF(C{r}="STATIC","JPG","MP4")')
+        T.style_body_cell(ws.cell(row=r, column=7))
+        ws.row_dimensions[r].height = T.XLSX_TRACKER_ROW_HEIGHT
+
+    last = n_canon + len(existing) + 1
     # Dropdowns on STATUS (E) and PLATFORM (F).
     T.add_dropdown(ws, f"E2:E{last}", STATUS_OPTIONS)
     T.add_dropdown(ws, f"F2:F{last}", PLATFORM_OPTIONS)

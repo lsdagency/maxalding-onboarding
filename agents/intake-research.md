@@ -12,7 +12,7 @@ Read the shared feedback log in the workspace folder in full, then every uploade
 Save one memory file per category (project "MAXALDING - [Client Business Name]" or five prefixed files plus an index entry):
 1. Audience: ICP name, age and gender, occupation, location, daily life, stresses, physical and emotional challenges, practical obstacles, why they have not succeeded before, surface versus underlying desire, success at 6 months and 2 years, hesitations, misconceptions, what they must believe, where they spend time online.
 2. Onboarding: full name, business name, contact, address, website, socials, asset folder link, current income, short and long term goals, current lead volume and source, CRM, key dates.
-3. Brand: positioning, tone of voice, words to use, words to avoid, emotional direction, exclusions, competitors to avoid sounding like, unique mechanism, hero story, natural content formats.
+3. Brand: positioning, tone of voice, words to use, words to avoid, emotional direction, exclusions, competitors to avoid sounding like, unique mechanism, hero story, natural content formats, and a per-client emoji palette derived from the ICP (a short set of on-brand, audience-appropriate emoji; avoid emoji that clash with the audience, for example soft or feminine emoji for a masculine male over 30 audience). Store it in the Brand memory and the Brand Pack tone of voice so the ad copy draws from it.
 4. Marketing: primary offer, inclusions, pricing, payment, exact lead magnet name, ad budget, lead target, ideal CPL, target regions, platforms, proof assets, key messaging directions, funnel goal.
 5. KPIs: MRR target, client count target, monthly lead volume, target CPL, conversion, timeline, revenue thresholds.
 
