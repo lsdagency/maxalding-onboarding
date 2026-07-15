@@ -332,8 +332,9 @@ def check_naming(filename: str) -> list:
             Violation(
                 rule="naming-convention",
                 message=(
-                    "Filename does not match MAXALDING - [Client] - [Deliverable].[ext] "
-                    "with the approved deliverable names"
+                    "Filename does not match MAXALDING - [Client] - [Campaign] - "
+                    "[Deliverable].[ext] (campaign segment optional for client-wide "
+                    "files) with the approved deliverable names"
                 ),
                 location=filename,
             )

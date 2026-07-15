@@ -64,6 +64,7 @@ The JSON shape:
 
     {
       "client_business_name": "FIT Republik",
+      "campaign": "Winter Project",
       "ad_copy": {
         "concepts": [
           {"concept": "Concept or video name", "posts": ["p1", "p2", "p3", "p4", "p5"]}
@@ -73,7 +74,9 @@ The JSON shape:
       }
     }
 
-The builder reuses the Creative Plan AD COPY tab generator, names the file `MAXALDING - [Client] - Meta Ad Copy.xlsx`, and runs a structure and character-limit check (5 posts per concept, post <=125, headline <=40, description <=25) before saving. If the client already has a Creative Plan, the same copy can instead be pasted into that file's AD COPY tab.
+The builder reuses the Creative Plan AD COPY tab generator, names the file `MAXALDING - [Client] - [Campaign] - Meta Ad Copy.xlsx` (always set a short `campaign` in the data JSON: a standalone ad copy file is for a specific campaign, and without the campaign segment two Meta Ad Copy files for different campaigns are indistinguishable), and runs a structure and character-limit check (5 posts per concept, post <=125, headline <=40, description <=25) before saving. If the client already has a Creative Plan, the same copy can instead be pasted into that file's AD COPY tab.
+
+Save the file into its own per-campaign subfolder in the workspace, `workspace/clients/[Client]/[Mon-DD-descriptor-campaign]/` (for example `Aug-01-anniversary-campaign`), never into the client root or another campaign's folder. Create the subfolder if this is a new campaign.
 
 ## Run the QA gate (mandatory)
 After building, run the deterministic validator over the file and fix every error before handing over:

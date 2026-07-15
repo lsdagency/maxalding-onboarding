@@ -50,8 +50,10 @@ Run the deterministic validator before delivery:
 
 It enforces, with zero tolerance: no em or en dashes, exclamation marks or ellipses anywhere including build-script strings; no banned words outside rule-statement cells; no Meta risk patterns; length limits (post copy 125, headline 40, description 25); hook word counts; the naming convention; no date in headers; and premium framing. Fix every error and re-scan before sharing.
 
-## Naming convention
-MAXALDING - [Client Business Name] - [Deliverable], with spaces and standard hyphens with a space either side. Deliverables: Creative Plan (xlsx), Video Ad Scripts, VSL Script, Landing Page Copy, CRM Automation (docx).
+## Naming convention and saving
+MAXALDING - [Client Business Name] - [Campaign] - [Deliverable], with spaces and standard hyphens with a space either side. Include a short campaign name on every campaign-specific deliverable so the file is identifiable away from its folder; omit it only for genuinely client-wide files. Deliverables: Creative Plan (xlsx), Video Ad Scripts, VSL Script, Landing Page Copy, CRM Automation (docx).
+
+Save each campaign's deliverables into their own per-campaign subfolder in the workspace, workspace/clients/[Client]/[Mon-DD-descriptor-campaign]/ (for example Aug-01-anniversary-campaign). Never drop a new campaign's files into the client root or another campaign's folder. Client-wide reference (client profile, audits) stays at the client root.
 
 ## Feedback loop
 If the user gave any correction during the session, append a dated entry to the workspace feedback log:

@@ -78,8 +78,16 @@ def logo_path(workspace: str | None = None) -> str | None:
     return candidate if os.path.isfile(candidate) else None
 
 
-def deliverable_filename(client_business_name: str, deliverable: str) -> str:
-    """MAXALDING - [Client Business Name] - [Deliverable].[ext]"""
+def deliverable_filename(client_business_name: str, deliverable: str,
+                         campaign: str | None = None) -> str:
+    """MAXALDING - [Client] - [Campaign] - [Deliverable].[ext]
+
+    The campaign segment makes the file identifiable on its own, away from its
+    campaign subfolder (Feedback 2026-07-15, UBX: two Meta Ad Copy files for
+    different campaigns were indistinguishable by name). Pass a short campaign
+    name for any campaign-specific deliverable; omit it only for genuinely
+    client-wide files. The validator accepts both forms.
+    """
     ext = {
         "Creative Plan": "xlsx",
         "Meta Ad Copy": "xlsx",
@@ -90,7 +98,8 @@ def deliverable_filename(client_business_name: str, deliverable: str) -> str:
         "Landing Page Copy": "docx",
         "CRM Automation": "docx",
     }[deliverable]
-    return f"MAXALDING - {client_business_name} - {deliverable}.{ext}"
+    middle = f"{client_business_name} - {campaign}" if campaign else client_business_name
+    return f"MAXALDING - {middle} - {deliverable}.{ext}"
 
 
 # ---------------------------------------------------------------------------

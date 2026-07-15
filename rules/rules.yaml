@@ -96,7 +96,8 @@ hook_style:
   source: "Feedback 2026-07-02 (UBX); extends Built By Brun 2026-06-29 (natural spoken scripts) and (labelled hooks, real Meta hook craft)"
 
 naming_convention:
-  pattern: "MAXALDING - [Client Business Name] - [Deliverable].[ext]"
+  pattern: "MAXALDING - [Client Business Name] - [Campaign] - [Deliverable].[ext]"
+  campaign_segment: "Required for any campaign-specific deliverable so the file is identifiable on its own, away from its campaign folder (for example two Meta Ad Copy files for different campaigns). Use a short campaign name. Omit only for genuinely client-wide files; the validator accepts both forms."
   separator: " - "
   forbid: [em dashes, underscores]
   deliverables:
@@ -109,7 +110,8 @@ naming_convention:
     Landing Page Copy: docx
     CRM Automation: docx
   note: "SCRIPT column in the tracker references the Video Ad Scripts filename. Meta Ad Copy / Lead Form deliverables come from the standalone meta-ad-copy and meta-lead-form skills."
-  source: "System Prompt s6; Feedback 2026-06-18"
+  saving: "Save every campaign deliverable into its own per-campaign subfolder in the workspace: workspace/clients/[Client]/[Mon-DD-descriptor-campaign]/ (for example Aug-01-anniversary-campaign). Never drop a new campaign's files into the client root or another campaign's folder. Client-wide reference files (client profile, audits) stay at the client root."
+  source: "System Prompt s6; Feedback 2026-06-18, 2026-07-15 (UBX campaign segment + per-campaign subfolders)"
 
 documents:
   no_date_in_header: true

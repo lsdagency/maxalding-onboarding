@@ -17,6 +17,7 @@ Usage:
 Input JSON shape:
 {
   "client_business_name": "FIT Republik",
+  "campaign": "Winter Project",   # short campaign name, goes into the filename
   "ad_copy": {
     "concepts": [
       {"concept": "Concept name", "posts": ["p1", "p2", "p3", "p4", "p5"]},
@@ -78,7 +79,10 @@ def build_ad_copy(data, out_dir) -> str:
     default_sheet = wb.active  # the blank sheet openpyxl creates
     _build_ad_copy(wb, data)
     wb.remove(default_sheet)  # leave AD COPY as the only tab
-    filename = T.deliverable_filename(data["client_business_name"], "Meta Ad Copy")
+    # Campaign-distinct filename (Feedback 2026-07-15, UBX): a standalone ad
+    # copy file is always for a specific campaign, so carry its name.
+    filename = T.deliverable_filename(
+        data["client_business_name"], "Meta Ad Copy", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
     wb.save(out_path)
     return out_path
