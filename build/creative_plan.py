@@ -115,7 +115,12 @@ def _build_tracker(wb, data):
     rows = data.get("tracker", [])
     video_scripts_file = data.get("video_scripts_filename", "")
 
-    for idx, (fmt, concept) in enumerate(CANONICAL_TRACKER):
+    # The canonical 13 rows are the default. A client may scope or extend the
+    # set with tracker_concepts: a list of [FORMAT, CONCEPT] pairs (statics
+    # first), for example adding an extra objection-angle video concept.
+    concept_rows = data.get("tracker_concepts") or CANONICAL_TRACKER
+
+    for idx, (fmt, concept) in enumerate(concept_rows):
         r = idx + 2
         content = rows[idx] if idx < len(rows) else {}
         is_static = fmt == "STATIC"
@@ -146,7 +151,7 @@ def _build_tracker(wb, data):
 
     # Existing post ads: proven organic posts to run as ads (Use Existing Post).
     # Appended after the canonical rows. Each is a dict of tracker fields.
-    n_canon = len(CANONICAL_TRACKER)
+    n_canon = len(concept_rows)
     existing = data.get("existing_posts", [])
     for j, post in enumerate(existing):
         idx = n_canon + j
