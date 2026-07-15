@@ -25,6 +25,34 @@ from .landing_page import build_landing_page
 from .crm_automation import build_crm_automation
 
 
+_STATIC_TRACKER_ROWS = 5
+_ADDRESSER_TAGS = ["(age)", "(role)", "(situation)"]
+
+
+def _sync_video_hooks(data):
+    """Single source of truth for video hooks. The Video Ad Script hook options
+    ARE the hooks; mirror them into the Creative Tracker video HOOK cells so the
+    tracker and the scripts can never show different hooks. Static rows are left
+    untouched. The Audience Addresser keeps its age/role/situation labels."""
+    concepts = data.get("scripts", {}).get("concepts", [])
+    tracker = data.get("tracker", [])
+    for j, concept in enumerate(concepts):
+        idx = _STATIC_TRACKER_ROWS + j
+        if idx >= len(tracker):
+            break
+        hooks = [h for h in concept.get("hooks", []) if h][:3]
+        if not hooks:
+            continue
+        addresser = "addresser" in concept.get("name", "").lower()
+        lines = []
+        for k, hook in enumerate(hooks):
+            if addresser and k < len(_ADDRESSER_TAGS):
+                lines.append(f"Hook {k + 1} {_ADDRESSER_TAGS[k]}: {hook}")
+            else:
+                lines.append(f"Hook {k + 1}: {hook}")
+        tracker[idx]["hook"] = "\n".join(lines)
+
+
 def build_all(data, out_dir, workspace=None):
     os.makedirs(out_dir, exist_ok=True)
 
@@ -35,6 +63,9 @@ def build_all(data, out_dir, workspace=None):
         "video_scripts_filename",
         T.deliverable_filename(client, "Video Ad Scripts"),
     )
+
+    # Mirror the script hook options into the tracker video hook cells.
+    _sync_video_hooks(data)
 
     outputs = {}
     outputs["Creative Plan"] = build_creative_plan(data, out_dir)
