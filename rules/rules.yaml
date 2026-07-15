@@ -92,6 +92,8 @@ post_copy_style:
 
 hook_style:
   video: "Each of the three video hook options (Creative Tracker video rows and Video Ad Script Option A/B/C) must sound like a voicenote said out loud to camera: natural spoken English, contractions, a real spoken opener where it fits (Okay, Real quick, Here's the thing, Don't scroll past this). Not a written slogan. The three must span DIFFERENT hook types, never three wordings of one idea: mix question, curiosity gap, urgency, bold statement, empathy or relatable and pattern interrupt, with at least one statement. Carry the campaign theme through without making all three sell."
+  register: "The hook register must match the ICP's age and world, never a generic social voice. No under-30 slang (real talk, no cap, lowkey, vibe) for an over-30 audience. Slang only when the coach or ICP genuinely uses it on the transcript. Invoke the ad-hooks skill every time hooks are written or rewritten, including revision rounds."
+  register_source: "Feedback 2026-07-15 (Built By Brun): 'real talk' aimed at men over 30 flagged; hooks had been rewritten by hand without re-invoking the skill."
   note: "Craft rule, not machine-enforceable; the validator still checks hook length and the labelled format."
   source: "Feedback 2026-07-02 (UBX); extends Built By Brun 2026-06-29 (natural spoken scripts) and (labelled hooks, real Meta hook craft)"
 
