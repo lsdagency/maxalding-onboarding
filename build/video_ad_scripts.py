@@ -112,7 +112,7 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
 
         T.add_divider(doc)
 
-    filename = T.deliverable_filename(data["client_business_name"], "Video Ad Scripts")
+    filename = T.deliverable_filename(data["client_business_name"], "Video Ad Scripts", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
     doc.save(out_path)
     return out_path

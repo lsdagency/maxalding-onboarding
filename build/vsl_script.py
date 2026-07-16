@@ -68,7 +68,7 @@ def build_vsl_script(data, out_dir, workspace=None):
         for line in step.get("lines", []):
             T.add_script_line(doc, line)
 
-    filename = T.deliverable_filename(data["client_business_name"], "VSL Script")
+    filename = T.deliverable_filename(data["client_business_name"], "VSL Script", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
     doc.save(out_path)
     return out_path

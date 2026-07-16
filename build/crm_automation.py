@@ -66,7 +66,7 @@ def build_crm_automation(data, out_dir, workspace=None):
                 if message.get("cta"):
                     T.add_script_line(doc, message["cta"])
 
-    filename = T.deliverable_filename(data["client_business_name"], "CRM Automation")
+    filename = T.deliverable_filename(data["client_business_name"], "CRM Automation", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
     doc.save(out_path)
     return out_path

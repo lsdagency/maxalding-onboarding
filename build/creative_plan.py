@@ -259,7 +259,7 @@ def build_creative_plan(data, out_dir):
     _build_tracker(wb, data)
     _build_ad_copy(wb, data)
 
-    filename = T.deliverable_filename(data["client_business_name"], "Creative Plan")
+    filename = T.deliverable_filename(data["client_business_name"], "Creative Plan", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
     wb.save(out_path)
     return out_path

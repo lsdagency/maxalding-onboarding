@@ -74,7 +74,7 @@ def build_landing_page(data, out_dir, workspace=None):
             for placeholder in extra.get("placeholders", []):
                 T.add_body(doc, f"[CLIENT ACTION: {placeholder}]", bold=True)
 
-    filename = T.deliverable_filename(data["client_business_name"], "Landing Page Copy")
+    filename = T.deliverable_filename(data["client_business_name"], "Landing Page Copy", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
     doc.save(out_path)
     return out_path

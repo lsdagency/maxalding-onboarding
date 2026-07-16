@@ -61,7 +61,7 @@ def build_all(data, out_dir, workspace=None):
     client = data["client_business_name"]
     data.setdefault(
         "video_scripts_filename",
-        T.deliverable_filename(client, "Video Ad Scripts"),
+        T.deliverable_filename(client, "Video Ad Scripts", campaign=data.get("campaign")),
     )
 
     # Mirror the script hook options into the tracker video hook cells.
