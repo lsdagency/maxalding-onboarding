@@ -16,10 +16,10 @@ Read the shared Onboarding Feedback Log in full before doing anything. It lives 
 This package is read-only at runtime. All writable state lives in the workspace folder: the logo (Maxalding Logo.png), the feedback log, per-client brand kits, and the generated client outputs. Never write into the package.
 
 ## Hard input gate
-Required: at least one of the Brand Campaign Document or the Creative Strategy Brief. If neither is present, stop and say: "To run the onboarding I need at least one of the following: the Brand Campaign Document or the Creative Strategy Brief. Please upload one or both and I will get started." Do not work from memory. If only one is present, proceed but flag what is missing and recommend a human creative review. If the funnel goal is not stated anywhere, ask before proceeding.
+Required: at least one of the Brand Campaign Document or the Creative Strategy Brief, AND the client's Instagram handle or profile URL. If neither document is present, stop and say: "To run the onboarding I need at least one of the following: the Brand Campaign Document or the Creative Strategy Brief. Please upload one or both and I will get started." If the Instagram account is missing, stop and ask for it in the same breath; the only waiver is the user explicitly stating the client has no Instagram (note the waiver in the Onboarding memory). Do not work from memory. If only one document is present, proceed but flag what is missing and recommend a human creative review. If the funnel goal is not stated anywhere, ask before proceeding.
 
 ## The four stages
-1. Read everything (intake-research): the feedback log, every document, any transcript. Mine a transcript for the real voice, the genuine offer focus, real objections and authentic story. Reconcile conflicts.
+1. Read everything (intake-research): the feedback log, every document, any transcript, and the client's Instagram (compulsory, see references/instagram-research.md): scan the profile, captions and metadata, download and transcribe the five most recent videos, and read the visual style and language. Mine a transcript for the real voice, the genuine offer focus, real objections and authentic story. Reconcile conflicts, including anything the Instagram contradicts.
 2. Extract and confirm (intake-research): extract the five categories (Audience, Onboarding, Brand, Marketing, KPIs), save the memory files, and define the campaign spine: a single Core Message, a short Tagline, one support line. Then PAUSE and confirm the spine, ICP, offer, funnel and any conflicts with the user before building.
 3. Build the Creative Plan XLSX (creative-plan): three tabs, using the Python build module.
 4. Produce the four documents (scriptwriting, conversion-copy, lifecycle-crm): Video Ad Scripts, VSL Script, Landing Page Copy, CRM Automation, using the Python build module. After the Video Ad Scripts file is named, the Creative Plan SCRIPT column references it on the video rows.
@@ -30,6 +30,7 @@ Then run the QA gate (compliance-qa) over every output, fix anything it flags, a
 A green QA gate is necessary but NOT sufficient. The deterministic validator only checks mechanical rules (characters, lengths, Meta patterns, naming, the labelled-hook format and the blank DATE column). It cannot check craft, voice, or whether you actually applied the mandated skills. Do not let a passing validator stand in for following the process. Before building anything, confirm every item:
 
 - Read the feedback log in full this session and applied it.
+- Instagram scan completed per references/instagram-research.md (or explicitly waived by the user) and the findings fed into the Brand memory.
 - Invoked the mandated craft skill for each deliverable (see Skill invocations below). The skills inform craft (angles, PAS and BAB, value before ask, voice of customer); the plugin reference rules win on any conflict (no weight figures or invented stats, no exclamation marks, fixed AD COPY and CRM structures, the framing decision, no "guarantee" if the client bans it).
 - Hooks are labelled Hook 1: / Hook 2: / Hook 3: (Audience Addresser tagged age, role, situation), short enough that the label plus the hook fits the word limit, and drawn from varied Meta hook angles, not three rewordings of one idea.
 - Creative Tracker DATE column left blank.
@@ -67,6 +68,7 @@ If no feedback was given, append nothing. Confirm what was logged.
 ## Reference files
 - references/writing-rules.md: global writing rules, banned characters, words, phrases, the positive-language rule.
 - references/meta-compliance.md: Meta advertising policy pass for all paid creative.
+- references/instagram-research.md: the compulsory Stage 1 Instagram scan (tooling, procedure, what feeds forward).
 - references/premium-positioning.md: premium framing of the lead magnet.
 - references/creative-plan-spec.md: the Creative Plan XLSX detailed spec.
 - references/script-guidelines.md: Video Ad Scripts and the Audience Addresser concept.

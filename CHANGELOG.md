@@ -2,6 +2,16 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.12.0] - 2026-07-16
+
+### Added
+- Compulsory Instagram research step in Stage 1 (new references/instagram-research.md). The client's Instagram handle or profile URL is now a hard-gate input alongside the Brand Campaign Document / Creative Strategy Brief (waivable only by the user explicitly stating the client has no Instagram). intake-research scans the profile, captions and metadata, downloads and transcribes the five most recent videos (yt-dlp + ffmpeg + mlx_whisper), reads the visual style from extracted frames, saves everything under workspace/clients/[Client]/research/instagram/, and feeds real voice, recurring phrases, content formats and visual grammar into the Brand memory. An empty or "Music" transcript is recorded as a text-overlay-led reel, not a failure. Never log in or use credentials; if anonymous access fails, ask the user for the videos. Requested by Liam at the start of the Fisca onboarding (2026-07-16).
+- Preflight checklist item: Instagram scan completed (or explicitly waived) with findings fed into the Brand memory.
+- requirements.txt gains yt-dlp and static-ffmpeg for the research step; ffmpeg/ffprobe are symlinked into .venv/bin from the static-ffmpeg package.
+
+### Changed
+- SKILL.md hard input gate, Stage 1, preflight and reference list; agents/onboarding-orchestrator.md gate and Stage 1; agents/intake-research.md gains the scan procedure and prefers demonstrated Instagram language in the Brand "words to use".
+
 ## [0.11.2] - 2026-06-26
 
 ### Changed

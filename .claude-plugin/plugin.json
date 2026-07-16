@@ -1,6 +1,6 @@
 {
   "name": "maxalding-onboarding",
-  "version": "0.11.2",
+  "version": "0.12.0",
   "description": "Maxalding Agency fitness client onboarding. An orchestrator plus specialist subagents that run the four-stage workflow, build the Creative Plan XLSX and four campaign documents, and gate every output through a deterministic QA validator.",
   "author": {
     "name": "Maxalding Agency",

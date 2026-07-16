@@ -1,3 +1,8 @@
 openpyxl>=3.1
 python-docx>=1.1
 PyYAML>=6.0
+
+# Stage 1 Instagram research (see skills/client-onboarding/references/instagram-research.md)
+yt-dlp>=2026.7
+static-ffmpeg>=2.13
+# Transcription uses mlx_whisper (Apple Silicon), installed system-wide, not pinned here.

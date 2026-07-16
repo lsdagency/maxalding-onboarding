@@ -9,7 +9,7 @@ Version 0.9.0.
 An orchestrator agent runs the four-stage workflow and the approval gates. Specialist subagents own one craft each. A separate compliance and QA reviewer holds the final line, and a deterministic validator makes the house style and Meta compliance rules code, not vibes.
 
 - onboarding-orchestrator: owns the workflow, the hard input gate, the Stage 2 confirm step and the QA gate.
-- intake-research: reads everything, extracts the five categories, defines the campaign spine.
+- intake-research: reads everything, runs the compulsory Instagram scan (captions, metadata, five most recent videos transcribed, visual style), extracts the five categories, defines the campaign spine.
 - creative-plan: builds the Creative Plan XLSX.
 - scriptwriting: Video Ad Scripts and the VSL Script.
 - conversion-copy: the Landing Page.
