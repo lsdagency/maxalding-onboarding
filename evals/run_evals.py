@@ -108,11 +108,34 @@ def run_build_eval():
     return failures
 
 
+def run_version_eval():
+    """The plugin has two version strings (plugin.json and rules/rules.yaml).
+    They drifted once (rules.yaml sat on 0.9.0 until 0.13.1); this locks them
+    together so a bump cannot miss one."""
+    try:
+        import yaml
+    except Exception as exc:
+        print(f"  version eval SKIPPED (missing dependency: {exc})")
+        return []
+    with open(os.path.join(ROOT, ".claude-plugin", "plugin.json"), encoding="utf-8") as fh:
+        plugin_version = json.load(fh)["version"]
+    with open(os.path.join(ROOT, "rules", "rules.yaml"), encoding="utf-8") as fh:
+        rules_version = yaml.safe_load(fh).get("version")
+    if plugin_version != rules_version:
+        return [
+            f"VERSION plugin.json is {plugin_version} but rules/rules.yaml is "
+            f"{rules_version}; bump both together"
+        ]
+    return []
+
+
 def main():
     print("Running rule evals...")
     failures = run_rule_evals()
     print("Running build eval...")
     failures += run_build_eval()
+    print("Running version eval...")
+    failures += run_version_eval()
 
     if failures:
         print(f"\n{len(failures)} eval failure(s):")

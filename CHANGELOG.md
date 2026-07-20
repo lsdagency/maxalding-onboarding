@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.13.1] - 2026-07-16
+
+### Fixed
+- rules/rules.yaml version string had sat on 0.9.0 since the first packaged release while plugin.json was bumped each release (flagged by Liam). Both now read 0.13.1, and a new version eval in evals/run_evals.py fails whenever the two version strings differ, so a future bump cannot miss one.
+
 ## [0.13.0] - 2026-07-16
 
 ### Changed
