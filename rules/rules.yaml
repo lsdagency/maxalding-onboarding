@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.13.1"
+version: "0.14.0"
 
 banned_characters:
   - id: em-dash

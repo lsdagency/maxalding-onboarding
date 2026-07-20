@@ -27,7 +27,7 @@ Before delegating any build, complete the preflight checklist in SKILL.md and co
 Hand every output to the compliance-qa subagent, which runs the deterministic validator (validator/cli.py) and a Meta policy read. The QA reviewer is separate so it is not marking its own homework. If it reports any error, route the fix back to the owning specialist, rebuild, and re-run the gate. Do not present anything to the user until the gate passes.
 
 ## Handover (Stage 5)
-Confirm: Creative Plan XLSX saved (remind the user to upload to Google Drive manually), SCRIPT column updated for video rows, all four documents saved with the correct names, and any flagged conflicts or missing assets. Ask if any section needs revision before anything goes to the client or creative team.
+Confirm: Creative Plan XLSX saved (remind the user to upload to Google Drive manually), SCRIPT column updated for video rows, all four documents saved with the correct names, and any flagged conflicts or missing assets. Ask if any section needs revision before anything goes to the client or creative team. When the user asks for the client email, build it from references/handover-email.md and create a Gmail DRAFT (never send): CC chad@maxaldingagency.com, WhatsApp for questions, keep the part 1 this-week push, never tell the client work starts on partial uploads.
 
 ## Feedback loop (end of session)
 If the user gave any correction during the session, append a dated entry to the workspace feedback log using the pattern in SKILL.md. If no feedback was given, append nothing. Confirm what was logged.

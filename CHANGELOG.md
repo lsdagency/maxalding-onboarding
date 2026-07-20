@@ -2,6 +2,14 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.14.0] - 2026-07-16
+
+### Added
+- Client handover email template (references/handover-email.md), used at Stage 5 when the user asks to "draft me the email". Always a Gmail draft for review, never sent; To the client contact, CC chad@maxaldingagency.com; WhatsApp ("drop me a WhatsApp") as the questions channel, never "call me"; keeps the this-week push on the part 1 assets; points everything at one content upload folder and pushes B-Roll volume hard with client-specific categories and voiceover script-beat pairings (archival footage ask where the client's history offers one). From Liam's Fisica handover email review (2026-07-16).
+
+### Changed
+- Corrected the previous commit's guidance: never tell the client to upload as they go or that work starts with whatever lands first. Work starts once the full content set is in (script-guidelines.md, handover-email.md).
+
 ## [0.13.1] - 2026-07-16
 
 ### Fixed

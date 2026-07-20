@@ -75,6 +75,7 @@ If no feedback was given, append nothing. Confirm what was logged.
 - references/vsl-guidelines.md: the VSL five-step formula.
 - references/landing-page-structure.md: the conversion landing page structure.
 - references/automation-copy-guidelines.md: CRM email and SMS copy rules.
+- references/handover-email.md: the Stage 5 client handover email template (Gmail draft only, CC Chad, WhatsApp for questions).
 
 ## Skill invocations (mandatory points)
 Apply the relevant expertise before writing each asset: ad-creative before any Creative Tracker content; ads, ad-creative and copywriting before Ad Copy; ad-creative before Video Ad Scripts; ads (funnel-stage thinking) before the VSL; copywriting before Landing Page Copy; email-sequence before any CRM email copy.
