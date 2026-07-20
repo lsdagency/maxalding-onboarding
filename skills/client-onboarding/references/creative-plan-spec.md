@@ -33,7 +33,9 @@ number, DATE, FORMAT, RESOLUTION, STATUS, PLATFORM, FILE TYPE, AUDIENCE, CONCEPT
 - SCRIPT: blank for statics; the Video Ad Scripts filename for video rows after Stage 4.
 - FINAL ASSET: blank.
 
-13 rows: 5 statics then 8 videos, concepts in the spec order (Problem to Solution, Incentive, Benefit, Social Proof Review, Social Proof Before and After, then video Problem to Solution, Social Proof, Pattern Interrupt, Storytelling, Benefit, Incentive, Social Proof, Audience Addresser).
+12 rows: 5 statics then 7 videos, concepts in the spec order (Problem to Solution, Incentive, Benefit, Social Proof Review, Social Proof Before and After, then video Problem to Solution, Social Proof (Client Interview), Pattern Interrupt, Storytelling (Full Voiceover B-Roll), Benefit, Incentive, Audience Addresser).
+
+There is ONE social proof video concept, in the client-interview format (see script-guidelines). The client records the same question set with a few different clients or members, and each interview becomes its own ad variant; do not add a second social proof video concept. Storytelling runs as the full voiceover B-Roll concept by default (one per plan, see script-guidelines); its FILMING DIRECTION is a concrete B-Roll shot list that doubles as the client's filming brief. Pattern Interrupt stays canonical but drop it via tracker_concepts when it does not serve the plan (Fisica, 2026-07-16).
 
 The canonical 13 rows are the default, not a cage. A client may scope or extend the set through the `tracker_concepts` data list ([FORMAT, CONCEPT] pairs, statics first), for example adding an extra objection-angle video such as a "Tried PT Before" concept aimed at the same ICP who has bought personal training before and had it not stick (proven buyers, a strong warm angle). Every video concept in the tracker must have a matching concept block, in the same order, in the Video Ad Scripts document; the build mirrors the script hook options into the tracker HOOK cells.
 

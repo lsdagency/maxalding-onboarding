@@ -14,8 +14,8 @@ Vertical 9:16; strong first frame, eyes to lens immediately; eye level, arm's le
 ## Editing best practice (research it every run)
 The document carries an EDITING BEST PRACTICE section after RECORDING BEST PRACTICE, so the editor has current paid-social / Reels guidance in the same file. Before each build, RESEARCH current best-practice editing tips for Instagram Reels and Meta video ads (web search) and pass the refreshed list as `data["scripts"]["editing_best_practice"]`; the builder falls back to a sensible evergreen default if none is supplied. Keep it in the same dashed bullet format. Typical points: win the first 3 seconds on the hook, burned-in captions for sound-off, 9:16 safe zones, cut dead air and change something visual every 1 to 2 seconds, short high-contrast on-screen text, brand cue early, native and handheld feel around 15 to 30 seconds, end on a clean CTA card. Add any campaign-specific editing notes here too (for example seasonal or birthday motion like a confetti burst).
 
-## The eight concepts
-Write all eight video concepts (Creative Tracker rows 6 to 13). Each block:
+## The seven concepts
+Write all seven video concepts (Creative Tracker rows 6 to 12): Problem to Solution, Social Proof (Client Interview), Pattern Interrupt, Storytelling (Full Voiceover B-Roll), Benefit, Incentive, Audience Addresser. Each block:
 - CONCEPT n in caps, then Format, Talent, Audience, Angle.
 - A short plain paragraph on what it is and how to film it.
 - Hook Options (film all three): Option A, B, C. All three are filmed and tested; never tell the client to choose one. A video hook is the strong, full SPOKEN opening line, a sentence or two (per the ad-hooks skill), not a short static-style fragment; these ARE the best line in the concept, the scroll-stopper, not a throwaway before the real opener. Specific, never "you" plus a negative attribute. Two hard requirements on top of that:
@@ -30,6 +30,17 @@ Write all eight video concepts (Creative Tracker rows 6 to 13). Each block:
 Each of the eight uses a meaningfully different angle, pain context and objection (time, confidence, intimidation, consistency, support, accountability, commitment). For a beginner-intimidating niche, confidence and "this is for normal people" leads. A strong optional ninth angle for any client whose ICP has bought the service before: a "tried it before and it didn't stick" concept that validates the past attempt, names why generic plans fail, and presents the difference (proven buyers convert best).
 
 Multi-location clients: never name two distant locations in the same spoken script or VSL. Pick ONE launch location per script set (decided with the client at the confirm gate, weighing where they are best known against demographics and any local sponsorships), write every location mention to that one place, and clone the campaign for the second location later. The Creative Plan brand pack still records all locations as fact.
+
+## Social Proof concept, client-interview format (coaches and gyms)
+The social proof video is an interview, never a monologue and never a script the client reads. The brand (the coach) asks the questions off camera and the client answers in their own words. This applies to every coach and gym client (Fisica, 2026-07-16).
+
+- The script block is a QUESTION SET with guided responses: each beat is a direction note carrying the question the coach asks and what to guide the client to mention in that answer (for example, get them to mention how long they had been dealing with it and what they had already tried). No spoken lines are written for the client.
+- Hooks: one of the three is ALWAYS the client's introduction line, for example "Hi, I'm [NAME] and I've been training at [Client] for the past year." The other two are pulled from the strongest moments in the client's actual answers during the edit; write them as example pull-lines and say so in the intro and the hook direction note.
+- One interview concept per plan. The client records the same question set with a few different clients or members, and each interview becomes its own ad variant. Do not write a second social proof video concept.
+- All the usual rules apply to the questions and guidance: positive language, no invented specifics, Meta compliance, and results framed as one person's real experience.
+
+## Full voiceover B-Roll concept, one per plan
+Exactly one video concept per plan runs as a full voiceover over B-Roll with no talking head. Storytelling is the default choice because continuous narration carries it best. The talent records the narration clean on a mic and the whole edit is cut to it. The concept's FILMING DIRECTION in the Creative Plan is a concrete B-Roll shot list, specific to the client's spaces and coaching moments, and doubles as the client's filming brief. Clients are typically short on B-Roll; this concept deliberately pushes them to film it, so make the shot list practical and specific.
 
 ## Audience Addresser concept, specific rules
 A direct-to-camera format with a four-beat structure: hook (direct callout, statement, names a lived experience not a demographic), understand them (2 to 3 lines naming specific daily situations), pain point (1 to 2 lines on the emotional cost, positive-language rule applies), present the solution (2 to 3 lines on the coaching approach), CTA (one clear instruction, offer named exactly).

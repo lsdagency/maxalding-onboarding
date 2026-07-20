@@ -179,10 +179,10 @@
     },
     {
       "hook": "Hook 1: A client on what finally changed\nHook 2: What the weekly review did for me\nHook 3: One client, twelve honest weeks",
-      "beats": "Clip 1: opening hook\nClip 2: main content\nClip 3: close and CTA",
-      "details": "- A social proof video led by a real client voice\n- Designed to build trust\n- Honest, conversational tone\n- Builds toward Book My Consultation\n- Uses a real client story, client to supply",
-      "editing": "- Interview style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
-      "filming": "- Film at a comfortable, quiet space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "beats": "Clip 1: the client's intro line\nClip 2: interview answers, before and the turning point\nClip 3: life now, then close and CTA end card",
+      "details": "- A client interview: the coach asks questions off camera, the client answers in their own words\n- The script is a question set with guided responses, not lines to read\n- Hook 1 is always the client's introduction, Hooks 2 and 3 are pulled from the strongest answers in the edit\n- Repeat the same question set with a few different clients so each interview becomes its own ad variant\n- Builds toward Book My Consultation",
+      "editing": "- Interview style, the coach's questions cut out or kept as short text cards\n- Pull Hooks 2 and 3 from the strongest answer moments\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Captions in social font\n- Decide on background music or not",
+      "filming": "- Film at a comfortable, quiet space with the coach asking questions off camera\n- Frame the client head and shoulders, eyes just off lens toward the coach\n- Record several takes of the intro line\n- Good, clear lighting\n- Repeat the same question set with a few different clients",
       "platform": "FACEBOOK + INSTAGRAM"
     },
     {
@@ -196,9 +196,9 @@
     {
       "hook": "Hook 1: I rebuilt training around a real career\nHook 2: The plan I wish I had at thirty five\nHook 3: How I learned to train around work",
       "beats": "Clip 1: opening hook\nClip 2: main content\nClip 3: close and CTA",
-      "details": "- A storytelling video from the coach\n- Designed to build authority and connection\n- Warm, personal tone\n- Builds toward Book My Consultation\n- Sets up the consultation",
-      "editing": "- Documentary style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
-      "filming": "- Film at a meaningful, on-brand location\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
+      "details": "- A storytelling video from the coach, full voiceover over B-Roll only\n- Designed to build authority and connection\n- Warm, personal tone\n- The filming direction doubles as the client's B-Roll shot list\n- Builds toward Book My Consultation",
+      "editing": "- Full voiceover with B-Roll only, no talking head\n- Record the narration clean on a mic, then cut the B-Roll to it\n- Simple cuts only, change the visual every 1 to 2 seconds\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Calm background music under the voice track",
+      "filming": "- This concept runs entirely on B-Roll, film to this shot list\n- Coaching moments: a session in progress, hands-on guidance\n- The space: details of the studio or training area, natural light\n- The coach's world: arriving, planning at a desk, everyday movement\n- Lifestyle moments that match the story being told",
       "platform": "FACEBOOK + INSTAGRAM"
     },
     {
@@ -215,14 +215,6 @@
       "details": "- An incentive video for the audit\n- Designed to drive the booking\n- Direct and warm\n- Builds toward Book My Consultation\n- Names the audit as the way in",
       "editing": "- Talk-to-camera\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
       "filming": "- Film at a welcoming space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
-      "platform": "FACEBOOK + INSTAGRAM"
-    },
-    {
-      "hook": "Hook 1: A client on the first month back\nHook 2: What changed after twelve weeks\nHook 3: Real words from a real client",
-      "beats": "Clip 1: opening hook\nClip 2: main content\nClip 3: close and CTA",
-      "details": "- A second social proof video, new angle\n- Designed to deepen trust\n- Honest and specific\n- Builds toward Book My Consultation\n- Uses a real client story, client to supply",
-      "editing": "- Interview style\n- No over-editing, filters or transitions\n- Simple jump-cuts only\n- Edit on CapCut or a social editing tool\n- Captions in social font\n- Decide on background music or not",
-      "filming": "- Film at a comfortable, quiet space\n- Hold camera in your hand with head and shoulders in shot\n- Use hands and camera movement to add energy\n- Good, clear lighting\n- Film using the back camera if using a phone",
       "platform": "FACEBOOK + INSTAGRAM"
     },
     {
@@ -350,35 +342,45 @@
         "cta": "Book your private Strength and Lifestyle Audit with me."
       },
       {
-        "name": "Social Proof",
+        "name": "Social Proof (Client Interview)",
         "format": "Vertical 9:16",
-        "talent": "Coach or client",
+        "talent": "A willing client, interviewed by the coach off camera",
         "audience": "Busy professionals in their 30s and 40s",
-        "angle": "Trust",
-        "intro": "A client led piece that builds trust with an honest story.",
+        "angle": "A real client tells their own story, guided by the coach's questions",
+        "intro": "This is an interview, not a script to read. The coach asks the questions off camera and the client answers in their own words; the notes under each question say what to guide them to mention. Hook 1 is always the client's introduction line. Hooks 2 and 3 below are examples of the kind of lines to pull, the real ones come from the strongest moments in the client's actual answers during the edit. Repeat the same question set with a few different clients so each interview becomes its own ad variant.",
         "hooks": [
-          "A client of mine on what finally made training stick after years of stopping and starting",
-          "He works a full diary and still trains three times a week, here's how",
-          "What clients actually say after their first twelve weeks"
+          "Hi, I'm [NAME] and I've been training at Northside Strength for the past year.",
+          "I'd tried every plan going before this one actually stuck.",
+          "I train three times a week now and it just fits."
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
+            "direction": "Film the client's introduction line as Hook 1, a few takes until it sounds relaxed. Hooks 2 and 3 are pulled from the strongest answer moments in the edit, so capture the whole conversation cleanly."
           },
           {
-            "timestamp": "0:06",
-            "label": "Main",
-            "line": "He's got a demanding job and a full home life, but once the plan was built around his actual week, it finally stuck. The weekly review kept it honest."
+            "timestamp": "0:05",
+            "label": "Question 1, before",
+            "direction": "The coach asks off camera: what was training like before you came here? Guide them to mention the stopping and starting and what they had already tried."
           },
           {
-            "timestamp": "0:20",
-            "label": "Close",
-            "line": "If that sounds like you, the audit is where we map the same thing for your week."
+            "timestamp": "0:13",
+            "label": "Question 2, the turning point",
+            "direction": "The coach asks: what changed once you started? Guide them to mention the plan being built around their real week and the weekly review keeping it honest."
+          },
+          {
+            "timestamp": "0:21",
+            "label": "Question 3, life now",
+            "direction": "The coach asks: what does training look like now? Guide them to name how often they train and one thing outside the gym that feels different."
+          },
+          {
+            "timestamp": "0:28",
+            "label": "Question 4, who it's for",
+            "direction": "The coach asks: who would you recommend this to? Guide them toward busy people who are done starting over."
           }
         ],
-        "cta": "Book your private Strength and Lifestyle Audit with me."
+        "cta": "Book your private Strength and Lifestyle Audit and start the same way they did."
       },
       {
         "name": "Pattern Interrupt",
@@ -412,12 +414,12 @@
         "cta": "Book your private Strength and Lifestyle Audit with me."
       },
       {
-        "name": "Storytelling",
+        "name": "Storytelling (Full Voiceover B-Roll)",
         "format": "Vertical 9:16",
         "talent": "Coach",
         "audience": "Busy professionals in their 30s and 40s",
         "angle": "Authority and story",
-        "intro": "The coach shares the story behind the method.",
+        "intro": "The coach shares the story behind the method as a full voiceover with no talking head. Record the narration clean on a mic and cut the whole edit on B-Roll; the filming direction in the Creative Plan is the B-Roll shot list.",
         "hooks": [
           "I rebuilt my own training around a demanding career, and it changed how I coach",
           "This is the plan I wish someone had given me at thirty five",
@@ -500,37 +502,6 @@
             "timestamp": "0:16",
             "label": "Close",
             "line": "You leave with a personalised plan to keep, whatever you decide to do next."
-          }
-        ],
-        "cta": "Book your private Strength and Lifestyle Audit with me."
-      },
-      {
-        "name": "Social Proof",
-        "format": "Vertical 9:16",
-        "talent": "Client",
-        "audience": "Busy professionals in their 30s and 40s",
-        "angle": "Second proof angle",
-        "intro": "A second client voice, a new angle on the first month.",
-        "hooks": [
-          "A client on his first month back after years away from training",
-          "Honestly, I expected to quit by week three, same as always. I didn't",
-          "Real words from a real client with a proper full schedule"
-        ],
-        "script": [
-          {
-            "timestamp": "0:00",
-            "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
-          },
-          {
-            "timestamp": "0:07",
-            "label": "Main",
-            "line": "But it was small, steady steps that actually fit my week, with someone keeping me honest. That's what made the difference."
-          },
-          {
-            "timestamp": "0:20",
-            "label": "Close",
-            "line": "If you've been on the fence, the audit is exactly how I started."
           }
         ],
         "cta": "Book your private Strength and Lifestyle Audit with me."

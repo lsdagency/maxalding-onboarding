@@ -2,6 +2,14 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.13.0] - 2026-07-16
+
+### Changed
+- Social Proof video is now ONE concept in the client-interview format, for all coach and gym clients: the brand asks questions off camera, the script is a question set with guided responses (what to get the client to mention per answer), Hook 1 is always the client's introduction line ("Hi, I'm [NAME] and I've been training at [Client] for the past year"), Hooks 2 and 3 are pulled from the strongest answer moments in the edit (written as example pull-lines). The client records the same question set with several different clients or members, each interview becoming its own ad variant; the second Social Proof video concept is removed from the canonical set. From Liam's Fisica creative plan review (2026-07-16).
+- One video concept per plan runs as a full voiceover over B-Roll with no talking head, Storytelling by default. Its FILMING DIRECTION is a concrete B-Roll shot list that doubles as the client's filming brief, deliberately pushing clients to supply B-Roll.
+- Canonical tracker is now 12 rows (5 statics + 7 videos): build/creative_plan.py CANONICAL_TRACKER, references/creative-plan-spec.md and references/script-guidelines.md updated, evals/cases/sample_client.json restructured to match (interview-format social proof, voiceover storytelling, second social proof removed).
+- Pattern Interrupt stays canonical but may be dropped via tracker_concepts when it does not serve the plan (dropped for Fisica).
+
 ## [0.12.0] - 2026-07-16
 
 ### Added

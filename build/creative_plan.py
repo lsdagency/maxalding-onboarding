@@ -31,12 +31,11 @@ CANONICAL_TRACKER = [
     ("STATIC", "Social Proof (Review)"),
     ("STATIC", "Social Proof (Before & After)"),
     ("VIDEO", "Problem > Solution"),
-    ("VIDEO", "Social Proof"),
+    ("VIDEO", "Social Proof (Client Interview)"),
     ("VIDEO", "Pattern Interrupt"),
-    ("VIDEO", "Storytelling"),
+    ("VIDEO", "Storytelling (Full Voiceover B-Roll)"),
     ("VIDEO", "Benefit"),
     ("VIDEO", "Incentive"),
-    ("VIDEO", "Social Proof"),
     ("VIDEO", "Audience Addresser"),
 ]
 
