@@ -120,7 +120,8 @@ def build(data, out_dir, lead_form_only=False) -> str:
     _build_lead_form(wb, data)
     wb.remove(default_sheet)
     deliverable = "Meta Lead Form Copy" if lead_form_only else "Meta Ad & Lead Form Copy"
-    filename = T.deliverable_filename(data["client_business_name"], deliverable)
+    filename = T.deliverable_filename(data["client_business_name"], deliverable,
+                                      data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
     wb.save(out_path)
     return out_path
