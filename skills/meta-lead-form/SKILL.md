@@ -13,8 +13,8 @@ Read the shared Onboarding Feedback Log in full before writing (workspace folder
 ## Confirm the funnel first
 A lead form is not always the right tool. If the client's funnel is a landing page that sells or books directly (no instant forms), say so and confirm with the user before writing. A lead form fits an enquiry or interest-capture step, where a person is handed to the client to follow up, not a direct book-and-pay offer.
 
-## Delivering the file (do not hand-encode binaries)
-Build the XLSX and save it into the session outputs directory, then let the user open it with Google Drive (the Cowork native upload moves the real bytes). Never hand-encode the workbook as base64 into a Drive create-file call: reproducing thousands of base64 characters corrupts the xlsx and it will not open. If the user wants it in a specific Drive folder, ask which one, but the file still travels via the outputs directory and the open-with-Google-Drive step. This applies to ad copy and lead form copy both.
+## Delivering the file (campaign subfolder + do not hand-encode binaries)
+Save the built XLSX into the client's campaign subfolder in the workspace: `clients/<Client>/<Mon-DD>-<slug>-campaign/` (the campaign-subfolder rule; a specific-campaign deliverable never sits loose at the client root). Also copy it into the session outputs directory so the user can open it with Google Drive (the Cowork native upload moves the real bytes). Never hand-encode the workbook as base64 into a Drive create-file call: reproducing thousands of base64 characters corrupts the xlsx and it will not open. If the user wants it in a specific Drive folder, ask which one, but the file still travels via the outputs directory and the open-with-Google-Drive step. This applies to ad copy and lead form copy both.
 
 ## Read-only package, writable workspace
 This package is read-only at runtime. Save the generated XLSX into the client workspace folder and upload it to the location the user provided.

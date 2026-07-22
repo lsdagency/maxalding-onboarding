@@ -59,6 +59,11 @@ All notable changes to the Maxalding Onboarding plugin. Each rule change is trac
 ### Folded in from the funnel spec
 - Standard funnel automations defined by the Automation Workflow doc: Lead Follow Up (12 steps), Booked Call Confirmation (8 steps), No Show Rebook (6 steps), Long Term Nurture (6 fortnightly emails) (2026-06-26).
 
+## [0.10.3] - 2026-06-24
+
+### Fixed
+- meta-ad-copy and meta-lead-form skills now say to save the built file into the client's campaign subfolder (clients/<Client>/<Mon-DD>-<slug>-campaign/), not just the outputs directory, so standalone deliverables follow the campaign-subfolder rule.
+
 ## [0.10.2] - 2026-06-24
 
 ### Changed
