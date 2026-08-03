@@ -37,6 +37,7 @@ Intro
 
 Questions
 - List the prefilled fields, then one or two custom qualifying questions. Multiple choice qualifies better than free text and is easier to complete. Keep each question clear and under about 80 characters. Phrase questions to qualify (goal, timeframe, suburb), never to interrogate.
+- Meta does NOT allow custom questions that collect contact information (email addresses, phone numbers), that data only comes through the prefilled fields for the person submitting. So a form can never capture a third party's contact details (a referred friend, a partner, a parent's alternative contact). When the offer needs them (for example a referral campaign), the form captures the submitter only and the client collects the third party's details on the follow-up call; say so in the completion description so the lead expects it. (Feedback 2026-07-24, UBX anniversary referral.)
 - Data-use description (always include it). This is the small description box that sits with the form fields. Meta's own prompt for it reads: "Let people know how the information that they give you will be used or shared." Write a short, plain-language note that says how the details will be used and reassures the person they are not shared outside the business. Add it as a row in the QUESTIONS section, field name "Data-use description". This is separate from the formal Privacy section: this one is the friendly in-form note, the Privacy section holds the disclaimer and policy URL.
 
 Privacy
