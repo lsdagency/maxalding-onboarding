@@ -37,6 +37,7 @@ CONTENT_KINDS = {
     "description",
     "video_hook",
     "static_hook",
+    "hook_cell",
     "header",
 }
 
@@ -376,28 +377,50 @@ def check_post_copy_punctuation(seg: Segment) -> list:
     return []
 
 
-_HOOK_LABEL_RE = re.compile(r"^Hook \d+\b.*:")
+_LEGACY_HOOK_LABEL_RE = re.compile(r"^\s*Hook\s*\d*\s*(\([^)]*\))?\s*:", re.IGNORECASE)
 
 
-def check_hook_label(seg: Segment) -> list:
-    """Every HOOK cell line must be labelled 'Hook 1:'/'Hook 2:'/'Hook 3:'
-    (or 'Hook 1 (age):'/'(role):'/'(situation):' for the Audience Addresser).
-    This is the established house format; an unlabelled hook is a regression."""
-    if seg.kind not in ("video_hook", "static_hook"):
+def check_hook_single(seg: Segment) -> list:
+    """The Creative Tracker HOOK GUIDANCE column holds ONE hook, not three.
+
+    Feedback 2026-08-06 (Kure by Konrad): in practice only one hook was ever
+    used off the tracker, so the column was renamed HOOK GUIDANCE and now
+    carries the single strongest hook, perfected, to show at a glance how the
+    video is likely to open. One line, no "Hook 1:" label, because the column
+    name already says what it is.
+
+    This applies to the tracker only. The Video Ad Scripts still carry three
+    hook options (Option A, B, C, all filmed) and are unaffected.
+    """
+    if seg.kind != "hook_cell":
         return []
-    if not _HOOK_LABEL_RE.match(seg.text.strip()):
-        return [
+    lines = [ln for ln in seg.text.splitlines() if ln.strip()]
+    out = []
+    if len(lines) > 1:
+        out.append(
             Violation(
-                rule="hook-label",
+                rule="hook-single",
                 message=(
-                    "hook line must be labelled 'Hook 1:'/'Hook 2:'/'Hook 3:' "
-                    "(or 'Hook N (tag):' for the Audience Addresser)"
+                    f"HOOK GUIDANCE holds {len(lines)} hooks, must hold exactly "
+                    f"one. Pick the strongest and perfect it"
                 ),
                 location=seg.location,
-                snippet=seg.text[:60],
+                snippet=seg.text[:80].replace("\n", " / "),
             )
-        ]
-    return []
+        )
+    if lines and _LEGACY_HOOK_LABEL_RE.match(lines[0]):
+        out.append(
+            Violation(
+                rule="hook-single",
+                message=(
+                    'drop the "Hook 1:" label, the column is already named '
+                    "HOOK GUIDANCE and carries a single hook"
+                ),
+                location=seg.location,
+                snippet=lines[0][:60],
+            )
+        )
+    return out
 
 
 def check_tracker_date(seg: Segment) -> list:
@@ -489,7 +512,7 @@ SEGMENT_CHECKS = [
     check_premium_framing,
     check_lengths,
     check_hooks,
-    check_hook_label,
+    check_hook_single,
     check_tracker_date,
     check_no_date,
     check_post_copy_punctuation,

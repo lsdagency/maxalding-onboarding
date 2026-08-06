@@ -18,7 +18,7 @@ import os
 import sys
 
 from . import template as T
-from .creative_plan import build_creative_plan
+from .creative_plan import build_creative_plan, CANONICAL_TRACKER
 from .ad_copy import build_ad_copy
 from .video_ad_scripts import build_video_ad_scripts
 from .vsl_script import build_vsl_script
@@ -26,32 +26,44 @@ from .landing_page import build_landing_page
 from .crm_automation import build_crm_automation
 
 
-_STATIC_TRACKER_ROWS = 5
-_ADDRESSER_TAGS = ["(age)", "(role)", "(situation)"]
 
 
 def _sync_video_hooks(data):
-    """Single source of truth for video hooks. The Video Ad Script hook options
-    ARE the hooks; mirror them into the Creative Tracker video HOOK cells so the
-    tracker and the scripts can never show different hooks. Static rows are left
-    untouched. The Audience Addresser keeps its age/role/situation labels."""
+    """Single source of truth for video hooks.
+
+    The Video Ad Scripts still carry three hook options (Option A, B, C, all
+    filmed). The Creative Tracker carries ONE line: the HOOK GUIDANCE column,
+    which is the single strongest hook, there to show at a glance how the video
+    is likely to open (Feedback 2026-08-06, Kure by Konrad).
+
+    Option A is that hook, so write Option A as the strongest of the three.
+    Mirroring it here means the tracker and the scripts can never drift apart,
+    which is exactly what happened when a pack was built by calling the
+    generators directly instead of going through build_all.
+
+    Static rows are left untouched.
+    """
     concepts = data.get("scripts", {}).get("concepts", [])
     tracker = data.get("tracker", [])
+
+    # Map script concepts onto the VIDEO rows in order. Derive those rows from
+    # tracker_concepts rather than assuming the canonical five statics come
+    # first: a scoped plan may have fewer statics or none at all, and a fixed
+    # offset silently wrote the hooks onto the wrong rows.
+    concept_rows = data.get("tracker_concepts") or CANONICAL_TRACKER
+    video_rows = [i for i, (fmt, _) in enumerate(concept_rows) if fmt == "VIDEO"]
+
     for j, concept in enumerate(concepts):
-        idx = _STATIC_TRACKER_ROWS + j
-        if idx >= len(tracker):
+        if j >= len(video_rows):
             break
-        hooks = [h for h in concept.get("hooks", []) if h][:3]
+        idx = video_rows[j]
+        if idx >= len(tracker):
+            continue
+        hooks = [h for h in concept.get("hooks", []) if h]
         if not hooks:
             continue
-        addresser = "addresser" in concept.get("name", "").lower()
-        lines = []
-        for k, hook in enumerate(hooks):
-            if addresser and k < len(_ADDRESSER_TAGS):
-                lines.append(f"Hook {k + 1} {_ADDRESSER_TAGS[k]}: {hook}")
-            else:
-                lines.append(f"Hook {k + 1}: {hook}")
-        tracker[idx]["hook"] = "\n".join(lines)
+        # One hook, unlabelled: the column is already named HOOK GUIDANCE.
+        tracker[idx]["hook"] = hooks[0]
 
 
 def build_all(data, out_dir, workspace=None):

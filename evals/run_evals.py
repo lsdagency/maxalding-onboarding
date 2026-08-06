@@ -51,8 +51,8 @@ BAD_CASES = [
     ("video hook too long", "Hook 1: this spoken video hook is written to run well beyond twenty five words on purpose so the length check still fires for an overlong opening line today", "video_hook", "hook-length"),
     ("static hook too short", "too short", "static_hook", "hook-length"),
     ("date in header", "DATE: 19/06/2026", "header", "no-date-in-header"),
-    ("unlabelled video hook", "You start strong then a big week", "video_hook", "hook-label"),
-    ("unlabelled static hook", "Home by six and too cooked", "static_hook", "hook-label"),
+    ("three hooks in one tracker cell", "Hook 1: one\nHook 2: two\nHook 3: three", "hook_cell", "hook-single"),
+    ("legacy hook label in tracker cell", "Hook 1: Training keeps falling off your week", "hook_cell", "hook-single"),
     ("tracker date stamped", "today", "tracker_date", "tracker-date-blank"),
 ]
 
@@ -63,8 +63,9 @@ GOOD_CASES = [
     ("clean post copy", "A plan built around your week, so progress finally holds.", "post_copy"),
     ("clean headline", "Strength built around your week", "headline"),
     ("clean description", "Strength that lasts", "description"),
-    ("clean video hook", "Hook 1: Training keeps falling off your week", "video_hook"),
-    ("clean static hook", "Hook 1: Strength that fits a packed week", "static_hook"),
+    ("clean video hook", "Training keeps falling off your week", "video_hook"),
+    ("clean static hook", "Strength that fits a packed week", "static_hook"),
+    ("single unlabelled tracker hook cell", "Training keeps falling off your week", "hook_cell"),
     ("clean header", "CLIENT: Northside Strength Co", "header"),
 ]
 

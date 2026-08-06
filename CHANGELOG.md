@@ -2,6 +2,19 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.16.0] - 2026-08-06
+
+### Changed
+- Creative Tracker: the HOOK column is renamed HOOK GUIDANCE and now carries ONE hook on a single line, unlabelled, instead of three labelled variations. In practice only one hook was ever used off the tracker, so the column is now guidance: it shows at a glance how the video is likely to open and set up. Generate several angles with the ad-hooks skill, then pick the strongest and perfect it. From Liam's Kure by Konrad feedback (2026-08-06).
+- The Video Ad Scripts document is deliberately UNCHANGED and still carries three spoken hook options (Option A, B, C, all filmed). Option A must now be written as the strongest of the three, because build_all mirrors Option A into the tracker's HOOK GUIDANCE cell.
+
+### Added
+- Validator rule `hook-single`: a tracker hook cell holding more than one line, or carrying a legacy "Hook 1:" label, is an error. Uses a new `hook_cell` segment kind for the whole cell, because a per-line segment cannot tell how many hooks a cell holds. Replaces the old `hook-label` rule, which enforced the three-option format.
+
+### Fixed
+- build_all._sync_video_hooks assumed the canonical five statics came first (`_STATIC_TRACKER_ROWS = 5`) and mapped script concepts onto tracker rows by that fixed offset. Any plan scoped through `tracker_concepts` with fewer statics, or none, had its hooks written onto the wrong rows. Video rows are now derived from `tracker_concepts`, so the mapping follows the actual plan. Caught by the new hook-single rule on a zero-static plan.
+- Tracker and script hooks could silently diverge when a pack was built by calling the generators directly instead of going through `build_all`, which is what happened on the first Kure build. The sync is now documented in script-guidelines as mandatory: never hand-write the tracker hook cell.
+
 ## [0.15.0] - 2026-08-06
 
 ### Changed

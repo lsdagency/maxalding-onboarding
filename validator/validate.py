@@ -128,18 +128,24 @@ def scan_xlsx(path: str) -> list:
                 v = ws.cell(row=r, column=c).value
                 if isinstance(v, str):
                     row_labels[c] = v.strip().upper()
-            if "HOOK" in row_labels.values() or "POST COPY" in row_labels.values():
+            has_hook = any(lbl.startswith("HOOK") for lbl in row_labels.values())
+            if has_hook or "POST COPY" in row_labels.values():
                 header_row = r
                 headers = row_labels
                 break
 
         if header_row:
             label_to_col = {lbl: col for col, lbl in headers.items()}
+            # The hook column is "HOOK GUIDANCE" (renamed from "HOOK",
+            # Feedback 2026-08-06). Match either so older files still scan.
+            hook_label = next(
+                (lbl for lbl in label_to_col if lbl.startswith("HOOK")), None
+            )
 
-            # Creative Tracker: tag HOOK cells as static_hook / video_hook by
+            # Creative Tracker: tag hook cells as static_hook / video_hook by
             # the FORMAT column on the same row.
-            if "HOOK" in label_to_col and "FORMAT" in label_to_col:
-                hook_col = label_to_col["HOOK"]
+            if hook_label and "FORMAT" in label_to_col:
+                hook_col = label_to_col[hook_label]
                 fmt_col = label_to_col["FORMAT"]
                 for r in range(header_row + 1, ws.max_row + 1):
                     fmt = ws.cell(row=r, column=fmt_col).value
@@ -199,11 +205,15 @@ def scan_xlsx(path: str) -> list:
                 ov = overrides.get((r, c))
                 if ov and ov[0] == "hooklines":
                     # One segment per hook line for word-count checking, plus a
-                    # whole-cell content segment for char/meta/premium checks.
+                    # whole-cell segment. The whole cell is tagged hook_cell so
+                    # the one-hook-per-concept rule can see every line at once
+                    # (a per-line segment cannot tell how many hooks there are);
+                    # hook_cell is in CONTENT_KINDS so it still gets the
+                    # char/meta/premium checks the old "content" tag gave it.
                     for line in v.splitlines():
                         if line.strip():
                             segments.append(Segment(line.strip(), loc, kind=ov[1]))
-                    segments.append(Segment(v, loc, kind="content"))
+                    segments.append(Segment(v, loc, kind="hook_cell"))
                 elif ov and ov[0] == "kind":
                     segments.append(Segment(v, loc, kind=ov[1]))
                 else:

@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.15.0"
+version: "0.16.0"
 
 banned_characters:
   - id: em-dash
@@ -98,7 +98,9 @@ hook_style:
   video: "Each of the three video hook options (Creative Tracker video rows and Video Ad Script Option A/B/C) must sound like a voicenote said out loud to camera: natural spoken English, contractions, a real spoken opener where it fits (Okay, Real quick, Here's the thing, Don't scroll past this). Not a written slogan. The three must span DIFFERENT hook types, never three wordings of one idea: mix question, curiosity gap, urgency, bold statement, empathy or relatable and pattern interrupt, with at least one statement. Carry the campaign theme through without making all three sell."
   register: "The hook register must match the ICP's age and world, never a generic social voice. No under-30 slang (real talk, no cap, lowkey, vibe) for an over-30 audience. Slang only when the coach or ICP genuinely uses it on the transcript. Invoke the ad-hooks skill every time hooks are written or rewritten, including revision rounds."
   register_source: "Feedback 2026-07-15 (Built By Brun): 'real talk' aimed at men over 30 flagged; hooks had been rewritten by hand without re-invoking the skill."
-  note: "Craft rule, not machine-enforceable; the validator still checks hook length and the labelled format."
+  tracker_hook_guidance: "The Creative Tracker column is HOOK GUIDANCE (renamed from HOOK) and carries exactly ONE hook on one line, with no Hook 1/2/3 label. It is guidance: it shows at a glance how the video is likely to open, not a menu to choose from. Generate several angles with the ad-hooks skill, then pick the strongest and perfect it. The Video Ad Scripts are UNCHANGED and still carry three spoken options (Option A, B, C, all filmed); Option A must be the strongest because build_all mirrors it into the tracker cell. Enforced by validator rule hook-single."
+  tracker_hook_guidance_source: "Feedback 2026-08-06 (Kure by Konrad): only one hook was ever used off the tracker, and a hand-built pack let the tracker and script hooks diverge because it bypassed build_all._sync_video_hooks."
+  note: "Craft rule, not machine-enforceable; the validator still checks hook length and the one-hook tracker format."
   source: "Feedback 2026-07-02 (UBX); extends Built By Brun 2026-06-29 (natural spoken scripts) and (labelled hooks, real Meta hook craft)"
 
 naming_convention:
