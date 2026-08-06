@@ -84,6 +84,44 @@ def run_rule_evals():
     return failures
 
 
+def run_set_evals():
+    """Set-level checks look at a whole file at once, so validate_text (single
+    segment) cannot exercise them. Post copy variance is the case that matters:
+    every cell can be individually legal and the SET still be patterned."""
+    from validator.checks import Segment, run_set_checks
+
+    def rules_for(lengths):
+        segs = [
+            Segment("x" * n, f"f.xlsx [AD COPY!C{i}]", kind="post_copy")
+            for i, n in enumerate(lengths, start=2)
+        ]
+        return {v.rule for v in run_set_checks(segs)}
+
+    failures = []
+
+    # Clustered near the 125 limit: the original failure mode.
+    if "post-copy-variance" not in rules_for([118, 120, 121, 123, 124]):
+        failures.append("SET [clustered at limit] expected 'post-copy-variance'")
+
+    # Clustered in the middle: the 2026-08-06 failure mode, every cell legal.
+    if "post-copy-variance" not in rules_for([51, 58, 63, 67, 72]):
+        failures.append("SET [clustered mid-range] expected 'post-copy-variance'")
+
+    # Wide spread but nothing genuinely short.
+    if "post-copy-variance" not in rules_for([60, 75, 90, 105, 118]):
+        failures.append("SET [no short post] expected 'post-copy-variance'")
+
+    # A healthy hand-written spread must pass clean.
+    if rules_for([21, 34, 62, 89, 104]):
+        failures.append("SET [varied spread] expected clean")
+
+    # Below the minimum set size the spread is not judged.
+    if rules_for([60, 62]):
+        failures.append("SET [tiny set] expected clean")
+
+    return failures
+
+
 def run_build_eval():
     try:
         import openpyxl  # noqa: F401
@@ -132,6 +170,8 @@ def run_version_eval():
 def main():
     print("Running rule evals...")
     failures = run_rule_evals()
+    print("Running set-level evals...")
+    failures += run_set_evals()
     print("Running build eval...")
     failures += run_build_eval()
     print("Running version eval...")

@@ -418,6 +418,67 @@ def check_tracker_date(seg: Segment) -> list:
     return []
 
 
+# ---------------------------------------------------------------------------
+# Set-level check: post copy length variance (Feedback 2026-08-06)
+# ---------------------------------------------------------------------------
+def check_post_copy_variance(segments) -> list:
+    """Post copy lengths across a file must look hand-written, not machine-set.
+
+    Unlike every other check this one is SET level: the failure it catches is
+    invisible in any single cell. Each post can sit well under the 125 limit and
+    still be wrong, because what reads as patterned is the whole set landing on
+    roughly the same length. This has been raised repeatedly (copy clustered at
+    125, then later clustered at ~65), so it is enforced here rather than left
+    to judgement.
+    """
+    posts = [s for s in segments if s.kind == "post_copy" and s.text.strip()]
+    if len(posts) < rules.POST_COPY_VARIANCE_MIN_SET:
+        return []
+    lengths = [len(s.text.strip()) for s in posts]
+    shortest, longest = min(lengths), max(lengths)
+    spread = longest - shortest
+    location = posts[0].location.split(" [")[0]
+    out = []
+    if spread < rules.POST_COPY_MIN_RANGE:
+        out.append(
+            Violation(
+                rule="post-copy-variance",
+                message=(
+                    f"post copy lengths are clustered: {len(lengths)} posts span only "
+                    f"{spread} characters ({shortest} to {longest}), need at least "
+                    f"{rules.POST_COPY_MIN_RANGE}. Vary length on purpose, the limit "
+                    f"is a ceiling not a target"
+                ),
+                location=location,
+            )
+        )
+    if shortest > rules.POST_COPY_SHORT_MAX:
+        out.append(
+            Violation(
+                rule="post-copy-variance",
+                message=(
+                    f"no genuinely short post copy: the shortest is {shortest} "
+                    f"characters, at least one should be {rules.POST_COPY_SHORT_MAX} "
+                    f"or under. Short often reads stronger"
+                ),
+                location=location,
+            )
+        )
+    return out
+
+
+SET_CHECKS = [
+    check_post_copy_variance,
+]
+
+
+def run_set_checks(segments) -> list:
+    violations = []
+    for check in SET_CHECKS:
+        violations.extend(check(segments))
+    return violations
+
+
 SEGMENT_CHECKS = [
     check_characters,
     check_banned_words,

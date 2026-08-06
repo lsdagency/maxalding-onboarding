@@ -1,6 +1,8 @@
 # Creative Plan XLSX, detailed spec
 
-Build with the Python build module (build/creative_plan.py). Three tabs.
+Build with the Python build module (build/creative_plan.py). TWO tabs: BRAND PACK and CREATIVE TRACKER.
+
+Ad copy is NOT a tab in the Creative Plan. It always ships as its own workbook, built with build/ad_copy.py and named "MAXALDING - [Client] - [Campaign] - Meta Ad Copy.xlsx" (Feedback 2026-08-06, Kure by Konrad). The AD COPY section below is the content spec for that separate workbook, and remains the single source of truth for the ad copy rules.
 
 ## XLSX formatting (mandatory)
 - Font: Helvetica Neue throughout, not Arial, not Calibri.
@@ -51,13 +53,14 @@ BEATS: statics use Graphic 1, 2, 3; videos use Clip 1 opening, Clip 2 main conte
 DETAILS: 4 to 5 dashed bullets, specific to the client.
 EDITING DIRECTION and FILMING DIRECTION: bullet format with a dash prefix on every point, per the templates in the System Prompt.
 
-## Tab 3, AD COPY
+## AD COPY (separate workbook, build/ad_copy.py)
 Apply ads, ad-creative and copywriting before writing. Columns: number, CONCEPT, POST COPY, CHARS. No STATUS column, no CTA column or note.
 - Organise by distinct concept only, no duplicate concept rows.
 - 5 post copy variations per concept.
 - One shared block of 5 headlines and one shared description that cover all concepts.
 - CHARS is a live LEN formula on the copy cell.
 - Post copy no longer than 125 characters, built to stop the scroll with a clear hook in the first line. Each of the five is unique: a genuinely different angle or approach, not a reworded version of the others. Maximum one rhetorical question per post. Do not end a post copy with a full stop, it reads unnatural in an ad.
+- LENGTH VARIANCE (enforced by the QA gate, rule `post-copy-variance`). 125 is a CEILING, not a target, and neither is any other number. The repeated failure here is writing every post to roughly the same length: first everything near 125, then later everything near 65. Both read machine-made. Write each post at the length its idea needs and let the set land unevenly. Concretely, across the whole set: the shortest and longest must differ by at least 45 characters, and at least one post must be 50 characters or under. A healthy set mixes genuinely short punchy lines (roughly 20 to 40 characters, often the strongest) with mid-length lines and a few longer ones near the limit. Check the spread before saving; if the lengths look like a flat line, rewrite rather than trim.
 - Headlines no more than 40 characters, ideally 30. Always include one audience-addresser variation and one offer variation, plus a few others on different angles.
 - Description one only, no more than 25 characters. Use the client tagline where it fits. It should tie the messaging together, not repeat the offer already carried by the post copy and headlines.
 - Emoji and length are fluid and intentional, never a pattern. Lean into emoji: aim for around a third of the posts to carry one, varied and never one-per-row, with some left bare. Prefer premium, on-brand emoji (sparkle, white heart, warm heart, leaf, location pin, house, sun) over hype or loud ones (no fire, 100, rocket, heart-eyes), subject to brand tone. Match the emoji to the AUDIENCE, not only the brand: for a male or masculine audience (for example men over 30), avoid soft or feminine-coded emoji such as white heart, warm heart, leaf or sun; use a neutral, relevant emoji like a location pin sparingly, or none. The set above is a menu, not a mandate, and fewer emoji often reads better for a masculine audience. Draw the emoji from the client's emoji palette (defined at intake from the ICP and shown in the Brand Pack TONE OF VOICE), matched to each post's angle (for example a time emoji on a no-time post, a location pin on a local post). Do not pad copy to reach the character limit: if shorter reads stronger, keep it shorter.

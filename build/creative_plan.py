@@ -1,11 +1,14 @@
 """
 Creative Plan XLSX generator (System Prompt section 8).
 
-Three tabs:
+Two tabs:
   1. BRAND PACK       label/value with black section headers, NO KPIs section
-  2. CREATIVE TRACKER 13 rows (5 statics then 8 videos), dropdowns, live formulas
-  3. AD COPY          distinct concepts, 5 post variations each, shared headlines
-                      and one description, all with live =LEN() formulas
+  2. CREATIVE TRACKER dropdowns, live formulas, blank DATE column
+
+Ad copy is NOT a tab here. It ships as its own workbook, built by
+build/ad_copy.py (Feedback 2026-08-06, Kure by Konrad). The AD COPY tab builder
+below (_build_ad_copy) is retained because build/ad_copy.py reuses it, so the
+standalone workbook keeps byte-for-byte identical layout and styling.
 
 The generator takes a structured `data` dict (the campaign content the agents
 produce) and lays it out to spec. See evals/cases/sample_client.json for the
@@ -256,7 +259,7 @@ def build_creative_plan(data, out_dir):
     wb = openpyxl.Workbook()
     _build_brand_pack(wb, data)
     _build_tracker(wb, data)
-    _build_ad_copy(wb, data)
+    # No AD COPY tab: ad copy ships as its own workbook via build/ad_copy.py.
 
     filename = T.deliverable_filename(data["client_business_name"], "Creative Plan", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)

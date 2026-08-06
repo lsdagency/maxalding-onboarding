@@ -46,7 +46,8 @@ Description
 - Tie the messaging together. Do not repeat the offer already carried by the post copy and headlines.
 
 Fluid, not patterned (this is the rule that gets missed)
-- Vary length on purpose. Do NOT pad toward 125. Short often reads stronger. The set of lengths across the five should look hand-written, not clustered near the limit.
+- Vary length on purpose. 125 is a CEILING, not a target, and neither is any other number. The recurring failure is writing every post to roughly the SAME length: first everything near 125, later everything near 65. Both read machine-made. Clustering anywhere is the bug, not just clustering at the limit.
+- Enforced by the QA gate (rule `post-copy-variance`): across the whole set the shortest and longest must differ by at least 45 characters, and at least one post must be 50 characters or under. A healthy set mixes genuinely short punchy lines (roughly 20 to 40 characters, often the strongest) with mid-length lines and a few nearer the limit. Write each post at the length its idea needs, then check the spread before saving. If the lengths look like a flat line, rewrite rather than trim.
 - Emoji are intentional, not decorative, but lean in: aim for around a third of the posts to carry one, varied in placement, never one-per-row as a pattern, with some posts left bare. Prefer premium, on-brand emoji (sparkle, white heart, warm heart, leaf, location pin, house, sun) and never hype or loud ones (no fire, 100, rocket, heart-eyes). Match the emoji to the AUDIENCE, not only the brand: for a male or masculine audience (men over 30) avoid soft or feminine-coded emoji (white heart, warm heart, leaf, sun) and use a neutral relevant emoji sparingly or none. Where the client has a defined emoji palette (from the onboarding, in the Brand Pack), draw from it and match the emoji to each post's angle.
 
 Banned copy (zero exceptions, scan every cell including build-script strings)

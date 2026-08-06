@@ -162,6 +162,20 @@ POST_COPY_MAX = 125
 HEADLINE_MAX = 40
 DESCRIPTION_MAX = 25
 
+# ---------------------------------------------------------------------------
+# Post copy length VARIANCE (Feedback 2026-08-06, Kure by Konrad)
+# The limit is a ceiling, not a target. Copy written to a roughly constant
+# length reads patterned and machine-made, whether it clusters at 125 or at 65.
+# These are set-level rules: they look at every post copy cell in a file at
+# once, not one cell at a time.
+#   - the set must SPAN at least POST_COPY_MIN_RANGE characters end to end
+#   - at least one post must be genuinely short (<= POST_COPY_SHORT_MAX)
+# Waive with --skip-rules post-copy-variance if a set is deliberately uniform.
+# ---------------------------------------------------------------------------
+POST_COPY_MIN_RANGE = 45
+POST_COPY_SHORT_MAX = 50
+POST_COPY_VARIANCE_MIN_SET = 5   # below this many posts, do not judge the spread
+
 # Hook word-count limits (System Prompt section 8; Feedback 2026-07-07 UBX).
 # A video hook is a SPOKEN opening line and may be a full sentence or two (per
 # the ad-hooks skill), so it is capped generously, not clipped to a short

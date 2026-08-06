@@ -23,6 +23,7 @@ from .checks import (
     Segment,
     Result,
     run_segment_checks,
+    run_set_checks,
     check_naming,
     is_rule_statement,
 )
@@ -243,6 +244,9 @@ def scan_file(path: str, check_names: bool = True) -> list:
     else:
         return []
     violations.extend(run_segment_checks(segments))
+    # Set-level checks look at the whole file at once (for example post copy
+    # length variance, which no single cell can reveal).
+    violations.extend(run_set_checks(segments))
     return violations
 
 

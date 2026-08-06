@@ -2,6 +2,20 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.15.0] - 2026-08-06
+
+### Changed
+- The Creative Plan is now TWO tabs (BRAND PACK, CREATIVE TRACKER). Ad copy is no longer a tab in it and always ships as its own workbook, built by build/ad_copy.py. build.build_all now builds the Meta Ad Copy workbook alongside the Creative Plan whenever ad_copy.concepts is present, so a full onboarding run still produces the copy. From Liam's Kure by Konrad feedback (2026-08-06).
+
+### Added
+- Deterministic post copy LENGTH VARIANCE rule (validator rule `post-copy-variance`). The character limit is a ceiling, not a target: a set of posts all written to roughly the same length reads machine-made whether it clusters at 125 or at 65. Across a file, post copy must span at least 45 characters end to end and at least one post must be 50 characters or under. Waive with `--skip-rules post-copy-variance`.
+- First SET-LEVEL check in the validator (checks.run_set_checks, wired into validate.scan_file). Every previous check judged one cell at a time, which is why this failure was invisible to the QA gate: each cell was individually legal and only the whole set was wrong.
+- Set-level evals in evals/run_evals.py covering both clustering modes (at the limit and mid-range), the no-short-post case, a healthy spread, and a below-threshold set.
+
+### Fixed
+- The canonical AD COPY example in evals/cases/sample_client.json was itself clustered (35 posts spanning 40 to 85 characters), so it taught the very pattern the fluidity rule forbids. Rewritten with a genuine spread (18 to 104 characters, 19 posts at or under 50). This was the root cause of the rule being missed repeatedly.
+- The length-variance guidance was buried inside a long emoji bullet in creative-plan-spec.md. It now has its own explicit, measurable bullet, and the meta-ad-copy skill carries the same wording.
+
 ## [0.14.0] - 2026-07-16
 
 ### Added

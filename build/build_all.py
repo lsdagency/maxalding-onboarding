@@ -19,6 +19,7 @@ import sys
 
 from . import template as T
 from .creative_plan import build_creative_plan
+from .ad_copy import build_ad_copy
 from .video_ad_scripts import build_video_ad_scripts
 from .vsl_script import build_vsl_script
 from .landing_page import build_landing_page
@@ -69,6 +70,10 @@ def build_all(data, out_dir, workspace=None):
 
     outputs = {}
     outputs["Creative Plan"] = build_creative_plan(data, out_dir)
+    # Ad copy is its own workbook, no longer a Creative Plan tab
+    # (Feedback 2026-08-06, Kure by Konrad).
+    if data.get("ad_copy", {}).get("concepts"):
+        outputs["Meta Ad Copy"] = build_ad_copy(data, out_dir)
     outputs["Video Ad Scripts"] = build_video_ad_scripts(data, out_dir, workspace=workspace)
     outputs["VSL Script"] = build_vsl_script(data, out_dir, workspace=workspace)
     outputs["Landing Page Copy"] = build_landing_page(data, out_dir, workspace=workspace)
