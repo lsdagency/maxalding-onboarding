@@ -318,15 +318,13 @@
         "angle": "Time pressure",
         "intro": "A calm talk-to-camera piece that names the busy-week problem and points to a plan that fits.",
         "hooks": [
-          "Training keeps slipping the moment work gets busy, and it's not a discipline problem",
-          "You don't need more hours in your week, you need a plan that fits the ones you've got",
-          "Here's why your consistency keeps breaking down in week three"
+          "Training keeps slipping the moment work gets busy, and it's not a discipline problem"
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
+            "direction": "The hook above is the first spoken line of the take. Speak it and continue straight into the script below, it is all one take."
           },
           {
             "timestamp": "0:05",
@@ -349,15 +347,13 @@
         "angle": "A real client tells their own story, guided by the coach's questions",
         "intro": "This is an interview, not a script to read. The coach asks the questions off camera and the client answers in their own words; the notes under each question say what to guide them to mention. Hook 1 is always the client's introduction line. Hooks 2 and 3 below are examples of the kind of lines to pull, the real ones come from the strongest moments in the client's actual answers during the edit. Repeat the same question set with a few different clients so each interview becomes its own ad variant.",
         "hooks": [
-          "Hi, I'm [NAME] and I've been training at Northside Strength for the past year.",
-          "I'd tried every plan going before this one actually stuck.",
-          "I train three times a week now and it just fits."
+          "Hi, I'm [NAME] and I've been training at Northside Strength for the past year."
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film the client's introduction line as Hook 1, a few takes until it sounds relaxed. Hooks 2 and 3 are pulled from the strongest answer moments in the edit, so capture the whole conversation cleanly."
+            "direction": "The hook above is the first spoken line of the take. Speak it and continue straight into the script below, it is all one take."
           },
           {
             "timestamp": "0:05",
@@ -390,15 +386,13 @@
         "angle": "Stop the scroll",
         "intro": "An opener that breaks the pattern then delivers value.",
         "hooks": [
-          "Most training plans ignore your calendar, and that's exactly why they fail",
-          "You don't need to train every day, and I can prove it",
-          "Stop scrolling if your training keeps dying in week three"
+          "Real quick, because I see this with almost every busy professional I meet"
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
+            "direction": "The hook above is the first spoken line of the take. Speak it and continue straight into the script below, it is all one take."
           },
           {
             "timestamp": "0:05",
@@ -421,15 +415,13 @@
         "angle": "Authority and story",
         "intro": "The coach shares the story behind the method as a full voiceover with no talking head. Record the narration clean on a mic and cut the whole edit on B-Roll; the filming direction in the Creative Plan is the B-Roll shot list.",
         "hooks": [
-          "I rebuilt my own training around a demanding career, and it changed how I coach",
-          "This is the plan I wish someone had given me at thirty five",
-          "Here's the method behind the way we coach busy professionals"
+          "I rebuilt my own training around a demanding career, and it changed how I coach"
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
+            "direction": "The hook above is the first spoken line of the take. Speak it and continue straight into the script below, it is all one take."
           },
           {
             "timestamp": "0:07",
@@ -452,15 +444,13 @@
         "angle": "Energy and capability",
         "intro": "A benefit led piece on energy and capability at work.",
         "hooks": [
-          "Imagine strength you can actually feel at work, not just in the gym",
-          "More energy through the afternoon, week after week, without training every day",
-          "Real quick, what would steady energy through your week actually be worth?"
+          "Imagine strength you can actually feel at work, not just in the gym"
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
+            "direction": "The hook above is the first spoken line of the take. Speak it and continue straight into the script below, it is all one take."
           },
           {
             "timestamp": "0:06",
@@ -483,15 +473,13 @@
         "angle": "The audit offer",
         "intro": "A direct, warm push to book the audit.",
         "hooks": [
-          "Your private Strength and Lifestyle Audit is open this month",
-          "One private session with me, one clear plan built around your week",
-          "You leave with a plan to keep, whatever you decide next"
+          "Your private Strength and Lifestyle Audit is open this month"
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
+            "direction": "The hook above is the first spoken line of the take. Speak it and continue straight into the script below, it is all one take."
           },
           {
             "timestamp": "0:05",
@@ -514,15 +502,13 @@
         "angle": "Direct callout",
         "intro": "A direct callout that names age, role and daily situation.",
         "hooks": [
-          "If you're in your 30s or 40s and short on time, this one's for you",
-          "Desk job all day and your training keeps slipping? Listen up",
-          "Your week runs you instead of the other way round? I built this for you"
+          "If you're in your 30s or 40s and short on time, this one's for you"
         ],
         "script": [
           {
             "timestamp": "0:00",
             "label": "Hook",
-            "direction": "Film all three hook options above, one at a time as separate takes. Everything below is the same take, whichever hook you use."
+            "direction": "The hook above is the first spoken line of the take. Speak it and continue straight into the script below, it is all one take."
           },
           {
             "timestamp": "0:06",

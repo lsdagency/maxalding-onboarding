@@ -90,10 +90,12 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
             T.add_body(doc, concept["intro"])
 
         doc.add_paragraph()
-        T.add_body(doc, "Hook Options (film all three):", bold=True)
-        for letter, hook in zip("ABC", concept.get("hooks", [])):
-            T.add_body(doc, f"Option {letter}:")
-            T.add_script_line(doc, hook)
+        T.add_body(doc, "Hook (the opening line):", bold=True)
+        # One hook per concept (0.17.0). A legacy data file may still carry a
+        # list of options; the first entry is the hook.
+        hooks = concept.get("hooks", [])
+        if hooks:
+            T.add_script_line(doc, hooks[0])
 
         doc.add_paragraph()
         T.add_body(doc, "Script:", bold=True)

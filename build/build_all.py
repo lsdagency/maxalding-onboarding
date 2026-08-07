@@ -31,15 +31,16 @@ from .crm_automation import build_crm_automation
 def _sync_video_hooks(data):
     """Single source of truth for video hooks.
 
-    The Video Ad Scripts still carry three hook options (Option A, B, C, all
-    filmed). The Creative Tracker carries ONE line: the HOOK GUIDANCE column,
-    which is the single strongest hook, there to show at a glance how the video
-    is likely to open (Feedback 2026-08-06, Kure by Konrad).
+    Each script concept carries ONE hook (0.17.0; Feedback 2026-08-07,
+    BodyShaping: hook and body must chain as one continuous spoken piece, which
+    three swappable options could never do). The Creative Tracker HOOK GUIDANCE
+    column carries that same line, there to show at a glance how the video
+    opens (Feedback 2026-08-06, Kure by Konrad).
 
-    Option A is that hook, so write Option A as the strongest of the three.
     Mirroring it here means the tracker and the scripts can never drift apart,
     which is exactly what happened when a pack was built by calling the
-    generators directly instead of going through build_all.
+    generators directly instead of going through build_all. A legacy data file
+    may still carry a list of options; the first entry is the hook.
 
     Static rows are left untouched.
     """

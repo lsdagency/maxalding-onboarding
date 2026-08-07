@@ -24,12 +24,12 @@ Good news, your full creative pack is ready. Everything is in the folder here: [
 
 What's inside:
 - Creative Plan (the master spreadsheet: brand pack, creative tracker and all ad copy)
-- Video Ad Scripts ([N] concepts, each with three hook options and filming guidance)
+- Video Ad Scripts ([N] concepts, each with its opening hook and filming guidance)
 - VSL Script (the video for your landing page)
 - Landing Page Copy
 - CRM Automation (the email and SMS follow-up copy for [CRM NAME])
 
-One note before you read the scripts: nothing needs to be read word for word. Each video has three hook options, film all three, then the rest is one take. Say it in your own words and keep it natural, hitting the beats matters more than the exact lines.
+One note before you read the scripts: nothing needs to be read word for word. Each video opens on its hook line and runs as one take from there. Say it in your own words and keep it natural, hitting the beats matters more than the exact lines.
 
 Everything you film or dig out goes into this upload folder:
 [UPLOAD FOLDER LINK]

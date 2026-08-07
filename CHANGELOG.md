@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.17.0] - 2026-08-07
+
+### Changed
+- Video Ad Scripts: ONE hook per concept, and it must CHAIN into the script body. The Option A/B/C menu is retired. The hook is the first spoken line of the take and the body's first line continues the thought, never restates it (hook "One of my clients came to me tired" followed by body "He came to me tired" is the failure). Three swappable hooks over one fixed body could never truly chain: hooks either disconnected from the body (Amir's original flag) or, once tied in, duplicated the body's opening line (Liam's follow-up flag). Write hook plus body as one continuous spoken piece, read aloud back to back before accepting. Updated in agents/scriptwriting.md, skills/client-onboarding/references/script-guidelines.md, rules/rules.yaml (hook_style.video, new hook_body_chaining), build/video_ad_scripts.py (renders "Hook (the opening line)" from the single hook; legacy hook lists fall back to the first entry), build/build_all.py docstring, and the handover email template. The Audience Addresser hook is now one callout built from the strongest of age, role or situation. Creative Tracker HOOK GUIDANCE mirroring is unchanged and now trivially identical to the script hook. From Liam's BodyShaping feedback (2026-08-07).
+
 ## [0.16.0] - 2026-08-06
 
 ### Changed
