@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.19.0"
+version: "0.20.0"
 
 banned_characters:
   - id: em-dash
@@ -141,6 +141,7 @@ creative_plan:
   brand_pack_no_kpis: true
   tracker_columns: ["#", DATE, FORMAT, RESOLUTION, STATUS, PLATFORM, FILE TYPE, AUDIENCE, CONCEPT, HOOK, BEATS, DETAILS, EDITING DIRECTION, FILMING DIRECTION, SCRIPT, FINAL ASSET]
   tracker_rows: "7 statics then 7 videos (14 total). Scope either half via tracker_concepts."
+  static_hook_blank: "Statics leave the HOOK GUIDANCE cell BLANK. All of a static's on-screen copy, hook line included, lives in BEATS with the subline or bullets and the CTA. Carrying the hook in both columns repeats it and reads as confusing. HOOK GUIDANCE is effectively a video-only column. Validator warns via rule static-hook-blank. Feedback 2026-08-11 (Xcelerate Performance)."
   static_template: "ONE graphic per static row, never three variations, because the tracker carries one perfected hook. BEATS describes the elements on that single graphic, each on its own line, and must say what the static IS. Coach template: Problem > Solution (two lines, the pain point and the solution, plus a CTA, B-Roll imagery); Incentive (hook line and a clear CTA to the offer, no subline, B-Roll imagery); Benefit (hook line, a checklist of three to four bullets on what comes in the package and the standout benefits, then a CTA, B-Roll imagery); Social Proof Review (five star rating, who it is from, one key quote pulled from the review, client supplies review and photo); Social Proof Progress (50:50 split, before and after from a client or the coach himself, hook naming the change, client supplies transformation photos); Location (annotated map of the area, hook asking the local question, clear CTA, B-Roll with the map over the top); Audience Addresser (hook calls the audience out directly, clear CTA, B-Roll of the ICP). Gyms are likely to differ, adapt rather than force. Where the end user is a MINOR, never run a body before-and-after on the Progress static, use the coach's own transformation or a documented performance figure."
   static_template_source: "Feedback 2026-08-11 (Xcelerate Performance)"
   file_type_formula: '=IF(C{row}="STATIC","JPG","MP4")'

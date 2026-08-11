@@ -304,19 +304,25 @@ def check_hooks(seg: Segment) -> list:
                 )
             )
     elif seg.kind == "static_hook":
-        n = _word_count(seg.text)
-        if n < rules.STATIC_HOOK_MIN_WORDS or n > rules.STATIC_HOOK_MAX_WORDS:
-            out.append(
-                Violation(
-                    rule="hook-length",
-                    message=(
-                        f"static hook is {n} words, must be "
-                        f"{rules.STATIC_HOOK_MIN_WORDS} to {rules.STATIC_HOOK_MAX_WORDS}"
-                    ),
-                    location=seg.location,
-                    snippet=seg.text[:60],
-                )
+        # Statics leave HOOK GUIDANCE BLANK (Feedback 2026-08-11, Xcelerate
+        # Performance). All the on-screen copy for a static, the hook line, any
+        # subline or bullets and the CTA, lives in BEATS. Carrying the hook line
+        # in both columns just repeats it and reads as confusing. HOOK GUIDANCE
+        # is effectively a video-only column now.
+        if not seg.text.strip():
+            return out
+        out.append(
+            Violation(
+                rule="static-hook-blank",
+                message=(
+                    "statics leave HOOK GUIDANCE blank; the hook line belongs in "
+                    "BEATS with the rest of the on-screen copy"
+                ),
+                location=seg.location,
+                snippet=seg.text[:60],
+                severity="warn",
             )
+        )
     return out
 
 

@@ -2,6 +2,22 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.20.0] - 2026-08-11
+
+### Changed
+- Statics now leave the HOOK GUIDANCE cell BLANK. All of a static's on-screen copy, hook line included, already lives in BEATS alongside the subline or bullets and the CTA, so carrying the hook in both columns just repeated it and read as confusing. HOOK GUIDANCE is effectively a video-only column now: it exists to show at a glance how a VIDEO opens, which a static does not need because its whole copy is written out in BEATS. From Liam's Xcelerate Performance feedback (2026-08-11), raised as a forward-looking rule, so no existing deliverable was rebuilt.
+- The static overlay hook is still written to the 5 to 10 word rule, it just lives as the first line of BEATS rather than in its own column.
+- evals/cases/sample_client.json: the seven static hooks are blanked and their hook lines folded into BEATS, so the canonical example teaches the new shape.
+
+### Added
+- Validator rule `static-hook-blank` (WARNING): a populated static HOOK GUIDANCE cell is flagged with a pointer to put the line in BEATS. A warning rather than an error so older packs still build.
+
+### Removed
+- The static hook length check. A blank static hook cell used to fail `hook-length` for being under five words, which would have made the new rule unusable. Video hooks are unaffected and still capped at 25 words.
+
+### Fixed
+- creative-plan-spec.md still said "the canonical 13 rows" and "the build mirrors the script's Option A hook", both stale since 0.18.0 and 0.17.0 respectively.
+
 ## [0.19.0] - 2026-08-11
 
 ### Added
