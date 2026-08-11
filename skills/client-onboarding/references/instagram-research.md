@@ -28,5 +28,6 @@ If the venv is missing the tools, install them: `.venv/bin/pip install yt-dlp st
 ## Feeding the results forward
 
 - Brand memory: real voice patterns, recurring phrases, natural content formats, visual grammar. The "words to use" list should prefer words the client demonstrably uses.
+- A "How [name] actually talks" block is MANDATORY in the Brand memory and in the Brand Pack TONE OF VOICE, written from the transcripts rather than from the questionnaire's tone section. Cover: typical sentence length, their standard opener, tag questions, filler words, what they repeat for emphasis, and a handful of phrases quoted verbatim. Count the recurring words off the transcript rather than guessing at them. Every spoken line in the scripts and VSL is then written against that block and read back in their voice (Feedback 2026-08-11, Xcelerate Performance: the transcripts were taken but the scripts were written in a generic voice anyway, and Liam spotted the AI cadences immediately).
 - Scripts and hooks: video hooks must sound like this person speaking, and scripts must be filmable in the environments seen in the reels. If the client never talks to camera, flag that before scripting a talking-head concept.
 - Creative Plan: existing-post ads nominated by the user get their captions and transcripts pulled in this step so the plan can reference them accurately.

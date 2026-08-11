@@ -2,6 +2,16 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.21.0] - 2026-08-11
+
+### Added
+- writing-rules.md: an AI CADENCES section listing the banned SHAPES rather than banned words. The significance clause bolted on to explain why what you just said matters ("and that's the whole reason I ended up coaching", "because nobody ever spells this out", "which is exactly why it works"); the neat balanced summary ("coached as one of twenty"); the "not X, it is Y" contrast; stacked subordinate clauses in a spoken line; and explaining your own point straight after making it. Liam flagged three of these in the Xcelerate scripts as "obvious Claude AI lines, I've seen them over and over again" (2026-08-11).
+- writing-rules.md: a "Write in the client's actual register" section. Every onboarding already transcribes the client's Instagram at Stage 1, and that transcript IS the register. Mine it for sentence length, openers, tag questions, filler words and repeated phrases, and write every spoken line against it.
+- instagram-research.md: a "How [name] actually talks" block is now MANDATORY in the Brand memory and in the Brand Pack TONE OF VOICE, written from the transcripts rather than the questionnaire's tone section, with the recurring words counted off the transcript rather than guessed at.
+
+### Why
+The Xcelerate run transcribed nine reels at Stage 1 and then wrote the scripts in a generic voice anyway. The research existed and went unused, which is a process failure the rules did not previously catch: the register rule was there but soft, buried in a sentence about hook slang. It is now its own requirement with a named artefact.
+
 ## [0.20.0] - 2026-08-11
 
 ### Changed
