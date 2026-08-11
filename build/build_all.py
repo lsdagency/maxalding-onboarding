@@ -23,6 +23,7 @@ from .ad_copy import build_ad_copy
 from .video_ad_scripts import build_video_ad_scripts
 from .vsl_script import build_vsl_script
 from .landing_page import build_landing_page
+from .lead_form import build as build_lead_form
 from .crm_automation import build_crm_automation
 
 
@@ -89,7 +90,16 @@ def build_all(data, out_dir, workspace=None):
         outputs["Meta Ad Copy"] = build_ad_copy(data, out_dir)
     outputs["Video Ad Scripts"] = build_video_ad_scripts(data, out_dir, workspace=workspace)
     outputs["VSL Script"] = build_vsl_script(data, out_dir, workspace=workspace)
-    outputs["Landing Page Copy"] = build_landing_page(data, out_dir, workspace=workspace)
+    # The funnel decides which destination deliverable is produced. A lead-form
+    # funnel gets Meta Lead Form copy; a landing-page funnel gets Landing Page
+    # copy. Writing the wrong one wastes the deliverable, so funnel_type is
+    # settled with the user at the Stage 2 gate (Feedback 2026-08-11,
+    # Xcelerate Performance, which ran an Instant Form and was handed a
+    # landing page). Default stays landing_page for older data files.
+    if data.get("funnel_type") == "lead_form":
+        outputs["Meta Lead Form Copy"] = build_lead_form(data, out_dir, lead_form_only=True)
+    else:
+        outputs["Landing Page Copy"] = build_landing_page(data, out_dir, workspace=workspace)
     outputs["CRM Automation"] = build_crm_automation(data, out_dir, workspace=workspace)
     return outputs
 

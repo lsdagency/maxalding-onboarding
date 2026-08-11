@@ -11,8 +11,8 @@ Top context block in bold: the scripts are guidance only and must not be read wo
 ## Recording best practice (8 points)
 Vertical 9:16; strong first frame, eyes to lens immediately; eye level, arm's length, face centred; natural light facing a window; quiet room, test a 5 second clip, use a mic; clean background with brand cues; calm confident pace, pause after key lines; record 3 takes.
 
-## Editing best practice (research it every run)
-The document carries an EDITING BEST PRACTICE section after RECORDING BEST PRACTICE, so the editor has current paid-social / Reels guidance in the same file. Before each build, RESEARCH current best-practice editing tips for Instagram Reels and Meta video ads (web search) and pass the refreshed list as `data["scripts"]["editing_best_practice"]`; the builder falls back to a sensible evergreen default if none is supplied. Keep it in the same dashed bullet format. Typical points: win the first 3 seconds on the hook, burned-in captions for sound-off, 9:16 safe zones, cut dead air and change something visual every 1 to 2 seconds, short high-contrast on-screen text, brand cue early, native and handheld feel around 15 to 30 seconds, end on a clean CTA card. Add any campaign-specific editing notes here too (for example seasonal or birthday motion like a confetti burst).
+## No editing best practice section
+The document used to carry an EDITING BEST PRACTICE section after RECORDING BEST PRACTICE. It was removed on 2026-08-11 (Feedback, Xcelerate Performance). This document is the TALENT'S filming brief: generic Reels editing guidance belongs with the editor, not with the person holding the phone, and per-concept editing direction already lives in the Creative Plan EDITING DIRECTION column. Do not reinstate it, and do not web-search editing tips for this document.
 
 ## The seven concepts
 Write all seven video concepts (the VIDEO rows of the Creative Tracker, which follow the seven statics): Problem to Solution, Social Proof (Client Interview), Pattern Interrupt, Storytelling (Full Voiceover B-Roll), Benefit, Incentive, Audience Addresser.

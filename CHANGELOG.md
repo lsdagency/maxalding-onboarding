@@ -2,6 +2,19 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.22.0] - 2026-08-11
+
+### Changed
+- The funnel destination deliverable now follows the funnel. New `funnel_type` field (`lead_form` or `landing_page`, default `landing_page`): build.build_all produces Meta Lead Form copy OR Landing Page copy, never the wrong one. The onboarding SKILL.md hard gate now says to ASK at the Stage 2 gate which one the campaign runs, every time, even when the documents imply one. The Xcelerate campaign ran a Meta Instant Form and was handed a landing page (Feedback 2026-08-11).
+- landing-page-structure.md: the document covers the LANDING PAGE only and does not automatically include the funnel's second step. If the funnel uses separate pages, the booking page (calendar above the fold, short what-to-expect, reassurance testimonial placeholder) and thank-you page are written as their own clearly titled sections so nobody has to guess whether they were covered. On a lead-form funnel the completion screen is the equivalent second step.
+
+### Removed
+- The EDITING BEST PRACTICE section from the Video Ad Scripts document, and the instruction to web-search editing tips before each build. That document is the TALENT'S filming brief: generic Reels editing guidance belongs with the editor, and per-concept editing direction already lives in the Creative Plan EDITING DIRECTION column. From Liam's Xcelerate Performance feedback (2026-08-11).
+
+### Added
+- creative-plan-spec.md, post copy: USE THE CEILING WHERE THE IDEA EARNS IT. The variance rule was being read as a licence to write everything short, and a set whose longest post is only 100 characters under-uses the space just as much as one clustered at 125. Expect a couple of posts in the 105 to 125 band in a healthy set. Never pad to reach the limit, never clip to manufacture variety.
+- creative-plan-spec.md: EXPLAIN ANY NUMBER A COLD READER CANNOT DECODE. A performance figure carries no meaning alone ("6.4 seconds in week four, 5.19 in week fifteen" tells a stranger nothing about what was measured). Name the test the first time the number appears in any asset. Applies to ad copy, scripts, CRM and the landing page alike.
+
 ## [0.21.0] - 2026-08-11
 
 ### Added

@@ -72,10 +72,10 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
     for point in RECORDING_BEST_PRACTICE:
         T.add_body(doc, f"- {point}")
 
-    doc.add_paragraph()
-    T.add_subheading(doc, "EDITING BEST PRACTICE")
-    for point in meta.get("editing_best_practice", DEFAULT_EDITING_BEST_PRACTICE):
-        T.add_body(doc, f"- {point}")
+    # The EDITING BEST PRACTICE section was removed on 2026-08-11 (Xcelerate
+    # Performance). This document is the talent's filming brief; generic Reels
+    # editing guidance belongs with the editor, and per-concept editing
+    # direction already lives in the Creative Plan EDITING DIRECTION column.
 
     for i, concept in enumerate(meta.get("concepts", []), start=1):
         doc.add_paragraph()

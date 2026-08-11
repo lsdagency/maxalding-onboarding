@@ -20,7 +20,11 @@ This is conversion copy and must be substantial and social-proof led, not a thin
 13. Final CTA: recap value, repeat the one CTA.
 14. Footer: business name, privacy policy placeholder, unsubscribe note.
 
-If the funnel uses separate pages, also provide a booking page (calendar above the fold, what to expect, a reassurance testimonial placeholder) and a thank-you page (confirmation, next steps, a warm trust line).
+This document covers the LANDING PAGE only. It does not automatically include the second step of the funnel, so decide explicitly and say which pages are in scope.
+
+If the funnel uses separate pages, also provide a **booking page** (calendar above the fold, a short what-to-expect list, a reassurance testimonial placeholder, and nothing else competing with the calendar) and a **thank-you page** (confirmation, what happens next and when, a warm trust line). Write them as their own sections in the same document, clearly titled, so nobody has to guess whether they were covered.
+
+Only produce this document at all when `funnel_type` is `landing_page`. A lead-form funnel gets Meta Lead Form copy instead (skills/meta-lead-form), where the completion screen is the equivalent second step.
 
 ## Missing information
 List required social proof, transformations, reviews, credentials, privacy policy and booking link as clearly labelled client-action placeholders. Never invent them. Do not include internal production checklists or direction notes in the client-facing sections.
