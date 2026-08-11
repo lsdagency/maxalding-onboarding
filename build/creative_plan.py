@@ -26,13 +26,18 @@ PLATFORM_OPTIONS = ["FACEBOOK + INSTAGRAM", "FACEBOOK", "INSTAGRAM", "TIKTOK"]
 DEFAULT_PLATFORM = "FACEBOOK + INSTAGRAM"
 DEFAULT_STATUS = "Briefed"
 
-# Canonical 13-row tracker template (System Prompt section 8 table).
+# Canonical 14-row tracker template: seven statics then seven videos.
+# The static set is the coach template (Feedback 2026-08-11, Xcelerate
+# Performance). Gyms are likely to differ; scope either half through
+# tracker_concepts.
 CANONICAL_TRACKER = [
     ("STATIC", "Problem > Solution"),
     ("STATIC", "Incentive"),
     ("STATIC", "Benefit"),
     ("STATIC", "Social Proof (Review)"),
-    ("STATIC", "Social Proof (Before & After)"),
+    ("STATIC", "Social Proof (Progress)"),
+    ("STATIC", "Location"),
+    ("STATIC", "Audience Addresser"),
     ("VIDEO", "Problem > Solution"),
     ("VIDEO", "Social Proof (Client Interview)"),
     ("VIDEO", "Pattern Interrupt"),

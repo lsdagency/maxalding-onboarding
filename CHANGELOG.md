@@ -2,6 +2,22 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.18.0] - 2026-08-11
+
+### Changed
+- Statics: ONE graphic per static row, never three variations. The tracker moved to a single perfected hook in 0.16.0 but the BEATS column was never brought in line and kept suggesting Graphic 1 / Graphic 2 / Graphic 3. BEATS now describes the elements on that one graphic, each on its own line, and must say what the static IS rather than reciting a generic layout. From Liam's Xcelerate Performance feedback (2026-08-11).
+- The canonical static set is now the COACH template, seven statics rather than five: Problem > Solution (two lines, the pain point and the solution, plus a CTA), Incentive (hook line and a clear CTA to the offer, no subline), Benefit (hook line, a checklist of three to four bullets on what comes in the package, then a CTA), Social Proof Review (five star rating, who it is from, one key quote pulled from the review), Social Proof Progress (50:50 split, before and after from a client or the coach himself), Location (annotated map of the catchment, a hook asking the local question, clear CTA) and Audience Addresser (hook calls the audience out directly). Gyms are likely to differ, so adapt rather than force. Statics carry B-Roll imagery by default. CANONICAL_TRACKER is now 14 rows, seven statics then seven videos.
+- Social Proof (Before & After) renamed Social Proof (Progress) and specified as a 50:50 split graphic.
+- Video concept purposes are now written down, because they had bled into each other: Storytelling is the COACH'S own story (why they started coaching, how long, what they love about it), Benefit explains the OFFER and what comes in the package, and Incentive is the offer or price short and sweet with no explanation of the package. From the same feedback round, where the Incentive video had drifted into explaining the offer and left Incentive with nothing of its own.
+- Pattern Interrupt is now explicitly the first concept to drop when the plan already carries strong existing-post ads, because a proven organic post interrupts the scroll better than a concept written to do it.
+
+### Added
+- Child-safety rule for any client whose end user is a minor: never run a body before-and-after on the Progress static. Use the coach's own transformation or a documented performance figure instead. Recorded in creative-plan-spec.md and rules/rules.yaml.
+
+### Fixed
+- rules/rules.yaml `tracker_rows` said "5 statics then 8 videos (13 total)", which had been stale since the tracker dropped to 12 rows. Now correct at 14.
+- plugin.json and rules/rules.yaml were both still on 0.16.0 despite a 0.17.0 changelog entry. Both bumped to 0.18.0.
+
 ## [0.17.0] - 2026-08-07
 
 ### Changed

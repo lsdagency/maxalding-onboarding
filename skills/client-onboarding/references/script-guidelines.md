@@ -15,7 +15,21 @@ Vertical 9:16; strong first frame, eyes to lens immediately; eye level, arm's le
 The document carries an EDITING BEST PRACTICE section after RECORDING BEST PRACTICE, so the editor has current paid-social / Reels guidance in the same file. Before each build, RESEARCH current best-practice editing tips for Instagram Reels and Meta video ads (web search) and pass the refreshed list as `data["scripts"]["editing_best_practice"]`; the builder falls back to a sensible evergreen default if none is supplied. Keep it in the same dashed bullet format. Typical points: win the first 3 seconds on the hook, burned-in captions for sound-off, 9:16 safe zones, cut dead air and change something visual every 1 to 2 seconds, short high-contrast on-screen text, brand cue early, native and handheld feel around 15 to 30 seconds, end on a clean CTA card. Add any campaign-specific editing notes here too (for example seasonal or birthday motion like a confetti burst).
 
 ## The seven concepts
-Write all seven video concepts (Creative Tracker rows 6 to 12): Problem to Solution, Social Proof (Client Interview), Pattern Interrupt, Storytelling (Full Voiceover B-Roll), Benefit, Incentive, Audience Addresser. Each block:
+Write all seven video concepts (the VIDEO rows of the Creative Tracker, which follow the seven statics): Problem to Solution, Social Proof (Client Interview), Pattern Interrupt, Storytelling (Full Voiceover B-Roll), Benefit, Incentive, Audience Addresser.
+
+Each concept has a distinct job and they must not bleed into each other (Feedback 2026-08-11, Xcelerate Performance, where the Incentive video had drifted into explaining the offer and left Incentive with nothing of its own):
+
+- **Problem to Solution**: name the exact pain the ICP lives with, then show the coach's answer to it.
+- **Social Proof (Client Interview)**: a real client answering a question set, in their own words. See the interview section below.
+- **Pattern Interrupt**: break the scroll with something unexpected. Drop this concept first when the plan already carries strong existing-post ads.
+- **Storytelling (Full Voiceover B-Roll)**: the COACH'S own story. What made them want to coach, how long they have been doing it and who with, and what they genuinely love about it. Not a client story, and not the offer.
+- **Benefit**: explain the OFFER properly. What the client actually gets, what comes as part of the package, and what they can expect from working with this coach. This is the concept that answers "what am I buying".
+- **Incentive**: the offer or the price, short and sweet. One clear reason to act now and a CTA. Do not explain what the package contains here, that belongs to Benefit.
+- **Audience Addresser**: talk directly to the ICP about what they are trying to achieve. See the Audience Addresser section below.
+
+Where a number belongs in the coach's story (years coaching, athletes worked with) and the client documents do not provide it, leave a clearly labelled placeholder and flag it. Never invent it.
+
+Each block:
 - CONCEPT n in caps, then Format, Talent, Audience, Angle.
 - A short plain paragraph on what it is and how to film it.
 - Hook (the opening line): exactly ONE hook per concept (the Option A/B/C menu is retired as of 0.17.0; Feedback 2026-08-07, BodyShaping). Generate several angles with the ad-hooks skill, pick the strongest, perfect it, and write it as the true first spoken line of the take. The build mirrors this hook into the Creative Plan's HOOK GUIDANCE column; never hand-write that tracker cell separately: build through build.build_all so the two files cannot drift apart. A video hook is the strong, full SPOKEN opening line, a sentence or two (per the ad-hooks skill), not a short static-style fragment; it IS the best line in the concept, the scroll-stopper, not a throwaway before the real opener. Specific, never "you" plus a negative attribute. Three hard requirements on top of that:
