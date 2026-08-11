@@ -38,6 +38,13 @@ Every onboarding transcribes the client's Instagram videos at Stage 1 (reference
 
 Signals worth counting off the transcript: how often they say yeah, mate, look, right, alright, okay, reckon, gonna, gotta. Whether they use tag questions. Whether they repeat for emphasis. How long their average sentence is. A coach who says "as hard as you can, as hard as you can" and "drive, drive, drive" does not then say "which is exactly why the approach works".
 
+### Two registers, and the difference between them
+The transcript governs the SHAPE of the client's speech: sentence length, openers, tag questions, cadence, what they repeat, and the technical vocabulary of their craft. Never put a shape in their mouth the transcript does not support.
+
+Audience-facing VOCABULARY is a separate question, and it may legitimately come from the audience's own language rather than the client's transcript. A line that addresses the customer can use the customer's word for something even when the client did not happen to say it in the reels you transcribed, provided the client would plainly say it in life. Xcelerate is the worked example: "footy" appears nowhere in nine transcribed reels, where Zack's on-camera sport vocabulary is all coaching technical (contact, bumpers, post contact metres, play the ball). But every Sydney league parent says "footy", and Liam kept it on exactly that ground (2026-08-11).
+
+So: evidence the shape from the transcript, evidence the vocabulary from the transcript OR the ICP, and be able to say which. What is never acceptable is reaching for a word because it merely sounds like the region or the trade. If you cannot point to either source, it is a guess, and guesses are how the copy ends up sounding like an impression of the client rather than the client.
+
 ## Positive language rule (critical)
 Never frame the problem as a personal failing, even when negating it. Do not write "you are not lazy", "the gym did not fail you", "you have not been consistent", "stop making excuses", "you know you should". Lead with what the person is capable of and what becomes available to them. Replace accusation with understanding. For example, instead of "you are not lazy" use "you have been doing this without the right support"; instead of "you have not been consistent" use "consistency becomes easier when the approach fits your life". Applies to hooks, post copy, scripts, the VSL and the landing page.
 

@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.22.1] - 2026-08-11
+
+### Changed
+- Refined the v0.21.0 register rule, which was too absolute. The transcript governs the SHAPE of the client's speech (sentence length, openers, tag questions, cadence, repetition, the technical vocabulary of their craft). Audience-facing VOCABULARY is a separate question and may legitimately come from the AUDIENCE's own language, provided the client would plainly say it in life. Evidence the shape from the transcript and the vocabulary from the transcript OR the ICP, and be able to say which; what is never acceptable is reaching for a word because it merely sounds like the region or the trade. Read literally, the old rule would have stripped a correct word. Worked example now in writing-rules: "footy" appears in none of Zack's nine transcribed reels, where his on-camera sport vocabulary is all coaching technical (contact, bumpers, post contact metres, play the ball), but every Sydney league parent says it and Liam kept it on exactly that ground (2026-08-11).
+
 ## [0.22.0] - 2026-08-11
 
 ### Changed
