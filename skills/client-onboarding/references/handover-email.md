@@ -10,8 +10,11 @@ When the creative pack has passed the QA gate and the user asks for the client e
 ## Hard rules
 - Questions channel is WhatsApp ("drop me a WhatsApp"), never "call me". Every client has a WhatsApp group with the agency.
 - Keep the gentle push on the part 1 assets ("If you can get the part 1 assets across this week, we will finalise the landing page while you film"). No other deadlines and no invented dates.
+- Ask softly and only for what we genuinely need. Liam consistently trims this section: he cut the booking-link ask entirely and softened the privacy policy to "no worries if you don't have one" (2026-08-11). Do not stack a long shopping list on a client who has just been handed a pack, and do not attach a consequence to an ask ("the form cannot go live without the first two") unless the user has confirmed they want the client pushed that hard. Where an ask is dropped, check nothing downstream depended on it and flag it to the user rather than quietly leaving a placeholder in a deliverable.
+- Write prices with the currency symbol the client uses ($95 a week), not spelled out.
 - Do NOT tell the client to upload as they go, and do not say work starts with whatever lands first. Work starts once the full set is in. Everything still points at the one upload folder.
-- The upload folder link comes from the user; ask for it if it was not provided. The pack folder link stays a placeholder for the user to fill if the pack is not yet uploaded.
+- TWO folders, always, and never the same one. The PACK folder is where the deliverables live and the client reads from it. The UPLOAD folder is a separate folder the client returns footage into. Ask the user for both if only one was given; do not point uploads back at the pack folder, because raw B-Roll quickly buries the deliverables (Feedback 2026-08-11, Xcelerate Performance).
+- Wording for the upload folder: "Everything you film or dig out goes here please: [UPLOAD FOLDER LINK]".
 - Fill every bracketed placeholder with client specifics before creating the draft. The B-Roll categories and the voiceover script pairings come from this client's Creative Plan (the voiceover concept's shot list); include an archival-footage ask when the client's history offers one.
 - Include any open questions from the onboarding (missing assets, people appearing in creative, unconfirmed details), folded in naturally near the end.
 - Agency writing rules apply: plain human English, no em dashes, no exclamation marks, no ellipses.
@@ -31,8 +34,7 @@ What's inside:
 
 One note before you read the scripts: nothing needs to be read word for word. Each video opens on its hook line and runs as one take from there. Say it in your own words and keep it natural, hitting the beats matters more than the exact lines.
 
-Everything you film or dig out goes into this upload folder:
-[UPLOAD FOLDER LINK]
+Everything you film or dig out goes here please: [UPLOAD FOLDER LINK]
 
 To take this live, here is exactly what we need from you, in four parts.
 
@@ -46,7 +48,7 @@ To take this live, here is exactly what we need from you, in four parts.
 - A privacy policy link for the page footer
 
 2. B-ROLL: THE MORE THE BETTER
-This is the single most valuable thing you can give us, and it is the thing most [coaches / gyms / studios] under-supply. Short 10 to 20 second clips, filmed on your phone, uploaded to the folder above. Nothing needs to be polished, real always beats staged.
+This is the single most valuable thing you can give us, and it is the thing most [coaches / gyms / studios] under-supply. Short 10 to 20 second clips, filmed on your phone, uploaded to the folder above. Nothing needs to be polished, just raw footage.
 
 What to capture, ideally a little every day:
 - [Four to five B-Roll categories from this client's Creative Plan shot list]

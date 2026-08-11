@@ -2,6 +2,13 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.22.2] - 2026-08-11
+
+### Changed
+- Handover email: TWO folders, always, and never the same one. The pack folder holds the deliverables; a separate upload folder takes the client's returned footage. Pointing uploads back at the pack folder buries the deliverables under raw B-Roll. Ask the user for both.
+- Handover email: ask softly and only for what we genuinely need. Liam trims this section every time. On the Xcelerate handover he cut the booking-link ask outright and softened the privacy policy to "no worries if you don't have one". Do not stack a long shopping list on a client who has just been handed a pack, and do not attach a consequence to an ask ("the form cannot go live without the first two") unless the user has confirmed they want the client pushed that hard. Where an ask is dropped, check nothing downstream depended on it and flag it, rather than quietly leaving a placeholder in a deliverable.
+- Handover email: prices use the client's currency symbol ($95 a week), not spelled out. B-Roll line is "nothing polished, just raw footage".
+
 ## [0.22.1] - 2026-08-11
 
 ### Changed
