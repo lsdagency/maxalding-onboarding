@@ -84,6 +84,23 @@ BANNED_FORMULA_PATTERNS = [
     r"not a[n]?\s+\w+\s+problem[.,]?\s+(it'?s|it is)\s+a[n]?\s+\w+\s+problem",
 ]
 
+# The wider contrastive-correction shape the banned formula belongs to:
+# "X isn't A. It's B", "not just A, it is B". The literal "X problem / Y
+# problem" wording above is only its most obvious form, and writing round that
+# one while still reaching for the same rhythm is the actual recurring failure
+# (four instances in a single Xcelerate Performance build, 2026-08-11, all
+# found by hand because nothing flagged them).
+#
+# WARNING only, deliberately. Plenty of legitimate copy contrasts two things,
+# so an error here would block good work. The warning exists to make the author
+# look at the line and decide, which is all that was missing.
+CONTRASTIVE_CORRECTION_PATTERNS = [
+    r"\b(is|was|are|were)n'?t\s+[^.?!]{3,60}[.,]\s*(it'?s|it is|that'?s|they'?re)\b",
+    r"\bis not\s+[^.?!]{3,60},\s*(it is|it'?s)\b",
+    r"\bnot just\s+[^.?!]{3,60},\s*(it'?s|it is|but|an?\s|the\s)",
+    r"\bnot\s+(a|an|the)\s+[^.?!]{3,60},\s*(an?|the)\s+\w+",
+]
+
 # ---------------------------------------------------------------------------
 # Positive-language rule (System Prompt section 3, Feedback round 4)
 # Negative self-framing that puts a failing on the person, even when negated.

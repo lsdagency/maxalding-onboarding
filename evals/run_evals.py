@@ -54,6 +54,9 @@ BAD_CASES = [
     ("three hooks in one tracker cell", "Hook 1: one\nHook 2: two\nHook 3: three", "hook_cell", "hook-single"),
     ("legacy hook label in tracker cell", "Hook 1: Training keeps falling off your week", "hook_cell", "hook-single"),
     ("tracker date stamped", "today", "tracker_date", "tracker-date-blank"),
+    ("contrastive correction, isnt/its", "The bit I love isn't the sprint times. It's the week he turns up early", "content", "contrastive-correction"),
+    ("contrastive correction, not just", "Not just a group plan, an actual program built for him", "content", "contrastive-correction"),
+    ("contrastive correction, not a/an", "Not a group plan with his name on the top, an actual program built for him", "content", "contrastive-correction"),
 ]
 
 # (description, text, kind) that must produce zero violations
@@ -67,6 +70,9 @@ GOOD_CASES = [
     ("clean static hook", "Strength that fits a packed week", "static_hook"),
     ("single unlabelled tracker hook cell", "Training keeps falling off your week", "hook_cell"),
     ("clean header", "CLIENT: Northside Strength Co", "header"),
+    ("plain negation is not a contrastive correction", "There is no guarantee attached to this and I would not offer you one", "content"),
+    ("negation across a full stop stays clean", "Club training builds the side. Nobody is building him", "content"),
+    ("not-clause with no corrective pair", "Not everyone is ready for this, and that is completely fine", "content"),
 ]
 
 

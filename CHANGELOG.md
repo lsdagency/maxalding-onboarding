@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.19.0] - 2026-08-11
+
+### Added
+- Validator rule `contrastive-correction` (WARNING, not an error): flags the wider "not X, it is Y" shape that the banned formula belongs to, for example "the bit I love isn't the sprint times, it's the week he turns up early" or "not just a group plan, an actual program". The existing `banned-formula` rule only ever matched the literal "X problem / Y problem" wording, so writing round that one while reaching for the same rhythm went completely unflagged: four instances survived into a finished Xcelerate Performance build on 2026-08-11 and were only caught by reading. Deliberately a warning, because plenty of legitimate copy contrasts two things and an error would block good work; the warning exists to make the author look at the line. Verified at 6 of 6 on real failures with 0 false positives across 12 legitimate negatives, and locked in with three bad cases and three good cases in the evals.
+
 ## [0.18.0] - 2026-08-11
 
 ### Changed

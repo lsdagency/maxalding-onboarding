@@ -160,6 +160,25 @@ def check_banned_formula(seg: Segment) -> list:
                     snippet=_snippet(seg.text, m.start()),
                 )
             )
+    if out:
+        # Already flagged as an error; do not also warn on the same line.
+        return out
+    for pat in rules.CONTRASTIVE_CORRECTION_PATTERNS:
+        m = re.search(pat, seg.text, re.IGNORECASE)
+        if m:
+            out.append(
+                Violation(
+                    rule="contrastive-correction",
+                    message=(
+                        'reads like the banned "not X, it is Y" formula; '
+                        "state the idea directly unless the contrast is doing real work"
+                    ),
+                    location=seg.location,
+                    snippet=_snippet(seg.text, m.start()),
+                    severity="warn",
+                )
+            )
+            break
     return out
 
 
