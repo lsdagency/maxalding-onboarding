@@ -173,6 +173,48 @@ PREMIUM_FRAMING_BANNED = [
 ]
 
 # ---------------------------------------------------------------------------
+# Physical format of the business (Feedback 2026-06-03, Evolve Fitness
+# Glenhaven). Evolve is an outdoor bootcamp that trains at Glenhaven Oval all
+# year, and the copy kept telling people to "come inside" and describing the
+# business as though it had a building.
+#
+# These patterns match copy that ASSERTS the client's own indoor space. A bare
+# mention of "gym" is deliberately not here: "without the intimidation of a
+# traditional gym" is correct copy for an outdoor bootcamp, and banning the word
+# would break the very line the rule exists to protect.
+#
+# WARNING only, and waived automatically for indoor clients: build.build_all
+# skips this rule when the client data sets business_format to gym, studio or
+# indoor, the same way premium_lead_magnet waives premium-framing.
+# ---------------------------------------------------------------------------
+VENUE_LANGUAGE_PATTERNS = [
+    r"\bcome inside\b",
+    r"\bstep inside\b",
+    r"\bcome on in\b",
+    r"\binside (?:the|our) (?:gym|studio|club|facility|space|centre|center)\b",
+    r"\b(?:in|at|on|to) (?:our|the) (?:gym|studio|facility|club) floor\b",
+    r"\b(?:in|at|inside) our (?:gym|studio|facility|club|space|centre|center)\b",
+    r"\bthrough (?:our|the) doors\b",
+    r"\bwalk (?:in|into) (?:our|the) (?:gym|studio|facility|club)\b",
+    r"\bunder one roof\b",
+    r"\bair ?conditioned\b",
+    r"\bclimate ?controlled\b",
+]
+
+# Client data business_format values that mean the client HAS an indoor space,
+# and so legitimately uses the language above.
+INDOOR_BUSINESS_FORMATS = {
+    "gym",
+    "indoor",
+    "indoor gym",
+    "studio",
+    "private studio",
+    "facility",
+    "mixed",
+    "hybrid",
+}
+
+# ---------------------------------------------------------------------------
 # Length limits (System Prompt section 8, AD COPY tab)
 # ---------------------------------------------------------------------------
 POST_COPY_MAX = 125

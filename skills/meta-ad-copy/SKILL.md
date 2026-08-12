@@ -86,6 +86,29 @@ After building, run the deterministic validator over the file and fix every erro
 
 It checks banned characters, banned words, positive-language, Meta personal-attributes compliance, the length limits, and the naming convention. The gate must pass with 0 errors.
 
+## The self-check (run it before writing, and again before saving)
+This list is mirrored from `../client-onboarding/references/creative-plan-spec.md`, which is the source of truth. Keep the two in step.
+
+    AD COPY SELF-CHECK
+    [ ] Invoked marketing-skills:ads, marketing-skills:ad-creative and marketing-skills:copywriting
+        this session, for this copy. Invoked, not skimmed, and again on every rewrite round.
+    [ ] Read the client's Brand memory: emoji palette, words to use, banned list, tagline.
+    [ ] Every concept has exactly 5 posts, and every post is a genuinely different ANGLE.
+        Name the angle of each one to yourself. If two share an angle, one of them is a reword.
+    [ ] Each post opens on a pain point or desire the ICP is ALREADY thinking about.
+    [ ] Emoji from this client's palette, matched to each post's angle, roughly a third of
+        posts, never one per row, some bare. Premium, never hype.
+    [ ] Lengths measured: longest minus shortest at least 45, at least one post 50 or under,
+        a couple in the 105 to 125 band.
+    [ ] Headlines: exactly 5, one audience addresser, one offer, all 40 or under.
+    [ ] Description: one, 25 or under, uses the tagline, does not repeat the offer.
+    [ ] Physical format correct for this client (an outdoor or online client never gets
+        "come inside", "through our doors" or "on the gym floor"), and any seasonal angle
+        sits only in the concepts it genuinely serves.
+    [ ] Zero em dashes, en dashes, exclamation marks. No trailing full stops.
+
+If a line cannot be ticked honestly, the copy is not finished, whatever the validator says.
+
 ## Before you hand over
 Run this scan and fix anything that fails:
 - Output is the XLSX, not a chat list.

@@ -133,6 +133,23 @@ def main(argv=None) -> int:
     if not data.get("premium_lead_magnet", True):
         skip_rules.add("premium-framing")
         print("  note: premium_lead_magnet is false, waiving premium-framing for this client")
+
+    # Per-client waiver: a client with an indoor space legitimately writes
+    # indoor-venue language, so venue-language is waived for them. An outdoor
+    # or online client keeps the check, which is the point of the rule.
+    # (Feedback 2026-06-03, Evolve Fitness Glenhaven.)
+    from validator import rules as _rules
+
+    business_format = str(data.get("business_format", "")).strip().lower()
+    if not business_format:
+        print(
+            "  note: business_format is not set, keeping the venue-language check on. "
+            "Set it to outdoor, indoor gym, studio, online or mixed in the client data."
+        )
+    elif business_format in _rules.INDOOR_BUSINESS_FORMATS:
+        skip_rules.add("venue-language")
+        print(f"  note: business_format is {business_format}, waiving venue-language for this client")
+
     result = validate_paths(list(outputs.values()), skip_rules=skip_rules)
     if result.ok:
         print(f"QA gate passed. 0 errors, {len(result.warnings)} warnings.")

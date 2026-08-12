@@ -266,6 +266,38 @@ def check_premium_framing(seg: Segment) -> list:
 
 
 # ---------------------------------------------------------------------------
+# Physical format of the business (content only)
+# ---------------------------------------------------------------------------
+def check_venue_language(seg: Segment) -> list:
+    """Flag copy that asserts an indoor space the client may not have.
+
+    Runs by default, because the failure it catches (an outdoor bootcamp told
+    people to "come inside") is invisible to every other check and was only
+    found by a human reading the pack. build.build_all waives it for a client
+    whose business_format is indoor.
+    """
+    if seg.kind not in CONTENT_KINDS:
+        return []
+    out = []
+    for pat in rules.VENUE_LANGUAGE_PATTERNS:
+        m = re.search(pat, seg.text, re.IGNORECASE)
+        if m:
+            out.append(
+                Violation(
+                    rule="venue-language",
+                    message=(
+                        "asserts an indoor space; confirm the client's physical "
+                        "format (outdoor and online clients have no building)"
+                    ),
+                    location=seg.location,
+                    snippet=_snippet(seg.text, m.start()),
+                    severity="warn",
+                )
+            )
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Length and word-count checks (kind-specific)
 # ---------------------------------------------------------------------------
 def check_lengths(seg: Segment) -> list:
@@ -535,6 +567,7 @@ SEGMENT_CHECKS = [
     check_positive_language,
     check_meta,
     check_premium_framing,
+    check_venue_language,
     check_lengths,
     check_hooks,
     check_hook_single,

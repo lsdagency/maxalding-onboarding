@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.22.2"
+version: "0.23.0"
 
 banned_characters:
   - id: em-dash
@@ -78,6 +78,33 @@ ai_cadences:
   two_registers: "The transcript governs the SHAPE of the client's speech (sentence length, openers, tag questions, cadence, repetition, the technical vocabulary of their craft). Audience-facing VOCABULARY is separate and may come from the AUDIENCE's own language, provided the client would plainly say it in life. Evidence the shape from the transcript and the vocabulary from the transcript OR the ICP, and be able to say which. Never reach for a word just because it sounds like the region or the trade."
   two_registers_source: "Feedback 2026-08-11 (Xcelerate Performance): footy appears in none of the nine transcribed reels, where Zack's on-camera sport vocabulary is all coaching technical, but every Sydney league parent says it and Liam kept it on that ground. The v0.21.0 register rule read literally would have stripped it."
   source: "Feedback 2026-08-11 (Xcelerate Performance): Liam flagged three lines as obvious Claude AI lines he has seen over and over. The transcripts existed and were not used."
+
+business_format:
+  rule: "Establish the client's PHYSICAL FORMAT at Stage 1 and set business_format in the client data: outdoor, indoor gym, studio, online, or mixed. It drives language across every output. A client with no building never gets come inside, step inside, through our doors, on the gym floor, in our studio, our facility or under one roof. Naming a competitor's building is still fine and often the point: without the intimidation of a traditional gym is correct copy for an outdoor bootcamp. An online-only client gets no physical venue language at all. An indoor client gets no outdoor scenes."
+  enforcement: "Validator rule venue-language, a WARNING, matches copy that asserts the client's own indoor space. build.build_all waives it when business_format is one of gym, indoor, indoor gym, studio, private studio, facility, mixed or hybrid, the same pattern as premium_lead_magnet waiving premium-framing. Left unset, the check stays on."
+  source: "Feedback 2026-06-03 (Evolve Fitness Glenhaven): an outdoor bootcamp training at Glenhaven Oval all year had copy telling readers to come inside and describing the business as though it had a building."
+
+seasonal_context:
+  rule: "Identify at Stage 1 the season the campaign launches into, in the client's hemisphere, plus anything the documents say about weather, seasonality, quiet or peak periods. Weave it through the concepts it genuinely serves, never into every line. For an outdoor client the season is often the campaign's central obstacle and its best proof: getting out of bed on a cold, wet morning is the real barrier, and a group that turns up anyway is the real proof."
+  where_it_belongs: "Typically Problem to Solution, the Social Proof concepts and Pattern Interrupt. Never Incentive, which is the offer and nothing else. If there is no meaningful seasonal angle, say so at the Stage 2 gate and leave it out. A forced season is worse than none."
+  source: "Feedback 2026-06-03 (Evolve Fitness Glenhaven): the campaign ran into a Sydney winter and the seasonal challenge sat only in the Pattern Interrupt concept."
+
+ad_copy_self_check:
+  rule: "Run the AD COPY self-check in references/creative-plan-spec.md before writing a single cell and again before saving. The AD COPY deliverable looks like the small one at the end of the build and is the one that gets rushed."
+  checklist: [
+    "Invoked ads, ad-creative and copywriting THIS session for THIS copy, and again on every rewrite round",
+    "Read the client Brand memory: emoji palette, words to use, banned list, tagline",
+    "5 posts per concept, each a genuinely different angle, named to yourself",
+    "Each post opens on a pain point or desire the ICP already holds",
+    "Emoji from the client palette, matched per angle, roughly a third of posts, some bare",
+    "Length spread measured: range at least 45, one post 50 or under, a couple in the 105 to 125 band",
+    "Headlines exactly 5, one audience addresser, one offer, all 40 or under",
+    "Description one, 25 or under, uses the tagline, does not repeat the offer",
+    "Physical format and seasonal context correct",
+    "Zero em dashes, en dashes, exclamation marks, no trailing full stops",
+  ]
+  note: "The QA gate checks characters and lengths. It cannot see a reworded angle, a skipped skill invocation or an emoji that does not fit the audience. A passing validator is not a finished deliverable."
+  source: "Feedback 2026-06-03 (Evolve Fitness Glenhaven): the AD COPY tab was written without invoking the mandated skills, with no emoji palette applied and insufficient variation between rows. The same rules have now had to be restated across eight clients."
 
 funnel_destination:
   ask_every_time: "ALWAYS ask at the Stage 2 gate whether the campaign runs a Meta Lead Form (Instant Form) or a landing page, even when the documents imply one. Set funnel_type to lead_form or landing_page in the client data. build.build_all then produces Meta Lead Form copy (skills/meta-lead-form) OR Landing Page copy, never both and never the wrong one."
@@ -175,4 +202,7 @@ workspace:
 feedback_loop:
   rule: "At end of any session with feedback, append a dated entry to the workspace feedback log."
   entry_format: "## [YYYY-MM-DD] - [Client name] - [brief summary]"
+  log_when_it_lands: "Write the entry as soon as the correction is given and the fix is applied, not at the end of the session. The failure mode is a run that fixes the deliverable, moves on, and never writes the entry."
+  closed_means_three_things: "A correction is not closed until the deliverable is rebuilt, a dated entry is in the workspace feedback log, and anything that should bind future clients is in the package (reference file, rules.yaml, a validator rule where the failure is mechanically detectable, version bumped, evals/cases/sample_client.json updated to match). Fixing the client file alone fixes one pack and teaches the system nothing."
+  closed_source: "Feedback 2026-06-03 (Evolve Fitness Glenhaven): three corrections were given, all three deliverables were rebuilt, and none of the three reached the feedback log. They were recovered from a handoff note on 2026-08-12, by which time the ad copy failure had recurred on other clients."
   source: "System Prompt s15"

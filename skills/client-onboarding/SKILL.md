@@ -20,7 +20,7 @@ Required: at least one of the Brand Campaign Document or the Creative Strategy B
 
 ## The four stages
 1. Read everything (intake-research): the feedback log, every document, any transcript, and the client's Instagram (compulsory, see references/instagram-research.md): scan the profile, captions and metadata, download and transcribe the five most recent videos, and read the visual style and language. Mine a transcript for the real voice, the genuine offer focus, real objections and authentic story. Reconcile conflicts, including anything the Instagram contradicts.
-2. Extract and confirm (intake-research): extract the five categories (Audience, Onboarding, Brand, Marketing, KPIs), save the memory files, and define the campaign spine: a single Core Message, a short Tagline, one support line. Then PAUSE and confirm the spine, ICP, offer, funnel and any conflicts with the user before building.
+2. Extract and confirm (intake-research): extract the five categories (Audience, Onboarding, Brand, Marketing, KPIs), save the memory files, establish the client's physical format and the campaign's seasonal context, and define the campaign spine: a single Core Message, a short Tagline, one support line. Then PAUSE and confirm the spine, ICP, offer, funnel, physical format, seasonal angle and any conflicts with the user before building.
 3. Build the Creative Plan XLSX (creative-plan): three tabs, using the Python build module.
 4. Produce the four documents (scriptwriting, conversion-copy, lifecycle-crm): Video Ad Scripts, VSL Script, the funnel destination copy (Meta Lead Form copy OR Landing Page Copy, whichever `funnel_type` says), and CRM Automation, using the Python build module. After the Video Ad Scripts file is named, the Creative Plan SCRIPT column references it on the video rows.
 
@@ -31,6 +31,9 @@ A green QA gate is necessary but NOT sufficient. The deterministic validator onl
 
 - Read the feedback log in full this session and applied it.
 - Instagram scan completed per references/instagram-research.md (or explicitly waived by the user) and the findings fed into the Brand memory.
+- `business_format` established and set in the client data (outdoor, indoor gym, studio, online, or a mix), and no output asserts a space the client does not have. See references/writing-rules.md.
+- Seasonal and environmental context identified, and either woven through the concepts it genuinely serves or explicitly ruled out at the Stage 2 gate.
+- The AD COPY self-check in references/creative-plan-spec.md run in full, not skimmed.
 - Invoked the mandated craft skill for each deliverable (see Skill invocations below). The skills inform craft (angles, PAS and BAB, value before ask, voice of customer); the plugin reference rules win on any conflict (no weight figures or invented stats, no exclamation marks, fixed AD COPY and CRM structures, the framing decision, no "guarantee" if the client bans it).
 - Hooks are labelled Hook 1: / Hook 2: / Hook 3: (Audience Addresser tagged age, role, situation), short enough that the label plus the hook fits the word limit, and drawn from varied Meta hook angles, not three rewordings of one idea.
 - Creative Tracker DATE column left blank.
@@ -64,6 +67,15 @@ If the user gave any correction during the session, append a dated entry to the 
     [How to apply it in future runs]
 
 If no feedback was given, append nothing. Confirm what was logged.
+
+**Log it when it lands, not at the end.** The failure mode is a session that fixes the deliverable, moves on, and never writes the entry, so the next client hits the same correction. The Evolve Fitness Glenhaven run in June 2026 took three corrections, rebuilt the deliverables for all three, and logged none of them; they were only recovered from a handoff note two months later, after the same ad copy failure had recurred on other clients. Write the entry as soon as a correction is given and the fix is applied, while the reasoning is still in front of you.
+
+A correction is not closed until three things are true, so state all three back to the user:
+1. The affected deliverable is rebuilt.
+2. A dated entry is in the workspace feedback log.
+3. Anything that should bind FUTURE clients is in this package (the relevant reference file, rules/rules.yaml, and a validator rule where the failure is mechanically detectable), version bumped, with the canonical example in evals/cases/sample_client.json updated to match. Runs learn from that sample, so leaving it in the old shape quietly keeps the old behaviour alive.
+
+Fixing the client's file alone is the failure. It fixes one pack and teaches the system nothing.
 
 ## Reference files
 - references/writing-rules.md: global writing rules, banned characters, words, phrases, the positive-language rule.

@@ -2,6 +2,20 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.23.0] - 2026-08-12
+
+Three corrections from the Evolve Fitness Glenhaven run (June 2026), recovered from a handoff note and codified now. None of the three had ever reached the feedback log, which is itself the fourth change below.
+
+### Added
+- **Physical format is established at Stage 1 and drives language everywhere.** New `business_format` field on the client data: outdoor, indoor gym, studio, online, or mixed. Evolve is an outdoor bootcamp that trains at Glenhaven Oval all year, and its copy told readers to "come inside" and described the business as though it had a building. Captured in intake-research.md, ruled in writing-rules.md, surfaced at the Stage 2 confirm gate and in the preflight checklist.
+- **New validator rule `venue-language`, a WARNING.** Matches copy that asserts the client's OWN indoor space ("come inside", "through our doors", "on the gym floor", "in our studio", "under one roof", "air conditioned"). A bare "gym" is deliberately not matched: "without the intimidation of a traditional gym" is correct copy for an outdoor bootcamp, and banning the word would break the line the rule exists to protect. build.build_all waives the rule when `business_format` is an indoor format, the same pattern as `premium_lead_magnet` waiving `premium-framing`. Left unset, the check stays on and build_all says so.
+- **Seasonal and environmental context is identified at Stage 1 and woven through where it belongs.** The Evolve campaign ran into a Sydney winter, where the real obstacle is getting out of bed in the cold and the real proof is that the group does it anyway, and that sat only in the Pattern Interrupt concept. It belongs across Problem to Solution and the Social Proof concepts too, and never in Incentive, which is the offer and nothing else. If a campaign has no meaningful seasonal angle, say so at the gate rather than forcing one.
+- **An AD COPY self-check that has to be run before writing and before saving.** Ten explicit lines covering skill invocation, the Brand memory read, one distinct angle per post, the emoji palette, the measured length spread, headlines, description, physical format and season, and banned characters. In creative-plan-spec.md as the source of truth and mirrored into the meta-ad-copy skill. The Evolve AD COPY tab was written without invoking ads, ad-creative or copywriting, with no emoji palette applied and rows that were not meaningfully different. These same rules have now had to be restated across eight clients, which says the problem is not that they are unwritten.
+
+### Changed
+- **The feedback loop closes on three things, not one.** A correction is not closed until the deliverable is rebuilt, a dated entry is in the workspace feedback log, and anything that should bind future clients is in the package (reference file, rules.yaml, a validator rule where the failure is mechanically detectable, version bump, and the canonical sample updated to match). Write the log entry when the correction lands, not at the end of the session. The Evolve run took three corrections, rebuilt all three deliverables, and logged none of them; they surfaced two months later, after the ad copy failure had recurred elsewhere. Fixing the client's file alone fixes one pack and teaches the system nothing.
+- evals/cases/sample_client.json now carries `business_format` and `seasonal_context`, so runs learn the new shape from the canonical example.
+
 ## [0.22.2] - 2026-08-11
 
 ### Changed

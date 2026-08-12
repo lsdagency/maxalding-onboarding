@@ -45,6 +45,29 @@ Audience-facing VOCABULARY is a separate question, and it may legitimately come 
 
 So: evidence the shape from the transcript, evidence the vocabulary from the transcript OR the ICP, and be able to say which. What is never acceptable is reaching for a word because it merely sounds like the region or the trade. If you cannot point to either source, it is a guess, and guesses are how the copy ends up sounding like an impression of the client rather than the client.
 
+## The client's physical format (Feedback 2026-06-03, Evolve Fitness Glenhaven)
+Establish the client's PHYSICAL FORMAT at Stage 1, before a word is written, and record it in the Brand memory and the Brand Pack. It is one of: outdoor (a park, oval, beach or field), indoor gym, private studio, online only, or a mix. The format is not a detail, it is the thing the reader pictures, and getting it wrong tells them immediately that nobody looked at the business.
+
+Evolve Fitness Glenhaven is an outdoor bootcamp that runs at Glenhaven Oval all year. The copy kept saying "come inside" and describing the business as though it had a building. Every line has to reflect where the training actually happens.
+
+For a client with no indoor space, never write a line that asserts one:
+- "come inside", "step inside", "come on in", "through our doors", "on the gym floor", "in our studio", "our facility", "under one roof".
+- The generic "at [client name]" is safe and often better than naming a venue at all.
+- Naming a competitor's building is still fine, and often the point: "without the intimidation of a traditional gym" is correct copy for an outdoor bootcamp.
+
+For an online-only client the same rule bans any physical venue language at all. For an indoor client, the reverse applies: do not write outdoor scenes into a business that trains under a roof.
+
+The validator warns on indoor-space language via the rule `venue-language`. It is waived automatically when the client data sets `business_format` to an indoor format, so set that field on every client.
+
+## Seasonal and environmental context (Feedback 2026-06-03, Evolve Fitness Glenhaven)
+Identify, at Stage 1, the season the campaign runs into and any environmental condition the client trains through, then let it run naturally through the creative. A campaign launching into a Sydney winter for an outdoor bootcamp is not the same campaign as one launching into spring: the real obstacle is getting out of bed in the cold and the rain, and the real proof is that the group does it anyway.
+
+Where to find it: the campaign start date against the client's hemisphere, and anything in the onboarding documents about weather, seasonality, quiet periods or peak periods.
+
+How to use it. Weave it through the concept set where it genuinely belongs, not into every line. It should read as context the writer noticed, never as a theme bolted onto copy that did not need it. On the Evolve pack it belonged in the Problem to Solution angle (why a group keeps you going when it is cold), in the Social Proof concepts (people who turn up anyway) and in the Pattern Interrupt (training in the rain). It did not belong in the Incentive concept, which is the offer and nothing else.
+
+If the campaign has no meaningful seasonal or environmental angle, say so at the Stage 2 gate and leave it out. A forced season is worse than none.
+
 ## Positive language rule (critical)
 Never frame the problem as a personal failing, even when negating it. Do not write "you are not lazy", "the gym did not fail you", "you have not been consistent", "stop making excuses", "you know you should". Lead with what the person is capable of and what becomes available to them. Replace accusation with understanding. For example, instead of "you are not lazy" use "you have been doing this without the right support"; instead of "you have not been consistent" use "consistency becomes easier when the approach fits your life". Applies to hooks, post copy, scripts, the VSL and the landing page.
 

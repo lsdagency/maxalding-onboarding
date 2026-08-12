@@ -43,6 +43,8 @@ The canonical 14 rows are the default, not a cage. A client may scope or extend 
 
 Existing post ads. If the client has a proven organic post to run as a paid ad (Meta's Use Existing Post), add it as an extra tracker row through the `existing_posts` data list, numbered after the canonical rows. Set FORMAT to EXISTING POST, STATUS to Signed Off, put the post URL in FINAL ASSET, describe it in DETAILS (a proven organic post to boost, run as is, do not re-edit) with the beats and editing notes saying no filming or editing is required, and leave SCRIPT blank. The hook lives in the existing post, so keep the HOOK GUIDANCE cell a short reference, not new copy; the validator does not apply the single-hook or hook-length rules to non STATIC or VIDEO rows. When the client shares a link to a post that performed well, that is the signal to add an existing-post-ad row.
 
+Physical format and season run through every row. Before writing a cell, know the client's `business_format` and the season the campaign launches into (references/writing-rules.md). An outdoor client never gets an indoor line in BEATS, DETAILS or FILMING DIRECTION, and the seasonal angle belongs in the concepts it genuinely serves, typically Problem to Solution, the Social Proof concepts and Pattern Interrupt, never in Incentive, which is the offer and nothing else (Feedback 2026-06-03, Evolve Fitness Glenhaven).
+
 ## Statics, the coach template
 
 ONE graphic per static row, not three variations (Feedback 2026-08-11, Xcelerate Performance: the tracker moved to a single perfected hook, and the BEATS column has to match it). BEATS describes the elements that appear on that one graphic, each on its own line. Do not write Graphic 1 / Graphic 2 / Graphic 3, and do not list hook variations anywhere.
@@ -73,6 +75,29 @@ EDITING DIRECTION and FILMING DIRECTION: bullet format with a dash prefix on eve
 
 ## AD COPY (separate workbook, build/ad_copy.py)
 Apply ads, ad-creative and copywriting before writing. Columns: number, CONCEPT, POST COPY, CHARS. No STATUS column, no CTA column or note.
+
+**Run the self-check below before a single cell is written, and again before saving.** The AD COPY tab is the deliverable that gets rushed, because it looks like the small one at the end of the build. It is not. The rules here have had to be restated after Mindful Strength Lab, BM6, FIT Republik, Peak with Hamza, Built By Brun, Kure by Konrad, Xcelerate Performance and Evolve Fitness Glenhaven, which is the clearest signal in this repo that reading them is not the same as applying them.
+
+    AD COPY SELF-CHECK
+    [ ] Invoked marketing-skills:ads, marketing-skills:ad-creative and marketing-skills:copywriting
+        this session, for this copy. Not "read the rules", invoked, on this pass and on every
+        rewrite (Feedback 2026-06-29 and 2026-07-15, Built By Brun).
+    [ ] Read the client's Brand memory: emoji palette, words to use, banned list, tagline.
+    [ ] Every concept has exactly 5 posts, and every post is a genuinely different ANGLE.
+        Name the angle of each one to yourself. If two share an angle, one of them is a reword.
+    [ ] Each post opens on a pain point or desire the ICP is ALREADY thinking about, in their
+        words, not a generic fitness opener.
+    [ ] Emoji drawn from this client's palette, matched to each post's angle, on roughly a
+        third of the posts, never one per row, some posts bare. Premium, never hype.
+    [ ] Lengths: measure the spread before saving. Longest minus shortest at least 45, at
+        least one post 50 or under, at least a couple in the 105 to 125 band.
+    [ ] Headlines: exactly 5, shared, one audience addresser, one offer, all 40 or under.
+    [ ] Description: one, 25 or under, uses the tagline, does not repeat the offer.
+    [ ] Physical format and seasonal context both reflected correctly (writing-rules.md).
+    [ ] Zero em dashes, en dashes, exclamation marks. No trailing full stops.
+
+If any line above cannot be ticked honestly, the copy is not finished, whatever the validator says. The QA gate checks characters and lengths; it cannot see a reworded angle, a missing skill invocation or an emoji that does not fit the audience.
+
 - Organise by distinct concept only, no duplicate concept rows.
 - 5 post copy variations per concept.
 - One shared block of 5 headlines and one shared description that cover all concepts.

@@ -57,6 +57,11 @@ BAD_CASES = [
     ("contrastive correction, isnt/its", "The bit I love isn't the sprint times. It's the week he turns up early", "content", "contrastive-correction"),
     ("contrastive correction, not just", "Not just a group plan, an actual program built for him", "content", "contrastive-correction"),
     ("contrastive correction, not a/an", "Not a group plan with his name on the top, an actual program built for him", "content", "contrastive-correction"),
+    ("venue language, come inside", "Come inside and see what a session feels like", "content", "venue-language"),
+    ("venue language, our studio", "Step inside our studio and meet the team", "content", "venue-language"),
+    ("venue language, through our doors", "The moment you come through our doors we know your name", "content", "venue-language"),
+    ("venue language, under one roof", "Everything you need is under one roof", "content", "venue-language"),
+    ("venue language, our facility", "Sessions run in our facility seven days a week", "content", "venue-language"),
 ]
 
 # (description, text, kind) that must produce zero violations
@@ -73,6 +78,10 @@ GOOD_CASES = [
     ("plain negation is not a contrastive correction", "There is no guarantee attached to this and I would not offer you one", "content"),
     ("negation across a full stop stays clean", "Club training builds the side. Nobody is building him", "content"),
     ("not-clause with no corrective pair", "Not everyone is ready for this, and that is completely fine", "content"),
+    ("naming a competitor's building is not venue language", "Without the intimidation of a traditional gym", "content"),
+    ("a lapsed gym membership is not venue language", "She had a gym membership for two years and used it twice", "content"),
+    ("outdoor copy stays clean", "Training outdoors at Glenhaven Oval, rain or shine", "content"),
+    ("come and train is not come inside", "Come and train with us on Saturday morning", "content"),
 ]
 
 

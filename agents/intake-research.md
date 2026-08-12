@@ -15,7 +15,7 @@ The client's Instagram is a required input, gated at Stage 0 like the brand docu
 Save one memory file per category (project "MAXALDING - [Client Business Name]" or five prefixed files plus an index entry):
 1. Audience: ICP name, age and gender, occupation, location, daily life, stresses, physical and emotional challenges, practical obstacles, why they have not succeeded before, surface versus underlying desire, success at 6 months and 2 years, hesitations, misconceptions, what they must believe, where they spend time online.
 2. Onboarding: full name, business name, contact, address, website, socials, asset folder link, current income, short and long term goals, current lead volume and source, CRM, key dates.
-3. Brand: positioning, tone of voice, words to use (prefer words the client demonstrably uses on their Instagram), words to avoid, emotional direction, exclusions, competitors to avoid sounding like, unique mechanism, hero story, natural content formats, and a per-client emoji palette derived from the ICP (a short set of on-brand, audience-appropriate emoji; avoid emoji that clash with the audience, for example soft or feminine emoji for a masculine male over 30 audience). Store it in the Brand memory and the Brand Pack tone of voice so the ad copy draws from it.
+3. Brand: the client's PHYSICAL FORMAT (outdoor, indoor gym, private studio, online only, or a mix) recorded as an explicit line and carried into the client data as `business_format`, positioning, tone of voice, words to use (prefer words the client demonstrably uses on their Instagram), words to avoid, emotional direction, exclusions, competitors to avoid sounding like, unique mechanism, hero story, natural content formats, and a per-client emoji palette derived from the ICP (a short set of on-brand, audience-appropriate emoji; avoid emoji that clash with the audience, for example soft or feminine emoji for a masculine male over 30 audience). Store it in the Brand memory and the Brand Pack tone of voice so the ad copy draws from it.
 4. Marketing: primary offer, inclusions, pricing, payment, exact lead magnet name, ad budget, lead target, ideal CPL, target regions, platforms, proof assets, key messaging directions, funnel goal.
 5. KPIs: MRR target, client count target, monthly lead volume, target CPL, conversion, timeline, revenue thresholds.
 
@@ -24,6 +24,15 @@ Produce a single Core Message the whole campaign works back to, a short Tagline,
 
 ## Client type check
 Confirm whether the client is an online coach or a gym, and note the matching template approach. Online coach is the default.
+
+## Physical format and seasonal context (both compulsory, both go to the confirm gate)
+Establish two things about the client's real world before anything is written, and put both in the Brand memory:
+
+1. **Physical format.** Outdoor, indoor gym, private studio, online only, or a mix. Name the actual training location where there is one. This drives language across every output: a client with no building never gets "come inside", "through our doors" or "on the gym floor". Set `business_format` in the client data so the QA gate can apply or waive the `venue-language` rule. See references/writing-rules.md.
+
+2. **Seasonal and environmental context.** The season the campaign launches into, in the client's hemisphere, and anything the documents say about weather, seasonality, quiet or peak periods. For an outdoor client this is often the campaign's central obstacle and its best proof. Record what it is and where in the concept set it genuinely belongs, so it is woven through rather than bolted onto every line.
+
+Both go into the Stage 2 confirm gate alongside the spine. If there is no meaningful seasonal angle, say so rather than inventing one (Feedback 2026-06-03, Evolve Fitness Glenhaven).
 
 ## Hand to the confirm gate
 Present, for the orchestrator to confirm with the user: the spine, the ICP, the offer, the funnel, and any conflicts (for example the questionnaire offer versus the offer the founder actually wants to sell). Do not let the build start until the user has had the chance to correct.
