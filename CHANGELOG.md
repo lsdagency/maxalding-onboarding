@@ -16,6 +16,12 @@ Three corrections from the Evolve Fitness Glenhaven run (June 2026), recovered f
 - **The feedback loop closes on three things, not one.** A correction is not closed until the deliverable is rebuilt, a dated entry is in the workspace feedback log, and anything that should bind future clients is in the package (reference file, rules.yaml, a validator rule where the failure is mechanically detectable, version bump, and the canonical sample updated to match). Write the log entry when the correction lands, not at the end of the session. The Evolve run took three corrections, rebuilt all three deliverables, and logged none of them; they surfaced two months later, after the ad copy failure had recurred elsewhere. Fixing the client's file alone fixes one pack and teaches the system nothing.
 - evals/cases/sample_client.json now carries `business_format` and `seasonal_context`, so runs learn the new shape from the canonical example.
 
+## [0.23.0] - 2026-08-13
+
+### Added
+- Stage 2 hard gate: when a client delivers both online and in person, ASK which side of the business the campaign is meant to GROW, and ask what capacity they actually have. The questionnaire lists what they do now, not what they want more of. On Xcelerate the entire pack was built around a one-to-one in-person session the client was in the middle of stopping, because nobody asked. A coach already full in person cannot take the leads an in-person campaign generates.
+- creative-plan-spec: SPORT AGNOSTIC OFFER, SPORT SPECIFIC PROOF. When a client's community is narrower than the offer they want to sell, keep the offer broad and let the proof stay specific. Testimonials, existing-post ads and the coach's own story can name one code; the concepts, hooks and CTAs must work for any. Do not sand the proof down to match the offer, the specificity is what makes it believable.
+
 ## [0.22.2] - 2026-08-11
 
 ### Changed

@@ -45,6 +45,9 @@ Existing post ads. If the client has a proven organic post to run as a paid ad (
 
 Physical format and season run through every row. Before writing a cell, know the client's `business_format` and the season the campaign launches into (references/writing-rules.md). An outdoor client never gets an indoor line in BEATS, DETAILS or FILMING DIRECTION, and the seasonal angle belongs in the concepts it genuinely serves, typically Problem to Solution, the Social Proof concepts and Pattern Interrupt, never in Incentive, which is the offer and nothing else (Feedback 2026-06-03, Evolve Fitness Glenhaven).
 
+### Sport agnostic offer, sport specific proof
+When a client's community is narrower than the offer they want to sell (a coach whose proof is all rugby league selling athletic development to any sport), keep the OFFER broad and let the PROOF stay specific. Testimonials, existing-post ads and the coach's own story can all name one code; the concepts, hooks and CTAs must work for a parent whose kid plays anything. Do not sand the proof down to match the offer, it is the specificity that makes it believable (Feedback 2026-08-13, Xcelerate Performance).
+
 ## Statics, the coach template
 
 ONE graphic per static row, not three variations (Feedback 2026-08-11, Xcelerate Performance: the tracker moved to a single perfected hook, and the BEATS column has to match it). BEATS describes the elements that appear on that one graphic, each on its own line. Do not write Graphic 1 / Graphic 2 / Graphic 3, and do not list hook variations anywhere.

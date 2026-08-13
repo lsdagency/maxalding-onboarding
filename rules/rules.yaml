@@ -106,6 +106,11 @@ ad_copy_self_check:
   note: "The QA gate checks characters and lengths. It cannot see a reworded angle, a skipped skill invocation or an emoji that does not fit the audience. A passing validator is not a finished deliverable."
   source: "Feedback 2026-06-03 (Evolve Fitness Glenhaven): the AD COPY tab was written without invoking the mandated skills, with no emoji palette applied and insufficient variation between rows. The same rules have now had to be restated across eight clients."
 
+business_side_and_capacity:
+  ask_every_time: "When a client delivers both online and in person, ask at the Stage 2 gate which side the campaign is meant to GROW, and what capacity they actually have. The questionnaire lists what they do now, not what they want more of. A coach already full in person cannot take the leads an in-person campaign generates."
+  sport_agnostic_proof: "When a client's community is narrower than the offer, keep the OFFER broad and let the PROOF stay specific. Do not sand the proof down to match the offer."
+  source: "Feedback 2026-08-13 (Xcelerate Performance): the whole pack was built around a one-to-one in-person session the client was in the middle of stopping."
+
 funnel_destination:
   ask_every_time: "ALWAYS ask at the Stage 2 gate whether the campaign runs a Meta Lead Form (Instant Form) or a landing page, even when the documents imply one. Set funnel_type to lead_form or landing_page in the client data. build.build_all then produces Meta Lead Form copy (skills/meta-lead-form) OR Landing Page copy, never both and never the wrong one."
   landing_page_scope: "Landing Page Copy covers the landing page only. It does not automatically include the second step of the funnel. If the funnel uses separate pages, add a booking page (calendar above the fold, short what-to-expect, reassurance testimonial placeholder) and a thank-you page as their own titled sections. On a lead-form funnel the completion screen is the equivalent second step."
