@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.23.0"
+version: "0.24.0"
 
 banned_characters:
   - id: em-dash
@@ -71,6 +71,14 @@ premium_framing:
   cta_example: "Book My Consultation"
   per_client_flag: "premium_lead_magnet (client data, default true). Set false for a low-ticket local client whose genuine front end is a free trial or session. When false, build.build_all waives the premium-framing rule and the standalone validator can waive it with --skip-rules premium-framing."
   source: "System Prompt s5; Feedback 2026-06-18, 2026-06-26 (Peak with Hamza)"
+
+never_fabricate_biography:
+  rule: "Every biographical claim about the client (what they played, where they trained, what happened to them, how long they have coached) must be traceable to the onboarding documents or their own transcripts. Name the source before it ships. It fits the story is not a source."
+  source: "Feedback 2026-08-13 (Xcelerate Performance): the Storytelling concept, the VSL and two ad copy posts were built on the coach having been the kid stuck on the wing. He had never played rugby, and the word appears nowhere in any source."
+
+audience_breadth:
+  rule: "Do not narrow an audience gender (or any attribute) further than the client and the brief did. Check pronouns in the finished draft against the agreed ICP, not against whoever happens to appear in the client proof. Neutral audience-facing language keeps the proof intact, because named real people keep their own pronouns."
+  source: "Feedback 2026-08-13 (Xcelerate Performance): the pack said your son and he throughout, halving the audience on a small budget."
 
 ai_cadences:
   banned_shapes: "Not banned words, banned SHAPES. 1) The significance clause bolted on to explain why what you just said matters (and that's the whole reason I ended up coaching / because nobody ever spells this out / which is exactly why it works). 2) The neat balanced summary (coached as one of twenty). 3) The not X, it is Y contrast. 4) Stacked subordinate clauses in a spoken line. 5) Explaining your own point straight after making it."

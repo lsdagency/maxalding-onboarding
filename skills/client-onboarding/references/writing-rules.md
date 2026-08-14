@@ -38,6 +38,9 @@ Every onboarding transcribes the client's Instagram videos at Stage 1 (reference
 
 Signals worth counting off the transcript: how often they say yeah, mate, look, right, alright, okay, reckon, gonna, gotta. Whether they use tag questions. Whether they repeat for emphasis. How long their average sentence is. A coach who says "as hard as you can, as hard as you can" and "drive, drive, drive" does not then say "which is exactly why the approach works".
 
+### Write to the whole audience, not the half you pictured
+Do not narrow an audience's gender, or any other attribute, further than the client and the brief actually did. Check the pronouns in a finished draft against the ICP as agreed, not against the examples that happen to exist in the client's proof. A coach whose filmed clients are all boys still coaches girls, and the parent reading the ad may have either (Feedback 2026-08-13, Xcelerate Performance: the whole pack said "your son" and "he" throughout, which halved the audience on a small budget). Neutral audience-facing language ("your kid", "they") costs nothing and keeps the proof intact, because named real people keep their own pronouns.
+
 ### Two registers, and the difference between them
 The transcript governs the SHAPE of the client's speech: sentence length, openers, tag questions, cadence, what they repeat, and the technical vocabulary of their craft. Never put a shape in their mouth the transcript does not support.
 
@@ -76,3 +79,10 @@ If a line could be used by any fitness business in any city, rewrite it with det
 
 ## Never fabricate
 Do not invent testimonials, results, numbers, proof, offers, positioning or credentials. Missing items become clearly labelled placeholders. Quantified outcomes such as a specific weight figure may only be used if explicitly present in the client documents.
+
+### Biography is the easiest thing to fabricate and the worst to get wrong
+The hero story invites invention, because a vivid origin reads better than a plain one. It is still fabrication. Every biographical claim about the client, what they played, where they trained, what happened to them, how long they have done this, must be traceable to the onboarding documents or their own transcripts. If you cannot point to the line it came from, it does not go in.
+
+Worked example (Feedback 2026-08-13, Xcelerate Performance): the Storytelling concept, the VSL and two ad copy posts were all built on the coach having been "the kid who got stuck on the wing". He had never played rugby. The word rugby appears nowhere in his onboarding document, nor does league, played, team or bench, and none of his nine transcribed reels mention it. It came from the campaign being rugby-flavoured at the time. Liam caught it with one question: "where did you get this from?" That line would have gone into a VSL the client had to read out loud about his own life.
+
+The check, applied to every biographical line before it ships: name the source. Document section, or transcript, or the client said it on a call. "It fits the story" is not a source.

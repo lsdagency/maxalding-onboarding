@@ -16,6 +16,12 @@ Three corrections from the Evolve Fitness Glenhaven run (June 2026), recovered f
 - **The feedback loop closes on three things, not one.** A correction is not closed until the deliverable is rebuilt, a dated entry is in the workspace feedback log, and anything that should bind future clients is in the package (reference file, rules.yaml, a validator rule where the failure is mechanically detectable, version bump, and the canonical sample updated to match). Write the log entry when the correction lands, not at the end of the session. The Evolve run took three corrections, rebuilt all three deliverables, and logged none of them; they surfaced two months later, after the ad copy failure had recurred elsewhere. Fixing the client's file alone fixes one pack and teaches the system nothing.
 - evals/cases/sample_client.json now carries `business_format` and `seasonal_context`, so runs learn the new shape from the canonical example.
 
+## [0.24.0] - 2026-08-13
+
+### Added
+- writing-rules: "Biography is the easiest thing to fabricate and the worst to get wrong". The hero story invites invention because a vivid origin reads better than a plain one, and it is still fabrication. Every biographical claim about the client must be traceable to the onboarding documents or their own transcripts, and the check is to name the source before it ships. Worked example: the Xcelerate Storytelling concept, VSL and two ad copy posts were all built on the coach having been "the kid who got stuck on the wing". He had never played rugby; the word appears nowhere in his document or his nine transcribed reels. It would have gone into a VSL he had to read out loud about his own life (Feedback 2026-08-13).
+- writing-rules: "Write to the whole audience, not the half you pictured". Do not narrow an audience's gender, or any other attribute, further than the client and the brief did. Check pronouns in the finished draft against the agreed ICP rather than against whoever appears in the client's proof. Neutral audience-facing language costs nothing and keeps the proof intact, because named real people keep their own pronouns. The Xcelerate pack said "your son" and "he" throughout, halving the audience on a small budget.
+
 ## [0.23.0] - 2026-08-13
 
 ### Added
