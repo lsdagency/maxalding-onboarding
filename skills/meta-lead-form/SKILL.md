@@ -20,7 +20,9 @@ Save the built XLSX into the client's campaign subfolder in the workspace: `clie
 This package is read-only at runtime. Save the generated XLSX into the client workspace folder and upload it to the location the user provided.
 
 ## What you produce
-One branded LEAD FORM spreadsheet tab (optionally combined with the AD COPY tab in the same workbook), built with the deterministic build module. Never a chat list, never hand-formatted. The tab is laid out as FIELD | COPY | CHARS under black section headers, with live =LEN() formulas on the length-limited fields.
+One branded LEAD FORM spreadsheet, built with the deterministic build module. Never a chat list, never hand-formatted. The tab is laid out as FIELD | COPY | CHARS under black section headers, with live =LEN() formulas on the length-limited fields.
+
+When the request covers ad copy AND lead form copy, deliver TWO separate workbooks: the Meta Ad Copy file (build.ad_copy) and the Meta Lead Form Copy file (build.lead_form --lead-form-only). Do not deliver the combined Meta Ad & Lead Form workbook unless the user explicitly asks for one file; Liam separates them (Peak with Hamza, 2026-08-17), consistent with the ad-copy-is-its-own-workbook rule (v0.15.0).
 
 ## Lead form best practices (apply before writing)
 Sourced from Meta's own guidance and current best practice. Keep the experience short and aligned with the ad.
@@ -62,6 +64,8 @@ Assemble the `lead_form` data dict (and the `ad_copy` dict if building the combi
     python -m build.lead_form "<data>.json" --out "<dir>"
     # lead form tab only
     python -m build.lead_form "<data>.json" --out "<dir>" --lead-form-only
+
+Default to `--lead-form-only` plus a separate `build.ad_copy` run when both deliverables are in play; the combined command below stays available for an explicit one-file request.
 
 The JSON shape (lead_form is a list of sections, each with FIELD/COPY rows; add "limit" to a row to get a live =LEN and a build-time character check):
 
