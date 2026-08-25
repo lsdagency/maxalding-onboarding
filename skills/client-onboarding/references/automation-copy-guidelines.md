@@ -5,6 +5,15 @@ Document 4, built with build/crm_automation.py. Apply email-sequence principles 
 ## Structure
 Go straight into AUTOMATION COPY. No overview, no instructions or prompt at the start, no booking-link preamble, no ClickUp contractor brief, no process steps, no quality-control checklist and no Master Copy Prompt. The deliverable is the email and SMS copy itself, nothing else.
 
+## The booked event is a CALL, and platforms must be split first
+The four workflows below belong to the lead-gen side of the funnel (typically GoHighLevel). The thing being booked, confirmed and chased in them is a QUICK CALL with the coach, never the end service itself. Do not write the Booked Call Confirmation as if the lead has booked the session, consultation or class: no studio directions, no what-to-wear notes, no arrival instructions. Confirm a call, set expectations for a call (a relaxed chat, questions answered, decide if the front-end offer is the right next step), and use the meeting link.
+
+Before writing a word, establish at the Stage 2 gate which platform owns which step. Many clients run a second system (WellnessLiving, Mindbody, Calendly) where people can book the end service directly and which already carries its own confirmations, missed-session recovery and member emails. Never duplicate those. State the owning platform inside each workflow's TRIGGER line so the client can see the split at a glance, and scope No Show Rebook and Long Term Nurture to the call funnel explicitly.
+
+When a direct booking path exists, write the copy two-path: the primary CTA books the call, and one or two natural mentions (the welcome email, the FAQ email, the final soft close) tell people who are already sure that they can book the front-end offer straight into the client's own calendar. One CTA button per message still; the second path is an inline sentence, not a second button.
+
+This rule exists because a client (Fisica, 2026-08-11) read a Booked Call Confirmation written as an in-studio consultation confirmation and could not tell where GoHighLevel ended and WellnessLiving began.
+
 ## Workflows
 Build these four funnel workflows, in this order, every time. Do not add, drop or rename them. The timing and type of each step are fixed; write the copy to fulfil the stated purpose. Booking link in follow-up messages only, never on a cold send.
 

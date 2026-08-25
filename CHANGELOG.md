@@ -16,6 +16,11 @@ Three corrections from the Evolve Fitness Glenhaven run (June 2026), recovered f
 - **The feedback loop closes on three things, not one.** A correction is not closed until the deliverable is rebuilt, a dated entry is in the workspace feedback log, and anything that should bind future clients is in the package (reference file, rules.yaml, a validator rule where the failure is mechanically detectable, version bump, and the canonical sample updated to match). Write the log entry when the correction lands, not at the end of the session. The Evolve run took three corrections, rebuilt all three deliverables, and logged none of them; they surfaced two months later, after the ad copy failure had recurred elsewhere. Fixing the client's file alone fixes one pack and teaches the system nothing.
 - evals/cases/sample_client.json now carries `business_format` and `seasonal_context`, so runs learn the new shape from the canonical example.
 
+## [0.24.1] - 2026-08-11
+
+### Changed
+- CRM Automation: the booked event in the four workflows is a CALL, never the end service. New section in automation-copy-guidelines.md: split platforms at the Stage 2 gate (GoHighLevel call funnel versus the client's own booking system such as WellnessLiving), state the owning platform in each TRIGGER, never duplicate the client system's existing confirmations and nurture, and write two-path copy (call CTA primary, direct service booking as an inline mention) when a direct booking path exists. From Rafa's Fisica feedback (2026-08-11); the Fisica CRM Automation was rebuilt to the call model.
+
 ## [0.24.0] - 2026-08-13
 
 ### Added
