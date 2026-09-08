@@ -34,8 +34,8 @@ Keep it short
 - Prefilled fields (name, email, phone) plus one or two qualifying questions outperform long forms. Do not ask more than you genuinely need. Every extra question lowers completion.
 
 Intro
-- Intro headline: state plainly what they get or what this is. No more than 60 characters.
-- Intro description: set expectations. Say what the program is, who it is for, and what happens after they submit (for example, the team will be in touch to confirm). This is where alignment with the ad is won or lost: the form must deliver what the ad promised.
+- Intro headline: SELL the thing they are handing their details over for. It is the most valuable line in the form and it must give a reason to continue, not name the offer. A label ("The Runners Diagnostic, Bishops Square") is a failure; the outcome the person actually wants ("Find out exactly why your running has stalled") is the job. Lead with what they will know, get or be able to do. No more than 60 characters. (Feedback 2026-09-07, Oliver Bird: "that intro headline needs to be a lot more engaging and appealing, we've got to sell what they're potentially leaving their details for".)
+- Intro description: PUNCHY. Three short lines at most, and aim well under 250 characters. Answer only two questions: what do I get, and what happens next. Short sentences and fragments beat full explanatory prose here, and the reader is mid-scroll with a form open. Do not restate the whole offer, do not explain the mechanism, do not add targeting or qualifying language the audience settings already handle. This is where alignment with the ad is won or lost: the form must deliver what the ad promised, in fewer words than the ad used. (Feedback 2026-09-07, Oliver Bird: a 437 character description was cut to 212 and read better; Liam noted the over-writing is a recurring habit, not a one-off.)
 
 Questions
 - List the prefilled fields, then one or two custom qualifying questions. Multiple choice qualifies better than free text and is easier to complete. Keep each question clear and under about 80 characters. Phrase questions to qualify (goal, timeframe, suburb), never to interrogate.

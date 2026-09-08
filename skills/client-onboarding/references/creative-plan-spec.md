@@ -86,6 +86,10 @@ Apply ads, ad-creative and copywriting before writing. Columns: number, CONCEPT,
         this session, for this copy. Not "read the rules", invoked, on this pass and on every
         rewrite (Feedback 2026-06-29 and 2026-07-15, Built By Brun).
     [ ] Read the client's Brand memory: emoji palette, words to use, banned list, tagline.
+    [ ] Checked every specialist term against the client-only vocabulary list in the Brand
+        memory. A term the client never uses with their own audience does not go in a hook,
+        a headline or a static overlay unless the asset explains it in the same breath.
+        Sell what the customer LEARNS or GETS; the mechanism is proof, not the hook.
     [ ] Every concept has exactly 5 posts, and every post is a genuinely different ANGLE.
         Name the angle of each one to yourself. If two share an angle, one of them is a reword.
     [ ] Each post opens on a pain point or desire the ICP is ALREADY thinking about, in their
