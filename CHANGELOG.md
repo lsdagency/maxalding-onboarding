@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.31.2] - 2026-09-18
+
+### Changed
+- script-guidelines.md: a creative hook must be filmable by the talent alone in a quiet space, with no members in shot. Replaces the "have a look behind me" example added in 0.31.1, which Liam rejected as unfilmable (trainers will not film in front of members, members are awkward on camera, a live session ruins the audio). New example: a guessing game that the body's first line answers.
+
 ## [0.31.1] - 2026-09-18
 
 ### Changed
