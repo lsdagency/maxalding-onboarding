@@ -2,6 +2,12 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.31.1] - 2026-09-18
+
+### Changed
+- writing-rules.md, two new banned shapes from Liam's Edge Fit Stanmore hook review: the negative to positive arc (a hook that opens on what is wrong and resolves into the offer, fine once, a tell when most of a set does it) and the tongue twister (say spoken offer lines out loud, "three one on one sessions for the price of one" has four ones in nine words).
+- script-guidelines.md: a multi-hook set needs real type spread, gain led hooks, and at least one genuinely creative, camera native or local option, with its filming need written into FILMING DIRECTION.
+
 ## [0.31.0] - 2026-09-18
 
 ### Added

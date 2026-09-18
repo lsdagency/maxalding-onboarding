@@ -30,6 +30,8 @@ Liam: "These are obvious Claude AI lines, I've seen them over and over again." N
 - **The "not X, it is Y" contrast.** See the banned formula above.
 - **Stacked subordinate clauses.** A spoken line should carry one idea. If a sentence has two commas and a "which", it was written, not said.
 - **Explaining your own joke or point.** If a line lands, the next line must not restate why it landed.
+- **The negative to positive arc.** A line that opens on what is wrong with the reader's situation and resolves into the offer: "If it's been years since you trained and you wouldn't know where to start, this is for you", "Ever walked past a big gym and thought, that's not for me?". One of these in a set is a Problem hook. Three of them in a set of five is a tell, and it makes the whole set read as one hook reworded (Feedback 2026-09-18, Edge Fit Stanmore, where four of five Audience Addresser hooks did it and every one had passed the positive-language rule, because none of them blamed the person). Hooks lead on the gain, the person's strengths, the place, the proof or the offer. Check a finished hook SET for shared arcs, not only each hook alone.
+- **The tongue twister.** Spoken offer lines get said out loud before they ship. "Three one on one sessions for the price of one" reads fine and has four "ones" in nine words. Say the offer the short way ("three personal training sessions for just ninety dollars") and find another phrase for one on one (your own trainer, a trainer beside you).
 
 The fix is not a synonym swap. Write the line the way the client would actually say it out loud, then read it back in their voice. If you cannot hear them saying it, it goes.
 
