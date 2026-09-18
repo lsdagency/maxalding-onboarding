@@ -256,13 +256,14 @@ DELIVERABLES = {
     "VSL Script": "docx",
     "Landing Page Copy": "docx",
     "CRM Automation": "docx",
+    "Filming Sheet": "docx",
 }
 NAMING_PREFIX = "MAXALDING - "
 # Group 1 = client business name, group 2 = deliverable, group 3 = extension
 NAMING_REGEX = (
     r"^MAXALDING - (.+) - "
     r"(Creative Plan|Meta Ad Copy|Meta Lead Form Copy|Meta Ad & Lead Form Copy"
-    r"|Video Ad Scripts|VSL Script|Landing Page Copy|CRM Automation)"
+    r"|Video Ad Scripts|VSL Script|Landing Page Copy|CRM Automation|Filming Sheet)"
     r"\.(xlsx|docx)$"
 )
 

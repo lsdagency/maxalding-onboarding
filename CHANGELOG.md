@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.30.0] - 2026-09-18
+
+### Added
+- Filming Sheet deliverable (build/filming_sheet.py, registered in the validator naming rules): the client-facing shoot doc for a SMALL ask, a handful of takes rather than a full concept batch. Canonical case is a hook test: several new openings plus a fresh CTA take against a winning ad's reused body. Structure: what we need, how to film every take, then the takes as one spoken line each, in the house docx style. Editor instructions never appear on the sheet, they go in the designer ticket. From Liam's Fisica Incentive hook-test review (2026-09-18): the full Video Ad Scripts format buried a six-take ask in per-concept structure.
+
 ## [0.23.0] - 2026-08-12
 
 Three corrections from the Evolve Fitness Glenhaven run (June 2026), recovered from a handoff note and codified now. None of the three had ever reached the feedback log, which is itself the fourth change below.

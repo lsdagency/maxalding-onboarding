@@ -1,5 +1,8 @@
 # Video Ad Scripts guidelines
 
+## When the ask is small, use the Filming Sheet instead
+The full Video Ad Scripts document earns its structure when every concept carries its own body and directions. When the client's ask is a handful of takes (the canonical case is a hook test: several new openings and a fresh CTA against a winning ad's reused body), build the FILMING SHEET instead (build/filming_sheet.py): what we need, how to film every take, then the takes, one spoken line each. Keep it radically simple, it is read by the person standing in front of the camera. Editor instructions (reused footage, B-Roll overlay, which take goes where) never appear on the sheet; they go in the designer ticket. From Liam's Fisica hook-test review (2026-09-18).
+
 Document 1, built with build/video_ad_scripts.py. Apply ad-creative principles before writing hooks and scripts.
 
 ## Typography and header

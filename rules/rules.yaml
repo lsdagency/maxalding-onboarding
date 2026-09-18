@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.29.0"
+version: "0.30.0"
 
 banned_characters:
   - id: em-dash
@@ -171,6 +171,7 @@ naming_convention:
     VSL Script: docx
     Landing Page Copy: docx
     CRM Automation: docx
+    Filming Sheet: docx
   note: "SCRIPT column in the tracker references the Video Ad Scripts filename. Meta Ad Copy / Lead Form deliverables come from the standalone meta-ad-copy and meta-lead-form skills."
   saving: "Save every campaign deliverable into its own per-campaign subfolder in the workspace: workspace/clients/[Client]/[Mon-DD-descriptor-campaign]/ (for example Aug-01-anniversary-campaign). Never drop a new campaign's files into the client root or another campaign's folder. Client-wide reference files (client profile, audits) stay at the client root."
   source: "System Prompt s6; Feedback 2026-06-18, 2026-07-15 (UBX campaign segment + per-campaign subfolders)"
