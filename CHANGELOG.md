@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.30.1] - 2026-09-18
+
+### Changed
+- CRM Automation copy always goes into the agency's own GoHighLevel, for every client. intake-research and automation-copy-guidelines now say so outright: never ask at the Stage 2 gate which CRM the automations are for, and never treat "CRM: NA" in a client document as a gap. The client CRM field is recorded only to split platforms when they run a second system of their own. From the Edge Fit Stanmore gate (2026-09-18), where the question was asked because the client's document said he had no CRM.
+
 ## [0.30.0] - 2026-09-18
 
 ### Added
