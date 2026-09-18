@@ -97,6 +97,7 @@ def deliverable_filename(client_business_name: str, deliverable: str,
         "VSL Script": "docx",
         "Landing Page Copy": "docx",
         "CRM Automation": "docx",
+        "Filming Sheet": "docx",
     }[deliverable]
     middle = f"{client_business_name} - {campaign}" if campaign else client_business_name
     return f"MAXALDING - {middle} - {deliverable}.{ext}"
