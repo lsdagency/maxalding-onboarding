@@ -89,7 +89,10 @@ def build_all(data, out_dir, workspace=None):
     if data.get("ad_copy", {}).get("concepts"):
         outputs["Meta Ad Copy"] = build_ad_copy(data, out_dir)
     outputs["Video Ad Scripts"] = build_video_ad_scripts(data, out_dir, workspace=workspace)
-    outputs["VSL Script"] = build_vsl_script(data, out_dir, workspace=workspace)
+    # A lead-form campaign with no landing page has nowhere for a VSL to sit,
+    # so a data file may opt out of it (Edge Fit Stanmore, 2026-09-18).
+    if "VSL Script" not in data.get("skip_deliverables", []):
+        outputs["VSL Script"] = build_vsl_script(data, out_dir, workspace=workspace)
     # The funnel decides which destination deliverable is produced. A lead-form
     # funnel gets Meta Lead Form copy; a landing-page funnel gets Landing Page
     # copy. Writing the wrong one wastes the deliverable, so funnel_type is

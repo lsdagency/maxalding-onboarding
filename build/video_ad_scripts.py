@@ -53,6 +53,15 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
         workspace=workspace,
     )
 
+    # Optional plain-English summary of the whole shoot, for a client who needs
+    # the ask at a glance before the detail (Edge Fit Stanmore, 2026-09-18:
+    # "make the video ad scripts easy for Jack to understand").
+    if meta.get("summary"):
+        doc.add_paragraph()
+        T.add_subheading(doc, "WHAT WE NEED FROM YOU")
+        for point in meta["summary"]:
+            T.add_body(doc, f"- {point}")
+
     # Context block, in bold: scripts are guidance only.
     doc.add_paragraph()
     T.add_body(
@@ -90,12 +99,23 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
             T.add_body(doc, concept["intro"])
 
         doc.add_paragraph()
-        T.add_body(doc, "Hook (the opening line):", bold=True)
-        # One hook per concept (0.17.0). A legacy data file may still carry a
-        # list of options; the first entry is the hook.
-        hooks = concept.get("hooks", [])
-        if hooks:
-            T.add_script_line(doc, hooks[0])
+        hooks = [h for h in concept.get("hooks", []) if h]
+        if concept.get("hook_test") and len(hooks) > 1:
+            # Opt-in hook test (Edge Fit Stanmore, 2026-09-18): several openings
+            # filmed over ONE fixed body and one CTA, each becoming its own ad.
+            # A structure Liam is testing, not the default. One hook per
+            # concept stays the rule everywhere else, and the tracker still
+            # mirrors only the first hook.
+            T.add_body(doc, f"Hooks (film all {len(hooks)}, one at a time):", bold=True)
+            for n, hook in enumerate(hooks, start=1):
+                T.add_body(doc, f"Hook {n}")
+                T.add_script_line(doc, hook)
+        else:
+            T.add_body(doc, "Hook (the opening line):", bold=True)
+            # One hook per concept (0.17.0). A legacy data file may still carry
+            # a list of options; the first entry is the hook.
+            if hooks:
+                T.add_script_line(doc, hooks[0])
 
         doc.add_paragraph()
         T.add_body(doc, "Script:", bold=True)

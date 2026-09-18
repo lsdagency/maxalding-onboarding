@@ -2,6 +2,14 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.31.0] - 2026-09-18
+
+### Added
+Three OPT-IN build switches, all off by default, so a pack on the three-concept structure Liam is testing (Edge Fit Stanmore) can still go through build.build_all. None of them changes a standing rule: one hook per concept stays the default, and the tracker still mirrors a single hook.
+- `hook_test: true` on a script concept renders every hook in `hooks` as "Hook 1" to "Hook N" under "Hooks (film all N, one at a time)". For a hook test, several openings filmed over one fixed body and one CTA. The Creative Tracker still takes only the first hook, so put the strongest first.
+- `skip_deliverables: ["VSL Script"]` at the top level skips the VSL, for a lead-form campaign with no landing page for it to sit on.
+- `scripts.summary` (a list of plain lines) renders a WHAT WE NEED FROM YOU block at the top of the Video Ad Scripts document, so the client sees the whole shoot at a glance before the detail.
+
 ## [0.30.1] - 2026-09-18
 
 ### Changed
