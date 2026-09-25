@@ -2,6 +2,12 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.31.3] - 2026-09-25
+
+### Changed
+- writing-rules.md: the list of three joins the banned AI cadences (one per script at most, pairs or single ideas, three-step CTAs split into two sentences), and positive connotations now explicitly run through bodies, CTAs, static sublines and interview questions, not only hooks and post copy. From Liam's review of the Colossus PT working draft, where five lists of three and a body full of low-grade negativity survived gain-led hooks.
+- rules.yaml ai_cadences: list_of_three and positive_throughout. No validator rule: a trial detector matched legitimate lists across every existing pack, so this stays a read-back check.
+
 ## [0.31.2] - 2026-09-18
 
 ### Changed

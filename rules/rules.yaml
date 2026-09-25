@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.31.2"
+version: "0.31.3"
 
 banned_characters:
   - id: em-dash
@@ -82,6 +82,9 @@ audience_breadth:
 
 ai_cadences:
   banned_shapes: "Not banned words, banned SHAPES. 1) The significance clause bolted on to explain why what you just said matters (and that's the whole reason I ended up coaching / because nobody ever spells this out / which is exactly why it works). 2) The neat balanced summary (coached as one of twenty). 3) The not X, it is Y contrast. 4) Stacked subordinate clauses in a spoken line. 5) Explaining your own point straight after making it."
+  list_of_three: "The list of three (three parallel items, the last joined with and) is an AI cadence. One per script at most; use a pair or a single idea; split a three-step CTA into two sentences. Count across bodies and CTAs. A genuine factual list (map areas, package contents) is exempt. Not a validator rule: a trial detector fired on legitimate lists across every existing pack, so this is a read-back check."
+  list_of_three_source: "Feedback 2026-09-25 (Colossus PT): Liam spotted power of threes creeping into the body copy of the working draft."
+  positive_throughout: "The gain-led check covers bodies, CTAs, static sublines and interview questions, not only hooks and post copy. Negativity that leaves the hooks tends to settle in the bodies."
   register_rule: "Write every spoken line in the client's actual register, mined from the Stage 1 Instagram transcripts, not from the questionnaire tone section. A How [name] actually talks block is mandatory in the Brand memory and the Brand Pack TONE OF VOICE. Read each line back in their voice before keeping it."
   two_registers: "The transcript governs the SHAPE of the client's speech (sentence length, openers, tag questions, cadence, repetition, the technical vocabulary of their craft). Audience-facing VOCABULARY is separate and may come from the AUDIENCE's own language, provided the client would plainly say it in life. Evidence the shape from the transcript and the vocabulary from the transcript OR the ICP, and be able to say which. Never reach for a word just because it sounds like the region or the trade."
   two_registers_source: "Feedback 2026-08-11 (Xcelerate Performance): footy appears in none of the nine transcribed reels, where Zack's on-camera sport vocabulary is all coaching technical, but every Sydney league parent says it and Liam kept it on that ground. The v0.21.0 register rule read literally would have stripped it."
