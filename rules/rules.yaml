@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.31.3"
+version: "0.32.0"
 
 banned_characters:
   - id: em-dash
@@ -150,7 +150,7 @@ post_copy_style:
   source: "Feedback 2026-06-24 (FIT Republik)"
 
 hook_style:
-  video: "Each video concept carries exactly ONE hook, in the Video Ad Script and mirrored into the Creative Tracker HOOK GUIDANCE cell. Generate several angles with the ad-hooks skill, then pick the strongest and perfect it. The hook must sound like a voicenote said out loud to camera: natural spoken English, contractions, a real spoken opener where it fits (Okay, Real quick, Here's the thing, Don't scroll past this). Not a written slogan. Across the concept set the hooks must span DIFFERENT hook types: mix question, curiosity gap, urgency, bold statement, empathy or relatable and pattern interrupt, with at least one statement in the set. Carry the campaign theme through without making every hook sell."
+  video: "Each video concept carries exactly ONE hook, in the Video Ad Script and mirrored into the Creative Tracker HOOK GUIDANCE cell. Generate several angles with the ad-hooks skill, then pick the strongest and perfect it. The hook must sound like a voicenote said out loud to camera: natural spoken English, contractions, opening on the content itself, never a filler opener (Okay, Real quick, So, Look, Honestly, Here's the thing), which spends the first word on nothing (Feedback 2026-09-25, Colossus PT; validator warning hook-filler-opener). Not a written slogan. Across the concept set the hooks must span DIFFERENT hook types: mix question, curiosity gap, urgency, bold statement, empathy or relatable and pattern interrupt, with at least one statement in the set. Carry the campaign theme through without making every hook sell."
   hook_body_chaining: "The hook is the FIRST SPOKEN LINE of the take and the script body continues straight from it. The body's first line must chain from the hook, never restate it: if the hook and the opening body line say the same thing in different words (hook 'One of my clients came to me tired' then body 'He came to me tired'), the hook has failed. Write hook plus body as one continuous spoken piece: the hook opens a thought (a question, a claim, a story lead) and the body advances it. Read them aloud back to back before accepting."
   hook_body_chaining_source: "Feedback 2026-08-07 (BodyShaping): Amir flagged hooks disconnecting from the script bodies; the rewrite then overcorrected into hooks that duplicated the first body line. Three swappable hooks over one fixed body cannot truly chain, which is why the scripts moved to one hook per concept."
   register: "The hook register must match the ICP's age and world, never a generic social voice. No under-30 slang (real talk, no cap, lowkey, vibe) for an over-30 audience. Slang only when the coach or ICP genuinely uses it on the transcript. Invoke the ad-hooks skill every time hooks are written or rewritten, including revision rounds."

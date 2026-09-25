@@ -2,6 +2,15 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.0] - 2026-09-25
+
+### Added
+- Validator rule `hook-filler-opener` (WARNING) on video hooks: flags a hook that opens on a filler word (okay, so, look, right, honestly, real quick, here's the thing and similar). From Liam on the Colossus PT draft: filler at the start of a hook loses attention.
+
+### Changed
+- script-guidelines.md, creative-plan-spec.md, rules.yaml hook_style: the "real spoken opener where it fits (Okay, Real quick, Here's the thing)" suggestion is REVERSED. Hooks open on the content; the spoken feel comes from sentence shape and contractions, and the client's fillers belong in the body. writing-rules.md notes counted fillers are register evidence for bodies only.
+- evals/cases/sample_client.json: the Pattern Interrupt hook no longer opens "Real quick".
+
 ## [0.31.3] - 2026-09-25
 
 ### Changed

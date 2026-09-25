@@ -325,6 +325,20 @@ def check_lengths(seg: Segment) -> list:
 def check_hooks(seg: Segment) -> list:
     out = []
     if seg.kind == "video_hook":
+        m = rules.HOOK_FILLER_OPENER.match(seg.text)
+        if m:
+            out.append(
+                Violation(
+                    rule="hook-filler-opener",
+                    message=(
+                        f'video hook opens on the filler "{m.group(1)}"; '
+                        "open on the content, the first word has to earn attention"
+                    ),
+                    location=seg.location,
+                    snippet=seg.text[:60],
+                    severity="warn",
+                )
+            )
         n = _word_count(seg.text)
         if n >= rules.VIDEO_HOOK_MAX_WORDS:
             out.append(

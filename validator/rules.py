@@ -1,3 +1,4 @@
+import re
 """
 Deterministic rule constants for the Maxalding QA gate.
 
@@ -298,3 +299,17 @@ RULE_STATEMENT_MARKERS = [
 # SMS limits (System Prompt section 12)
 SMS_PREFERRED_MAX = 160
 SMS_HARD_MAX = 320
+
+
+# ---------------------------------------------------------------------------
+# Filler openers on video hooks (Feedback 2026-09-25, Colossus PT). The first
+# word of a hook is the most valuable second of the ad. "Okay", "Real quick",
+# "So", "Look" spend it on nothing. Spoken feel comes from sentence shape and
+# contractions, not from a warm-up word. WARNING: fillers are fine in bodies.
+# ---------------------------------------------------------------------------
+HOOK_FILLER_OPENER = re.compile(
+    r"^\s*(?:hook\s*\d+[^:]*:\s*)?"
+    r"(okay|ok|so|right|righto|look|listen|honestly|alright|well|now|um|hey|"
+    r"real quick|quick one|here'?s the thing|the thing is)\b",
+    re.IGNORECASE,
+)
