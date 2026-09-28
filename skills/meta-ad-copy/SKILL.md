@@ -23,6 +23,7 @@ One AD COPY spreadsheet, built with the deterministic build module. Never a chat
 
 - Columns: `# | CONCEPT | POST COPY | CHARS`. No STATUS column, no CTA column or note.
 - Organise by distinct concept only, no duplicate concept rows. For a batch of videos, each video maps to one concept (use the video's subject or angle as the concept name).
+- A HOOK TEST is ONE concept. When the ads are variants of one video that differ only in their opening hook, write ONE shared set for the whole test: 5 posts, the 5 headlines and 1 description, used on every variant, so the hook stays the only variable. Never write per-variant post copy for a hook test (Fisica Incentive Hook Test, 2026-09-28).
 - 5 post copy variations per concept.
 - One shared block of 5 headlines and one shared description that cover all concepts.
 - CHARS is a live `=LEN()` formula on every copy cell. Never hardcode a count.

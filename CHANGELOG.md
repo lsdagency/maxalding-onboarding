@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.1] - 2026-09-28
+
+### Changed
+- meta-ad-copy: a HOOK TEST is one concept. When the ads are variants of one video that differ only in their opening hook, write one shared set (5 posts, 5 headlines, 1 description) for every variant so the hook stays the only variable. Never per-variant post copy for a hook test. From Liam on the Fisica Incentive Hook Test (2026-09-28).
+
 ## [0.32.0] - 2026-09-25
 
 ### Added
