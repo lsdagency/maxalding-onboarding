@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.3] - 2026-09-30
+
+### Changed
+- script-guidelines.md: a guessing game or number-led hook needs an answer that impresses. "Guess how many people can train in here. Four." undersold a private studio and was rejected by Liam (Unstoppable Training Studio). Where small or private is the selling point, show the benefit, not the number.
+
 ## [0.32.2] - 2026-09-30
 
 ### Changed
