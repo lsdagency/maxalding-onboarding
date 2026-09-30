@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.2] - 2026-09-30
+
+### Changed
+- writing-rules.md, rules.yaml ai_cadences: the comma-stacked repeat joins the banned spoken shapes ("we write down every rep, every weight"). A word repeated across a comma with no "and" is a written device; in speech, join the two things or say it once. Client slogans in that shape stay on statics and captions only. From Liam on the Unstoppable Training Studio working draft, flagged as a recurring habit. Read-back check, no validator rule.
+
 ## [0.32.1] - 2026-09-28
 
 ### Changed
