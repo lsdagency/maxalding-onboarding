@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.4] - 2026-10-01
+
+### Changed
+- writing-rules.md, rules.yaml ai_cadences: four more patterns Liam flagged as recurring, from his rewrites of the 1 TO 360 working draft. The comma-tacked filler ("My clients are busy, you know"), the explainer tacked onto a hook, process where the gain should be ("we work backwards from the date" becomes "we'll get you feeling your best in time"), and losing the gain while fixing a line's shape. Read-back checks, no validator rules.
+
 ## [0.32.3] - 2026-09-30
 
 ### Changed

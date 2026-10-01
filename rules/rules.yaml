@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.32.3"
+version: "0.32.4"
 
 banned_characters:
   - id: em-dash
@@ -86,6 +86,10 @@ ai_cadences:
   list_of_three_source: "Feedback 2026-09-25 (Colossus PT): Liam spotted power of threes creeping into the body copy of the working draft."
   comma_stacked_repeat: "A word repeated across a comma with no and (every rep, every weight / no crowds, no waiting) is a written rhetorical device, not speech. In spoken lines join the two things or say it once (we keep track of everything you lift). A client slogan in that shape may stay on a static or caption, never in a spoken line. Read-back check, no validator rule."
   comma_stacked_repeat_source: "Feedback 2026-09-30 (Unstoppable Training Studio): Liam flagged write down every rep, every weight as a habit across drafts."
+  comma_tacked_filler: "Never paste the client's counted filler after a comma onto a written sentence (My clients are busy, you know). Fillers are register evidence, not decoration; write the plain sentence a person would say. Read-back check."
+  hook_explainer: "Never add a second sentence to a hook that explains it (Four sessions for the price of three. That's how I start with every new client). Stop on the line that lands."
+  process_over_gain: "When a spoken line describes the coach's method (we work backwards from the date / if you like how we work), rewrite it as the result she feels (we'll get you feeling your best in time / if you like the progress you're getting). When fixing a line's shape, keep its gain."
+  patterns_source: "Feedback 2026-10-01 (1 TO 360): Liam rewrote five lines of working draft v2 and flagged these as patterns the writer keeps repeating."
   positive_throughout: "The gain-led check covers bodies, CTAs, static sublines and interview questions, not only hooks and post copy. Negativity that leaves the hooks tends to settle in the bodies."
   register_rule: "Write every spoken line in the client's actual register, mined from the Stage 1 Instagram transcripts, not from the questionnaire tone section. A How [name] actually talks block is mandatory in the Brand memory and the Brand Pack TONE OF VOICE. Read each line back in their voice before keeping it."
   two_registers: "The transcript governs the SHAPE of the client's speech (sentence length, openers, tag questions, cadence, repetition, the technical vocabulary of their craft). Audience-facing VOCABULARY is separate and may come from the AUDIENCE's own language, provided the client would plainly say it in life. Evidence the shape from the transcript and the vocabulary from the transcript OR the ICP, and be able to say which. Never reach for a word just because it sounds like the region or the trade."
