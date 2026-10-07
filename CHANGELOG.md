@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.5] - 2026-10-07
+
+### Changed
+- agents/intake-research.md: client questions at the Stage 2 gate are the exception. Only ask the client what blocks the build (for example a lead form privacy policy URL); default everything else in the internal gate file. From Liam on NSF Personal Training, who cut eight client questions down to one.
+
 ## [0.32.4] - 2026-10-01
 
 ### Changed

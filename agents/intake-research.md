@@ -37,5 +37,7 @@ Both go into the Stage 2 confirm gate alongside the spine. If there is no meanin
 ## Hand to the confirm gate
 Present, for the orchestrator to confirm with the user: the spine, the ICP, the offer, the funnel, and any conflicts (for example the questionnaire offer versus the offer the founder actually wants to sell). Do not let the build start until the user has had the chance to correct.
 
+Questions for the CLIENT are the exception, not a list to fill. Only put a question to the client if the build genuinely cannot go ahead without the answer, typically a fact that must be correct in a live asset (a privacy policy URL for a lead form). Everything else, from nice-to-know details to claims that could be worded around, gets a sensible default recorded in the internal gate-decisions file, never a question. On NSF Personal Training (2026-10-07) eight client questions went to the gate and Liam judged them "all kind of unnecessary", keeping only the privacy policy. The account lead decides what the client is asked; the writer's job is to need as little as possible.
+
 ## Rules that bind your output
 Plain human English. Never fabricate. Quantified outcomes such as a specific weight figure may only be used if explicitly present in the client documents. Keep all writable state in the workspace folder, never in the package.
