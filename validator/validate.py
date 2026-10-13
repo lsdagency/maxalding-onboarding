@@ -236,6 +236,87 @@ def _dedupe(violations: list) -> list:
     return out
 
 
+# ---------------------------------------------------------------------------
+# Other clients named in a deliverable (Feedback 2026-10-13, AMPWR Coaching)
+# ---------------------------------------------------------------------------
+# A deliverable for one client must never name another client. Working notes
+# carry the agency's history ("the Xcelerate rule", "as on Edge Fit"), and that
+# history leaks into briefs the client reads. The other clients are the sibling
+# folders of the deliverable's own folder under workspace/clients/, so the check
+# needs no configuration and only runs when the file lives there.
+_GENERIC_SUFFIXES = (
+    "personal training", "training studio", "strength and fitness",
+    "nutrition & fitness", "fitness", "performance", "coaching", "training",
+    "studio", "pt", "academy", "lab",
+)
+
+
+def _client_root(path: str):
+    """(clients_dir, own_client_folder) when path sits under .../clients/<Client>/."""
+    parts = os.path.abspath(path).split(os.sep)
+    for i in range(len(parts) - 2, 0, -1):
+        if parts[i] == "clients" and i + 1 < len(parts) - 1:
+            return os.sep.join(parts[: i + 1]), parts[i + 1]
+    return None, None
+
+
+def _short_form(name: str):
+    low = name.lower()
+    for suffix in _GENERIC_SUFFIXES:
+        if low.endswith(" " + suffix):
+            short = name[: -len(suffix) - 1].strip()
+            return short if len(short) >= 3 else None
+    return None
+
+
+def other_client_names(path: str) -> list:
+    """[(name, severity)] for every OTHER client folder: full name = error, short form = warn."""
+    clients_dir, own = _client_root(path)
+    if not clients_dir or not os.path.isdir(clients_dir):
+        return []
+    own_low = own.lower()
+    out = []
+    for entry in sorted(os.listdir(clients_dir)):
+        full = os.path.join(clients_dir, entry)
+        if entry == own or entry.startswith(".") or not os.path.isdir(full):
+            continue
+        out.append((entry, "error"))
+        short = _short_form(entry)
+        if short and short.lower() not in own_low and short.lower() != entry.lower():
+            out.append((short, "warn"))
+    return out
+
+
+def check_other_clients(segments, names) -> list:
+    import re
+    from .checks import Violation
+
+    found = []
+    for name, severity in names:
+        # Full folder names match in any case. Short forms match only as written
+        # (a proper noun), because several are ordinary words ("feel unstoppable").
+        flags = re.IGNORECASE if severity == "error" else 0
+        pattern = re.compile(r"(?<![\w])" + re.escape(name) + r"(?![\w])", flags)
+        for seg in segments:
+            m = pattern.search(seg.text or "")
+            if m:
+                lo = max(0, m.start() - 30)
+                found.append(Violation(
+                    rule="other-client-name",
+                    message=(
+                        f'Names another agency client ("{name}"). A deliverable never '
+                        "mentions other clients. Remove it."
+                        if severity == "error" else
+                        f'May name another agency client ("{name}"). Check it is not a '
+                        "reference to that client, and remove it if it is."
+                    ),
+                    location=seg.location,
+                    severity=severity,
+                    snippet=seg.text[lo: m.end() + 30].replace("\n", " "),
+                ))
+    return found
+
+
 def scan_file(path: str, check_names: bool = True) -> list:
     ext = os.path.splitext(path)[1].lower()
     violations = []
@@ -257,6 +338,8 @@ def scan_file(path: str, check_names: bool = True) -> list:
     # Set-level checks look at the whole file at once (for example post copy
     # length variance, which no single cell can reveal).
     violations.extend(run_set_checks(segments))
+    if ext in DOCX_EXTS or ext in XLSX_EXTS:
+        violations.extend(check_other_clients(segments, other_client_names(path)))
     return violations
 
 

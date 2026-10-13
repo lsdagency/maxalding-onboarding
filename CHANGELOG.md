@@ -2,6 +2,12 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.6] - 2026-10-13
+
+### Added
+- validator rule `other-client-name`: a .docx or .xlsx under workspace/clients/<Client>/ that names another client folder is an ERROR (full name, any case), or a WARNING for a short form with a generic suffix removed (matched only as written, since some are ordinary words). No configuration, the sibling folders are the list. Swept the whole workspace on adding it: one real leak (a Rails MMA Brand Pack titled "Mindful Strength Lab Brand Pack"), two sentence-start "Freedom" warnings, nothing else.
+- writing-rules.md and rules.yaml other_clients: a deliverable never names another agency client; describe the lesson, not the client. From Liam on the AMPWR Coaching working draft, which named Xcelerate in the Founder Story brief.
+
 ## [0.32.5] - 2026-10-07
 
 ### Changed

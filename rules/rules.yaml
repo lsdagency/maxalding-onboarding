@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.32.5"
+version: "0.32.6"
 
 banned_characters:
   - id: em-dash
@@ -95,6 +95,11 @@ ai_cadences:
   two_registers: "The transcript governs the SHAPE of the client's speech (sentence length, openers, tag questions, cadence, repetition, the technical vocabulary of their craft). Audience-facing VOCABULARY is separate and may come from the AUDIENCE's own language, provided the client would plainly say it in life. Evidence the shape from the transcript and the vocabulary from the transcript OR the ICP, and be able to say which. Never reach for a word just because it sounds like the region or the trade."
   two_registers_source: "Feedback 2026-08-11 (Xcelerate Performance): footy appears in none of the nine transcribed reels, where Zack's on-camera sport vocabulary is all coaching technical, but every Sydney league parent says it and Liam kept it on that ground. The v0.21.0 register rule read literally would have stripped it."
   source: "Feedback 2026-08-11 (Xcelerate Performance): Liam flagged three lines as obvious Claude AI lines he has seen over and over. The transcripts existed and were not used."
+
+other_clients:
+  rule: "A deliverable for one client never names another agency client, in any form: not in a brief, a script note, a direction for the editor or a tracker cell. Working notes carry the agency's history (the X rule, as on Y), and that history must be stripped before anything reaches a client-facing file. Describe the lesson, never the client it came from."
+  enforcement: "Validator rule other-client-name runs on every .docx and .xlsx that lives under workspace/clients/<Client>/. The other clients are that folder's siblings. A full folder name is an ERROR (any case). A short form with a generic suffix removed (Xcelerate from Xcelerate Performance) is a WARNING and matches only as written, because some short forms are ordinary words."
+  source: "Feedback 2026-10-13 (AMPWR Coaching): Liam spotted Xcelerate named in the Founder Story brief of a working draft. The first workspace sweep also found a Rails MMA Brand Pack titled Mindful Strength Lab Brand Pack."
 
 business_format:
   rule: "Establish the client's PHYSICAL FORMAT at Stage 1 and set business_format in the client data: outdoor, indoor gym, studio, online, or mixed. It drives language across every output. A client with no building never gets come inside, step inside, through our doors, on the gym floor, in our studio, our facility or under one roof. Naming a competitor's building is still fine and often the point: without the intimidation of a traditional gym is correct copy for an outdoor bootcamp. An online-only client gets no physical venue language at all. An indoor client gets no outdoor scenes."

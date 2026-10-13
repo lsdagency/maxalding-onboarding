@@ -113,6 +113,9 @@ Keep Meta compliance in view while doing this: sell capability and performance, 
 ## Specificity
 If a line could be used by any fitness business in any city, rewrite it with details specific to this client, ICP and offer.
 
+## Never name another client (Feedback 2026-10-13, AMPWR Coaching)
+A deliverable for one client never mentions another agency client, in any form. Briefs, script notes, editor directions and tracker cells are all client-facing or client-adjacent, and the agency's working shorthand ("cut anything that asks for sympathy, the Xcelerate rule", "as on Edge Fit") leaks straight into them. Describe the lesson, never the client it came from. Working drafts follow the same rule, because they become the deliverable. The validator enforces it with `other-client-name`: an error on another client's full folder name, a warning on a short form.
+
 ## Never fabricate
 Do not invent testimonials, results, numbers, proof, offers, positioning or credentials. Missing items become clearly labelled placeholders. Quantified outcomes such as a specific weight figure may only be used if explicitly present in the client documents.
 

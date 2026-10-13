@@ -166,6 +166,37 @@ def run_build_eval():
     return failures
 
 
+def run_other_client_eval():
+    """other-client-name needs a workspace/clients tree, so build a tiny one."""
+    import tempfile
+    from validator.checks import Segment
+    from validator.validate import other_client_names, check_other_clients
+
+    failures = []
+    with tempfile.TemporaryDirectory() as tmp:
+        for name in ("AMPWR Coaching", "Xcelerate Performance", "Unstoppable Training Studio"):
+            os.makedirs(os.path.join(tmp, "clients", name, "Oct-13-campaign"))
+        path = os.path.join(tmp, "clients", "AMPWR Coaching", "Oct-13-campaign", "x.docx")
+        names = other_client_names(path)
+        cases = [
+            ("full name is an error", "As we did for Xcelerate Performance last month", "error"),
+            ("short form is a warning", "Cut anything that asks for sympathy, the Xcelerate rule", "warn"),
+            ("ordinary word is not a client", "Feel unstoppable after forty", None),
+            ("own client is fine", "AMPWR Coaching online coaching", None),
+        ]
+        for desc, text, expected in cases:
+            hits = check_other_clients([Segment(text, "<eval>", kind="content")], names)
+            sev = {v.severity for v in hits}
+            if expected is None and hits:
+                failures.append(f"OTHER-CLIENT [{desc}] expected clean, got {sorted(sev)}")
+            elif expected and expected not in sev:
+                failures.append(f"OTHER-CLIENT [{desc}] expected {expected}, got {sorted(sev) or 'none'}")
+        outside = other_client_names(os.path.join(tmp, "x.docx"))
+        if outside:
+            failures.append("OTHER-CLIENT a file outside workspace/clients should get no names")
+    return failures
+
+
 def run_version_eval():
     """The plugin has two version strings (plugin.json and rules/rules.yaml).
     They drifted once (rules.yaml sat on 0.9.0 until 0.13.1); this locks them
@@ -194,6 +225,8 @@ def main():
     failures += run_set_evals()
     print("Running build eval...")
     failures += run_build_eval()
+    print("Running other-client eval...")
+    failures += run_other_client_eval()
     print("Running version eval...")
     failures += run_version_eval()
 
