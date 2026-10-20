@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.32.7] - 2026-10-20
+
+### Changed
+- writing-rules.md and rules.yaml ai_cadences: the comma-tacked fragment joins the banned shapes. A short qualifier bolted onto a finished sentence after a comma ("free, at home"), a label-comma-fragment line, and comma triplets of fragments. Applies to ad copy and lead forms, not only spoken lines. From Liam on a reconciled lead form, where the same tic was in 13 ad copy posts. Read-back check, no validator rule.
+
 ## [0.32.6] - 2026-10-13
 
 ### Added
