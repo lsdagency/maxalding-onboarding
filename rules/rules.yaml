@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.32.7"
+version: "0.33.0"
 
 banned_characters:
   - id: em-dash
@@ -79,6 +79,10 @@ never_fabricate_biography:
 audience_breadth:
   rule: "Do not narrow an audience gender (or any attribute) further than the client and the brief did. Check pronouns in the finished draft against the agreed ICP, not against whoever happens to appear in the client proof. Neutral audience-facing language keeps the proof intact, because named real people keep their own pronouns."
   source: "Feedback 2026-08-13 (Xcelerate Performance): the pack said your son and he throughout, halving the audience on a small budget."
+
+handover_message:
+  rule: "Every scripts and creative pack handover to a client uses the standard message in references/handover-email.md word for word: the two filming options (record it yourself, or the professional content session at GBP 600 or 250 a month for three months). Only the pack link line may change. Client asks go in a separate follow-up. If the content session is already booked, ask the user before sending."
+  source: "Liam, 2026-10-21 (1 TO 360): when you send ad scripts to clients, please add the following message alongside it."
 
 ai_cadences:
   banned_shapes: "Not banned words, banned SHAPES. 1) The significance clause bolted on to explain why what you just said matters (and that's the whole reason I ended up coaching / because nobody ever spells this out / which is exactly why it works). 2) The neat balanced summary (coached as one of twenty). 3) The not X, it is Y contrast. 4) Stacked subordinate clauses in a spoken line. 5) Explaining your own point straight after making it."

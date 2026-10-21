@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.33.0] - 2026-10-21
+
+### Changed
+- references/handover-email.md: replaced the four-part handover email with Liam's standard client message, used word for word with every scripts and creative pack handover. It offers two ways to get the scripts filmed: record them yourself, or the 2 hour professional content session (GBP 600, or 250 a month for three months). Only the pack link line may be edited. Client asks now go in a separate short follow-up. If the content session is already booked, the user is asked before anything is sent. The orchestrator Stage 5 note, SKILL.md and rules.yaml (handover_message) point at it.
+
 ## [0.32.7] - 2026-10-20
 
 ### Changed

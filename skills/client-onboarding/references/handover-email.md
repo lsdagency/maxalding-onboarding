@@ -1,73 +1,45 @@
-# Client Handover Email (Stage 5)
+# Client Handover Message (Stage 5)
 
-When the creative pack has passed the QA gate and the user asks for the client email ("draft me the email", "handover email", "send the pack to the client"), build it from this template and create a Gmail DRAFT for the user to review. Never send it; the user sends after review.
+When the creative pack has passed the QA gate and the user asks for the message to the client ("draft me the email", "handover email", "quick message to [client]", "send the scripts and creative pack over"), use the template below WORD FOR WORD. Liam set this as the standard message on 2026-10-21: "when you send ad scripts to clients, please can you add the following message alongside it". It goes with every scripts and creative pack handover, whatever the client.
 
-## Addressing
-- To: the client's contact email from the Onboarding memory.
-- CC: chad@maxaldingagency.com, on every handover email.
-- Subject: [Client Business Name] Creative Pack: ready for review, plus what we need from you to launch
-
-## Hard rules
-- Questions channel is WhatsApp ("drop me a WhatsApp"), never "call me". Every client has a WhatsApp group with the agency.
-- Keep the gentle push on the part 1 assets ("If you can get the part 1 assets across this week, we will finalise the landing page while you film"). No other deadlines and no invented dates.
-- Ask softly and only for what we genuinely need. Liam consistently trims this section: he cut the booking-link ask entirely and softened the privacy policy to "no worries if you don't have one" (2026-08-11). Do not stack a long shopping list on a client who has just been handed a pack, and do not attach a consequence to an ask ("the form cannot go live without the first two") unless the user has confirmed they want the client pushed that hard. Where an ask is dropped, check nothing downstream depended on it and flag it to the user rather than quietly leaving a placeholder in a deliverable.
-- Write prices with the currency symbol the client uses ($95 a week), not spelled out.
-- Do NOT tell the client to upload as they go, and do not say work starts with whatever lands first. Work starts once the full set is in. Everything still points at the one upload folder.
-- TWO folders, always, and never the same one. The PACK folder is where the deliverables live and the client reads from it. The UPLOAD folder is a separate folder the client returns footage into. Ask the user for both if only one was given; do not point uploads back at the pack folder, because raw B-Roll quickly buries the deliverables (Feedback 2026-08-11, Xcelerate Performance).
-- Wording for the upload folder: "Everything you film or dig out goes here please: [UPLOAD FOLDER LINK]".
-- Fill every bracketed placeholder with client specifics before creating the draft. The B-Roll categories and the voiceover script pairings come from this client's Creative Plan (the voiceover concept's shot list); include an archival-footage ask when the client's history offers one.
-- Include any open questions from the onboarding (missing assets, people appearing in creative, unconfirmed details), folded in naturally near the end.
-- Agency writing rules apply: plain human English, no em dashes, no exclamation marks, no ellipses.
+## How to use it
+- Copy the template exactly. Do not rewrite it, shorten it, add a sales line or change the price. The only edits allowed are the ones listed here.
+- The pack link: where the pack is shared as a Drive folder rather than attached, change the first line to "Please find your ad scripts and creative pack here: [PACK DRIVE LINK]". Ask the user for the link if it was not given.
+- Client asks (missing assets, reviews, venue names, a privacy policy link and so on) are NOT part of this message. If the user wants them sent too, draft them as a separate short follow-up, and ask softly: only what is genuinely needed, no consequences attached, no long shopping list.
+- If the client has ALREADY booked the professional content session, the two options no longer make sense. Do not send the template as is. Tell the user and ask what they want instead.
+- If the user asks for an email, create a Gmail DRAFT (never send), to the client's contact email from the Onboarding memory, CC chad@maxaldingagency.com. Subject: [Client Business Name]: your ad scripts. If the user asks for a message (WhatsApp, chat), give the text ready to paste.
+- Agency writing rules apply to anything around the template: no em dashes, no exclamation marks, no ellipses. The template already complies.
 
 ## Template
 
-Hi [CLIENT FIRST NAME],
+Please find your ad scripts attached. There are two ways to get them filmed.
 
-Good news, your full creative pack is ready. Everything is in the folder here: [PACK DRIVE LINK]
+Option 1: Record them yourself
+The scripts include everything you need. Film on your phone in good lighting, send the clips to us and we'll handle the rest.
 
-What's inside:
-- Creative Plan (the master spreadsheet: brand pack, creative tracker and all ad copy)
-- Video Ad Scripts ([N] concepts, each with its opening hook and filming guidance)
-- VSL Script (the video for your landing page)
-- Landing Page Copy
-- CRM Automation (the email and SMS follow-up copy for [CRM NAME])
+Option 2: Professional content session
+Our team will come to you for a 2 hour content session. You'll receive professionally produced ads, along with enough video and photography to support your organic social media for the next 3 months.
 
-One note before you read the scripts: nothing needs to be read word for word. Each video opens on its hook line and runs as one take from there. Say it in your own words and keep it natural, hitting the beats matters more than the exact lines.
+We manage the full process: set up, directing, filming, editing and post production. You choose a time and make sure the right people are there. We take care of everything else.
 
-Everything you film or dig out goes here please: [UPLOAD FOLDER LINK]
+What's included:
 
-To take this live, here is exactly what we need from you, in four parts.
+- Professional camera set up, lighting and mics
+- Talking head videos, each with multiple hooks
+- Client testimonial interviews edited into ads
+- Photography of your facility, you, your team and your clients training
+- A library of photos and B roll for your ads over the next 3 months
+- Content for your own social media channels
+- Onsite director, managing the session, so you can focus on being on camera
 
-1. ASSETS TO SEND US (this unblocks the landing page, so first priority)
-- [Booking or enquiry link for the client's CRM or calendar]
-- Your review score and rough client count (for example, 5.0 on Google from 40 reviews)
-- Three short client quotes we can use on the landing page
-- Six approved testimonials, each with a first name and an age or role
-- [Approved proof imagery specific to this client, realistic and modest]
-- Confirmation of the credentials you want displayed ([known credentials])
-- A privacy policy link for the page footer
+Investment: £600 (or £250 per month x3)
 
-2. B-ROLL: THE MORE THE BETTER
-This is the single most valuable thing you can give us, and it is the thing most [coaches / gyms / studios] under-supply. Short 10 to 20 second clips, filmed on your phone, uploaded to the folder above. Nothing needs to be polished, just raw footage.
+We'll need around two hours at your gym, studio or training space with you, any relevant team members and a few clients.
 
-What to capture, ideally a little every day:
-- [Four to five B-Roll categories from this client's Creative Plan shot list]
+Let me know which option you'd prefer and I'll arrange the next steps.
 
-There is no such thing as too much. Spare B-Roll gets used across every edit we make for you, now and in future months.
-
-3. FILMING YOU CAN DO SOLO (Batch 1)
-- [The to-camera concepts for this client]. Scripts are in the Video Ad Scripts doc. Vertical on your phone, roughly 30 to 45 seconds each.
-- The [voiceover concept name] video is the special one: it is a voiceover only, you are not on camera at all. Record the narration cleanly on a mic, then go through that script line by line and film, or dig out, footage that could sit under each line. As a guide: [two or three script-beat to footage pairings specific to this client]. [Archival footage ask if the client's history offers one.] The full shot list is in the Creative Plan.
-- The VSL: this one is horizontal (16:9) on a tripod, it lives on your landing page rather than in the feed. Script included.
-
-4. CLIENT INTERVIEWS (Batch 2)
-- We would like two or three [clients / members] who are happy to be filmed answering four short questions (the question set is in the scripts doc). You ask from off camera, they answer naturally in their own words.
-- Get a few takes of their intro line: "Hi, I'm [name] and I've been training at [Client Business Name] for the past year."
-- We will need each person's written OK to appear in ads.
-
-[Open questions from the onboarding, folded in naturally.]
-
-If you can get the part 1 assets across this week, we will finalise the landing page while you film. Any questions on any of the concepts, drop me a WhatsApp.
-
-Cheers,
+Kind regards,
 Liam
+
+## If the client picks Option 2
+The pack switches to the videographer format: the Video Ad Scripts are replaced by a Shoot Plan (the day at a glance, before the day, running order, numbered shot list with the photos the statics need, scripts, interview questions, filming notes), and the Creative Plan filming directions are rewritten for the videographer. The concepts and approved scripts do not change.
