@@ -78,6 +78,8 @@ DETAILS: 4 to 5 dashed bullets, specific to the client.
 EDITING DIRECTION and FILMING DIRECTION: bullet format with a dash prefix on every point, per the templates in the System Prompt.
 
 ## AD COPY (separate workbook, build/ad_copy.py)
+Written when the finished ads come back, not at onboarding (Liam, 2026-10-22). The onboarding data file lists Meta Ad Copy and Meta Lead Form Copy in skip_deliverables; both are written against the delivered creative and shared with the client at that stage.
+
 Apply ads, ad-creative and copywriting before writing. Columns: number, CONCEPT, POST COPY, CHARS. No STATUS column, no CTA column or note.
 
 **Run the self-check below before a single cell is written, and again before saving.** The AD COPY tab is the deliverable that gets rushed, because it looks like the small one at the end of the build. It is not. The rules here have had to be restated after Mindful Strength Lab, BM6, FIT Republik, Peak with Hamza, Built By Brun, Kure by Konrad, Xcelerate Performance and Evolve Fitness Glenhaven, which is the clearest signal in this repo that reading them is not the same as applying them.

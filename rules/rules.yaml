@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.34.1"
+version: "0.35.0"
 
 banned_characters:
   - id: em-dash
@@ -87,6 +87,10 @@ youth_sport_motivation:
 venue_phrasing:
   rule: "Say the venue the welcoming way: we train at, I'm at, come down to. Never the listing form it's at [venue]."
   source: "Feedback 2026-10-22 (Relentless Generation)."
+
+copy_timing:
+  rule: "At onboarding the client gets the Video Ad Scripts and the Creative Plan (plus CRM Automation). Meta Ad Copy and Meta Lead Form Copy are held until the finished ads come back, then written against the delivered creative and shared. List both in skip_deliverables in the onboarding data file."
+  source: "Liam, 2026-10-22 (Relentless Generation): the copy gets reworked to the cuts every time, so there is no need to share it with the client before then."
 
 handover_message:
   rule: "Every scripts and creative pack handover to a client uses the standard message in references/handover-email.md word for word: the two filming options (record it yourself, or the professional content session at GBP 600 or 250 a month for three months). Only the pack link line may change. Client asks go in a separate follow-up. If the content session is already booked, ask the user before sending."

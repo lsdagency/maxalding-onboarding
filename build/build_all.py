@@ -86,7 +86,11 @@ def build_all(data, out_dir, workspace=None):
     outputs["Creative Plan"] = build_creative_plan(data, out_dir)
     # Ad copy is its own workbook, no longer a Creative Plan tab
     # (Feedback 2026-08-06, Kure by Konrad).
-    if data.get("ad_copy", {}).get("concepts"):
+    # Ad copy and lead form copy are written once the finished ads come back,
+    # against the delivered creative, not at onboarding (Liam, 2026-10-22).
+    # An onboarding data file lists them in skip_deliverables.
+    skip = set(data.get("skip_deliverables", []))
+    if data.get("ad_copy", {}).get("concepts") and "Meta Ad Copy" not in skip:
         outputs["Meta Ad Copy"] = build_ad_copy(data, out_dir)
     outputs["Video Ad Scripts"] = build_video_ad_scripts(data, out_dir, workspace=workspace)
     # A lead-form campaign with no landing page has nowhere for a VSL to sit,
@@ -100,7 +104,8 @@ def build_all(data, out_dir, workspace=None):
     # Xcelerate Performance, which ran an Instant Form and was handed a
     # landing page). Default stays landing_page for older data files.
     if data.get("funnel_type") == "lead_form":
-        outputs["Meta Lead Form Copy"] = build_lead_form(data, out_dir, lead_form_only=True)
+        if "Meta Lead Form Copy" not in skip:
+            outputs["Meta Lead Form Copy"] = build_lead_form(data, out_dir, lead_form_only=True)
     else:
         outputs["Landing Page Copy"] = build_landing_page(data, out_dir, workspace=workspace)
     outputs["CRM Automation"] = build_crm_automation(data, out_dir, workspace=workspace)

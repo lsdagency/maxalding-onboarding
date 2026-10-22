@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.35.0] - 2026-10-22
+
+### Changed
+- Onboarding no longer ships Meta Ad Copy or Meta Lead Form Copy. They are written when the finished ads come back, against the delivered creative, because they were being reworked to the cuts every time anyway. build_all honours "Meta Ad Copy" and "Meta Lead Form Copy" in skip_deliverables; SKILL.md Stage 4, creative-plan-spec.md and rules.yaml copy_timing say so. From Liam on the Relentless Generation pack.
+
 ## [0.34.1] - 2026-10-22
 
 ### Added
