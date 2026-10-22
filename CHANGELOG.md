@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.36.1] - 2026-10-22
+
+### Removed
+- Video Ad Scripts: the take checklist, the interview "ends on" CTA line, and the organic concept's extra notes and "when a post runs as an ad" line. Liam removed them from the Relentless Generation doc as AI commentary. Rule: if the client doesn't film it or say it, it isn't in the scripts doc; edit notes live in the Creative Plan and designer ticket.
+
 ## [0.36.0] - 2026-10-22
 
 ### Added

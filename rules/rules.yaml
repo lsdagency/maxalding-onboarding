@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.36.0"
+version: "0.36.1"
 
 banned_characters:
   - id: em-dash
@@ -93,7 +93,7 @@ broll_list:
   source: "Liam, 2026-10-22 (Relentless Generation)."
 
 scripts_layout:
-  rule: "Video Ad Scripts: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, on camera, one line on what it is, how to film, and a takes table; a take checklist at the end. No timestamps, beat labels, audience or angle lines, or strategy paragraphs."
+  rule: "Video Ad Scripts: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, on camera, one line on what it is, how to film, and a takes table. No take checklist, timestamps, beat labels, audience or angle lines, strategy paragraphs, or edit notes (end cards, CTA audio, when a post runs as an ad). If the client doesn't film it or say it, it isn't in the doc."
   source: "Liam, 2026-10-22 (Relentless Generation): a lot easier to understand, way less AI commentary, keep good guidance."
 
 copy_timing:

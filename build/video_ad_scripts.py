@@ -3,7 +3,7 @@ Document 1: Video Ad Scripts (.docx) (System Prompt section 9).
 
 Vertical 9:16 social scripts, laid out for the client (2026-10-22): what we
 need, before you film, then per video a plain line on what it is, how to film
-and a table of takes, and a tick-box take checklist at the end.
+and a table of takes. Nothing the client doesn't film or say.
 
 Driven by data["scripts"]. See evals/cases/sample_client.json for the shape.
 """
@@ -125,7 +125,6 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
 
     Per video: who is on camera, one plain line on what it is, how to film, and a
     table of takes. No timestamps, no beat labels, no audience or angle lines.
-    Ends on a tick-box take checklist.
     """
     doc = T.new_document()
     meta = data.get("scripts", {})
@@ -155,7 +154,6 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
     for point in meta.get("recording_best_practice") or RECORDING_BEST_PRACTICE:
         T.add_body(doc, f"- {point}")
 
-    checklist = []
     for n, concept in enumerate(meta.get("concepts", []), start=1):
         kind = _kind(concept)
         name = concept.get("name", "")
@@ -191,15 +189,12 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
             test = concept.get("hook_test") and len(hooks) > 1
             for i, hook in enumerate(hooks if test else hooks[:1], start=1):
                 rows.append([(f"Hook {i}" if test else "Opening line", "label"), (hook, "script")])
-                checklist.append(f"Video {n}, Hook {i}" if test else f"Video {n}, opening line")
             middle = "\n".join(b["line"] for b in beats if b.get("line"))
             if middle:
                 rows.append([("Middle" + (" (same after every hook)" if test else ""), "label"),
                              (middle, "script")])
-                checklist.append(f"Video {n}, middle")
             if concept.get("cta"):
                 rows.append([("Ending", "label"), (concept["cta"], "script")])
-                checklist.append(f"Video {n}, ending")
             _table(doc, ["TAKE", "WHAT TO SAY"], rows, [3.5, 13.0])
 
         elif kind == "interview":
@@ -216,11 +211,8 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
                     q, steer = b.get("label", ""), b.get("direction", "")
                 rows.append([(q, "label"), (steer or "", "note")])
             _table(doc, ["QUESTION", "GET THEM TALKING ABOUT"], rows, [6.5, 10.0])
-            if concept.get("cta"):
-                doc.add_paragraph()
-                T.add_body(doc, "Each interview ad ends on:", bold=True)
-                T.add_script_line(doc, concept["cta"])
-            checklist.append(f"Video {n}, {concept.get('takes_label', 'all three interviews')}")
+            # The end card and CTA audio are edit notes, not something the
+            # client films, so they stay out of this doc (Liam, 2026-10-22).
 
         else:  # organic
             labels = concept.get("hook_labels", [])
@@ -230,21 +222,10 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
                 rows.append([(labels[i] if i < len(labels) else f"Pillar {i + 1}", "label"),
                              (hook, "script"), (idea, "note")])
             _table(doc, ["PILLAR", "EXAMPLE OPENING LINE", "MORE IDEAS"], rows, [3.5, 5.0, 8.0])
-            for b in beats[len(hooks):]:
-                doc.add_paragraph()
-                T.add_body(doc, b.get("label", ""), bold=True)
-                T.add_body(doc, b.get("direction", ""))
-            if concept.get("cta"):
-                doc.add_paragraph()
-                T.add_body(doc, "When a post runs as an ad:", bold=True)
-                T.add_body(doc, concept["cta"])
-            checklist.append(concept.get("checklist", "Organic clips, about three a week"))
+            # Only the pillars table. Extra notes and "when a post runs as an
+            # ad" read as commentary to the client (Liam, 2026-10-22).
 
-    if checklist:
-        doc.add_paragraph()
-        T.add_subheading(doc, "TAKE CHECKLIST")
-        for item in checklist:
-            T.add_body(doc, f"\u2610  {item}")
+    # No take checklist: Liam removed it as AI commentary (2026-10-22).
 
     filename = T.deliverable_filename(data["client_business_name"], "Video Ad Scripts", campaign=data.get("campaign"))
     out_path = os.path.join(out_dir, filename)
