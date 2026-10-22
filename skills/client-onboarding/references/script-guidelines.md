@@ -49,6 +49,9 @@ Each of the eight uses a meaningfully different angle, pain context and objectio
 
 Multi-location clients: never name two distant locations in the same spoken script or VSL. Pick ONE launch location per script set (decided with the client at the confirm gate, weighing where they are best known against demographics and any local sponsorships), write every location mention to that one place, and clone the campaign for the second location later. The Creative Plan brand pack still records all locations as fact.
 
+## Organic content concepts (coach's own posts, run as ads later)
+When the pack asks the client to post their own content (coaching clips, challenges, drills), it goes in the scripts doc as a concept with `organic: true`, never as an ad script. Give ONE example opening line per content pillar, with `hook_labels` naming each pillar, so every pillar the user asked for is visible and nothing reads as the only idea. The document heads it ORGANIC CONTENT, NOT AN AD SCRIPT and frames the ending as what happens when a post runs as an ad. In the Creative Plan, the concept name starts ORGANIC, BEATS lists one opening line per pillar, and DETAILS says the best posts run as existing-post ads. Liam, 2026-10-22 (Relentless Generation), after a draft showed only the challenge pillar's line.
+
 ## Social Proof concept, client-interview format (coaches and gyms)
 The social proof video is an interview, never a monologue and never a script the client reads. The brand (the coach) asks the questions off camera and the client answers in their own words. This applies to every coach and gym client (Fisica, 2026-07-16).
 

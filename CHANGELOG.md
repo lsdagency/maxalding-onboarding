@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.34.1] - 2026-10-22
+
+### Added
+- build/video_ad_scripts.py: `organic: true` on a scripts concept marks it ORGANIC CONTENT, NOT AN AD SCRIPT, prints one labelled example opening line per content pillar (`hook_labels`), and frames the ending as what happens when a post runs as an ad. script-guidelines.md documents it. From Liam on the Relentless Generation pack, where the organic concept showed only one pillar's line.
+
 ## [0.34.0] - 2026-10-22
 
 ### Changed

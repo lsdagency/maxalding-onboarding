@@ -103,7 +103,20 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
 
         doc.add_paragraph()
         hooks = [h for h in concept.get("hooks", []) if h]
-        if concept.get("hook_test") and len(hooks) > 1:
+        if concept.get("organic"):
+            # Organic content (Relentless Generation, 2026-10-22): the client's
+            # own posts, one example opening line per content pillar, posted
+            # first and run as ads later only if they perform. Never a script.
+            T.add_body(doc, "ORGANIC CONTENT, NOT AN AD SCRIPT. Posted to your own "
+                       "Instagram and TikTok first. The best posts are run as ads later.",
+                       bold=True)
+            doc.add_paragraph()
+            T.add_body(doc, "Example opening line for each pillar:", bold=True)
+            labels = concept.get("hook_labels", [])
+            for n, hook in enumerate(hooks):
+                T.add_body(doc, labels[n] if n < len(labels) else f"Pillar {n + 1}")
+                T.add_script_line(doc, hook)
+        elif concept.get("hook_test") and len(hooks) > 1:
             # Opt-in hook test (Edge Fit Stanmore, 2026-09-18): several openings
             # filmed over ONE fixed body and one CTA, each becoming its own ad.
             # A structure Liam is testing, not the default. One hook per
@@ -121,7 +134,7 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
                 T.add_script_line(doc, hooks[0])
 
         doc.add_paragraph()
-        T.add_body(doc, "Script:", bold=True)
+        T.add_body(doc, "More ideas for each pillar:" if concept.get("organic") else "Script:", bold=True)
         for beat in concept.get("script", []):
             # beat = {timestamp, label, line, direction(optional)}
             T.add_timestamp(doc, f"{beat.get('timestamp', '')}  {beat.get('label', '')}".strip())
@@ -131,7 +144,8 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
                 T.add_script_line(doc, beat["line"])
 
         doc.add_paragraph()
-        T.add_body(doc, "CTA (film this ending):", bold=True)
+        T.add_body(doc, "When a post runs as an ad:" if concept.get("organic")
+                   else "CTA (film this ending):", bold=True)
         if concept.get("cta"):
             T.add_script_line(doc, concept["cta"])
 
