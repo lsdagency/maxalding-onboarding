@@ -7,7 +7,8 @@ When the creative pack has passed the QA gate and the user asks for the message 
 - The pack link: where the pack is shared as a Drive folder rather than attached, change the first line to "Please find your ad scripts and creative pack here: [PACK DRIVE LINK]". Ask the user for the link if it was not given.
 - Client asks (missing assets, reviews, venue names, a privacy policy link and so on) are NOT part of this message. If the user wants them sent too, draft them as a separate short follow-up, and ask softly: only what is genuinely needed, no consequences attached, no long shopping list.
 - If the client has ALREADY booked the professional content session, the two options no longer make sense. Do not send the template as is. Tell the user and ask what they want instead.
-- If the user asks for an email, create a Gmail DRAFT (never send), to the client's contact email from the Onboarding memory, CC chad@maxaldingagency.com. Subject: [Client Business Name]: your ad scripts. If the user asks for a message (WhatsApp, chat), give the text ready to paste.
+- The handover goes to the client on WhatsApp. Give the text ready to paste in the reply, in a code block. Do NOT create a Gmail draft (Liam, 2026-10-22: "I'm sending this over whatsapp, don't draft emails for me"). Only if the user explicitly asks for an EMAIL draft: Gmail draft, never sent, to the client's contact email, CC chad@maxaldingagency.com, subject "[Client Business Name]: your ad scripts".
+- When the user asks for a line about what is in the pack, add a short "Here's what's inside" block after the link line (one bullet per deliverable, plain words). The rest of the template stays word for word.
 - Agency writing rules apply to anything around the template: no em dashes, no exclamation marks, no ellipses. The template already complies.
 
 ## Template

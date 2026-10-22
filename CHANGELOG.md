@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.36.2] - 2026-10-22
+
+### Changed
+- handover-email.md and rules.yaml handover_message: the client handover is WhatsApp text ready to paste, never a Gmail draft unless an email is explicitly asked for. An optional short "what's inside" block may follow the link line when the user asks for it. From Liam on the Relentless Generation handover.
+
 ## [0.36.1] - 2026-10-22
 
 ### Removed

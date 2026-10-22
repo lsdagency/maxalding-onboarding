@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.36.1"
+version: "0.36.2"
 
 banned_characters:
   - id: em-dash
@@ -101,7 +101,7 @@ copy_timing:
   source: "Liam, 2026-10-22 (Relentless Generation): the copy gets reworked to the cuts every time, so there is no need to share it with the client before then."
 
 handover_message:
-  rule: "Every scripts and creative pack handover to a client uses the standard message in references/handover-email.md word for word: the two filming options (record it yourself, or the professional content session at GBP 600 or 250 a month for three months). Only the pack link line may change. Client asks go in a separate follow-up. If the content session is already booked, ask the user before sending."
+  rule: "Every scripts and creative pack handover to a client uses the standard message in references/handover-email.md word for word: the two filming options (record it yourself, or the professional content session at GBP 600 or 250 a month for three months). Only the pack link line may change. Client asks go in a separate follow-up. If the content session is already booked, ask the user before sending. Delivered as WhatsApp text ready to paste, never a Gmail draft unless an email is explicitly asked for (Liam, 2026-10-22)."
   source: "Liam, 2026-10-21 (1 TO 360): when you send ad scripts to clients, please add the following message alongside it."
 
 ai_cadences:
