@@ -8,8 +8,13 @@ Document 1, built with build/video_ad_scripts.py. Apply ad-creative principles b
 ## Typography and header
 Helvetica Neue on every run (python-docx falls back to Cambria otherwise; set it explicitly on every run). Main heading size 16 bold; section subheadings size 14 bold; all body, direction notes and script lines size 10. Header labels bold, values unbolded. No date in the header (CLIENT, CAMPAIGN, PREPARED BY only). Logo at the top.
 
-## Context and format
-Top context block in bold: the scripts are guidance only and must not be read word for word; the talent says it in their own words, natural and creative, while hitting the key beats and timing. Filming format: filmed vertical 9:16. Do not mention the VSL or 16:9 in this document.
+## Layout: easy to follow, no AI commentary (Liam, 2026-10-22)
+The client reads this standing on the spot where they film. Liam: "a lot easier to understand and contains way less AI commentary whilst keeping good guidance". build/video_ad_scripts.py lays it out as:
+1. WHAT WE NEED FROM YOU: scripts.summary, the whole ask in four or five plain lines.
+2. BEFORE YOU FILM: one bold line (guides, not lines to learn, say it your way) and the filming tips (recording_best_practice, outdoor list where relevant). Vertical 9:16 lives in the tips. Never mention the VSL or 16:9 here.
+3. Per video, a plain title (`title`, e.g. "The parent video", not the agency concept name), On camera, one plain line on what it is (`what`), How to film bullets (`how_to_film`), then a table: TAKE | WHAT TO SAY for scripted videos (Hook 1 to 3 or Opening line, Middle, Ending), QUESTION | GET THEM TALKING ABOUT for interviews (`question` and `steer` per beat), PILLAR | EXAMPLE OPENING LINE | MORE IDEAS for organic content.
+4. TAKE CHECKLIST: a tick box per take.
+No timestamps, no beat labels, no Audience or Angle lines, no paragraphs explaining the strategy. Strategy belongs in the Creative Plan; the scripts doc says what to film and what to say.
 
 ## Recording best practice (8 points)
 Vertical 9:16; strong first frame, eyes to lens immediately; eye level, arm's length, face centred; natural light facing a window; quiet room, test a 5 second clip, use a mic; clean background with brand cues; calm confident pace, pause after key lines; record 3 takes. That default assumes an indoor room. For a client who films outdoors (a pitch, an oval, a park), pass scripts.recording_best_practice with an outdoor list (light behind the camera, clip-on mic for wind, a quiet corner of the pitch), so the brief never tells them to face a window (Relentless Generation, 2026-10-22).
@@ -32,9 +37,10 @@ Each concept has a distinct job and they must not bleed into each other (Feedbac
 
 Where a number belongs in the coach's story (years coaching, athletes worked with) and the client documents do not provide it, leave a clearly labelled placeholder and flag it. Never invent it.
 
-Each block:
-- CONCEPT n in caps, then Format, Talent, Audience, Angle.
-- A short plain paragraph on what it is and how to film it.
+The writing rules below still apply to every line. The data shape keeps `hooks`, `script` beats with `line` and `cta`; `timestamp` and `label` on a scripted beat are no longer printed.
+
+Each concept:
+- `title`, `talent` and `what` (one plain line), plus `how_to_film` bullets.
 - Hook (the opening line): exactly ONE hook per concept (the Option A/B/C menu is retired as of 0.17.0; Feedback 2026-08-07, BodyShaping). Generate several angles with the ad-hooks skill, pick the strongest, perfect it, and write it as the true first spoken line of the take. The build mirrors this hook into the Creative Plan's HOOK GUIDANCE column; never hand-write that tracker cell separately: build through build.build_all so the two files cannot drift apart. A video hook is the strong, full SPOKEN opening line, a sentence or two (per the ad-hooks skill), not a short static-style fragment; it IS the best line in the concept, the scroll-stopper, not a throwaway before the real opener. Specific, never "you" plus a negative attribute. Three hard requirements on top of that:
   - They must sound like a voicenote. Each hook is the exact thing a real person would say out loud to camera in the first second, in natural spoken English with contractions. Not a written slogan, not a caption, not a headline read aloud. It opens on the content, never on a filler word ("Okay", "Real quick", "So", "Look", "Honestly", "Here's the thing"): that first word is where attention is won or lost, and a warm-up spends it (Feedback 2026-09-25, Colossus PT, reversing the earlier spoken-opener suggestion; validator warning hook-filler-opener). The spoken feel comes from sentence shape and contractions. The client's own fillers ("okay", "yeah?") can still live in the body where they genuinely use them.
   - The register must match the ICP's AGE and world, not a generic social-media voice. For an over-30 audience never use under-30 slang ("real talk", "no cap", "lowkey", "vibe"). Pull the register from the client's own transcript and brand voice: slang is only allowed when the coach or the ICP genuinely uses it (for example an Australian client who says "cooked" on the call). When in doubt, plain and direct beats slangy. Invoke the ad-hooks skill EVERY time hooks are written or rewritten, including revision rounds, not only the first pass.

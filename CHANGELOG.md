@@ -2,6 +2,14 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.36.0] - 2026-10-22
+
+### Added
+- Creative Plan B-ROLL LIST worksheet (build_broll_sheet, data["broll"]): specific clips for the client to film, each tied to the ads it feeds, with a To film / Filmed / Uploaded status dropdown.
+
+### Changed
+- Video Ad Scripts rebuilt around the client: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, who is on camera, one line on what it is, how to film, and a takes table (TAKE | WHAT TO SAY, QUESTION | GET THEM TALKING ABOUT, or PILLAR | EXAMPLE OPENING LINE | MORE IDEAS), ending on a tick-box take checklist. Timestamps, beat labels, Audience and Angle lines are gone. New optional data fields: title, what, how_to_film, kind, question/steer, checklist. Old data files still build. Both from Liam on the Relentless Generation pack.
+
 ## [0.35.0] - 2026-10-22
 
 ### Changed

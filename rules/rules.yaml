@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.35.0"
+version: "0.36.0"
 
 banned_characters:
   - id: em-dash
@@ -87,6 +87,14 @@ youth_sport_motivation:
 venue_phrasing:
   rule: "Say the venue the welcoming way: we train at, I'm at, come down to. Never the listing form it's at [venue]."
   source: "Feedback 2026-10-22 (Relentless Generation)."
+
+broll_list:
+  rule: "Every Creative Plan has a B-ROLL LIST tab of specific clips (#, CLIP, WHERE AND WHEN, HOW TO FILM, LENGTH, USED IN, WHO'S IN SHOT, STATUS, FINAL ASSET), each tied to the ads it feeds and filmable by the client. data['broll'], build_broll_sheet."
+  source: "Liam, 2026-10-22 (Relentless Generation)."
+
+scripts_layout:
+  rule: "Video Ad Scripts: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, on camera, one line on what it is, how to film, and a takes table; a take checklist at the end. No timestamps, beat labels, audience or angle lines, or strategy paragraphs."
+  source: "Liam, 2026-10-22 (Relentless Generation): a lot easier to understand, way less AI commentary, keep good guidance."
 
 copy_timing:
   rule: "At onboarding the client gets the Video Ad Scripts and the Creative Plan (plus CRM Automation). Meta Ad Copy and Meta Lead Form Copy are held until the finished ads come back, then written against the delivered creative and shared. List both in skip_deliverables in the onboarding data file."

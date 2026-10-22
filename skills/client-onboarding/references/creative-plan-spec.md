@@ -49,6 +49,9 @@ Physical format and season run through every row. Before writing a cell, know th
 ### Sport agnostic offer, sport specific proof
 When a client's community is narrower than the offer they want to sell (a coach whose proof is all rugby league selling athletic development to any sport), keep the OFFER broad and let the PROOF stay specific. Testimonials, existing-post ads and the coach's own story can all name one code; the concepts, hooks and CTAs must work for a parent whose kid plays anything. Do not sand the proof down to match the offer, it is the specificity that makes it believable (Feedback 2026-08-13, Xcelerate Performance).
 
+## B-ROLL LIST worksheet (Liam, 2026-10-22)
+Every Creative Plan carries a B-ROLL LIST tab: specific clips for the client to film around their normal sessions, so B-Roll stops being a vague ask. Columns: #, CLIP, WHERE AND WHEN, HOW TO FILM, LENGTH, USED IN, WHO'S IN SHOT, STATUS (To film, Filmed, Uploaded), FINAL ASSET. Built from data["broll"] by build/creative_plan.build_broll_sheet (per-client scripts call it too). Around 15 to 20 clips, each one concrete (the shot, the angle, the moment), tied to the ads it feeds in USED IN, and filmable by the client on a phone in their real space. Where a child could be in shot, say how to film them safely (from behind, feet and ball only) and that a parent's written OK is needed. The Video Ad Scripts WHAT WE NEED FROM YOU block points the client at this tab.
+
 ## Statics, the coach template
 
 ONE graphic per static row, not three variations (Feedback 2026-08-11, Xcelerate Performance: the tracker moved to a single perfected hook, and the BEATS column has to match it). BEATS describes the elements that appear on that one graphic, each on its own line. Do not write Graphic 1 / Graphic 2 / Graphic 3, and do not list hook variations anywhere.
