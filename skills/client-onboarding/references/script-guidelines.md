@@ -12,7 +12,7 @@ Helvetica Neue on every run (python-docx falls back to Cambria otherwise; set it
 Top context block in bold: the scripts are guidance only and must not be read word for word; the talent says it in their own words, natural and creative, while hitting the key beats and timing. Filming format: filmed vertical 9:16. Do not mention the VSL or 16:9 in this document.
 
 ## Recording best practice (8 points)
-Vertical 9:16; strong first frame, eyes to lens immediately; eye level, arm's length, face centred; natural light facing a window; quiet room, test a 5 second clip, use a mic; clean background with brand cues; calm confident pace, pause after key lines; record 3 takes.
+Vertical 9:16; strong first frame, eyes to lens immediately; eye level, arm's length, face centred; natural light facing a window; quiet room, test a 5 second clip, use a mic; clean background with brand cues; calm confident pace, pause after key lines; record 3 takes. That default assumes an indoor room. For a client who films outdoors (a pitch, an oval, a park), pass scripts.recording_best_practice with an outdoor list (light behind the camera, clip-on mic for wind, a quiet corner of the pitch), so the brief never tells them to face a window (Relentless Generation, 2026-10-22).
 
 ## No editing best practice section
 The document used to carry an EDITING BEST PRACTICE section after RECORDING BEST PRACTICE. It was removed on 2026-08-11 (Feedback, Xcelerate Performance). This document is the TALENT'S filming brief: generic Reels editing guidance belongs with the editor, not with the person holding the phone, and per-concept editing direction already lives in the Creative Plan EDITING DIRECTION column. Do not reinstate it, and do not web-search editing tips for this document.

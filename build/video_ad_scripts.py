@@ -78,7 +78,10 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
 
     doc.add_paragraph()
     T.add_subheading(doc, "RECORDING BEST PRACTICE")
-    for point in RECORDING_BEST_PRACTICE:
+    # The default list assumes an indoor room with a window. Outdoor clients
+    # (a pitch, an oval, a park) pass their own list in
+    # scripts.recording_best_practice (Relentless Generation, 2026-10-22).
+    for point in meta.get("recording_best_practice") or RECORDING_BEST_PRACTICE:
         T.add_body(doc, f"- {point}")
 
     # The EDITING BEST PRACTICE section was removed on 2026-08-11 (Xcelerate

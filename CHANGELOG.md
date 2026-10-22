@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.33.3] - 2026-10-22
+
+### Added
+- build/video_ad_scripts.py: scripts.recording_best_practice overrides the default RECORDING BEST PRACTICE list, which assumed an indoor room with a window. Outdoor clients now get outdoor filming advice. script-guidelines.md documents it. Found building the Relentless Generation pack (filmed on a pitch).
+
 ## [0.33.2] - 2026-10-22
 
 ### Added
