@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.36.3] - 2026-10-22
+
+### Changed
+- Reverses 0.36.2. The handover is a Gmail draft (CC Chad) plus a short paste-ready WhatsApp nudge telling the client to check their email. Liam sent the email draft after all and liked that approach.
+
 ## [0.36.2] - 2026-10-22
 
 ### Changed
