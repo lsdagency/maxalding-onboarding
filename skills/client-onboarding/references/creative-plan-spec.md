@@ -7,7 +7,8 @@ Ad copy is NOT a tab in the Creative Plan. It always ships as its own workbook, 
 ## XLSX formatting (mandatory)
 - Font: Helvetica Neue throughout, not Arial, not Calibri.
 - Header rows: black background (000000), white bold text, size 8.
-- Body rows: white background, text colour 434343, size 8, wrap text on, top-aligned.
+- Body rows: white background, text colour 434343, size 8, wrap text on.
+- Alignment (Liam, 2026-10-22): every cell in the Creative Plan, headers included, is vertically centred, and the first column (#) is also centred horizontally. Every other column stays left-aligned. build/template.py plan_align does this; per-client Creative Plan scripts must use it too.
 - Column widths generous; all content readable without horizontal scrolling.
 - Row heights: minimum 45pt for short rows; 120 to 150pt for Creative Tracker data rows.
 - Freeze the top row on the Creative Tracker and Ad Copy tabs.
@@ -22,9 +23,9 @@ Sections in order. Do NOT include a KPIs section.
 
 ## Tab 2, CREATIVE TRACKER
 Apply ad-creative principles before writing any cell. Columns left to right:
-number, DATE, FORMAT, RESOLUTION, STATUS, PLATFORM, FILE TYPE, AUDIENCE, CONCEPT, HOOK GUIDANCE, BEATS, DETAILS, EDITING DIRECTION, FILMING DIRECTION, SCRIPT, FINAL ASSET.
+number, FORMAT, RESOLUTION, STATUS, PLATFORM, FILE TYPE, AUDIENCE, CONCEPT, HOOK GUIDANCE, BEATS, DETAILS, EDITING DIRECTION, FILMING DIRECTION, SCRIPT, FINAL ASSET.
 
-- DATE: leave blank. The agency does not stamp a date on deliverables, to avoid implying deadlines we cannot meet. The team fills this per row when a creative is actually briefed. Do not write "today" or an actual calendar date into this column.
+- No DATE column (Liam, 2026-10-22). It used to sit second and was always left blank to avoid implying deadlines; it is now gone from every Creative Plan, including the VIDEOS and STATICS layout. FILE TYPE references FORMAT, which is column B.
 - FORMAT: STATIC or VIDEO.
 - RESOLUTION: the fixed string "1080 x 1350 (4:5) / 1080 x 1920 (9:16)".
 - STATUS: dropdown Briefed, Filmed, In Edit, Signed Off, Live. Default Briefed.

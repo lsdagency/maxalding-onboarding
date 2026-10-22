@@ -3,7 +3,7 @@ Creative Plan XLSX generator (System Prompt section 8).
 
 Two tabs:
   1. BRAND PACK       label/value with black section headers, NO KPIs section
-  2. CREATIVE TRACKER dropdowns, live formulas, blank DATE column
+  2. CREATIVE TRACKER dropdowns, live formulas, no DATE column
 
 Ad copy is NOT a tab here. It ships as its own workbook, built by
 build/ad_copy.py (Feedback 2026-08-06, Kure by Konrad). The AD COPY tab builder
@@ -48,21 +48,22 @@ CANONICAL_TRACKER = [
 ]
 
 TRACKER_COLUMNS = [
-    "#", "DATE", "FORMAT", "RESOLUTION", "STATUS", "PLATFORM", "FILE TYPE",
+    "#", "FORMAT", "RESOLUTION", "STATUS", "PLATFORM", "FILE TYPE",
     "AUDIENCE", "CONCEPT", "HOOK GUIDANCE", "BEATS", "DETAILS",
     "EDITING DIRECTION", "FILMING DIRECTION", "SCRIPT", "FINAL ASSET",
 ]
 
+# No DATE column (Liam, 2026-10-22): the tracker starts #, FORMAT.
 TRACKER_WIDTHS = {
-    "A": 5, "B": 12, "C": 10, "D": 28, "E": 12, "F": 22, "G": 10, "H": 30,
-    "I": 18, "J": 38, "K": 34, "L": 40, "M": 34, "N": 34, "O": 30, "P": 16,
+    "A": 5, "B": 10, "C": 28, "D": 12, "E": 22, "F": 10, "G": 30,
+    "H": 18, "I": 38, "J": 34, "K": 40, "L": 34, "M": 34, "N": 30, "O": 16,
 }
 
 
 def _write_row(ws, row, values):
     for i, value in enumerate(values, start=1):
         cell = ws.cell(row=row, column=i, value=value)
-        T.style_body_cell(cell)
+        T.plan_align(cell, i)
     return row
 
 
@@ -89,15 +90,15 @@ def _build_brand_pack(wb, data):
         # Black section header spanning both columns.
         ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=2)
         cell = ws.cell(row=row, column=1, value=title)
-        T.style_header_cell(cell)
+        T.style_header_cell(cell, vertical=T.PLAN_VERTICAL)
         ws.row_dimensions[row].height = T.XLSX_MIN_ROW_HEIGHT
         row += 1
         for label, value in rows:
             lab = ws.cell(row=row, column=1, value=label)
-            T.style_body_cell(lab)
+            T.style_body_cell(lab, vertical=T.PLAN_VERTICAL)
             lab.font = T.xlsx_font(bold=True)
             val = ws.cell(row=row, column=2, value=value)
-            T.style_body_cell(val)
+            T.style_body_cell(val, vertical=T.PLAN_VERTICAL)
             ws.row_dimensions[row].height = T.XLSX_MIN_ROW_HEIGHT
             row += 1
     return ws
@@ -113,12 +114,11 @@ def _build_tracker(wb, data):
     # Header row.
     for i, name in enumerate(TRACKER_COLUMNS, start=1):
         cell = ws.cell(row=1, column=i, value=name)
-        T.style_header_cell(cell)
+        T.plan_align(cell, i, header=True)
     ws.row_dimensions[1].height = T.XLSX_MIN_ROW_HEIGHT
     ws.freeze_panes = "A2"
 
     audience_line = data.get("audience_line", "")
-    date_value = data.get("date", "")
     rows = data.get("tracker", [])
     video_scripts_file = data.get("video_scripts_filename", "")
 
@@ -134,26 +134,25 @@ def _build_tracker(wb, data):
         script_value = "" if is_static else (content.get("script") or video_scripts_file)
         values = [
             idx + 1,                                   # A #
-            date_value,                                # B DATE (blank by default, no date stamped)
-            fmt,                                       # C FORMAT
-            RESOLUTION_STRING,                         # D RESOLUTION
-            content.get("status", DEFAULT_STATUS),     # E STATUS
-            content.get("platform", DEFAULT_PLATFORM), # F PLATFORM
-            None,                                      # G FILE TYPE (formula)
-            audience_line,                             # H AUDIENCE (identical)
-            concept,                                   # I CONCEPT
-            content.get("hook", ""),                   # J HOOK
-            content.get("beats", ""),                  # K BEATS
-            content.get("details", ""),                # L DETAILS
-            content.get("editing", ""),                # M EDITING DIRECTION
-            content.get("filming", ""),                # N FILMING DIRECTION
-            script_value,                              # O SCRIPT
-            content.get("final_asset", ""),            # P FINAL ASSET
+            fmt,                                       # B FORMAT
+            RESOLUTION_STRING,                         # C RESOLUTION
+            content.get("status", DEFAULT_STATUS),     # D STATUS
+            content.get("platform", DEFAULT_PLATFORM), # E PLATFORM
+            None,                                      # F FILE TYPE (formula)
+            audience_line,                             # G AUDIENCE (identical)
+            concept,                                   # H CONCEPT
+            content.get("hook", ""),                   # I HOOK
+            content.get("beats", ""),                  # J BEATS
+            content.get("details", ""),                # K DETAILS
+            content.get("editing", ""),                # L EDITING DIRECTION
+            content.get("filming", ""),                # M FILMING DIRECTION
+            script_value,                              # N SCRIPT
+            content.get("final_asset", ""),            # O FINAL ASSET
         ]
         _write_row(ws, r, values)
-        # FILE TYPE is always a formula referencing the FORMAT column (C).
-        ws.cell(row=r, column=7, value=f'=IF(C{r}="STATIC","JPG","MP4")')
-        T.style_body_cell(ws.cell(row=r, column=7))
+        # FILE TYPE is always a formula referencing the FORMAT column (B).
+        ws.cell(row=r, column=6, value=f'=IF(B{r}="STATIC","JPG","MP4")')
+        T.plan_align(ws.cell(row=r, column=6), 6)
         ws.row_dimensions[r].height = T.XLSX_TRACKER_ROW_HEIGHT
 
     # Existing post ads: proven organic posts to run as ads (Use Existing Post).
@@ -165,31 +164,30 @@ def _build_tracker(wb, data):
         r = idx + 2
         values = [
             idx + 1,                                       # A #
-            date_value,                                    # B DATE
-            post.get("format", "EXISTING POST"),           # C FORMAT
-            post.get("resolution", "As posted"),           # D RESOLUTION
-            post.get("status", "Signed Off"),              # E STATUS
-            post.get("platform", DEFAULT_PLATFORM),        # F PLATFORM
-            None,                                          # G FILE TYPE (formula)
-            audience_line,                                 # H AUDIENCE
-            post.get("concept", "Existing Post Ad"),       # I CONCEPT
-            post.get("hook", ""),                          # J HOOK
-            post.get("beats", ""),                         # K BEATS
-            post.get("details", ""),                       # L DETAILS
-            post.get("editing", ""),                       # M EDITING DIRECTION
-            post.get("filming", ""),                       # N FILMING DIRECTION
-            "",                                            # O SCRIPT (blank)
-            post.get("final_asset", ""),                   # P FINAL ASSET (post URL)
+            post.get("format", "EXISTING POST"),           # B FORMAT
+            post.get("resolution", "As posted"),           # C RESOLUTION
+            post.get("status", "Signed Off"),              # D STATUS
+            post.get("platform", DEFAULT_PLATFORM),        # E PLATFORM
+            None,                                          # F FILE TYPE (formula)
+            audience_line,                                 # G AUDIENCE
+            post.get("concept", "Existing Post Ad"),       # H CONCEPT
+            post.get("hook", ""),                          # I HOOK
+            post.get("beats", ""),                         # J BEATS
+            post.get("details", ""),                       # K DETAILS
+            post.get("editing", ""),                       # L EDITING DIRECTION
+            post.get("filming", ""),                       # M FILMING DIRECTION
+            "",                                            # N SCRIPT (blank)
+            post.get("final_asset", ""),                   # O FINAL ASSET (post URL)
         ]
         _write_row(ws, r, values)
-        ws.cell(row=r, column=7, value=f'=IF(C{r}="STATIC","JPG","MP4")')
-        T.style_body_cell(ws.cell(row=r, column=7))
+        ws.cell(row=r, column=6, value=f'=IF(B{r}="STATIC","JPG","MP4")')
+        T.plan_align(ws.cell(row=r, column=6), 6)
         ws.row_dimensions[r].height = T.XLSX_TRACKER_ROW_HEIGHT
 
     last = n_canon + len(existing) + 1
-    # Dropdowns on STATUS (E) and PLATFORM (F).
-    T.add_dropdown(ws, f"E2:E{last}", STATUS_OPTIONS)
-    T.add_dropdown(ws, f"F2:F{last}", PLATFORM_OPTIONS)
+    # Dropdowns on STATUS (D) and PLATFORM (E).
+    T.add_dropdown(ws, f"D2:D{last}", STATUS_OPTIONS)
+    T.add_dropdown(ws, f"E2:E{last}", PLATFORM_OPTIONS)
     return ws
 
 

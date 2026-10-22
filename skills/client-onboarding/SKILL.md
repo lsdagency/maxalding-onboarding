@@ -27,7 +27,7 @@ Required: at least one of the Brand Campaign Document or the Creative Strategy B
 Then run the QA gate (compliance-qa) over every output, fix anything it flags, and only then hand over.
 
 ## Preflight checklist (hard gate before Stage 3)
-A green QA gate is necessary but NOT sufficient. The deterministic validator only checks mechanical rules (characters, lengths, Meta patterns, naming, the labelled-hook format and the blank DATE column). It cannot check craft, voice, or whether you actually applied the mandated skills. Do not let a passing validator stand in for following the process. Before building anything, confirm every item:
+A green QA gate is necessary but NOT sufficient. The deterministic validator only checks mechanical rules (characters, lengths, Meta patterns, naming and the labelled-hook format). It cannot check craft, voice, or whether you actually applied the mandated skills. Do not let a passing validator stand in for following the process. Before building anything, confirm every item:
 
 - Read the feedback log in full this session and applied it.
 - Instagram scan completed per references/instagram-research.md (or explicitly waived by the user) and the findings fed into the Brand memory.
@@ -36,7 +36,7 @@ A green QA gate is necessary but NOT sufficient. The deterministic validator onl
 - The AD COPY self-check in references/creative-plan-spec.md run in full, not skimmed.
 - Invoked the mandated craft skill for each deliverable (see Skill invocations below). The skills inform craft (angles, PAS and BAB, value before ask, voice of customer); the plugin reference rules win on any conflict (no weight figures or invented stats, no exclamation marks, fixed AD COPY and CRM structures, the framing decision, no "guarantee" if the client bans it).
 - Hooks are labelled Hook 1: / Hook 2: / Hook 3: (Audience Addresser tagged age, role, situation), short enough that the label plus the hook fits the word limit, and drawn from varied Meta hook angles, not three rewordings of one idea.
-- Creative Tracker DATE column left blank.
+- Creative Plan has no DATE column, every cell vertically centred, the # column centred.
 - Offer framing decided at the Stage 2 gate (premium versus a named free offer) and premium_lead_magnet set to match.
 - No KPIs anywhere in the Creative Plan, no date in any document header, naming convention correct.
 

@@ -251,19 +251,33 @@ def xlsx_header_fill():
                        fill_type="solid")
 
 
-def style_header_cell(cell):
+def style_header_cell(cell, vertical="top", horizontal="left"):
     from openpyxl.styles import Alignment
 
     cell.font = xlsx_font(bold=True, header=True)
     cell.fill = xlsx_header_fill()
-    cell.alignment = Alignment(wrap_text=True, vertical="top", horizontal="left")
+    cell.alignment = Alignment(wrap_text=True, vertical=vertical, horizontal=horizontal)
 
 
-def style_body_cell(cell):
+def style_body_cell(cell, vertical="top", horizontal="left"):
     from openpyxl.styles import Alignment
 
     cell.font = xlsx_font(bold=False, header=False)
-    cell.alignment = Alignment(wrap_text=True, vertical="top", horizontal="left")
+    cell.alignment = Alignment(wrap_text=True, vertical=vertical, horizontal=horizontal)
+
+
+# Creative Plan alignment (Liam, 2026-10-22): the whole sheet vertically
+# centred, and the first column (#) centred horizontally too.
+PLAN_VERTICAL = "center"
+
+
+def plan_align(cell, column_index, header=False):
+    """Style a Creative Plan cell: vertical centre everywhere, column 1 centred."""
+    horizontal = "center" if column_index == 1 else "left"
+    if header:
+        style_header_cell(cell, vertical=PLAN_VERTICAL, horizontal=horizontal)
+    else:
+        style_body_cell(cell, vertical=PLAN_VERTICAL, horizontal=horizontal)
 
 
 def set_column_widths(ws, widths: dict):

@@ -2,6 +2,13 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.34.0] - 2026-10-22
+
+### Changed
+- Creative Plan: the DATE column is removed from the tracker (and from the VIDEOS and STATICS layout used by per-client scripts). FORMAT is now column B, so FILE TYPE is =IF(B{row}="STATIC","JPG","MP4"); STATUS and PLATFORM dropdowns move to D and E.
+- Creative Plan alignment: every cell, headers included, is vertically centred, and the first column (#) is centred horizontally. New build/template.py plan_align helper; style_body_cell and style_header_cell take optional alignment (defaults unchanged, so the ad copy and lead form workbooks are untouched).
+- creative-plan-spec.md, rules.yaml, SKILL.md and agents/creative-plan.md updated to match. From Liam, for all future creative packs.
+
 ## [0.33.3] - 2026-10-22
 
 ### Added
