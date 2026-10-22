@@ -40,6 +40,9 @@ Liam: "These are obvious Claude AI lines, I've seen them over and over again." N
 - **Process where the gain should be.** "Tell me the date and we work backwards from there" describes how the coach operates. Liam's version sells what she gets: "We'll work to get you feeling your best in time." Likewise "if you like how we work" became "if you like the progress you're getting". When a line describes the method, rewrite it as the result she feels.
 - **Losing the gain while fixing the shape.** "Kensington, Chelsea. I'm Sergio, and I help women here to get stronger and feel like themselves again" had a fragment opener. The fix swapped the whole line for a fact ("most of my clients are busy women") and threw the gain away. Liam kept the gain and fixed only the opener: "I'm a personal trainer in South Kensington and I help women to get stronger and feel like themselves again." Fix the broken part. Keep what was working.
 
+- **Stating the obvious.** A line that tells the viewer what the offer's own name already told them. For a one-to-one coach, "every session is one coach and one player" is the definition of one-to-one, and it had crept into every body and CTA in the draft (Feedback 2026-10-22, Relentless Generation: "Why with every single one of these do you say the same line [cut] there's too much calling out the obvious with your writing sometimes"). Check each body line and CTA: would the viewer already know this from the words in the offer name? If yes, cut it and spend the line on something they don't know (how the kid feels after a session, what the coach does that others don't, what they can push for).
+- **A credential with no so-what.** Naming a past club, academy or title is not impressive on its own to a cold audience. "This is me at the AFC Wimbledon academy" gave a parent no reason to care. Say what the coach was missing at that stage and what the customer gets now because of it: "At the AFC Wimbledon academy I didn't get a coach of my own until I was seventeen. Kids who train with us get one much younger." The biography rule still applies: the missing piece must come from the client's own story, never be invented to make the line work (Feedback 2026-10-22, Relentless Generation).
+
 The fix is not a synonym swap. Write the line the way the client would actually say it out loud, then read it back in their voice. If you cannot hear them saying it, it goes.
 
 ## Write in the client's actual register
@@ -49,6 +52,9 @@ Signals worth counting off the transcript: how often they say yeah, mate, look, 
 
 ### Write to the whole audience, not the half you pictured
 Do not narrow an audience's gender, or any other attribute, further than the client and the brief actually did. Check the pronouns in a finished draft against the ICP as agreed, not against the examples that happen to exist in the client's proof. A coach whose filmed clients are all boys still coaches girls, and the parent reading the ad may have either (Feedback 2026-08-13, Xcelerate Performance: the whole pack said "your son" and "he" throughout, which halved the audience on a small budget). Neutral audience-facing language ("your kid", "they") costs nothing and keeps the proof intact, because named real people keep their own pronouns.
+
+### Youth sport: what the kid wants and what the parent wants
+When the player is a child and the parent buys, write to what each of them actually wants. Kids play for the enjoyment, their mates, the weekend and winning. Parents want to see their kid do well and get to the next step (a better team, an academy trial), and they are usually more invested than the kid. Do not put adult performance psychology onto children ("brilliant in training, quieter on match day"): they are too young for that gap to be the story, even when the client says it on a sales call (Feedback 2026-10-22, Relentless Generation, from Liam, who has played all his life). Lead with enjoyment, let the next step be the parent's goal, and never promise selection.
 
 ### Two registers, and the difference between them
 The transcript governs the SHAPE of the client's speech: sentence length, openers, tag questions, cadence, what they repeat, and the technical vocabulary of their craft. Never put a shape in their mouth the transcript does not support.
@@ -66,6 +72,8 @@ For a client with no indoor space, never write a line that asserts one:
 - "come inside", "step inside", "come on in", "through our doors", "on the gym floor", "in our studio", "our facility", "under one roof".
 - The generic "at [client name]" is safe and often better than naming a venue at all.
 - Naming a competitor's building is still fine, and often the point: "without the intimidation of a traditional gym" is correct copy for an outdoor bootcamp.
+
+Say the venue the welcoming way. "It's at Tudor Park in Feltham" reads like a listing. A person inviting you says "we train at Tudor Park", "I'm at Tudor Park", "come down to Tudor Park" (Feedback 2026-10-22, Relentless Generation).
 
 For an online-only client the same rule bans any physical venue language at all. For an indoor client, the reverse applies: do not write outdoor scenes into a business that trains under a roof.
 

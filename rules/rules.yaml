@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.33.0"
+version: "0.33.1"
 
 banned_characters:
   - id: em-dash
@@ -80,6 +80,14 @@ audience_breadth:
   rule: "Do not narrow an audience gender (or any attribute) further than the client and the brief did. Check pronouns in the finished draft against the agreed ICP, not against whoever happens to appear in the client proof. Neutral audience-facing language keeps the proof intact, because named real people keep their own pronouns."
   source: "Feedback 2026-08-13 (Xcelerate Performance): the pack said your son and he throughout, halving the audience on a small budget."
 
+youth_sport_motivation:
+  rule: "When a child plays and a parent buys: kids play for enjoyment, mates, weekends and winning; parents want them to do well and reach the next step (better team, academy trial) and are often more invested. Never put adult performance psychology on a child (good in training, quiet on match day), even if the client said it. Lead with enjoyment, the next step is the parent's goal, never promise selection."
+  source: "Feedback 2026-10-22 (Relentless Generation): Liam."
+
+venue_phrasing:
+  rule: "Say the venue the welcoming way: we train at, I'm at, come down to. Never the listing form it's at [venue]."
+  source: "Feedback 2026-10-22 (Relentless Generation)."
+
 handover_message:
   rule: "Every scripts and creative pack handover to a client uses the standard message in references/handover-email.md word for word: the two filming options (record it yourself, or the professional content session at GBP 600 or 250 a month for three months). Only the pack link line may change. Client asks go in a separate follow-up. If the content session is already booked, ask the user before sending."
   source: "Liam, 2026-10-21 (1 TO 360): when you send ad scripts to clients, please add the following message alongside it."
@@ -92,6 +100,9 @@ ai_cadences:
   comma_stacked_repeat_source: "Feedback 2026-09-30 (Unstoppable Training Studio): Liam flagged write down every rep, every weight as a habit across drafts."
   comma_tacked_filler: "Never paste the client's counted filler after a comma onto a written sentence (My clients are busy, you know). Fillers are register evidence, not decoration; write the plain sentence a person would say. Read-back check."
   comma_tacked_fragment: "No two or three word qualifier bolted onto a finished sentence after a comma (Your first hour of personal training is free, at home) and no label-comma-fragment lines (Free PT session, Kingston and Richmond). Fold the qualifier in where a person would say it (Your first hour of at home personal training is free). Sweep comma triplets of fragments (No driving, no parking, no getting cold) in the same pass. Applies to ad copy and lead forms, not only spoken lines. Read-back check, from Liam 2026-10-20."
+  stating_the_obvious: "Cut any body line or CTA that only restates what the offer's name already tells the viewer (every session is one coach and one player, for a one-to-one coach). Spend the line on something they don't know. Read-back check."
+  credential_so_what: "A past club, academy or title is not a hook on its own. Say what the coach was missing at that stage and what the customer gets now because of it, sourced from the client's own story."
+  stating_the_obvious_source: "Feedback 2026-10-22 (Relentless Generation): Liam, on working draft v1."
   hook_explainer: "Never add a second sentence to a hook that explains it (Four sessions for the price of three. That's how I start with every new client). Stop on the line that lands."
   process_over_gain: "When a spoken line describes the coach's method (we work backwards from the date / if you like how we work), rewrite it as the result she feels (we'll get you feeling your best in time / if you like the progress you're getting). When fixing a line's shape, keep its gain."
   patterns_source: "Feedback 2026-10-01 (1 TO 360): Liam rewrote five lines of working draft v2 and flagged these as patterns the writer keeps repeating."

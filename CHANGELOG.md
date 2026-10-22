@@ -2,6 +2,12 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.33.1] - 2026-10-22
+
+### Changed
+- writing-rules.md and rules.yaml ai_cadences: two new banned shapes. Stating the obvious (a body line or CTA that only restates the offer's name, "every session is one coach and one player" for a one-to-one coach) and a credential with no so-what (a past academy or club named without what the coach was missing then and what the customer gets now). From Liam on the Relentless Generation working draft v1.
+- writing-rules.md and rules.yaml: youth sport motivation (kids play for enjoyment, mates and winning; parents want the next step and are more invested; no adult performance psychology on children, even when the client said it) and venue phrasing (we train at / come down to, never "it's at"). Read-back checks, no validator rule.
+
 ## [0.33.0] - 2026-10-21
 
 ### Changed
