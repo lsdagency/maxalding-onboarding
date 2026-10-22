@@ -43,9 +43,11 @@ def build_crm_automation(data, out_dir, workspace=None):
         for n, message in enumerate(workflow.get("messages", []), start=1):
             mtype = message.get("type", "email").lower()
             doc.add_paragraph()
-            if mtype == "sms":
+            if mtype in ("sms", "whatsapp"):
+                # WhatsApp replaces SMS when the client pays for the GoHighLevel
+                # WhatsApp add-on; same short-message rules, different label.
                 head = doc.add_paragraph()
-                run = head.add_run(f"{n}. SMS")
+                run = head.add_run(f"{n}. {'WhatsApp' if mtype == 'whatsapp' else 'SMS'}")
                 T._set_run_font(run, size=T.SIZE_BODY, bold=True, color=T.COLOR_BLACK)
                 T.add_label_line(doc, "Delay", message.get("delay", ""))
                 if message.get("note"):

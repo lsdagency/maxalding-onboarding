@@ -76,6 +76,8 @@ Every email and every SMS must sign off in the coach's name so the copy has a cl
 
 Use HighLevel custom values naturally: contact first name, appointment start time, appointment start date, appointment meeting link.
 
+When the client takes the GoHighLevel WhatsApp add-on in place of SMS (Relentless Generation, 2026-10-22), set the message type to "whatsapp" and the document labels it WhatsApp. Same steps, timings and short-message rules as SMS; nothing else changes.
+
 SMS under 160 characters where possible, never over 320. One message, one action. The booking link appears only in follow-up messages, not in cold sends.
 
 Each sequence has its own intent: Lead Follow Up pushes to book; Booked Call Confirmation confirms, sets expectations and reminds before the call to maximise show rate; No Show Rebook recovers fast and frictionless; Long Term Nurture delivers value and authority with a soft CTA.

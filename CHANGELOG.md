@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.33.2] - 2026-10-22
+
+### Added
+- build/crm_automation.py: message type "whatsapp", labelled WhatsApp, for clients on the GoHighLevel WhatsApp add-on instead of SMS. Same rules as SMS. automation-copy-guidelines.md documents it. First used on Relentless Generation.
+
 ## [0.33.1] - 2026-10-22
 
 ### Changed
