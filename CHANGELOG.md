@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.37.0] - 2026-10-26
+
+### Changed
+- Meta Ad Copy structure follows how the ads run. Every VIDEO gets its own row of 5 post copy variations, written against that video. ALL the statics share ONE row of 5 ("Statics (Dynamic Ad)"), because they run together as one dynamic ad and Meta pairs any post with any image, so each statics post must work above every static. Videos first in tracker order, then the statics row; existing-post ads get no post copy; a hook test stays one video with one shared set. Updated creative-plan-spec.md (rule plus a self-check tick), skills/meta-ad-copy/SKILL.md, agents/creative-plan.md, rules.yaml ad_copy_structure, and the canonical sample's ad copy reshaped to match. From Liam on the Oliver Bird finals.
+
 ## [0.36.3] - 2026-10-22
 
 ### Changed

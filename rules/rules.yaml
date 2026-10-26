@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.36.3"
+version: "0.37.0"
 
 banned_characters:
   - id: em-dash
@@ -144,6 +144,7 @@ ad_copy_self_check:
   checklist: [
     "Invoked ads, ad-creative and copywriting THIS session for THIS copy, and again on every rewrite round",
     "Read the client Brand memory: emoji palette, words to use, banned list, tagline",
+    "One row per video and one shared statics row for the dynamic ad; every statics post works above any static",
     "5 posts per concept, each a genuinely different angle, named to yourself",
     "Each post opens on a pain point or desire the ICP already holds",
     "Emoji from the client palette, matched per angle, roughly a third of posts, some bare",
@@ -246,7 +247,8 @@ creative_plan:
   status_dropdown: [Briefed, Filmed, In Edit, Signed Off, Live]
   platform_dropdown: ["FACEBOOK + INSTAGRAM", FACEBOOK, INSTAGRAM, TIKTOK]
   ad_copy_columns: ["#", CONCEPT, POST COPY, CHARS]
-  ad_copy_structure: "distinct concepts only, 5 post variations each, one shared block of 5 headlines, one shared description"
+  ad_copy_structure: "one row per VIDEO with 5 post variations each, written against that video; ONE shared row of 5 for ALL the statics, because they run together as one dynamic ad (each statics post must work above any static); videos first in tracker order, then the statics row; existing-post ads get no post copy; a hook test is one video with one shared set; one shared block of 5 headlines, one shared description"
+  ad_copy_structure_source: "Feedback 2026-10-26 (Oliver Bird): each video gets its own 5 post copy, the statics get an overall set because they run as one dynamic ad"
   ad_copy_separate_workbook: "Ad copy is NOT a tab in the Creative Plan. The Creative Plan has TWO tabs (BRAND PACK, CREATIVE TRACKER). Ad copy always ships as its own workbook built by build/ad_copy.py and named MAXALDING - [Client] - [Campaign] - Meta Ad Copy.xlsx. build.build_all builds it alongside the Creative Plan whenever ad_copy.concepts is present."
   ad_copy_separate_workbook_source: "Feedback 2026-08-06 (Kure by Konrad)"
   source: "System Prompt s8; Feedback 2026-06-18"

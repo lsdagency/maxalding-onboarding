@@ -22,7 +22,7 @@ This package is read-only at runtime. Save the generated XLSX into the client's 
 One AD COPY spreadsheet, built with the deterministic build module. Never a chat list, never hand-formatted. Layout, columns and styling are fixed by the builder:
 
 - Columns: `# | CONCEPT | POST COPY | CHARS`. No STATUS column, no CTA column or note.
-- Organise by distinct concept only, no duplicate concept rows. For a batch of videos, each video maps to one concept (use the video's subject or angle as the concept name).
+- **Structure follows how the ads run (Feedback 2026-10-26, Oliver Bird).** Every VIDEO gets its own concept row with 5 post copy variations, written against that video. ALL the statics share ONE concept row of 5 posts, named "Statics (Dynamic Ad)", because the statics run together as one dynamic ad and Meta pairs any post with any image. So every statics post must make sense above every static in the set: never name one static's subject (a single review, the map, one offer line). Videos first, in tracker order, then the statics row. Existing-post ads need no post copy, they run with their own caption. A hook test is still one video, so its variants share one set of 5. Name each video row after the video ("Problem > Solution (Video)").
 - A HOOK TEST is ONE concept. When the ads are variants of one video that differ only in their opening hook, write ONE shared set for the whole test: 5 posts, the 5 headlines and 1 description, used on every variant, so the hook stays the only variable. Never write per-variant post copy for a hook test (Fisica Incentive Hook Test, 2026-09-28).
 - 5 post copy variations per concept.
 - One shared block of 5 headlines and one shared description that cover all concepts.
@@ -94,6 +94,8 @@ This list is mirrored from `../client-onboarding/references/creative-plan-spec.m
     [ ] Invoked marketing-skills:ads, marketing-skills:ad-creative and marketing-skills:copywriting
         this session, for this copy. Invoked, not skimmed, and again on every rewrite round.
     [ ] Read the client's Brand memory: emoji palette, words to use, banned list, tagline.
+    [ ] One row per VIDEO and one shared row for all the STATICS (they run as one dynamic ad).
+        Every statics post works above any static in the set, never just one of them.
     [ ] Every concept has exactly 5 posts, and every post is a genuinely different ANGLE.
         Name the angle of each one to yourself. If two share an angle, one of them is a reword.
     [ ] Each post opens on a pain point or desire the ICP is ALREADY thinking about.

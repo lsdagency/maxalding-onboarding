@@ -96,6 +96,8 @@ Apply ads, ad-creative and copywriting before writing. Columns: number, CONCEPT,
         memory. A term the client never uses with their own audience does not go in a hook,
         a headline or a static overlay unless the asset explains it in the same breath.
         Sell what the customer LEARNS or GETS; the mechanism is proof, not the hook.
+    [ ] One row per VIDEO and one shared row for all the STATICS (they run as one dynamic ad).
+        Every statics post works above any static in the set, never just one of them.
     [ ] Every concept has exactly 5 posts, and every post is a genuinely different ANGLE.
         Name the angle of each one to yourself. If two share an angle, one of them is a reword.
     [ ] Each post opens on a pain point or desire the ICP is ALREADY thinking about, in their
@@ -111,8 +113,8 @@ Apply ads, ad-creative and copywriting before writing. Columns: number, CONCEPT,
 
 If any line above cannot be ticked honestly, the copy is not finished, whatever the validator says. The QA gate checks characters and lengths; it cannot see a reworded angle, a missing skill invocation or an emoji that does not fit the audience.
 
-- Organise by distinct concept only, no duplicate concept rows.
-- 5 post copy variations per concept.
+- **Structure follows how the ads run (Feedback 2026-10-26, Oliver Bird).** Every VIDEO gets its own concept row with 5 post copy variations, written against that video. ALL the statics share ONE concept row of 5 posts, named "Statics (Dynamic Ad)", because the statics run together as one dynamic ad and Meta pairs any post with any image. So every statics post must make sense above every static in the set: never name one static's subject (a single review, the map, one offer line). Videos first, in tracker order, then the statics row. Existing-post ads need no post copy, they run with their own caption. A hook test is still one video, so its variants share one set of 5.
+- 5 post copy variations per concept row.
 - One shared block of 5 headlines and one shared description that cover all concepts.
 - CHARS is a live LEN formula on the copy cell.
 - Post copy no longer than 125 characters, built to stop the scroll with a clear hook in the first line. Each of the five is unique: a genuinely different angle or approach, not a reworded version of the others. Maximum one rhetorical question per post. Do not end a post copy with a full stop, it reads unnatural in an ad.

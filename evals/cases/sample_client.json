@@ -246,7 +246,7 @@
   "ad_copy": {
     "concepts": [
       {
-        "concept": "Problem > Solution",
+        "concept": "Problem > Solution (Video)",
         "posts": [
           "Busy week wins again?",
           "Training keeps slipping the moment work takes over, and a plan built around your week is what changes it",
@@ -256,27 +256,7 @@
         ]
       },
       {
-        "concept": "Incentive",
-        "posts": [
-          "One session, one clear plan",
-          "Book a private Strength and Lifestyle Audit and leave with a plan built around your actual schedule",
-          "Your audit is open this month ✨",
-          "A private hour with the coach, then a personalised plan you keep whatever you decide next",
-          "Limited audits each month"
-        ]
-      },
-      {
-        "concept": "Benefit",
-        "posts": [
-          "Feel capable again",
-          "Strength you can feel at work, not just in the gym",
-          "Get stronger around a full schedule, so your body finally keeps up with the week you actually have",
-          "Steadier focus, better sleep, and a body that stops being the bottleneck ⏳",
-          "Energy that lasts past 3pm"
-        ]
-      },
-      {
-        "concept": "Social Proof",
+        "concept": "Social Proof (Client Interview Video)",
         "posts": [
           "Twelve honest weeks",
           "A client on the weekly review: it kept the plan fitting my week when everything else got busy",
@@ -286,7 +266,7 @@
         ]
       },
       {
-        "concept": "Pattern Interrupt",
+        "concept": "Pattern Interrupt (Video)",
         "posts": [
           "Read this before Monday",
           "Most training plans ignore your calendar, which is exactly why they fall apart by week three",
@@ -296,7 +276,7 @@
         ]
       },
       {
-        "concept": "Storytelling",
+        "concept": "Storytelling (Video)",
         "posts": [
           "This started with one bad year",
           "He rebuilt his own training around a demanding career, and that lesson became the whole method",
@@ -306,13 +286,43 @@
         ]
       },
       {
-        "concept": "Audience Addresser",
+        "concept": "Benefit (Video)",
+        "posts": [
+          "Feel capable again",
+          "Strength you can feel at work, not just in the gym",
+          "Get stronger around a full schedule, so your body finally keeps up with the week you actually have",
+          "Steadier focus, better sleep, and a body that stops being the bottleneck ⏳",
+          "Energy that lasts past 3pm"
+        ]
+      },
+      {
+        "concept": "Incentive (Video)",
+        "posts": [
+          "One session, one clear plan",
+          "Book a private Strength and Lifestyle Audit and leave with a plan built around your actual schedule",
+          "Your audit is open this month ✨",
+          "A private hour with the coach, then a personalised plan you keep whatever you decide next",
+          "Limited audits each month"
+        ]
+      },
+      {
+        "concept": "Audience Addresser (Video)",
         "posts": [
           "Built for people done starting over",
           "In your 30s or 40s with a packed calendar and a body that is not keeping up like it used to?",
           "Desk job, long days, training slipping?",
           "If your week runs you instead of the other way round, here is the plan that fits around it ✨",
           "Professionals who want strength without the grind ⏳"
+        ]
+      },
+      {
+        "concept": "Statics (Dynamic Ad)",
+        "posts": [
+          "Strength coaching for people with a full diary ✨",
+          "One private hour with a coach on the Northside, then a plan built around the week you actually have",
+          "Train before work or straight after, whichever your week allows",
+          "Stronger by the time the busy season comes round again ⏳",
+          "Strength and energy that keep up with your job, built around the time you can actually give it each week"
         ]
       }
     ],
