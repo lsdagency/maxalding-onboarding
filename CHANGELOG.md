@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.38.1] - 2026-10-27
+
+### Changed
+- A biographical line that goes past its source is rewritten to what the source says, never sent to the client to confirm (writing-rules.md, rules.yaml never_fabricate_biography.rewrite_not_confirm). From Liam on the CSS PER-FIT draft.
+
 ## [0.38.0] - 2026-10-27
 
 ### Added

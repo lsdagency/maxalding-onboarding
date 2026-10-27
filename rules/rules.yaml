@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.38.0"
+version: "0.38.1"
 
 banned_characters:
   - id: em-dash
@@ -75,6 +75,7 @@ premium_framing:
 never_fabricate_biography:
   rule: "Every biographical claim about the client (what they played, where they trained, what happened to them, how long they have coached) must be traceable to the onboarding documents or their own transcripts. Name the source before it ships. It fits the story is not a source."
   source: "Feedback 2026-08-13 (Xcelerate Performance): the Storytelling concept, the VSL and two ad copy posts were built on the coach having been the kid stuck on the wing. He had never played rugby, and the word appears nowhere in any source."
+  rewrite_not_confirm: "A biographical line that goes past its source is rewritten to what the source says, never sent to the client to confirm. Where the client's pages disagree on a detail, use the better-supported version and note it. Feedback 2026-10-27 (CSS PER-FIT)."
 
 audience_breadth:
   rule: "Do not narrow an audience gender (or any attribute) further than the client and the brief did. Check pronouns in the finished draft against the agreed ICP, not against whoever happens to appear in the client proof. Neutral audience-facing language keeps the proof intact, because named real people keep their own pronouns."
