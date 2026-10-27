@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.38.0] - 2026-10-27
+
+### Added
+- Draft craft rules from Liam's review of the CSS PER-FIT working draft (script-guidelines.md new section, rules.yaml script_craft): bodies written in named beats; every body line must give the viewer a reason to keep watching, even when sourced; every video names its filming location in a table at the top of the draft and the pack varies locations (walk and talk for attention-led audiences); the niche goes in every hook including Incentive; education videos are spoken, never a slideshow of citations; a split-screen attention loop is never mentioned; a creative hook is an action the talent performs, never an edit-only graphic.
+
 ## [0.37.0] - 2026-10-26
 
 ### Changed

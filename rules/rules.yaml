@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.37.0"
+version: "0.38.0"
 
 banned_characters:
   - id: em-dash
@@ -87,6 +87,16 @@ youth_sport_motivation:
 venue_phrasing:
   rule: "Say the venue the welcoming way: we train at, I'm at, come down to. Never the listing form it's at [venue]."
   source: "Feedback 2026-10-22 (Relentless Generation)."
+
+script_craft:
+  body_beats: "Write every script body as a short run of named beats (for an Audience Addresser: what I'm going for, who they are, what I do, what you get), each advancing the last. Label them in the working draft so a missing or repeated beat is obvious."
+  earn_the_next_second: "Every body line must give the viewer a reason to keep watching. A line can be sourced from the client's own document and still kill the ad: 'A lot of people with ADHD already know what would help them' tells the viewer they already have the answer."
+  creative_hook_is_an_action: "A creative hook is something the talent DOES on camera (closing a laptop lid as he says it), never something only the edit adds (a browser animation). Graphics can support a hook, never carry it."
+  filming_locations: "Every video names where it is filmed, in a location table at the top of the working draft, and the pack varies the locations. Hooks, body and CTA of one video stay in one spot and session. A walk and talk outdoors is a strong option when the audience is attention-led."
+  niche_in_every_hook: "In a niche campaign every hook carries the niche, the Incentive hooks included. A hook that could run for any PT in any town fails."
+  education_is_spoken: "An education video is the person saying the point in plain sentences, not a slideshow of articles or citations on screen. Sources stay in the internal draft so every claim is defensible. Verify any health-adjacent claim before scripting it."
+  split_screen_loop: "A split-screen attention loop (a satisfying animation on the top half) sits there silently. The talent films a normal sales video for the offer and never mentions or refers to it."
+  source: "Feedback 2026-10-27 (CSS PER-FIT): Liam's review of working draft v1."
 
 broll_list:
   rule: "Every Creative Plan has a B-ROLL LIST tab of specific clips (#, CLIP, WHERE AND WHEN, HOW TO FILM, LENGTH, USED IN, WHO'S IN SHOT, STATUS, FINAL ASSET), each tied to the ads it feeds and filmable by the client. data['broll'], build_broll_sheet."
