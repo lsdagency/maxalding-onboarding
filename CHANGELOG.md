@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.38.2] - 2026-11-03
+
+### Changed
+- Video Ad Scripts: WHAT WE NEED FROM YOU states how long everything is (seconds per scripted video, hooks a sentence or two, interview minutes) and each video's what line repeats its length (script-guidelines.md, rules.yaml scripts_layout.lengths, canonical sample now carries a scripts.summary). A client had to ask how long the clips needed to be (CSS PER-FIT).
+
 ## [0.38.1] - 2026-10-27
 
 ### Changed

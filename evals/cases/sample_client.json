@@ -336,6 +336,12 @@
     "description": "Strength that lasts"
   },
   "scripts": {
+    "summary": [
+      "Six short videos of you talking to camera. Each is about 20 to 35 seconds, and each opening line is a sentence or two",
+      "One voiceover of your story, about 30 to 40 seconds, plus the clips listed for it",
+      "Three client interviews, about 7 minutes each, cut down to 30 to 45 seconds per ad",
+      "The clips on the B-Roll List tab of the Creative Plan"
+    ],
     "concepts": [
       {
         "name": "Problem > Solution",
