@@ -108,6 +108,27 @@ def _table(doc, headers, rows, widths_cm):
     return table
 
 
+# Spoken length of a take, worked out from its words at a calm talking pace
+# (about 150 words a minute). Liam, 2026-11-03: the client should see how long
+# every take and the whole video runs, in the table of what to say.
+WORDS_PER_SECOND = 2.5
+
+
+def _seconds(text):
+    import math
+    import re
+    words = len(re.findall(r"[A-Za-z0-9']+", text or ""))
+    return max(2, math.ceil(words / WORDS_PER_SECOND))
+
+
+def _about(low, high=None):
+    r = lambda x: max(5, 5 * round(x / 5))  # noqa: E731
+    high = low if high is None else high
+    if r(low) == r(high):
+        return f"About {r(low)} sec"
+    return f"About {r(low)} to {r(high)} sec"
+
+
 def _kind(concept):
     if concept.get("organic"):
         return "organic"
@@ -187,15 +208,22 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
         if kind == "script":
             rows = []
             test = concept.get("hook_test") and len(hooks) > 1
-            for i, hook in enumerate(hooks if test else hooks[:1], start=1):
-                rows.append([(f"Hook {i}" if test else "Opening line", "label"), (hook, "script")])
+            used_hooks = hooks if test else hooks[:1]
+            for i, hook in enumerate(used_hooks, start=1):
+                rows.append([(f"Hook {i}" if test else "Opening line", "label"), (hook, "script"),
+                             (_about(_seconds(hook)), "note")])
             middle = "\n".join(b["line"] for b in beats if b.get("line"))
+            mid_s = _seconds(middle) if middle else 0
             if middle:
                 rows.append([("Middle" + (" (same after every hook)" if test else ""), "label"),
-                             (middle, "script")])
+                             (middle, "script"), (_about(mid_s), "note")])
+            end_s = _seconds(concept["cta"]) if concept.get("cta") else 0
             if concept.get("cta"):
-                rows.append([("Ending", "label"), (concept["cta"], "script")])
-            _table(doc, ["TAKE", "WHAT TO SAY"], rows, [3.5, 13.0])
+                rows.append([("Ending", "label"), (concept["cta"], "script"), (_about(end_s), "note")])
+            hook_s = [_seconds(h) for h in used_hooks] or [0]
+            rows.append([("Whole video", "label"), ("Each video, opening line to ending" if test else "Opening line to ending", "note"),
+                         (_about(min(hook_s) + mid_s + end_s, max(hook_s) + mid_s + end_s), "label")])
+            _table(doc, ["TAKE", "WHAT TO SAY", "LENGTH"], rows, [3.2, 10.8, 2.5])
 
         elif kind == "interview":
             rows = []

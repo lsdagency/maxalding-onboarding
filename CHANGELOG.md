@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.39.0] - 2026-11-03
+
+### Added
+- Video Ad Scripts: the scripted takes table gains a LENGTH column and a Whole video row, worked out from each take's word count at about 150 words a minute (build/video_ad_scripts.py), so lengths always match the script. WHAT WE NEED FROM YOU now states the ask in plain terms and never quotes seconds the table contradicts (script-guidelines.md, rules.yaml scripts_layout.lengths, canonical sample summary). From Liam on the CSS PER-FIT scripts.
+
 ## [0.38.2] - 2026-11-03
 
 ### Changed
