@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.39.3] - 2026-11-04
+
+### Changed
+- Hooks say the real point and are literally true to a stranger, and the niche is why the line matters, never bolted on the end (script-guidelines.md, rules.yaml script_craft.hook_says_the_real_point). From Liam on two CSS PER-FIT hooks.
+
 ## [0.39.2] - 2026-11-04
 
 ### Changed
