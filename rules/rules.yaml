@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.39.1"
+version: "0.39.2"
 
 banned_characters:
   - id: em-dash
@@ -101,6 +101,7 @@ script_craft:
   client_pain_points_as_spine: "When the client lists their own pain points, each one becomes the spine of a script body rather than being sprinkled across existing ones. Feedback 2026-11-04 (CSS PER-FIT)."
   niche_said_plainly: "Meta's personal attributes rule bans only telling the viewer they have the condition. Say the niche's real struggles in first person or about people with the condition; do not soften them away. Feedback 2026-11-04 (CSS PER-FIT)."
   home_studio_privacy: "If the studio is at the client's home, ads show the area only: no street, map pin, house exterior or address in any asset, B-Roll list or email. Feedback 2026-11-04 (CSS PER-FIT)."
+  no_one_asked_hook: "A hook never comments on the ad or the talent's own trait to excuse it (I've got ADHD, so I'll keep this quick). Every hook gives the viewer the offer, the gain or a prop that shows it. Feedback 2026-11-04 (CSS PER-FIT)."
 
 broll_list:
   rule: "Every Creative Plan has a B-ROLL LIST tab of specific clips (#, CLIP, WHERE AND WHEN, HOW TO FILM, LENGTH, USED IN, WHO'S IN SHOT, STATUS, FINAL ASSET), each tied to the ads it feeds and filmable by the client. data['broll'], build_broll_sheet."

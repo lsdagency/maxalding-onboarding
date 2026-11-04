@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.39.2] - 2026-11-04
+
+### Changed
+- A hook never comments on the ad or excuses itself with the talent's own trait ("I've got ADHD, so I'll keep this quick", Liam: "no one asked"). Every hook gives the viewer the offer, the gain or a prop that shows it (script-guidelines.md creative hooks, rules.yaml script_craft.no_one_asked_hook).
+
 ## [0.39.1] - 2026-11-04
 
 ### Added
