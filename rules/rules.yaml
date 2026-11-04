@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.39.0"
+version: "0.39.1"
 
 banned_characters:
   - id: em-dash
@@ -98,6 +98,9 @@ script_craft:
   education_is_spoken: "An education video is the person saying the point in plain sentences, not a slideshow of articles or citations on screen. Sources stay in the internal draft so every claim is defensible. Verify any health-adjacent claim before scripting it."
   split_screen_loop: "A split-screen attention loop (a satisfying animation on the top half) sits there silently. The talent films a normal sales video for the offer and never mentions or refers to it."
   source: "Feedback 2026-10-27 (CSS PER-FIT): Liam's review of working draft v1."
+  client_pain_points_as_spine: "When the client lists their own pain points, each one becomes the spine of a script body rather than being sprinkled across existing ones. Feedback 2026-11-04 (CSS PER-FIT)."
+  niche_said_plainly: "Meta's personal attributes rule bans only telling the viewer they have the condition. Say the niche's real struggles in first person or about people with the condition; do not soften them away. Feedback 2026-11-04 (CSS PER-FIT)."
+  home_studio_privacy: "If the studio is at the client's home, ads show the area only: no street, map pin, house exterior or address in any asset, B-Roll list or email. Feedback 2026-11-04 (CSS PER-FIT)."
 
 broll_list:
   rule: "Every Creative Plan has a B-ROLL LIST tab of specific clips (#, CLIP, WHERE AND WHEN, HOW TO FILM, LENGTH, USED IN, WHO'S IN SHOT, STATUS, FINAL ASSET), each tied to the ads it feeds and filmable by the client. data['broll'], build_broll_sheet."

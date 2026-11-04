@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.39.1] - 2026-11-04
+
+### Added
+- script-guidelines.md and rules.yaml script_craft: a client's own listed pain points each become the spine of a script; Meta caution bans only telling the viewer they have the condition, so the niche is said plainly in first or third person; a home studio never shows its street, pin, exterior or address. From client feedback on the CSS PER-FIT pack.
+
 ## [0.39.0] - 2026-11-03
 
 ### Added
