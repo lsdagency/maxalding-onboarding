@@ -72,6 +72,8 @@ For each workflow: the WORKFLOW NAME in caps, a TRIGGER, then each message in or
 ## Copy rules
 Value first, conversational, matches the client tone. Premium positioning of the consultation, with no discount language. Positive-language rule. No banned words or characters. No invented proof.
 
+**No placeholders in CRM copy (Liam, 2026-11-10, Relentless Generation).** The CRM copy goes to the client for approval and into GoHighLevel as written, so it never carries a "[CLIENT ACTION: ...]" placeholder. Write the success story and case study steps from proof already in hand: a real review, a testimonial, a quote on the client's website, the coaches' real backgrounds, or a walk-through of what the front-end session involves. If there is genuinely no proof for a step, give that step a different angle rather than leaving a gap, and ask the user directly at the gate for the one story worth having. Never bury an ask for the client inside a deliverable. The validator errors on it (rule `crm-placeholder`).
+
 Every email and every SMS must sign off in the coach's name so the copy has a clear ending, for example "Cheers, Alessandro" on emails and "Cheers, Ale" on SMS. Never leave a message ending mid-thought with nothing closing it.
 
 Use HighLevel custom values naturally: contact first name, appointment start time, appointment start date, appointment meeting link.

@@ -317,6 +317,34 @@ def check_other_clients(segments, names) -> list:
     return found
 
 
+def check_crm_placeholders(segments, path) -> list:
+    """CRM Automation copy goes to the client and into GoHighLevel as written, so a
+    placeholder ("[CLIENT ACTION: ...]") must never ship in it. Story and case study
+    emails are written from proof already in hand; anything genuinely missing is
+    raised with the user as a direct question (Liam, 2026-11-10, Relentless
+    Generation)."""
+    import re
+    from .checks import Violation
+
+    if "crm automation" not in os.path.basename(path).lower():
+        return []
+    found = []
+    pattern = re.compile(r"\[\s*CLIENT ACTION", re.IGNORECASE)
+    for seg in segments:
+        m = pattern.search(seg.text or "")
+        if m:
+            found.append(Violation(
+                rule="crm-placeholder",
+                message=("A [CLIENT ACTION] placeholder in CRM copy. Rewrite the message "
+                         "from proof already in hand, and ask the user directly for "
+                         "anything genuinely missing."),
+                location=seg.location,
+                severity="error",
+                snippet=seg.text[m.start(): m.start() + 80].replace("\n", " "),
+            ))
+    return found
+
+
 def scan_file(path: str, check_names: bool = True) -> list:
     ext = os.path.splitext(path)[1].lower()
     violations = []
@@ -340,6 +368,8 @@ def scan_file(path: str, check_names: bool = True) -> list:
     violations.extend(run_set_checks(segments))
     if ext in DOCX_EXTS or ext in XLSX_EXTS:
         violations.extend(check_other_clients(segments, other_client_names(path)))
+    if ext in DOCX_EXTS:
+        violations.extend(check_crm_placeholders(segments, path))
     return violations
 
 

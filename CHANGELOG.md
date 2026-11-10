@@ -2,6 +2,14 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.40.0] - 2026-11-10
+
+### Added
+- validator rule `crm-placeholder` (error): a [CLIENT ACTION] placeholder in a CRM Automation document fails the QA gate.
+
+### Changed
+- automation-copy-guidelines.md, agents/lifecycle-crm.md, rules.yaml crm_no_placeholders: story and case study emails are written from proof already in hand (reviews, testimonials, website quotes, coach bios, a walk-through of the first session), the angle changes where there is no proof, and anything genuinely missing is asked of the user directly, never left as a gap in the copy. From Liam on the Relentless Generation CRM, which shipped four placeholder emails.
+
 ## [0.39.3] - 2026-11-04
 
 ### Changed

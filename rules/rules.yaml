@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.39.3"
+version: "0.40.0"
 
 banned_characters:
   - id: em-dash
@@ -112,6 +112,10 @@ scripts_layout:
   rule: "Video Ad Scripts: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, on camera, one line on what it is, how to film, and a takes table. No take checklist, timestamps, beat labels, audience or angle lines, strategy paragraphs, or edit notes (end cards, CTA audio, when a post runs as an ad). If the client doesn't film it or say it, it isn't in the doc."
   source: "Liam, 2026-10-22 (Relentless Generation): a lot easier to understand, way less AI commentary, keep good guidance."
   lengths: "The scripted takes table is TAKE | WHAT TO SAY | LENGTH with a Whole video row; build/video_ad_scripts.py works out each length from the word count at about 150 words a minute, so never hand-write seconds. WHAT WE NEED FROM YOU says the ask in plain terms (under a minute per video, hook a sentence or two, interview minutes) and never contradicts the table. Feedback 2026-11-03 (CSS PER-FIT)."
+
+crm_no_placeholders:
+  rule: "CRM Automation copy never carries a [CLIENT ACTION] placeholder. Write story and case study emails from proof in hand (reviews, testimonials, website quotes, coach bios, the first-session walk-through); change the angle where there is none, and ask the user directly for anything genuinely missing. Validator rule crm-placeholder (error)."
+  source: "Liam, 2026-11-10 (Relentless Generation): why are we putting things like this in the automations, you didn't flag to me to ask KJ anything."
 
 copy_timing:
   rule: "At onboarding the client gets the Video Ad Scripts and the Creative Plan (plus CRM Automation). Meta Ad Copy and Meta Lead Form Copy are held until the finished ads come back, then written against the delivered creative and shared. List both in skip_deliverables in the onboarding data file."
