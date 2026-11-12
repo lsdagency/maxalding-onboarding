@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.40.0"
+version: "0.40.1"
 
 banned_characters:
   - id: em-dash
@@ -116,6 +116,10 @@ scripts_layout:
 crm_no_placeholders:
   rule: "CRM Automation copy never carries a [CLIENT ACTION] placeholder. Write story and case study emails from proof in hand (reviews, testimonials, website quotes, coach bios, the first-session walk-through); change the angle where there is none, and ask the user directly for anything genuinely missing. Validator rule crm-placeholder (error)."
   source: "Liam, 2026-11-10 (Relentless Generation): why are we putting things like this in the automations, you didn't flag to me to ask KJ anything."
+
+crm_speaks_to_every_lead:
+  rule: "The ads can target a niche trait, but every form lead gets the CRM, and many will not share it. No email or SMS opens on the trait or introduces the coach by it; it lives in the coach's story (after what the reader gets) and an FAQ saying you do not need it; no line assumes the reader has it."
+  source: "2026-11-12 (CSS PER-FIT): not all his clients will necessarily have ADHD, so we should not lead with that."
 
 copy_timing:
   rule: "At onboarding the client gets the Video Ad Scripts and the Creative Plan (plus CRM Automation). Meta Ad Copy and Meta Lead Form Copy are held until the finished ads come back, then written against the delivered creative and shared. List both in skip_deliverables in the onboarding data file."

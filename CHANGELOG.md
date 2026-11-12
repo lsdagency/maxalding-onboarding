@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.40.1] - 2026-11-12
+
+### Changed
+- automation-copy-guidelines.md, agents/lifecycle-crm.md, rules.yaml crm_speaks_to_every_lead: the CRM goes to every form lead, so no message opens on the ad's niche trait or introduces the coach by it; the trait sits in the coach's story and an FAQ saying you do not need it. From the CSS PER-FIT welcome email, which opened on Charlie having ADHD.
+
 ## [0.40.0] - 2026-11-10
 
 ### Added
