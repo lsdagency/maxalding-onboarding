@@ -35,6 +35,23 @@ DEFAULT_SECTION_ORDER = [
 ]
 
 
+def _wireframe_block(doc, heading, section):
+    """One block of the page laid out like a wireframe: the heading, a line on
+    how the block looks, then every piece of copy labelled by the element it
+    sits in (Headline, Button, Card 1 and so on). Opt in per section with
+    "layout" and "elements": [[label, text], ...] (Liam, 2026-11-19: the page
+    was hard to picture from a run of plain paragraphs)."""
+    from .video_ad_scripts import _table
+
+    T.add_subheading(doc, heading)
+    if section.get("layout"):
+        T.add_direction(doc, f"How it looks: {section['layout']}")
+    rows = [[(label, "label"), (text, "script")] for label, text in section["elements"]]
+    for placeholder in section.get("placeholders", []):
+        rows.append([("Client to provide", "label"), (placeholder, "note")])
+    _table(doc, ["ELEMENT", "COPY"], rows, [4.0, 12.5])
+
+
 def build_landing_page(data, out_dir, workspace=None):
     doc = T.new_document()
     lp = data.get("landing_page", {})
@@ -54,8 +71,21 @@ def build_landing_page(data, out_dir, workspace=None):
     if not sections:
         sections = [{"title": title, "lines": []} for title in DEFAULT_SECTION_ORDER]
 
+    # The page at a glance: a numbered run of the blocks top to bottom, so the
+    # reader can picture the page before reading any copy (Liam, 2026-11-19).
+    if lp.get("overview"):
+        doc.add_paragraph()
+        T.add_subheading(doc, "THE PAGE AT A GLANCE")
+        for i, line in enumerate(lp["overview"], start=1):
+            T.add_body(doc, f"{i}. {line}")
+
+    block = 0
     for section in sections:
         doc.add_paragraph()
+        if section.get("elements"):
+            block += 1
+            _wireframe_block(doc, f"BLOCK {block}: {section.get('title', '').upper()}", section)
+            continue
         T.add_subheading(doc, section.get("title", "").upper())
         for line in section.get("lines", []):
             T.add_body(doc, line)
@@ -68,6 +98,9 @@ def build_landing_page(data, out_dir, workspace=None):
         extra = lp.get(extra_key)
         if extra:
             doc.add_paragraph()
+            if extra.get("elements"):
+                _wireframe_block(doc, heading, extra)
+                continue
             T.add_subheading(doc, heading)
             for line in extra.get("lines", []):
                 T.add_body(doc, line)

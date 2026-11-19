@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.40.1"
+version: "0.41.0"
 
 banned_characters:
   - id: em-dash
@@ -106,10 +106,11 @@ script_craft:
 
 broll_list:
   rule: "Every Creative Plan has a B-ROLL LIST tab of specific clips (#, CLIP, WHERE AND WHEN, HOW TO FILM, LENGTH, USED IN, WHO'S IN SHOT, STATUS, FINAL ASSET), each tied to the ads it feeds and filmable by the client. data['broll'], build_broll_sheet."
+  whole_sessions: "Lead the list with whole-session recordings (phone on a tripod, set up once, left running), with the specific clips as a guide to what the editor pulls out. More authentic footage for less of the client's time. Liam, 2026-11-19 (Fisica)."
   source: "Liam, 2026-10-22 (Relentless Generation)."
 
 scripts_layout:
-  rule: "Video Ad Scripts: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, on camera, one line on what it is, how to film, and a takes table. No take checklist, timestamps, beat labels, audience or angle lines, strategy paragraphs, or edit notes (end cards, CTA audio, when a post runs as an ad). If the client doesn't film it or say it, it isn't in the doc."
+  rule: "Video Ad Scripts: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, on camera, one line on what it is, how to film, and a takes table. No take checklist, timestamps, commentary beat labels (a single-problem video's framework steps are labelled, one row each, Liam 2026-11-19), audience or angle lines, strategy paragraphs, or edit notes (end cards, CTA audio, when a post runs as an ad). If the client doesn't film it or say it, it isn't in the doc."
   source: "Liam, 2026-10-22 (Relentless Generation): a lot easier to understand, way less AI commentary, keep good guidance."
   lengths: "The scripted takes table is TAKE | WHAT TO SAY | LENGTH with a Whole video row; build/video_ad_scripts.py works out each length from the word count at about 150 words a minute, so never hand-write seconds. WHAT WE NEED FROM YOU says the ask in plain terms (under a minute per video, hook a sentence or two, interview minutes) and never contradicts the table. Feedback 2026-11-03 (CSS PER-FIT)."
 

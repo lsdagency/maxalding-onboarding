@@ -2,6 +2,21 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.41.0] - 2026-11-19
+
+From Liam's review of the Fisica New Year Refresh pack.
+
+### Added
+- Video Ad Scripts: spoken lines can carry a `label`, and a labelled middle prints one row per beat, so a single-problem video shows its framework (The problem, How people notice it, Why it keeps coming back, What we do, Proof, Ending). `opening_label` renames the opening row. New `kind: "brief"` for a filming brief with nothing to say on camera (for example recording whole sessions): title, what and how to film, no table.
+- Landing Page Copy as a wireframe: `landing_page.overview` prints THE PAGE AT A GLANCE, and a section with `layout` and `elements` prints as a numbered BLOCK with a "How it looks" line and a labelled ELEMENT | COPY table. Booking and thank-you pages take the same shape. Older section data still renders as before.
+- Takes and wireframe tables use a fixed layout, so short tables keep the same column widths.
+
+### Changed
+- B-Roll List leads with whole-session recordings (phone on a tripod, set up once, left running), with the specific clips as a guide to what the editor pulls out. More authentic footage for less of the client's time (creative-plan-spec.md, script-guidelines.md, rules.yaml broll_list.whole_sessions).
+- script-guidelines.md: single-problem videos are written in five labelled beats; a variation of a winning ad keeps the winner's hook style, with any seasonal theme said in passing.
+- landing-page-structure.md: lay the document out like the page, and send a quick visual mockup when the page is being rebuilt.
+- Canonical sample: a whole-session B-Roll row first, and a landing page overview plus one wireframe block.
+
 ## [0.40.1] - 2026-11-12
 
 ### Changed

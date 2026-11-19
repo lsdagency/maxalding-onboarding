@@ -26,6 +26,12 @@ If the funnel uses separate pages, also provide a **booking page** (calendar abo
 
 Only produce this document at all when `funnel_type` is `landing_page`. A lead-form funnel gets Meta Lead Form copy instead (skills/meta-lead-form), where the completion screen is the equivalent second step.
 
+## Lay the document out like the page (Liam, 2026-11-19, Fisica)
+A run of section headings and paragraphs is hard to picture. Write the document so the reader can see the page:
+- Open with THE PAGE AT A GLANCE (`landing_page.overview`): the blocks top to bottom, one line each on what the block is for.
+- Write each section as a numbered BLOCK with a `layout` line (how it looks: full-width video, three cards in a row that stack on mobile, a two-column photo and text, a sticky button) and its copy in `elements`, labelled by the element it sits in (Headline, Subheadline, Body, Card 1, Quote, Button). build/landing_page.py renders each block as a labelled table. The booking and thank-you pages take the same shape.
+- Where the page is being rebuilt or is hard to explain in words, also send a quick visual mockup (a single HTML page) built from the same copy, so the account lead and the page builder see the intended layout.
+
 ## Missing information
 List required social proof, transformations, reviews, credentials, privacy policy and booking link as clearly labelled client-action placeholders. Never invent them. Do not include internal production checklists or direction notes in the client-facing sections.
 

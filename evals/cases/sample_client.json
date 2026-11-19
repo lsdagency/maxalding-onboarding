@@ -645,6 +645,21 @@
         ],
         "placeholders": [
           "Add rating, client count and any as featured in logos"
+        ],
+        "layout": "Full width, studio photo behind the text, button centred under the subheadline",
+        "elements": [
+          [
+            "Headline",
+            "Strength that fits the life you already lead."
+          ],
+          [
+            "Subheadline",
+            "Private coaching built around a full schedule."
+          ],
+          [
+            "Button",
+            "Book My Consultation"
+          ]
         ]
       },
       {
@@ -746,6 +761,11 @@
           "Add unsubscribe note"
         ]
       }
+    ],
+    "overview": [
+      "Hero: the headline, a short line and one button",
+      "Proof: star rating and three short quotes",
+      "How it works: three steps, then the button again"
     ]
   },
   "crm": {
@@ -1083,6 +1103,14 @@
     ]
   ],
   "broll": [
+    {
+      "clip": "A whole real session, start to finish",
+      "where": "The studio, any normal session with a client who has said yes",
+      "how": "Phone on a tripod in a corner, set up once and left running until the end. We pull the clips below out of it",
+      "length": "The whole session",
+      "used_in": "Every video, the statics and the end cards",
+      "who": "The coach and a client, with their written OK"
+    },
     {
       "clip": "The studio empty before the first session, a slow pan across the room",
       "where": "The studio, first thing in the morning",

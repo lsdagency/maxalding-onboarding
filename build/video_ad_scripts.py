@@ -87,6 +87,11 @@ def _table(doc, headers, rows, widths_cm):
         el.set(qn("w:color"), "BFBFBF")
         borders.append(el)
     table._tbl.tblPr.append(borders)
+    # Fixed layout, so a short table keeps the same column widths as a long one
+    # instead of the label column collapsing to fit its text.
+    layout = OxmlElement("w:tblLayout")
+    layout.set(qn("w:type"), "fixed")
+    table._tbl.tblPr.append(layout)
     for i, h in enumerate(headers):
         cell = table.rows[0].cells[i]
         _shade(cell, "000000")
@@ -210,11 +215,19 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
             test = concept.get("hook_test") and len(hooks) > 1
             used_hooks = hooks if test else hooks[:1]
             for i, hook in enumerate(used_hooks, start=1):
-                rows.append([(f"Hook {i}" if test else "Opening line", "label"), (hook, "script"),
+                rows.append([(f"Hook {i}" if test else concept.get("opening_label", "Opening line"), "label"), (hook, "script"),
                              (_about(_seconds(hook)), "note")])
             middle = "\n".join(b["line"] for b in beats if b.get("line"))
             mid_s = _seconds(middle) if middle else 0
-            if middle:
+            spoken = [b for b in beats if b.get("line")]
+            if spoken and any(b.get("label") for b in spoken):
+                # Labelled beats get a row each, so the client can see the
+                # shape of the video, for example problem, how people notice it,
+                # why it keeps coming back, what we do, proof (Liam, 2026-11-19).
+                for b in spoken:
+                    rows.append([(b.get("label") or "Middle", "label"), (b["line"], "script"),
+                                 (_about(_seconds(b["line"])), "note")])
+            elif middle:
                 rows.append([("Middle" + (" (same after every hook)" if test else ""), "label"),
                              (middle, "script"), (_about(mid_s), "note")])
             end_s = _seconds(concept["cta"]) if concept.get("cta") else 0
@@ -241,6 +254,12 @@ def build_video_ad_scripts(data, out_dir, workspace=None):
             _table(doc, ["QUESTION", "GET THEM TALKING ABOUT"], rows, [6.5, 10.0])
             # The end card and CTA audio are edit notes, not something the
             # client films, so they stay out of this doc (Liam, 2026-10-22).
+
+        elif kind == "brief":
+            # A filming brief with nothing to say on camera, for example
+            # recording whole sessions for B-Roll: title, what and how to film
+            # only, no table (Liam, 2026-11-19).
+            pass
 
         else:  # organic
             labels = concept.get("hook_labels", [])
