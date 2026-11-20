@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.42.0"
+version: "0.42.1"
 
 banned_characters:
   - id: em-dash
@@ -123,6 +123,10 @@ crm_no_placeholders:
 crm_speaks_to_every_lead:
   rule: "The ads can target a niche trait, but every form lead gets the CRM, and many will not share it. No email or SMS opens on the trait or introduces the coach by it; it lives in the coach's story (after what the reader gets) and an FAQ saying you do not need it; no line assumes the reader has it."
   source: "2026-11-12 (CSS PER-FIT): not all his clients will necessarily have ADHD, so we should not lead with that."
+
+coach_skills_and_rework:
+  rule: "Say the coach's services as skills with the credential and what is included, never as a casual extra (no 'sort your food if you want'). On a rework round run the full writing-rules pass, keep B-Roll inside the client's filming limits (no clients on camera when they have said they cannot), and rewrite every static so it traces to a current concept."
+  source: "Liam, 2026-11-20 (CSS PER-FIT): it sounds so AI, it needs more detail about what's actually included, don't discredit Charlie; we can't film client sessions; how do the statics relate to the feedback."
 
 copy_timing:
   rule: "At onboarding the client gets the Video Ad Scripts and the Creative Plan (plus CRM Automation). Meta Ad Copy and Meta Lead Form Copy are held until the finished ads come back, then written against the delivered creative and shared. List both in skip_deliverables in the onboarding data file."

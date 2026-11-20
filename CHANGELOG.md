@@ -2,6 +2,13 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.42.1] - 2026-11-20
+
+### Changed
+- writing-rules.md: never undermine the coach's own skills (say a trained service with its credential and what it involves), and say what's actually included rather than gesturing at it.
+- script-guidelines.md: a rework round gets the full writing-rules pass; B-Roll stays inside the client's filming limits (no clients on camera when the coach can't get them); every static headline traces to a concept in the current round.
+- rules.yaml coach_skills_and_rework. From Liam's review of the CSS PER-FIT rework.
+
 ## [0.42.0] - 2026-11-20
 
 From Liam's review of the Fisica New Year Refresh scripts: "a big document of text is really hard to read".
