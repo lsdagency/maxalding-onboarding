@@ -2,6 +2,18 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.42.0] - 2026-11-20
+
+From Liam's review of the Fisica New Year Refresh scripts: "a big document of text is really hard to read".
+
+### Changed
+- Video Ad Scripts is laid out as a shoot sheet on A4. Page one is the whole shoot as one table (# | VIDEO | WHERE | WHAT YOU FILM | DONE box), then BEFORE YOU FILM as a grid of tip boxes kept together. Every video starts on its own page with a black title banner, an at-a-glance strip (on camera, where, you film, finished ad), the line on what it is, numbered filming steps, a strip showing the shape of the video when its takes are labelled steps, then the takes.
+- Takes print one sentence per line at 11.5pt with a Filmed box per take. A hook-test opening can carry a `carry_on` note ("Then carry straight on: ... and stop."). Interview questions are numbered.
+- The Whole video row is dropped when the at-a-glance strip already shows the finished length. A hook test with a reused middle shows Total to film instead of a misleading whole-video figure.
+
+### Added
+- Optional concept fields `where`, `you_film`, `ad_length` and `carry_on`. Without them the builder works out what it can (number of takes, questions per person, the finished length from the script).
+
 ## [0.41.0] - 2026-11-19
 
 From Liam's review of the Fisica New Year Refresh pack.

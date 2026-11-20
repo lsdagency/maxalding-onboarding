@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.41.0"
+version: "0.42.0"
 
 banned_characters:
   - id: em-dash
@@ -112,7 +112,9 @@ broll_list:
 scripts_layout:
   rule: "Video Ad Scripts: WHAT WE NEED FROM YOU, BEFORE YOU FILM, then per video a plain title, on camera, one line on what it is, how to film, and a takes table. No take checklist, timestamps, commentary beat labels (a single-problem video's framework steps are labelled, one row each, Liam 2026-11-19), audience or angle lines, strategy paragraphs, or edit notes (end cards, CTA audio, when a post runs as an ad). If the client doesn't film it or say it, it isn't in the doc."
   source: "Liam, 2026-10-22 (Relentless Generation): a lot easier to understand, way less AI commentary, keep good guidance."
-  lengths: "The scripted takes table is TAKE | WHAT TO SAY | LENGTH with a Whole video row; build/video_ad_scripts.py works out each length from the word count at about 150 words a minute, so never hand-write seconds. WHAT WE NEED FROM YOU says the ask in plain terms (under a minute per video, hook a sentence or two, interview minutes) and never contradicts the table. Feedback 2026-11-03 (CSS PER-FIT)."
+  shoot_sheet: "Since 0.42.0 the doc is laid out as a shoot sheet on A4: page one is WHAT WE NEED FROM YOU as one table of every video (# | VIDEO | WHERE | WHAT YOU FILM | DONE box) with the summary lines under it, then BEFORE YOU FILM as a grid of tip boxes kept on one page. Every video starts on its own page: a black banner (VIDEO n OF N and the plain title), an at-a-glance strip (ON CAMERA, WHERE, YOU FILM, FINISHED AD), the one line on what it is, numbered HOW TO FILM steps, THE SHAPE OF THIS VIDEO strip when the takes are labelled steps, then the takes (one sentence per line, 11.5pt, a Filmed box per take) or the numbered questions. Per concept, pass `where` (short location), `you_film` and `ad_length` where the builder cannot work them out, and `carry_on` for the line a hook-test opening runs into. Keep the location out of how_to_film once it is in `where`. Each video should fit one page: check the render and trim before sending."
+  shoot_sheet_source: "Liam, 2026-11-20 (Fisica): a big document of text is really hard to read, there has to be a better way to display the scripts and filming instructions."
+  lengths: "The scripted takes table is TAKE | WHAT TO SAY | LENGTH; build/video_ad_scripts.py works out each length from the word count at about 150 words a minute, so never hand-write seconds. The whole-video length shows as FINISHED AD in the at-a-glance strip, and the table only adds a total row when it says something new (Total to film on a hook test whose middle is reused). WHAT WE NEED FROM YOU says the ask in plain terms (under a minute per video, hook a sentence or two, interview minutes) and never contradicts the table. Feedback 2026-11-03 (CSS PER-FIT), 2026-11-20 (Fisica)."
 
 crm_no_placeholders:
   rule: "CRM Automation copy never carries a [CLIENT ACTION] placeholder. Write story and case study emails from proof in hand (reviews, testimonials, website quotes, coach bios, the first-session walk-through); change the angle where there is none, and ask the user directly for anything genuinely missing. Validator rule crm-placeholder (error)."

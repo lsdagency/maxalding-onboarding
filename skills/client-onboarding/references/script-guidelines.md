@@ -6,7 +6,15 @@ The full Video Ad Scripts document earns its structure when every concept carrie
 Document 1, built with build/video_ad_scripts.py. Apply ad-creative principles before writing hooks and scripts.
 
 ## Typography and header
-Helvetica Neue on every run (python-docx falls back to Cambria otherwise; set it explicitly on every run). Main heading size 16 bold; section subheadings size 14 bold; all body, direction notes and script lines size 10. Header labels bold, values unbolded. No date in the header (CLIENT, CAMPAIGN, PREPARED BY only). Logo at the top.
+Helvetica Neue on every run (python-docx falls back to Cambria otherwise; set it explicitly on every run). Main heading size 16 bold; section subheadings size 14 bold; body and direction notes size 10; spoken lines in the takes table 11.5 (see the shoot sheet below). Header labels bold, values unbolded. No date in the header (CLIENT, CAMPAIGN, PREPARED BY only). Logo at the top.
+
+## Shoot-sheet layout (Liam, 2026-11-20, Fisica)
+Liam: "a big document of text is really hard to read... there has to be a better way to display the scripts and filming instructions". Since 0.42.0, build/video_ad_scripts.py lays the doc out on A4 like a shoot sheet:
+- Page one: WHAT WE NEED FROM YOU as one table of the whole shoot (# | VIDEO | WHERE | WHAT YOU FILM | DONE box). `scripts.summary` sits under it, so keep it to the lines the table can't say (releases, how long a take is). Then BEFORE YOU FILM as a grid of tip boxes.
+- One page per video: a black banner (VIDEO n OF N, plain title), an at-a-glance strip (ON CAMERA, WHERE, YOU FILM, FINISHED AD), the one line on what it is, numbered HOW TO FILM steps, THE SHAPE OF THIS VIDEO strip for labelled steps, then the takes table (one sentence per line, a Filmed box per take) or numbered questions.
+- Concept fields: `where` (a short location, and then take it out of how_to_film), `you_film` (for example "3 openings and 1 ending, about 10 minutes"), `ad_length` when the finished ad isn't the script length (a hook test with a reused middle, interviews), and `carry_on` for the line a hook-test opening carries into. The builder works out the rest.
+- The intro line shouldn't repeat the steps the shape strip shows.
+- Every video should fit one page. Render it (Word to PDF) and trim wording or steps if a row spills.
 
 ## Layout: easy to follow, no AI commentary (Liam, 2026-10-22)
 The client reads this standing on the spot where they film. Liam: "a lot easier to understand and contains way less AI commentary whilst keeping good guidance". build/video_ad_scripts.py lays it out as:
