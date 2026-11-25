@@ -59,6 +59,8 @@ The standard every Maxalding edit is held to. Sources are listed at the end. The
 ## Learned from feedback
 Dated entries promoted from the workspace feedback log. Newest first.
 
+- 2026-11-25 (Liam): one finished ad per interview, built on the best hook from the scored script evaluation, not three hook variants (only make variants when asked for a hook test). The hook title is one font (TikTok Sans Black). Captions must interact with the video: the layout director reframes the subject off-centre and sets the captions in the open space, changing at sentence boundaries. The default close is the offer over a muted listening beat, not a solid end card.
+
 - 2026-11-25 (Liam's caption references): captions and hook titles are editorial (mixed TikTok Sans with a serif-italic key word, small connecting words, words fading in as spoken, soft shadow and scrim). See caption-style.md. Frame for the title: eyes about 38 percent down so a two-line title fits above the head. Tighter framing (chest up, zoom about 2.1 on 4K) with 1.15 punch-ins.
 
 - 2026-11-25 (Liam): "if you do that stupid copper box caption thing I'm going to go mad, that's such AI slop". Captions are clean: plain white TikTok Sans Bold with a soft shadow. Never the boxed or karaoke word-highlight caption-tool looks. Vendor "best caption style" lists describe what caption tools sell, not what a good editor does for a premium brand.

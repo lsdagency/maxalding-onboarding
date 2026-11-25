@@ -141,7 +141,7 @@ def check_manifest(man: dict, fmt: str, dur: float | None = None) -> list:
         if e["size"] < specs.CAPTION["min_size"]:
             out.append(Finding(ERROR, "text-size", f"{e['kind']} at {e['size']}px, minimum {specs.CAPTION['min_size']}", e["start"]))
         if e["kind"] == "caption":
-            if len(e["lines"]) > specs.CAPTION["max_lines"]:
+            if len(e["lines"]) > e.get("max_lines", specs.CAPTION["max_lines"]):
                 out.append(Finding(ERROR, "caption-lines", f"'{e['text']}' runs to {len(e['lines'])} lines", e["start"]))
             if e["end"] - e["start"] < specs.CAPTION["min_event"] - 0.01:
                 out.append(Finding(WARN, "caption-flash", f"'{e['text']}' is up for {e['end'] - e['start']:.2f}s", e["start"]))

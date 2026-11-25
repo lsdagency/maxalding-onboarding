@@ -44,7 +44,11 @@ def _src_size(path):
     return _SIZE_CACHE[path]
 
 
-def _reframe(W, H, zoom, fx, fy, src=None, fmt="9x16"):
+LAYOUT_FRAME = {  # where the eyes sit across the frame, and zoom, per layout
+    "center": (0.50, 1.00), "punch": (0.50, 1.15), "left": (0.68, 0.94), "right": (0.32, 0.94)}
+
+
+def _reframe(W, H, zoom, fx, fy, src=None, fmt="9x16", layout="center"):
     """Scale to cover the frame (times zoom) and crop so the focus point lands on the eye line.
 
     focus (fx, fy) is where the eyes are in the source, as fractions of its width and
@@ -55,9 +59,11 @@ def _reframe(W, H, zoom, fx, fy, src=None, fmt="9x16"):
         sw, sh = _src_size(src)
     else:
         sw, sh = W, H
-    s = max(W / sw, H / sh) * zoom
+    lx, lz = LAYOUT_FRAME.get(layout, (0.5, 1.0))
+    s = max(W / sw, H / sh) * zoom * lz
     zw, zh = int(round(sw * s / 2) * 2), int(round(sh * s / 2) * 2)
     tx, ty = specs.EYE_LINE.get(fmt, (0.5, 0.36))
+    tx = lx
     cx = min(max(fx * zw - tx * W, 0), zw - W)
     cy = min(max(fy * zh - ty * H, 0), zh - H)
     return (f"scale={zw}:{zh},crop={W}:{H}:{int(cx)}:{int(cy)},setsar=1,fps={specs.FPS},format={specs.PIX_FMT}")
@@ -166,7 +172,7 @@ def render_format(plan: dict, fmt: str, out_dir: str, pieces=None, preview: bool
                         break
             inputs += fast_in + ["-ss", f"{t_in:.3f}", "-t", f"{p.dur:.3f}", "-i", src_path]
             fx, fy = _focus({"focus": p.focus}, fmt)
-            graph.append(f"[{idx}:v]{_reframe(W, H, p.zoom, fx, fy, src_path, fmt)},trim=duration={p.dur:.3f},setpts=PTS-STARTPTS[v{k}]")
+            graph.append(f"[{idx}:v]{_reframe(W, H, p.zoom, fx, fy, src_path, fmt, p.layout)},trim=duration={p.dur:.3f},setpts=PTS-STARTPTS[v{k}]")
             info = tools.probe(src_path)
             if info.has_audio and not p.mute:
                 fo = max(0.0, p.dur - 0.015)
@@ -255,7 +261,7 @@ def render_format(plan: dict, fmt: str, out_dir: str, pieces=None, preview: bool
         "plan": plan.get("_path"), "ad": plan["ad"], "client": plan.get("client"), "concept": plan.get("concept"),
         "format": fmt, "file": out, "duration": total, "preview": preview,
         "pieces": [{"src": p.src, "in": p.t_in, "out": p.t_out, "dur": round(p.dur, 3), "role": p.role,
-                    "card": p.card, "zoom": p.zoom} for p in pieces],
+                    "card": p.card, "zoom": p.zoom, "layout": p.layout} for p in pieces],
         "events": events, "words": planmod.all_words(pieces),
         "has_music": bool(m), "max_seconds": plan.get("max_seconds"),
         "fonts": font_report,

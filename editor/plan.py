@@ -49,6 +49,8 @@ class Piece:
     mute: bool = False
     card: dict | None = None
     words: list = field(default_factory=list)  # output-timeline words
+    layout: str = "center"  # center | punch | left (text left, subject right) | right
+    clip_i: int = -1        # which plan clip this piece came from
 
     @property
     def dur(self) -> float:
@@ -227,14 +229,14 @@ def timeline(plan: dict) -> list:
     t = 0.0
     punch = float(plan.get("punch_in", 0) or 0)
     fixes = {k.lower(): v for k, v in (plan.get("captions", {}).get("fixes") or {}).items()}
-    for clip in plan.get("clips", []):
+    for ci, clip in enumerate(plan.get("clips", [])):
         if "card" in clip:
             p = Piece(src="", t_in=0, t_out=0, card=clip["card"], role=clip.get("role", "cta"))
             pieces.append(p)
             t += p.dur
             continue
         src = resolve(plan, clip["src"])
-        words = clip_words(plan, clip)
+        words = [] if clip.get("mute") else clip_words(plan, clip)  # a muted clip carries no captions
         t_in = float(clip.get("in", 0))
         t_out = float(clip["out"]) if clip.get("out") is not None else None
         if t_out is None:
@@ -261,9 +263,9 @@ def timeline(plan: dict) -> list:
             if o >= min(0.03, 0.5 * (w["end"] - w["start"])):
                 best[wi] = j
         for j, (a, b) in enumerate(spans):
-            z = base_zoom * (punch if (punch and j % 2 == 1) else 1.0)
+            z = base_zoom * (punch if (punch and j % 2 == 1 and plan.get("layout", "auto") != "auto") else 1.0)
             p = Piece(src=src, t_in=a, t_out=b, focus=clip.get("focus", (0.5, 0.5)),
-                      zoom=z, role=clip.get("role", ""), mute=bool(clip.get("mute")))
+                      zoom=z, role=clip.get("role", ""), mute=bool(clip.get("mute")), clip_i=ci)
             for wi, w in enumerate(words):
                 if best.get(wi) == j and not (clip.get("tighten") and _is_filler(w)):
                     txt = fixes.get(w["w"].lower().strip(specs.PUNCT), None)
@@ -286,7 +288,94 @@ def timeline(plan: dict) -> list:
             low = w["w"].lower()
             if low.rstrip(specs.PUNCT) in ("i", "i'm", "i've", "i'll", "i'd"):
                 w["w"] = "I" + w["w"][1:]
+    if plan.get("layout", "auto") == "auto":
+        direct(pieces, plan)
     return pieces
+
+
+LAYOUT_CYCLE = ["side", "center", "side", "punch"]  # "side" takes the next allowed side in turn
+_SIDES = {}
+
+
+def text_sides(src: str, t: float, focus) -> list:
+    """Which side(s) can take white text: the background either side of the subject is
+    sampled and the darker side wins; both sides only when they are similarly dark.
+    A bright wall or light pillar kills white type, so it never gets the text."""
+    key = (src, round(t))
+    if key in _SIDES:
+        return _SIDES[key]
+    from . import tools
+    try:
+        g = tools.frame_gray(src, t)
+    except Exception:
+        return ["left", "right"]
+    fx = float(focus[0]) if isinstance(focus, (list, tuple)) else 0.5
+    h, w = g.shape
+    r0, r1 = int(h * 0.22), int(h * 0.60)
+    lx1 = max(1, int(w * (fx - 0.18)))
+    rx0 = min(w - 1, int(w * (fx + 0.18)))
+    left = float(g[r0:r1, :lx1].mean()) if lx1 > 1 else 255.0
+    right = float(g[r0:r1, rx0:].mean()) if rx0 < w - 1 else 255.0
+    # text goes on the left of frame when the subject moves right, so the LEFT
+    # background must be dark for the "left" layout
+    if abs(left - right) < 18 and max(left, right) < 150:
+        out = ["left", "right"]
+    else:
+        out = ["left"] if left < right else ["right"]
+    _SIDES[key] = out
+    return out
+
+
+def direct(pieces: list, plan: dict) -> None:
+    """Give each piece a layout so framing and caption position change with the edit.
+
+    The subject moves off-centre and the captions set into the open space beside them
+    (left/right), then back to centre, or a tighter punch-in, at cuts, roughly every
+    three to six seconds. The hook stays centred under the title; side layouts only
+    go on pieces long enough to read (1.4 s or more). Plan `layouts` can pin a piece
+    by index.
+    """
+    pinned = {int(k): v for k, v in (plan.get("layouts") or {}).items()}
+    t, held, cur, k, side_turn = 0.0, 0.0, "center", 0, 0
+    hook_end = max((tt["end"] for tt in plan.get("titles", []) if tt.get("style", "hook") == "hook"), default=0)
+    for i, p in enumerate(pieces):
+        if p.card or p.mute:
+            p.layout = "center"
+        elif i in pinned:
+            p.layout = cur = pinned[i]
+            held = 0.0
+        elif t < hook_end - 0.05:
+            p.layout = cur = "center"
+        else:
+            prev = pieces[i - 1] if i else None
+            boundary = (prev is None or prev.clip_i != p.clip_i or prev.role != p.role
+                        or (prev.words and prev.words[-1]["w"].rstrip()[-1:] in specs.END_PUNCT))
+            if held >= 3.0 and boundary:
+                allowed = plan.get("sides") or text_sides(p.src, (p.t_in + p.t_out) / 2,
+                                                         p.focus.get("9x16") if isinstance(p.focus, dict) else p.focus)
+                for _ in range(len(LAYOUT_CYCLE)):
+                    nxt = LAYOUT_CYCLE[k % len(LAYOUT_CYCLE)]
+                    k += 1
+                    if nxt == "side":
+                        if p.dur < 1.4:
+                            continue
+                        nxt = allowed[side_turn % len(allowed)]
+                        side_turn += 1
+                    if nxt != cur:
+                        cur, held = nxt, 0.0
+                        break
+            p.layout = cur
+        held += p.dur
+        t += p.dur
+    # inside a run of one layout, alternate a small zoom step so a jump cut still reads as a cut
+    run = 0
+    for i, p in enumerate(pieces):
+        if i and pieces[i - 1].layout == p.layout and not p.card and not pieces[i - 1].card:
+            run += 1
+            if run % 2 == 1:
+                p.zoom *= 1.06
+        else:
+            run = 0
 
 
 def duration(pieces: list) -> float:

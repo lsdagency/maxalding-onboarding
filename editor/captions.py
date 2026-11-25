@@ -70,16 +70,17 @@ def _emph_set(words: list, phrases: list) -> set:
 
 
 def editorial_chunk(texts: list, emph: list, size: int, fmt: str, brand: dict, title: bool = False,
-                    max_lines: int = 2):
+                    max_lines: int = 2, maxw: float | None = None):
     """Lay out a chunk, scaling it down in steps until it fits max_lines (never a third line)."""
     for scale in (1.0, 0.9, 0.8, 0.72, 0.65):
-        lines, w, h = _editorial_layout(texts, emph, int(size * scale), fmt, brand, title)
+        lines, w, h = _editorial_layout(texts, emph, int(size * scale), fmt, brand, title, maxw)
         if len(lines) <= max_lines:
             break
     return lines, w, h
 
 
-def _editorial_layout(texts: list, emph: list, size: int, fmt: str, brand: dict, title: bool = False):
+def _editorial_layout(texts: list, emph: list, size: int, fmt: str, brand: dict, title: bool = False,
+                      maxw: float | None = None):
     """Lay out one chunk editorially. Returns (lines of (text, role, px) tuples, box w, box h).
 
     Connecting words small and lighter, the rest Bold, emphasis words large in the
@@ -107,7 +108,7 @@ def _editorial_layout(texts: list, emph: list, size: int, fmt: str, brand: dict,
         return len(t) * px * k
 
     x0, _, x1, _ = specs.safe_box(fmt)
-    maxw = (x1 - x0) * 0.92
+    maxw = maxw or (x1 - x0) * 0.92
     first_e = next((i for i, it in enumerate(items) if it[1] == "accent"), None)
     gap = 0.3 * size
     lines, cur, cw = [], [], 0.0
@@ -199,10 +200,43 @@ def _glue(words: list, phrases: list) -> list:
     return glued
 
 
-def chunk_words(words: list, max_words: int, max_chars: int, gap: float, keep_together=()) -> list:
+def balanced(text: str, max_chars: int, max_lines: int = 3) -> list:
+    """Break text into the fewest lines that fit, with line lengths as even as possible."""
+    words = text.split()
+    for n in range(1, max_lines + 1):
+        best = None
+
+        def rec(i, k, acc):
+            nonlocal best
+            if k == 1:
+                line = " ".join(words[i:])
+                cand = acc + [line]
+                if len(line) <= max_chars:
+                    sc = max(len(x) for x in cand) - min(len(x) for x in cand)
+                    if best is None or sc < best[0]:
+                        best = (sc, cand)
+                return
+            for j in range(i + 1, len(words) - k + 2):
+                line = " ".join(words[i:j])
+                if len(line) <= max_chars:
+                    rec(j, k - 1, acc + [line])
+
+        if len(words) >= n:
+            rec(0, n, [])
+        if best:
+            return best[1]
+    return wrap(text, max_chars, max_lines)
+
+
+def chunk_words(words: list, max_words: int, max_chars: int, gap: float, keep_together=(), breaks=()) -> list:
     chunks, cur = [], []
     glued = _glue(words, keep_together)
+    breaks = set(breaks)
     for i, w in enumerate(words):
+        if cur and i in breaks:
+            # a new framing starts here: the phrase never carries across it
+            chunks.append(cur)
+            cur = []
         if cur and glued[i] and w["start"] - cur[-1]["end"] <= gap:
             cur.append(w)
             continue
@@ -247,6 +281,15 @@ def box_for(text_lines: list, size: int, cx: float, cy: float, pad: float = 0.0)
     w = max(len(l) for l in text_lines) * size * CHAR_W + 2 * pad
     h = len(text_lines) * size * LINE_H + 2 * pad
     return (round(cx - w / 2), round(cy - h / 2), round(cx + w / 2), round(cy + h / 2))
+
+
+def _layout_at(pieces, t):
+    acc = 0.0
+    for p in pieces:
+        if acc - 0.01 <= t < acc + p.dur:
+            return getattr(p, "layout", "center")
+        acc += p.dur
+    return "center"
 
 
 def _starts(pieces):
@@ -300,8 +343,14 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
     if cfg.get("on", True):
         words = [w for p in pieces if not p.card for w in p.words]
         cap_chars = min(cap["max_chars"], fit_chars(fmt, cap_size))
+        lay_breaks, prev_lay = [], None
+        for wi, w in enumerate(words):
+            lw = _layout_at(pieces, w["start"])
+            if prev_lay is not None and lw != prev_lay:
+                lay_breaks.append(wi)
+            prev_lay = lw
         chunks = chunk_words(words, int(cfg.get("max_words", specs.CAPTION["max_words"])),
-                             cap_chars, specs.CAPTION["break_gap"], cfg.get("keep_together", []))
+                             cap_chars, specs.CAPTION["break_gap"], cfg.get("keep_together", []), lay_breaks)
         bounds, acc = [], 0.0
         for p in pieces:
             acc += p.dur
@@ -314,7 +363,7 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
             c_end = max(c_end, c_start + specs.CAPTION["min_event"])
             if nxt:
                 c_end = min(c_end, nxt)
-            # never hang over into a card: stop at the end of the piece the words are in
+            # never hang over into a card or the next framing: stop at the end of the piece the words are in
             for b_end, _ in bounds:
                 if b_end >= ch[-1]["end"] - 0.01:
                     c_end = min(c_end, b_end)
@@ -336,11 +385,41 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                 # word so nothing jumps.
                 emph_all = _emph_set(ch, cfg.get("emphasis", []))
                 emph = [k in emph_all for k in range(len(ch))]
-                lay, bw, bh = editorial_chunk(texts, emph, cap_size, fmt, brand)
-                _, _, _, sy1 = specs.safe_box(fmt)
-                ccy = min(cy, sy1 - bh / 2 - H * 0.01)  # a taller phrase lifts so it stays in the safe zone
+                # where this phrase sits depends on the layout of the shot it is in:
+                # centre below the face, or set into the open side when the subject is off-centre
+                layout = _layout_at(pieces, c_start)
+                x0s, sy0, x1s, sy1 = specs.safe_box(fmt)
+                if layout in ("left", "right") and fmt == "9x16":
+                    colw = W * 0.44
+                    lay, bw, bh = editorial_chunk(texts, emph, int(cap_size * 1.12), fmt, brand, max_lines=4, maxw=colw)
+                    ccy = max(sy0 + bh / 2 + H * 0.01, min(H * 0.47, sy1 - bh / 2 - H * 0.01))
+                    if layout == "left":
+                        an, ax = 4, x0s + W * 0.01
+                        box = (round(ax), round(ccy - bh / 2), round(ax + bw), round(ccy + bh / 2))
+                    else:
+                        an, ax = 6, x1s - W * 0.01
+                        box = (round(ax - bw), round(ccy - bh / 2), round(ax), round(ccy + bh / 2))
+                else:
+                    an, ax = 5, cx
+                    lay, bw, bh = editorial_chunk(texts, emph, cap_size, fmt, brand)
+                    ccy = min(cy, sy1 - bh / 2 - H * 0.01)  # a taller phrase lifts so it stays in the safe zone
+                    box = (round(cx - bw / 2), round(ccy - bh / 2), round(cx + bw / 2), round(ccy + bh / 2))
                 events[-1]["lines"] = [" ".join(t for t, _, _ in ln) for ln in lay]
-                events[-1]["box"] = (round(cx - bw / 2), round(ccy - bh / 2), round(cx + bw / 2), round(ccy + bh / 2))
+                events[-1]["box"] = box
+                events[-1]["layout"] = layout
+                events[-1]["max_lines"] = 4 if an in (4, 6) else 2  # side columns stack
+                if brand.get("scrims", True):
+                    strength = int(cfg.get("scrim", 0x57))
+                    pad = H * 0.06
+                    if an == 4:
+                        rx0, rx1 = -100, box[2] + W * 0.12
+                    elif an == 6:
+                        rx0, rx1 = box[0] - W * 0.12, W + 100
+                    else:
+                        rx0, rx1 = -100, W + 100
+                    lines.append(f"Dialogue: 0,{ts(c_start)},{ts(c_end)},CapEd,,0,0,0,,{{\\an7\\pos(0,0)\\p1\\bord0\\shad0\\c&H000000&"
+                                 f"\\alpha&H{255 - strength:02X}&\\blur90}}m {rx0:.0f} {box[1] - pad:.0f} l {rx1:.0f} {box[1] - pad:.0f} "
+                                 f"{rx1:.0f} {box[3] + pad:.0f} {rx0:.0f} {box[3] + pad:.0f}{{\\p0}}")
                 flat = [it for ln in lay for it in ln]
                 for wi, w in enumerate(ch):
                     ws = c_start if wi == 0 else w["start"]
@@ -369,8 +448,8 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                                 seg.append(f"{{\\fn{fn}\\fs{px}{ital}{look}{a}}}{t}")
                                 k += 1
                             parts.append(" ".join(seg))
-                        off = "\\pos({:.0f},{:.0f})".format(cx + (3 if shadow else 0), ccy + (5 if shadow else 0))
-                        lines.append(f"Dialogue: {layer},{ts(ws)},{ts(we)},CapEd,,0,0,0,,{{\\an5{off}\\bord0\\shad0\\q2}}" + "\\N".join(parts))
+                        off = "\\pos({:.0f},{:.0f})".format(ax + (3 if shadow else 0), ccy + (5 if shadow else 0))
+                        lines.append(f"Dialogue: {layer},{ts(ws)},{ts(we)},CapEd,,0,0,0,,{{\\an{an}{off}\\bord0\\shad0\\q2}}" + "\\N".join(parts))
                 continue
             if mode == "clean":
                 # house default: the phrase as one plain block, white with a soft shadow,
@@ -406,50 +485,58 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                              for k, t in enumerate(texts)]
                     lines.append(f"Dialogue: 1,{ts(ws)},{ts(we)},Caption,,0,0,0,,{{{pos}}}{_join(parts)}")
 
-    # Soft contrast band behind the caption area while anyone is speaking, so white
-    # type holds on bright backgrounds (the video version of the statics' scrims)
-    if cfg.get("on", True) and brand.get("scrims", True):
-        speech = [(p_start, p_start + p.dur) for p_start, p in _starts(pieces) if not p.card and p.words]
-        if speech:
-            cyb = H * float(cfg.get("y", cap["y"]))
-            band_h = cap_size * 3.2
-            for a, b in _merge(speech):
-                strength = int(cfg.get("scrim", 0x57))  # 0 to 255 opacity of the band; raise for light clothing or walls
-                lines.append(f"Dialogue: 0,{ts(a)},{ts(b)},CapEd,,0,0,0,,{{\\an7\\pos(0,0)\\p1\\bord0\\shad0\\c&H000000&\\alpha&H{255 - strength:02X}&\\blur90}}"
-                             f"m -100 {cyb - band_h / 2:.0f} l {W + 100} {cyb - band_h / 2:.0f} {W + 100} {cyb + band_h / 2:.0f} -100 {cyb + band_h / 2:.0f}{{\\p0}}")
-
-    # Titles (hook text, CTA text, labels)
+    # Titles (hook text, CTA text, labels). A title with from_end counts its times
+    # back from the end of the ad (the CTA over the closing beat).
+    total = sum(p.dur for p in pieces)
+    titles = []
     for t in plan.get("titles", []):
+        if t.get("from_end"):
+            t = dict(t, start=total + float(t["start"]), end=total + float(t["end"]))
+        titles.append(t)
+    for t in titles:
         if t.get("formats") and fmt not in t["formats"]:
             continue
-        if t.get("style", "hook") == "hook" and brand.get("title_style", "editorial") == "editorial":
-            size = int(t.get("size", t_size))
-            toks = [_esc(_case(x, brand)) for x in t["text"].split()]
-            em = {_bare(x) for x in t.get("emphasis", [])}
-            lay, bw, bh = editorial_chunk(toks, [_bare(x) in em for x in toks], size, fmt, brand, title=True, max_lines=3)
-            _, sy0, _, _ = specs.safe_box(fmt)
-            y = H * float(t["y"]) if "y" in t else sy0 + H * 0.02 + bh / 2
-            events.append({"kind": "hook", "text": t["text"], "start": float(t["start"]), "end": float(t["end"]),
-                           "lines": [" ".join(x for x, _, _ in ln) for ln in lay], "size": size,
-                           "box": (round(cx - bw / 2), round(y - bh / 2), round(cx + bw / 2), round(y + bh / 2))})
+        if t.get("style", "hook") in ("hook", "cta") and brand.get("title_style", "plain") == "plain":
+            # one font, TikTok Sans Black, white, balanced lines, no box (Liam, 2026-11-25:
+            # the hook does not take the caption's mixed type)
+            txt = _esc(_case(t["text"], brand))
+            # the largest size that sets the hook on two lines (it has to sit above the head)
+            size, wrapped = int(t.get("size", t_size)), None
+            if "\n" in txt:
+                wrapped = txt.split("\n")
+            elif "size" not in t:
+                for sz in (96, 88, 80, 74):
+                    cand = balanced(txt, fit_chars(fmt, sz), 2)
+                    if len(cand) <= 2 and max(len(x) for x in cand) <= fit_chars(fmt, sz):
+                        size, wrapped = sz, cand
+                        break
+            if wrapped is None:
+                wrapped = balanced(txt, fit_chars(fmt, size), 3)
+            bh = len(wrapped) * size * 1.12
+            _, sy0, _, sy1 = specs.safe_box(fmt)
+            if "y" in t:
+                y = H * float(t["y"])
+            elif t.get("style", "hook") == "hook":
+                y = sy0 + H * 0.02 + bh / 2
+            else:
+                y = sy1 - H * 0.02 - bh / 2
+            box = box_for(wrapped, size, cx, y)
+            events.append({"kind": t.get("style", "hook"), "text": t["text"], "start": float(t["start"]),
+                           "end": float(t["end"]), "lines": wrapped, "size": size, "box": box})
             if brand.get("scrims", True):
-                y1 = int(y + bh / 2 + H * 0.07)
+                if t.get("style", "hook") == "hook":
+                    ry0, ry1 = -100, int(box[3] + H * 0.07)
+                else:
+                    ry0, ry1 = int(box[1] - H * 0.07), H + 100
                 lines.append(f"Dialogue: 0,{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"
                              f"{{\\an7\\pos(0,0)\\p1\\bord0\\shad0\\c&H000000&\\alpha&H78&\\blur70\\fad(0,120)}}"
-                             f"m -100 -100 l {W + 100} -100 {W + 100} {y1} -100 {y1}{{\\p0}}")
-            for layer, shadow in ((4, True), (5, False)):
-                parts = []
-                for ln in lay:
-                    seg = []
-                    for (x, role, px) in ln:
-                        role = "title" if role == "caption" else role
-                        ital = "\\i1" if role == "accent" else "\\i0"
-                        look = "\\c&H000000&\\alpha&HA0&\\blur10" if shadow else f"\\c{ass_color(brand['caption_color'])}"
-                        seg.append(f"{{\\fn{face(brand, role)}\\fs{px}{ital}{look}}}{x}")
-                    parts.append(" ".join(seg))
-                off = "\\pos({:.0f},{:.0f})".format(cx + (3 if shadow else 0), y + (5 if shadow else 0))
-                lines.append(f"Dialogue: {layer},{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"
-                             f"{{\\an5{off}\\bord0\\shad0\\q2\\fad(0,120)}}" + "\\N".join(parts))
+                             f"m -100 {ry0} l {W + 100} {ry0} {W + 100} {ry1} -100 {ry1}{{\\p0}}")
+            body = "\\N".join(wrapped)
+            fn = face(brand, "title")
+            lines.append(f"Dialogue: 4,{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"
+                         f"{{\\an5\\pos({cx + 3:.0f},{y + 5:.0f})\\fn{fn}\\fs{size}\\c&H000000&\\alpha&HA0&\\blur10\\q2\\fad(0,120)}}{body}")
+            lines.append(f"Dialogue: 5,{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"
+                         f"{{\\an5\\pos({cx:.0f},{y:.0f})\\fn{fn}\\fs{size}\\c{ass_color(brand['caption_color'])}\\q2\\fad(0,120)}}{body}")
             continue
         style = {"cta": "CTA"}.get(t.get("style", "hook"), "Title")
         size = int(t.get("size", t_size))

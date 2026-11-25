@@ -179,3 +179,17 @@ def audio_array(path: str, sr: int = 16000):
     if p.returncode != 0:
         raise EditError(p.stderr.decode(errors="ignore")[-2000:])
     return np.frombuffer(p.stdout, dtype=np.float32).copy()
+
+
+def frame_gray(path: str, t: float, width: int = 96):
+    """One frame as a small greyscale numpy array (rows, cols), upright, for layout decisions."""
+    import numpy as np
+    info = probe(path)
+    w, h = info.display_size
+    height = max(2, int(round(width * h / max(w, 1) / 2) * 2))
+    cmd = [ffmpeg(), "-hide_banner", "-nostdin", "-ss", f"{t:.2f}", "-i", path, "-frames:v", "1",
+           "-vf", f"scale={width}:{height}", "-f", "rawvideo", "-pix_fmt", "gray", "-"]
+    p = subprocess.run(cmd, capture_output=True)
+    if p.returncode != 0 or len(p.stdout) < width * height:
+        raise EditError("could not read a frame from " + path)
+    return np.frombuffer(p.stdout[: width * height], dtype=np.uint8).reshape(height, width)

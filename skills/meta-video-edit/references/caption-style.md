@@ -21,12 +21,23 @@ From Liam's four caption references, 2026-11-25. They're saved in the workspace 
 - **Never** boxed or karaoke active-word highlights, bouncing pops or emoji captions (Liam: "AI slop"). `captions.style: "clean"` (plain white phrases) is the fallback.
 
 ## Hook title
+- One font: TikTok Sans Black, white, one size, with balanced line breaks. It does not take the captions' mixed type (Liam, 2026-11-25). No box.
 - Fully up on frame one (no fade-in), for about 3 seconds through the first spoken line.
-- A few words, the point of the ad: the audience, the offer or the client's strongest line paraphrased. Eight words or fewer, from the `ad-hooks` skill.
-- The same editorial type as the captions, with no box: TikTok Sans Black, connecting words smaller, one serif-italic word (`emphasis` on the title). Up to three lines above the speaker's head, at the top of the safe zone, over a soft dark gradient from the top of the frame.
+- Eight words or fewer, from the `ad-hooks` skill. Two lines above the speaker's head (the largest size that fits two lines), over a soft dark gradient from the top of the frame.
 
-## CTA and end card
-- The CTA line sits at the bottom of the safe zone, or on the end card.
+## Captions that move with the edit (layout director)
+What made Liam's references work is that the captions change position and interact with the shot, so the eye keeps getting pulled back. The engine's director gives each piece a layout at sentence or module boundaries, roughly every three to six seconds:
+- **centre:** subject centred, captions below the face.
+- **side:** the subject is reframed off-centre and the caption stacks big in the open space beside them, left or right aligned. The 4K source gives the room.
+- **punch:** a tighter crop, captions below.
+- The rhythm is side, centre, side, punch. The hook stays centred under the title.
+- Side text only goes where the background is dark enough for white type. The director samples the frame and never puts text on a bright wall or light pillar.
+- A phrase always breaks where the framing changes.
+- Inside a run of one layout, alternate pieces step the zoom by 6 percent, so jump cuts still read as cuts.
+- A plan can pin layouts with `layouts` or limit sides with `sides`.
+
+## CTA close (no end card by default)
+- The ad closes on a short muted beat of the client listening (2.5 to 3 seconds), with the offer set over the footage in the hook's plain TikTok Sans Black at the bottom of the safe zone (1 TO 360: "4 sessions for the price of 3"). The Meta CTA button and the primary text do the "tap below". A solid branded slate reads as an ad and invites the swipe, so use one only when Liam or the brief asks for it.
 - End card mirrors the static End card: brand accent background, the offer as the biggest thing on screen, a support line, then the CTA line (for 1 TO 360: "4 for 3", "Start with four sessions for the price of three.", "Tap below and Sergio will call you").
 - 2.5 to 4 seconds, long enough to read twice.
 
