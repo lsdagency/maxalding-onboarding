@@ -283,6 +283,141 @@ def box_for(text_lines: list, size: int, cx: float, cy: float, pad: float = 0.0)
     return (round(cx - w / 2), round(cy - h / 2), round(cx + w / 2), round(cy + h / 2))
 
 
+class Placer:
+    """Moves captions around a fixed frame, phrase by phrase, never over the face.
+
+    Zones come from the face box in the finished frame: below the chin, left and right
+    of the head, above it (after the hook title). The position changes at sentence
+    breaks (or after three phrases), cycling below, left, below, right, above, and only
+    into a zone the phrase fits and whose background is dark enough for white type.
+    """
+
+    CYCLE = ["below", "left", "below_l", "above", "below_r", "right"]
+
+    def __init__(self, plan, pieces, fmt, brand, size):
+        self.plan, self.pieces, self.fmt, self.brand, self.size = plan, pieces, fmt, brand, size
+        self.W, self.H = specs.frame_size(fmt)
+        self.cur, self.held, self.k = "below", 0, 0
+        self.prev_end_sentence = True
+        self.hook_end = max((float(t["end"]) for t in plan.get("titles", []) if t.get("style", "hook") == "hook"),
+                            default=0.0)
+        self.zones_allowed = (plan.get("captions") or {}).get("zones") or self.CYCLE
+
+    def _piece(self, t):
+        acc = 0.0
+        for p in self.pieces:
+            if acc - 0.01 <= t < acc + p.dur:
+                return p
+            acc += p.dur
+        return self.pieces[-1]
+
+    def zones(self, p):
+        from . import faces, tools as _t
+        W, H = self.W, self.H
+        sx0, sy0, sx1, sy1 = specs.safe_box(self.fmt)
+        if p.card or not p.src:
+            return {"below": (sx0, H * 0.55, sx1, sy1)}, None, None, None
+        sw, sh = _t.probe(p.src).display_size
+        fx, fy = faces.focus_for(p, self.fmt)
+        geo = faces.crop(W, H, sw, sh, p.zoom, fx, fy, self.fmt, getattr(p, "layout", "center"))
+        fb = faces.detect(p.src, round((p.t_in + p.t_out) / 2, 1))
+        if fb:
+            face = faces.to_frame(fb, geo, W, H)
+        else:
+            ey = specs.EYE_LINE.get(self.fmt, (0.5, 0.38))[1] * H
+            face = (W * 0.33, ey - H * 0.14, W * 0.67, ey + H * 0.16)
+        m = H * 0.022
+        fx0, fy0, fx1, fy1 = face
+        z = {"below": (sx0, fy1 + m, sx1, sy1),
+             "below_l": (sx0, fy1 + m, sx1, sy1),
+             "below_r": (sx0, fy1 + m, sx1, sy1),
+             "above": (sx0, sy0, sx1, fy0 - m),
+             "left": (sx0, max(sy0, fy0 - H * 0.04), fx0 - m * 0.6, min(sy1, fy1 + H * 0.10)),
+             "right": (fx1 + m * 0.6, max(sy0, fy0 - H * 0.04), sx1, min(sy1, fy1 + H * 0.10))}
+        return z, face, geo, p
+
+    def fit(self, zone, texts, emph, max_lines):
+        x0, y0, x1, y1 = zone
+        zw, zh = x1 - x0, y1 - y0
+        if zw < self.W * 0.18 or zh < self.size * 0.7:
+            return None
+        for scale in (1.0, 0.9, 0.8, 0.72):
+            lay, bw, bh = editorial_chunk(texts, emph, int(self.size * scale), self.fmt, self.brand,
+                                          max_lines=max_lines, maxw=zw * 0.96)
+            if len(lay) <= max_lines and bh <= zh and bw <= zw:
+                return lay, bw, bh
+        return None
+
+    def readable(self, name, zone, geo, p):
+        if name.startswith("below") or geo is None:
+            return True
+        from . import faces
+        frac = faces.to_source(zone, geo)
+        return faces.brightness(p.src, round((p.t_in + p.t_out) / 2, 1), frac) < 165
+
+    def place(self, texts, emph, t, chunk):
+        zones, face, geo, p = self.zones(self._piece(t))
+        change = (self.held >= 3) or (self.held >= 1 and self.prev_end_sentence)
+        order = []
+        if change:
+            for i in range(len(self.CYCLE)):
+                order.append(self.CYCLE[(self.k + i) % len(self.CYCLE)])
+        order = ([self.cur] if not change else []) + order + ["below", "below_l", "below_r", "left", "right", "above"]
+        chosen = None
+        for name in order:
+            if name not in zones or name not in self.zones_allowed and name != "below":
+                continue
+            if name == "above" and t < self.hook_end + 0.2:
+                continue
+            res = self.fit(zones[name], texts, emph, 4 if name in ("left", "right") else 2)
+            if res and name in ("below_l", "below_r") and res[1] > (zones[name][2] - zones[name][0]) * 0.7:
+                res = None  # an off-centre line only reads as moved when it is short
+            if not res or not self.readable(name, zones[name], geo, p):
+                continue
+            chosen = (name, res)
+            break
+        if chosen is None:  # last resort: below, as small as it needs
+            name = "below"
+            lay, bw, bh = editorial_chunk(texts, emph, int(self.size * 0.65), self.fmt, self.brand, max_lines=3)
+            chosen = (name, (lay, bw, bh))
+        name, (lay, bw, bh) = chosen
+        if change and name in self.CYCLE:
+            self.k = (self.CYCLE.index(name) + 1) % len(self.CYCLE)  # move the cycle on every change point
+        if name != self.cur:
+            self.cur, self.held = name, 0
+        self.held += 1
+        self.prev_end_sentence = chunk[-1]["w"].rstrip()[-1:] in ".?" + chr(33)
+        x0, y0, x1, y1 = zones[name]
+        cxm = self.W / 2
+        if name == "below":
+            an, x, y = 5, cxm, min(y0 + bh / 2 + self.H * 0.005, y1 - bh / 2)
+            box = (cxm - bw / 2, y - bh / 2, cxm + bw / 2, y + bh / 2)
+        elif name in ("below_l", "below_r"):
+            y = min(y0 + bh / 2 + self.H * 0.005, y1 - bh / 2)
+            if name == "below_l":
+                an, x = 4, x0
+                box = (x0, y - bh / 2, x0 + bw, y + bh / 2)
+            else:
+                an, x = 6, x1
+                box = (x1 - bw, y - bh / 2, x1, y + bh / 2)
+        elif name == "above":
+            an, x, y = 5, cxm, y1 - bh / 2
+            box = (cxm - bw / 2, y - bh / 2, cxm + bw / 2, y + bh / 2)
+        elif name == "left":
+            mid = (face[1] + face[3]) / 2 if face else (y0 + y1) / 2
+            y = min(max(mid, y0 + bh / 2), y1 - bh / 2)
+            an, x = 4, x0
+            box = (x0, y - bh / 2, x0 + bw, y + bh / 2)
+        else:
+            mid = (face[1] + face[3]) / 2 if face else (y0 + y1) / 2
+            y = min(max(mid, y0 + bh / 2), y1 - bh / 2)
+            an, x = 6, x1
+            box = (x1 - bw, y - bh / 2, x1, y + bh / 2)
+        box = tuple(round(v) for v in box)
+        return {"an": an, "x": x, "y": y, "lay": lay, "w": bw, "h": bh, "box": box, "zone": name,
+                "face": tuple(round(v) for v in face) if face else None}
+
+
 def _layout_at(pieces, t):
     acc = 0.0
     for p in pieces:
@@ -356,6 +491,7 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
             acc += p.dur
             bounds.append((acc, bool(p.card)))
         cy = H * float(cfg.get("y", cap["y"]))
+        placer = Placer(plan, pieces, fmt, brand, cap_size)
         for ci, ch in enumerate(chunks):
             c_start = ch[0]["start"]
             nxt = chunks[ci + 1][0]["start"] if ci + 1 < len(chunks) else None
@@ -387,27 +523,13 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                 emph = [k in emph_all for k in range(len(ch))]
                 # where this phrase sits depends on the layout of the shot it is in:
                 # centre below the face, or set into the open side when the subject is off-centre
-                layout = _layout_at(pieces, c_start)
-                x0s, sy0, x1s, sy1 = specs.safe_box(fmt)
-                if layout in ("left", "right") and fmt == "9x16":
-                    colw = W * 0.44
-                    lay, bw, bh = editorial_chunk(texts, emph, int(cap_size * 1.12), fmt, brand, max_lines=4, maxw=colw)
-                    ccy = max(sy0 + bh / 2 + H * 0.01, min(H * 0.47, sy1 - bh / 2 - H * 0.01))
-                    if layout == "left":
-                        an, ax = 4, x0s + W * 0.01
-                        box = (round(ax), round(ccy - bh / 2), round(ax + bw), round(ccy + bh / 2))
-                    else:
-                        an, ax = 6, x1s - W * 0.01
-                        box = (round(ax - bw), round(ccy - bh / 2), round(ax), round(ccy + bh / 2))
-                else:
-                    an, ax = 5, cx
-                    lay, bw, bh = editorial_chunk(texts, emph, cap_size, fmt, brand)
-                    ccy = min(cy, sy1 - bh / 2 - H * 0.01)  # a taller phrase lifts so it stays in the safe zone
-                    box = (round(cx - bw / 2), round(ccy - bh / 2), round(cx + bw / 2), round(ccy + bh / 2))
+                pl = placer.place(texts, emph, c_start, ch)
+                an, ax, ccy, lay, bw, bh, box, layout = pl["an"], pl["x"], pl["y"], pl["lay"], pl["w"], pl["h"], pl["box"], pl["zone"]
+                events[-1]["face"] = pl["face"]
                 events[-1]["lines"] = [" ".join(t for t, _, _ in ln) for ln in lay]
                 events[-1]["box"] = box
                 events[-1]["layout"] = layout
-                events[-1]["max_lines"] = 4 if an in (4, 6) else 2  # side columns stack
+                events[-1]["max_lines"] = 4 if an in (4, 6) else 3  # side columns stack
                 if brand.get("scrims", False):
                     strength = int(cfg.get("scrim", 0x57))
                     pad = H * 0.06

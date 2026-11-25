@@ -22,6 +22,12 @@ from . import tools
 DEFAULT_MODEL = os.environ.get("MAXALDING_WHISPER_MODEL", "mlx-community/whisper-large-v3-turbo")
 
 
+# Whisper drops fillers and false starts unless the prompt shows it some. A verbatim
+# transcript is what lets the edit cut around "uh, the private, the..." instead of
+# starting a hook on it (Liam, 2026-11-25: "still a stutter at the start").
+VERBATIM = "Umm, uh, so, I mean, like, you know, erm, the, the."
+
+
 def transcribe(path: str, prompt: str | None = None, model: str = DEFAULT_MODEL, language: str = "en") -> dict:
     try:
         import mlx_whisper  # type: ignore
@@ -32,7 +38,7 @@ def transcribe(path: str, prompt: str | None = None, model: str = DEFAULT_MODEL,
         return {"source": path, "model": model, "duration": info.duration, "words": [], "text": ""}
     audio = tools.audio_array(path)
     res = mlx_whisper.transcribe(
-        audio, path_or_hf_repo=model, word_timestamps=True, initial_prompt=prompt,
+        audio, path_or_hf_repo=model, word_timestamps=True, initial_prompt=(VERBATIM + " " + (prompt or "")).strip(),
         language=language, condition_on_previous_text=False,
         hallucination_silence_threshold=2.0,
     )
@@ -67,3 +73,37 @@ def load_or_transcribe(src: str, work_dir: str | None = None, prompt: str | None
 def low_confidence(words: list, threshold: float = 0.6) -> list:
     """Words the model was unsure of. Check every one against the footage before captions ship."""
     return [w for w in words if w.get("p", 1) < threshold]
+
+
+def refine(src: str, t0: float, t1: float, work_dir: str | None = None, prompt: str | None = None,
+           model: str = DEFAULT_MODEL) -> list:
+    """Re-transcribe one short span on its own and patch it into the clip's words file.
+
+    Whole-file transcripts smear word timings around false starts and fillers (the
+    "uh, the private, the personal" at the top of Gianluigi's hook came out as one
+    stretched "personal"). A short span transcribed alone, verbatim, times them
+    properly. Run it on every span an edit actually uses. Returns the new words.
+    """
+    import mlx_whisper  # type: ignore
+    a = tools.audio_array(src)
+    seg = a[int(t0 * 16000):int(t1 * 16000)]
+    r = mlx_whisper.transcribe(seg, path_or_hf_repo=model, word_timestamps=True,
+                               initial_prompt=(VERBATIM + " " + (prompt or "")).strip(),
+                               language="en", condition_on_previous_text=False)
+    new = [{"w": w["word"].strip(), "start": round(float(w["start"]) + t0, 3), "end": round(float(w["end"]) + t0, 3),
+            "p": round(float(w.get("probability", 1)), 3)}
+           for sg in r.get("segments", []) for w in sg.get("words", []) if w["word"].strip()]
+    wp = words_path(src, work_dir)
+    with open(wp) as f:
+        data = json.load(f)
+    # keep words outside the span, and inside it only from the refined pass (trim the
+    # span edges by a hair so a word cut in half at the boundary is not duplicated)
+    lo, hi = t0 + 0.15, t1 - 0.15
+    kept = [w for w in data["words"] if w["start"] < lo or w["start"] > hi]
+    new = [w for w in new if lo <= w["start"] <= hi]
+    data["words"] = sorted(kept + new, key=lambda w: w["start"])
+    data["text"] = " ".join(w["w"] for w in data["words"])
+    data.setdefault("refined", []).append([t0, t1])
+    with open(wp, "w") as f:
+        json.dump(data, f, indent=1)
+    return new

@@ -26,12 +26,13 @@ From Liam's four caption references, 2026-11-25. They're saved in the workspace 
 - Eight words or fewer, from the `ad-hooks` skill. Two lines above the speaker's head (the largest size that fits two lines), over a soft dark gradient from the top of the frame.
 
 ## Framing and caption position on talking heads
-- Client interviews and talking heads keep one framing (Liam, 2026-11-25: "the framing shouldn't change as this is a client interview and a talking head"). There are no lateral reframes or side layouts, which pushed the client towards the edge. The layout director stays in the engine (`layout: "auto"`) only for formats where moving the frame suits, such as B-roll-led ads, and only when Liam asks.
-- Variety comes from the type (editorial captions) and, later, from depth (text behind the subject), not from moving the crop.
+- Talking heads and interviews keep one framing for the whole ad (Liam: "the framing shouldn't change"). Use a slightly wider fixed crop (zoom about 1.85 on 4K) so there's room around the head.
+- Captions move, not the frame (the references). The Placer finds the face in every shot (OpenCV face detection) and sets each phrase in a zone around it: below the chin (centre, left-aligned or right-aligned), beside the head on either side, or above it once the hook title is gone. The position changes at sentence breaks. A zone is used only when the phrase fits and the background is dark enough for white type.
+- Captions never touch the face; the QA gate fails any caption box that overlaps it.
 
 ## Contrast without gradients
 - No gradients or scrims behind text (Liam: "a weird gradient effect appears behind the text which just looks clunky"). Readability comes from a stronger soft shadow on every word.
-- When the background or clothing is light (client 2's grey hoodie), add a thin ink outline with `captions.outline` (about 3.5 px). Leave it off on dark shots.
+- Never a border or outline round captions (Liam). When light clothing or a light wall washes the type out, grade the clip instead: `grade.highlights` (for example -0.16) pulls the bright areas down, and `grade.exposure` sets overall exposure.
 
 ## Ending
 - No end card and no on-screen offer. The ad ends naturally on the client's strongest closing line. Most viewers have gone by then, and the offer belongs in the ad copy and the CTA button (Liam, 2026-11-25). Put an offer on screen only when a brief explicitly asks for it (`cta_required` in the plan turns the QA check back on).

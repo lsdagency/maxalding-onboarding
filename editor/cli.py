@@ -3,6 +3,8 @@ Maxalding video edit command line.
 
     python -m editor.cli index <footage folder> --work <work folder> [--prompt "offer words"]
     python -m editor.cli transcribe <clip> [--work <folder>] [--prompt "names"]
+    python -m editor.cli refine <clip> <start> <end> --work <folder>   re-time one span verbatim
+    python -m editor.cli verify <plan.json>            listen to every cut-in for stray words or fillers
     python -m editor.cli timeline <plan.json>          print the cut, words and length
     python -m editor.cli render <plan.json> --out <folder> [--formats 9x16 4x5]
     python -m editor.cli qa <video or folder>    the edit QA gate (exit 1 on any error)
@@ -47,6 +49,9 @@ def main(argv=None) -> int:
     a = sub.add_parser("index"); a.add_argument("folder"); a.add_argument("--work", required=True)
     a.add_argument("--prompt"); a.add_argument("--no-transcribe", action="store_true")
     a = sub.add_parser("transcribe"); a.add_argument("clip"); a.add_argument("--work"); a.add_argument("--prompt")
+    a = sub.add_parser("refine"); a.add_argument("clip"); a.add_argument("start", type=float); a.add_argument("end", type=float)
+    a.add_argument("--work"); a.add_argument("--prompt")
+    a = sub.add_parser("verify"); a.add_argument("plan")
     a = sub.add_parser("timeline"); a.add_argument("plan")
     a = sub.add_parser("render"); a.add_argument("plan"); a.add_argument("--out", required=True); a.add_argument("--formats", nargs="*")
     a.add_argument("--preview", action="store_true")
@@ -66,6 +71,16 @@ def main(argv=None) -> int:
         unsure = transcribe.low_confidence(data["words"])
         if unsure:
             print("\nCheck these words against the footage: " + ", ".join(f"{w['w']} ({w['start']:.1f}s)" for w in unsure))
+        return 0
+    if args.cmd == "refine":
+        new = transcribe.refine(args.clip, args.start, args.end, args.work, args.prompt)
+        print(" ".join(f"{w['w']}({w['start']:.2f})" for w in new))
+        return 0
+    if args.cmd == "verify":
+        finds = qa.verify_cuts(args.plan)
+        for f in finds:
+            print(" ", f)
+        print(f"Cut check: {len(finds)} cut(s) to look at." if finds else "Cut check: every cut starts on its word.")
         return 0
     if args.cmd == "timeline":
         p = planmod.load(args.plan)

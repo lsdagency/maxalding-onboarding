@@ -55,18 +55,25 @@ def _reframe(W, H, zoom, fx, fy, src=None, fmt="9x16", layout="center"):
     height. The crop puts that point at specs.EYE_LINE for the format, clamped so the
     crop never leaves the picture.
     """
-    if src:
-        sw, sh = _src_size(src)
-    else:
-        sw, sh = W, H
-    lx, lz = LAYOUT_FRAME.get(layout, (0.5, 1.0))
-    s = max(W / sw, H / sh) * zoom * lz
-    zw, zh = int(round(sw * s / 2) * 2), int(round(sh * s / 2) * 2)
-    tx, ty = specs.EYE_LINE.get(fmt, (0.5, 0.36))
-    tx = lx
-    cx = min(max(fx * zw - tx * W, 0), zw - W)
-    cy = min(max(fy * zh - ty * H, 0), zh - H)
+    from .faces import crop
+    sw, sh = _src_size(src) if src else (W, H)
+    zw, zh, cx, cy = crop(W, H, sw, sh, zoom, fx, fy, fmt, layout)
     return (f"scale={zw}:{zh},crop={W}:{H}:{int(cx)}:{int(cy)},setsar=1,fps={specs.FPS},format={specs.PIX_FMT}")
+
+
+def _grade(plan: dict) -> str:
+    """Optional light grade on every piece: exposure (+/- stops, roughly) and highlights
+    (negative pulls bright areas down, e.g. a light jumper washing out white captions)."""
+    g = plan.get("grade") or {}
+    out = []
+    ex = float(g.get("exposure", 0))
+    if ex:
+        out.append(f"eq=gamma={2 ** ex:.3f}")
+    hl = float(g.get("highlights", 0))
+    if hl:
+        top = max(0.5, min(1.0, 1 + hl))
+        out.append(f"curves=all='0/0 0.5/{0.5 + hl * 0.15:.3f} 1/{top:.3f}'")
+    return ("," + ",".join(out)) if out else ""
 
 
 def _hex(c):
@@ -171,8 +178,9 @@ def render_format(plan: dict, fmt: str, out_dir: str, pieces=None, preview: bool
                         src_path, t_in = px, p.t_in - pa
                         break
             inputs += fast_in + ["-ss", f"{t_in:.3f}", "-t", f"{p.dur:.3f}", "-i", src_path]
-            fx, fy = _focus({"focus": p.focus}, fmt)
-            graph.append(f"[{idx}:v]{_reframe(W, H, p.zoom, fx, fy, src_path, fmt, p.layout)},trim=duration={p.dur:.3f},setpts=PTS-STARTPTS[v{k}]")
+            from .faces import focus_for
+            fx, fy = focus_for(p, fmt)
+            graph.append(f"[{idx}:v]{_reframe(W, H, p.zoom, fx, fy, src_path, fmt, p.layout)}{_grade(plan)},trim=duration={p.dur:.3f},setpts=PTS-STARTPTS[v{k}]")
             info = tools.probe(src_path)
             if info.has_audio and not p.mute:
                 fo = max(0.0, p.dur - 0.015)

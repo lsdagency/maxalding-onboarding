@@ -140,6 +140,12 @@ def check_manifest(man: dict, fmt: str, dur: float | None = None) -> list:
                                f"(box {e['box']}, safe {[x0, y0, x1, y1]})", e["start"]))
         if e["size"] < specs.CAPTION["min_size"]:
             out.append(Finding(ERROR, "text-size", f"{e['kind']} at {e['size']}px, minimum {specs.CAPTION['min_size']}", e["start"]))
+        fbox = e.get("face")
+        if fbox:
+            ix = min(e["box"][2], fbox[2]) - max(e["box"][0], fbox[0])
+            iy = min(e["box"][3], fbox[3]) - max(e["box"][1], fbox[1])
+            if ix > 4 and iy > 4:
+                out.append(Finding(ERROR, "caption-over-face", f"'{e['text'][:40]}' overlaps the face", e["start"]))
         if e["kind"] == "caption":
             if len(e["lines"]) > e.get("max_lines", specs.CAPTION["max_lines"]):
                 out.append(Finding(ERROR, "caption-lines", f"'{e['text']}' runs to {len(e['lines'])} lines", e["start"]))
@@ -196,3 +202,56 @@ def check(paths: list) -> dict:
         else:
             res[p] = check_file(p)
     return res
+
+
+def verify_cuts(plan_path: str) -> list:
+    """Listen to the first moment after every cut and check it starts on the expected word.
+
+    A cut a few hundredths too early carries the tail of a filler, a false start or the
+    previous word ("uh", "So", "there's") and reads as a stutter. Each piece's first
+    1.6 s is transcribed on its own (no prompt, so nothing is suggested) and compared with
+    the first caption word the plan expects. Slow, so it runs on demand: editor.cli verify.
+    """
+    import mlx_whisper  # type: ignore
+    from . import plan as planmod, transcribe
+    p = planmod.load(plan_path)
+    out = []
+    cache = {}
+    t = 0.0
+    for pc in planmod.timeline(p):
+        if pc.card or pc.mute or not pc.words:
+            t += pc.dur
+            continue
+        if pc.src not in cache:
+            cache[pc.src] = tools.audio_array(pc.src)
+        a = cache[pc.src]
+        seg = a[int(pc.t_in * 16000):int(min(pc.t_out, pc.t_in + 1.6) * 16000)]
+        r = mlx_whisper.transcribe(seg, path_or_hf_repo=transcribe.DEFAULT_MODEL, language="en",
+                                   condition_on_previous_text=False)
+        heard = r.get("text", "").strip().split()
+        want = pc.words[0]["w"].strip(specs.PUNCT).lower()
+        got = heard[0].strip(specs.PUNCT).lower() if heard else ""
+        if got and got != want and not (len(heard) > 1 and heard[1].strip(specs.PUNCT).lower() == want and got in specs.FILLER_WORDS):
+            fix = clean_start(a, want, pc.t_in, pc.t_out)
+            hint = f"; starts cleanly at {fix:.2f}s" if fix is not None else "; no clean start found nearby"
+            out.append(Finding(WARN, "cut-in", f"cut at {pc.t_in:.2f}s should start on '{want}' but starts '{' '.join(heard[:3])}'{hint}", t))
+        elif got in specs.FILLER_WORDS:
+            out.append(Finding(WARN, "cut-in", f"cut at {pc.t_in:.2f}s starts on a filler '{got}'", t))
+        t += pc.dur
+    return out
+
+
+def clean_start(audio, want: str, t_in: float, t_out: float, before: float = 0.3, after: float = 0.5, step: float = 0.03):
+    """Scan around a cut-in for the earliest point whose first heard word is `want`."""
+    import mlx_whisper  # type: ignore
+    from . import transcribe
+    t = max(0.0, t_in - before)
+    while t <= t_in + after:
+        seg = audio[int(t * 16000):int(min(t_out, t + 1.6) * 16000)]
+        r = mlx_whisper.transcribe(seg, path_or_hf_repo=transcribe.DEFAULT_MODEL, language="en",
+                                   condition_on_previous_text=False)
+        heard = r.get("text", "").strip().split()
+        if heard and heard[0].strip(specs.PUNCT).lower() == want:
+            return round(t, 2)
+        t += step
+    return None

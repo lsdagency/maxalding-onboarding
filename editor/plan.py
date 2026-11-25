@@ -247,7 +247,8 @@ def timeline(plan: dict) -> list:
         if clip.get("tighten") and plan.get("audio_tighten", True):
             try:
                 spans = split_on_silence(src, spans, gap=gap)
-                spans = snap_edges(src, spans)
+                if clip.get("snap", True):
+                    spans = snap_edges(src, spans)
             except Exception:
                 pass  # no audio or undecodable: keep the word-based spans
         base_zoom = float(clip.get("zoom", 1.0))
@@ -257,9 +258,10 @@ def timeline(plan: dict) -> list:
         for wi, w in enumerate(words):
             # a word belongs to this clip only if it starts inside it: whisper stretches a
             # word over the pause after it, so its sound is at its start, not its end
-            if w["start"] < t_in - 0.03 or w["start"] > t_out - 0.08:
+            if w["start"] < t_in - 0.08 or w["start"] > t_out - 0.08:
                 continue
-            ov = [(min(b, w["end"]) - max(a, w["start"]), j) for j, (a, b) in enumerate(spans)]
+            we = max(w["end"], w["start"] + 0.05)  # guard against a word timed with end before start
+            ov = [(min(b, we) - max(a, w["start"]), j) for j, (a, b) in enumerate(spans)]
             o, j = max(ov) if ov else (0, -1)
             if o >= min(0.03, 0.5 * (w["end"] - w["start"])):
                 best[wi] = j
