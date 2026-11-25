@@ -317,10 +317,13 @@ class Placer:
         sx0, sy0, sx1, sy1 = specs.safe_box(self.fmt)
         if p.card or not p.src:
             return {"below": (sx0, H * 0.55, sx1, sy1)}, None, None, None
-        sw, sh = _t.probe(p.src).display_size
-        fx, fy = faces.focus_for(p, self.fmt)
-        geo = faces.crop(W, H, sw, sh, p.zoom, fx, fy, self.fmt, getattr(p, "layout", "center"))
-        fb = faces.detect(p.src, round((p.t_in + p.t_out) / 2, 1))
+        try:
+            sw, sh = _t.probe(p.src).display_size
+            fx, fy = faces.focus_for(p, self.fmt)
+            geo = faces.crop(W, H, sw, sh, p.zoom, fx, fy, self.fmt, getattr(p, "layout", "center"))
+            fb = faces.detect(p.src, round((p.t_in + p.t_out) / 2, 1))
+        except _t.EditError:
+            geo, fb = None, None  # no readable source: fall back to the estimated face box
         if fb:
             face = faces.to_frame(fb, geo, W, H)
         else:
