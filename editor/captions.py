@@ -301,7 +301,9 @@ class Placer:
         self.prev_end_sentence = True
         self.hook_end = max((float(t["end"]) for t in plan.get("titles", []) if t.get("style", "hook") == "hook"),
                             default=0.0)
-        self.zones_allowed = (plan.get("captions") or {}).get("zones") or self.CYCLE
+        self.zones_allowed = (plan.get("captions") or {}).get("zones") or ["below"]
+        # house default is one area below the chin (Liam, 2026-11-25: moving captions round
+        # the face did not work); a plan can opt into more zones with captions.zones
 
     def _piece(self, t):
         acc = 0.0
@@ -365,10 +367,11 @@ class Placer:
         if change:
             for i in range(len(self.CYCLE)):
                 order.append(self.CYCLE[(self.k + i) % len(self.CYCLE)])
+            order = [z for z in order if z in self.zones_allowed]
         order = ([self.cur] if not change else []) + order + ["below", "below_l", "below_r", "left", "right", "above"]
         chosen = None
         for name in order:
-            if name not in zones or name not in self.zones_allowed and name != "below":
+            if name not in zones or name not in self.zones_allowed:
                 continue
             if name == "above" and t < self.hook_end + 0.2:
                 continue
@@ -559,8 +562,11 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                                 fn = face(brand, role)
                                 ital = "\\i1" if role == "accent" else "\\i0"
                                 if shadow:
-                                    vis, show = "&H50&", "&HFF&"
-                                    look = f"\\c&H000000&\\blur7"
+                                    sh_a = int(cfg.get("shadow_alpha", 0x50))   # lower is darker
+                                    vis, show = f"&H{sh_a:02X}&", "&HFF&"
+                                    look = f"\\c&H000000&\\blur{float(cfg.get('shadow_blur', 7)):g}"
+                                    if cfg.get("shadow_glow"):
+                                        look += f"\\bord{float(cfg.get('shadow_glow')):g}\\3c&H000000&"
                                 else:
                                     vis, show = "&H00&", "&HFF&"
                                     ol = float(cfg.get("outline", 0))  # thin ink outline for light clothing or walls
@@ -576,7 +582,8 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                                 seg.append(f"{{\\fn{fn}\\fs{px}{ital}{look}{a}}}{t}")
                                 k += 1
                             parts.append(" ".join(seg))
-                        off = "\\pos({:.0f},{:.0f})".format(ax + (3 if shadow else 0), ccy + (5 if shadow else 0))
+                        so = cfg.get("shadow_offset", (3, 5))
+                        off = "\\pos({:.0f},{:.0f})".format(ax + (so[0] if shadow else 0), ccy + (so[1] if shadow else 0))
                         lines.append(f"Dialogue: {layer},{ts(ws)},{ts(we)},CapEd,,0,0,0,,{{\\an{an}{off}\\bord0\\shad0\\q2}}" + "\\N".join(parts))
                 continue
             if mode == "clean":
@@ -661,6 +668,14 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                              f"m -100 {ry0} l {W + 100} {ry0} {W + 100} {ry1} -100 {ry1}{{\\p0}}")
             body = "\\N".join(wrapped)
             fn = face(brand, "title")
+            if brand.get("title_box") and t.get("style", "hook") == "hook":
+                # highlighted hook: each line on a solid paper box, ink TikTok Sans Black
+                pad = max(10, size // 5)
+                lines.append(f"Dialogue: 5,{ts(float(t['start']))},{ts(float(t['end']))},Title,,0,0,0,,"
+                             f"{{\\an5\\pos({cx:.0f},{y:.0f})\\fn{fn}\\fs{size}\\bord{pad}\\shad0\\q2"
+                             f"\\1c{ass_color(brand['title_color'])}\\3c{ass_color(brand['title_box'])}\\4c{ass_color(brand['title_box'])}}}{body}")
+                events[-1]["box"] = (round(box[0] - pad), round(box[1] - pad), round(box[2] + pad), round(box[3] + pad))
+                continue
             lines.append(f"Dialogue: 4,{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"
                          f"{{\\an5\\pos({cx + 3:.0f},{y + 5:.0f})\\fn{fn}\\fs{size}\\c&H000000&\\alpha&H50&\\blur8\\q2\\fad(0,120)}}{body}")
             lines.append(f"Dialogue: 5,{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"

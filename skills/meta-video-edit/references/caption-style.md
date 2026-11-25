@@ -21,18 +21,18 @@ From Liam's four caption references, 2026-11-25. They're saved in the workspace 
 - **Never** boxed or karaoke active-word highlights, bouncing pops or emoji captions (Liam: "AI slop"). `captions.style: "clean"` (plain white phrases) is the fallback.
 
 ## Hook title
-- One font: TikTok Sans Black, white, one size, with balanced line breaks. It does not take the captions' mixed type (Liam, 2026-11-25). No box.
+- One font: TikTok Sans Black, one size, balanced line breaks. It does not take the captions' mixed type (Liam, 2026-11-25).
+- Highlighted: each line sits on a solid box in the brand paper colour, with ink text (`brand.title_box`). Liam preferred this to plain white type, which got lost over the footage.
 - Fully up on frame one (no fade-in), for about 3 seconds through the first spoken line.
 - Eight words or fewer, from the `ad-hooks` skill. Two lines above the speaker's head (the largest size that fits two lines), over a soft dark gradient from the top of the frame.
 
 ## Framing and caption position on talking heads
-- Talking heads and interviews keep one framing for the whole ad (Liam: "the framing shouldn't change"). Use a slightly wider fixed crop (zoom about 1.85 on 4K) so there's room around the head.
-- Captions move, not the frame (the references). The Placer finds the face in every shot (OpenCV face detection) and sets each phrase in a zone around it: below the chin (centre, left-aligned or right-aligned), beside the head on either side, or above it once the hook title is gone. The position changes at sentence breaks. A zone is used only when the phrase fits and the background is dark enough for white type.
-- Captions never touch the face; the QA gate fails any caption box that overlaps it.
+- Talking heads and interviews keep one framing for the whole ad (zoom about 1.85 on 4K).
+- Captions stay in one area, below the chin, centred (Liam, 2026-11-25: moving them round the face did not work, especially against a bright pillar). The face-aware Placer still sets the line just under the detected face and the QA gate still fails any overlap. Other zones (beside or above the head) are opt-in through `captions.zones`, for shots with dark, even backgrounds.
 
 ## Contrast without gradients
 - No gradients or scrims behind text (Liam: "a weird gradient effect appears behind the text which just looks clunky"). Readability comes from a stronger soft shadow on every word.
-- Never a border or outline round captions (Liam). When light clothing or a light wall washes the type out, grade the clip instead: `grade.highlights` (for example -0.16) pulls the bright areas down, and `grade.exposure` sets overall exposure.
+- Never a hard border or outline round captions (Liam). On light clothing use a soft dark glow behind the letters (`captions.shadow_alpha` about 0x18, `shadow_blur` 16, `shadow_glow` 6, offset [0, 2]) together with a highlights grade. When light clothing or a light wall washes the type out, grade the clip instead: `grade.highlights` (for example -0.16) pulls the bright areas down, and `grade.exposure` sets overall exposure.
 
 ## Ending
 - No end card and no on-screen offer. The ad ends naturally on the client's strongest closing line. Most viewers have gone by then, and the offer belongs in the ad copy and the CTA button (Liam, 2026-11-25). Put an offer on screen only when a brief explicitly asks for it (`cta_required` in the plan turns the QA check back on).
