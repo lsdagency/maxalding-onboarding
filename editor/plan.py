@@ -68,7 +68,14 @@ def load(path: str) -> dict:
 
 
 def resolve(plan: dict, p: str) -> str:
+    """A source path: local (relative to the plan), a URL, or drive:<file id>, which is read
+    straight from Google Drive a few seconds at a time (the file must be shared by link)."""
     if not p:
+        return p
+    if p.startswith("drive:"):
+        from .drive import url
+        return url(p[len("drive:"):])
+    if p.startswith(("http://", "https://")):
         return p
     p = os.path.expanduser(p)
     return p if os.path.isabs(p) else os.path.normpath(os.path.join(plan.get("_base", "."), p))
@@ -90,12 +97,13 @@ def check(plan: dict) -> list:
                 errs.append(f"clip {i}: card audio not found: {ca.get('src')}")
             continue
         src = resolve(plan, c.get("src", ""))
-        if not src or not os.path.exists(src):
+        if not src or not (src.startswith("http") or os.path.exists(src)):
             errs.append(f"clip {i}: source not found: {c.get('src')}")
         if c.get("out") is not None and c.get("in") is not None and c["out"] <= c["in"]:
             errs.append(f"clip {i}: out ({c['out']}) is not after in ({c['in']})")
     for i, b in enumerate(plan.get("broll", [])):
-        if not os.path.exists(resolve(plan, b.get("src", ""))):
+        bsrc = resolve(plan, b.get("src", ""))
+        if not (bsrc.startswith("http") or os.path.exists(bsrc)):
             errs.append(f"broll {i}: source not found: {b.get('src')}")
     m = plan.get("music")
     if m and not os.path.exists(resolve(plan, m.get("src", ""))):

@@ -100,15 +100,16 @@ def proxies(plan: dict) -> list:
     """
     out = []
     d = _proxy_dir(plan)
-    for c in plan.get("clips", []):
-        if "src" not in c:
-            continue
+    spans = [c for c in plan.get("clips", []) if "src" in c]
+    spans += [{"src": b["src"], "in": float(b.get("in", 0)), "out": float(b.get("in", 0)) + float(b.get("dur", 2.0))}
+              for b in plan.get("broll", [])]
+    for c in spans:
         src = planmod.resolve(plan, c["src"])
         a = max(0.0, float(c.get("in", 0)) - 0.5)
         b = float(c["out"]) + 0.5 if c.get("out") is not None else tools.probe(src).duration
         if any(s == src and pa <= a and b <= pb for s, pa, pb, _ in out):
             continue
-        base = os.path.splitext(os.path.basename(src))[0]
+        base = (c["src"][6:] if str(c["src"]).startswith("drive:") else os.path.splitext(os.path.basename(src))[0])
         path = os.path.join(d, f"{base}_{a:.2f}_{b:.2f}.mp4")
         # reuse any existing proxy of this source that already covers the span
         cover = None
@@ -119,8 +120,11 @@ def proxies(plan: dict) -> list:
                 except ValueError:
                     continue
                 if pa <= a and b <= pb:
-                    cover = (pa, pb, os.path.join(d, f))
-                    break
+                    # a span cut short by a dropped connection is not a cover
+                    got = tools.probe(os.path.join(d, f)).duration
+                    if got >= (pb - pa) * 0.95 - 0.1:
+                        cover = (pa, pb, os.path.join(d, f))
+                        break
         if cover:
             out.append((src, cover[0], cover[1], cover[2]))
             continue
@@ -132,6 +136,10 @@ def proxies(plan: dict) -> list:
         # frames are upright now; strip the camera's rotation flag that ffmpeg carries over
         tools.run(["-y", "-display_rotation", "0", "-i", path.replace(".mp4", ".tmp.mov"), "-c", "copy", "-f", "mov", path])
         os.remove(path.replace(".mp4", ".tmp.mov"))
+        got = tools.probe(path).duration
+        if got < (b - a) * 0.95 - 0.1:
+            raise tools.EditError(f"span {base} {a:.2f}-{b:.2f} came back {got:.2f}s long (source cut off); "
+                                  "re-run once the source is readable")
         out.append((src, a, b, path))
     return out
 
@@ -199,7 +207,13 @@ def render_format(plan: dict, fmt: str, out_dir: str, pieces=None, preview: bool
         dur = float(b.get("dur", 2.0))
         at = float(b["at"])
         idx = _count_inputs(inputs)
-        inputs += fast_in + ["-ss", f"{float(b.get('in', 0)):.3f}", "-t", f"{dur:.3f}", "-i", src]
+        b_in = float(b.get("in", 0))
+        if preview:
+            for s0, pa, pb, px in prox:
+                if s0 == src and pa <= b_in and b_in + dur <= pb:
+                    src, b_in = px, b_in - pa
+                    break
+        inputs += fast_in + ["-ss", f"{b_in:.3f}", "-t", f"{dur:.3f}", "-i", src]
         fx, fy = _focus(b, fmt)
         graph.append(f"[{idx}:v]{_reframe(W, H, float(b.get('zoom', 1.0)), fx, fy, src, fmt)},trim=duration={dur:.3f},setpts=PTS-STARTPTS+{at:.3f}/TB[b{j}]")
         graph.append(f"[{vlast}][b{j}]overlay=enable='between(t,{at:.3f},{at + dur:.3f})':eof_action=pass[vb{j}]")
@@ -271,7 +285,7 @@ def render_format(plan: dict, fmt: str, out_dir: str, pieces=None, preview: bool
         "pieces": [{"src": p.src, "in": p.t_in, "out": p.t_out, "dur": round(p.dur, 3), "role": p.role,
                     "card": p.card, "zoom": p.zoom, "layout": p.layout} for p in pieces],
         "events": events, "words": planmod.all_words(pieces),
-        "has_music": bool(m), "max_seconds": plan.get("max_seconds"), "cta_required": bool(plan.get("cta_required")),
+        "has_music": bool(m), "max_seconds": plan.get("max_seconds"), "cta_required": bool(plan.get("cta_required")), "hook_text": plan.get("hook_text", True),
         "fonts": font_report,
         "font_sources": {r: (f or {}).get("source") for r, f in prepared["faces"].items()},
     }

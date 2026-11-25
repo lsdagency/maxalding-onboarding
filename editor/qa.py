@@ -172,7 +172,7 @@ def check_manifest(man: dict, fmt: str, dur: float | None = None) -> list:
     opens_on_card = bool(pieces and pieces[0].get("card"))
     if words and not opens_on_card and words[0]["start"] > specs.HOOK_SPEECH_START_MAX:
         out.append(Finding(WARN, "slow-open", f"first word at {words[0]['start']:.2f}s; the hook should start by {specs.HOOK_SPEECH_START_MAX}s", 0))
-    if not any(e["kind"] == "hook" and e["start"] <= 0.5 for e in events):
+    if man.get("hook_text", True) and not any(e["kind"] == "hook" and e["start"] <= 0.5 for e in events):
         out.append(Finding(WARN, "no-hook-text", "no on-screen hook text in the first half second (sound-off viewers get nothing)"))
     if words and not any(e["kind"] == "caption" for e in events):
         out.append(Finding(ERROR, "no-captions", "the ad has speech but no captions"))

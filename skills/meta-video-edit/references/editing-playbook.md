@@ -59,6 +59,8 @@ The standard every Maxalding edit is held to. Sources are listed at the end. The
 ## Learned from feedback
 Dated entries promoted from the workspace feedback log. Newest first.
 
+- 2026-11-25 (Liam, preview round 7): no on-screen hook text on interviews (`titles: []`, `hook_text: false`); the spoken hook carries it. Keep the caption glow soft (shadow_alpha about 0x40, blur 10, glow 3 on light clothing). B-roll is training footage only (never coach intros or interviews), worked out line by line from what's being said: a cutaway of 2 to 2.5 s on the words it illustrates, three to five per ad, hooks and endings on the face. Use that client's own training first; if none fits a beat, another client's training is fine, preferring shots where the person isn't the focus (hands, bar, coaching).
+
 - 2026-11-25 (Liam, preview round 6, "nearly there, the scripts are a lot better"): captions back in one area below the chin, with the same editorial style; the hook title is highlighted (ink on a paper box). On light clothing, use a soft glow shadow plus a highlights grade, never a border.
 
 - 2026-11-25 (Liam, preview round 5): the opening still had an "ummm" (his false start "uh, the private, the" was hidden by the transcript); one result was built from parts of different sentences and lost the viewer after 0:29; "give you a goal / gym will try something different" came from a cut landing on the tail of another word; captions sat on the face; client 2 had an outline. Standing fixes: verbatim transcripts, `refine` on every used span, `verify` on every cut-in before rendering, never join parts of different sentences, captions placed around the detected face (QA fails overlaps), no caption borders (grade the clip instead).

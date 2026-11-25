@@ -53,8 +53,21 @@ def available() -> bool:
         return False
 
 
+RECONNECT = ["-reconnect", "1", "-reconnect_at_eof", "1", "-reconnect_delay_max", "2"]
+
+
+def _with_reconnect(args: list) -> list:
+    """Remote inputs read in chunks (see driveproxy), so ffmpeg must reconnect as it reads on."""
+    out = []
+    for i, a in enumerate(args):
+        if a == "-i" and i + 1 < len(args) and is_remote(args[i + 1]):
+            out += RECONNECT
+        out.append(a)
+    return out
+
+
 def run(args, *, capture=True, check=True) -> subprocess.CompletedProcess:
-    cmd = [ffmpeg(), "-hide_banner", "-nostdin"] + list(args)
+    cmd = [ffmpeg(), "-hide_banner", "-nostdin"] + _with_reconnect(list(args))
     p = subprocess.run(cmd, capture_output=capture, text=True)
     if check and p.returncode != 0:
         tail = (p.stderr or "")[-3000:]
@@ -90,9 +103,32 @@ class MediaInfo:
         return d
 
 
+def is_remote(path: str) -> bool:
+    return isinstance(path, str) and path.startswith(("http://", "https://"))
+
+
+_PROBE_CACHE_FILE = os.path.expanduser("~/.cache/maxalding/probe.json")
+
+
+def _probe_cache() -> dict:
+    try:
+        with open(_PROBE_CACHE_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
 def probe(path: str) -> MediaInfo:
-    if not os.path.exists(path):
+    remote = is_remote(path)
+    if not remote and not os.path.exists(path):
         raise EditError(f"No such file: {path}")
+    if remote:
+        # asking Drive for a file's header takes ~25 s; remember the answer
+        cached = _probe_cache().get(path)
+        if cached:
+            info = MediaInfo(path=path)
+            info.__dict__.update({k: v for k, v in cached.items() if k in info.__dict__})
+            return info
     p = run(["-i", path], check=False)
     err = p.stderr or ""
     info = MediaInfo(path=path)
@@ -113,6 +149,12 @@ def probe(path: str) -> MediaInfo:
     if a:
         info.has_audio = True
         info.acodec, info.sample_rate = a.group(1), int(a.group(2))
+    if remote and info.duration:
+        c = _probe_cache()
+        c[path] = {k: v for k, v in info.__dict__.items() if k != "extra"}
+        os.makedirs(os.path.dirname(_PROBE_CACHE_FILE), exist_ok=True)
+        with open(_PROBE_CACHE_FILE, "w") as f:
+            json.dump(c, f)
     return info
 
 
@@ -187,7 +229,7 @@ def frame_gray(path: str, t: float, width: int = 96):
     info = probe(path)
     w, h = info.display_size
     height = max(2, int(round(width * h / max(w, 1) / 2) * 2))
-    cmd = [ffmpeg(), "-hide_banner", "-nostdin", "-ss", f"{t:.2f}", "-i", path, "-frames:v", "1",
+    cmd = [ffmpeg(), "-hide_banner", "-nostdin", "-ss", f"{t:.2f}"] + (RECONNECT if is_remote(path) else []) + ["-i", path, "-frames:v", "1",
            "-vf", f"scale={width}:{height}", "-f", "rawvideo", "-pix_fmt", "gray", "-"]
     p = subprocess.run(cmd, capture_output=True)
     if p.returncode != 0 or len(p.stdout) < width * height:
