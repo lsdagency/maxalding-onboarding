@@ -27,3 +27,6 @@ The validator catches patterns; you catch judgement. Read every hook, post copy,
 
 ## Return a verdict
 If everything passes, say so plainly and clear it for delivery. If anything fails, list each issue with the file, the location and the specific fix, and route it to the owning specialist (creative-plan, scriptwriting, conversion-copy or lifecycle-crm). After the fix, re-run the validator and re-read before clearing. Never wave through a file you have not scanned.
+
+## Video edits
+For rendered ads, run the edit QA gate: `python -m editor.cli qa <edits folder>`. Zero errors to pass. Then do the Meta read on what is said and shown: no weight figures or body claims, no health conditions without Liam's sign-off, no other business's results, captions matching the audio.

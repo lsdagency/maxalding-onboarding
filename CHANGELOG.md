@@ -2,6 +2,17 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.43.0] - 2026-11-25
+
+The video editing arm. Liam: "whenever a client's raw footage is ready we edit the videos in the best possible way for paid social", and the process learns from feedback over time.
+
+### Added
+- `editor/` engine: word-level transcription (mlx-whisper), footage index with frame strips, a JSON edit plan per ad, tightening into jump cuts with alternating punch-ins, eye-line reframing for 9x16 and 4x5, B-roll overlays, burned-in captions and hook titles (ASS), multi-line end cards with a voice line, music beds with sidechain ducking, two-pass loudness to -14 LUFS, contact sheets and first frames for review.
+- Edit QA gate (`python -m editor.cli qa`): frame size, frame rate, codec, audio, loudness and true peak, black opening, dead air, safe zones, text size, caption lines, brand font fallback, hook text, captions present, CTA close, concept length, and every on-screen word through the copy validator.
+- House font TikTok Sans for all on-screen text (Black for titles and cards, Bold for captions), cut to static instances so libass cannot fall back to Helvetica.
+- `skills/meta-video-edit` (process, playbook, caption style, specs and safe zones, QA checklist, plan format) and the `video-editor` agent. The orchestrator gets a Stage 6: Edit.
+- `evals/edit_evals.py`: tightening, caption chunking, safe-zone layout, QA catches, and an end-to-end render that must pass the gate.
+
 ## [0.42.1] - 2026-11-20
 
 ### Changed

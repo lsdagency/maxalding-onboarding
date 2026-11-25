@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.42.1"
+version: "0.43.0"
 
 banned_characters:
   - id: em-dash
@@ -298,3 +298,14 @@ feedback_loop:
   closed_means_three_things: "A correction is not closed until the deliverable is rebuilt, a dated entry is in the workspace feedback log, and anything that should bind future clients is in the package (reference file, rules.yaml, a validator rule where the failure is mechanically detectable, version bumped, evals/cases/sample_client.json updated to match). Fixing the client file alone fixes one pack and teaches the system nothing."
   closed_source: "Feedback 2026-06-03 (Evolve Fitness Glenhaven): three corrections were given, all three deliverables were rebuilt, and none of the three reached the feedback log. They were recovered from a handoff note on 2026-08-12, by which time the ad copy failure had recurred on other clients."
   source: "System Prompt s15"
+
+video_edit:
+  note: "The editing arm (skills/meta-video-edit, editor/). Mechanical rules are enforced by editor/qa.py; craft rules live in the playbook."
+  house_font: "TikTok Sans for all on-screen text: titles, CTA and end cards in Black, captions in Bold, matching the statics. QA fails a font fallback. Liam 2026-11-25."
+  safe_zones: "Text inside 14 percent top, 35 percent bottom, 6 percent sides on 9x16; 6, 12, 6 on 4x5. Source: third-party Reels guides, 2026."
+  loudness: "-14 LUFS integrated, true peak under -1 dBTP."
+  hook_first: "Frame one carries the hook: face on screen, hook text up, first word by 0.7 seconds."
+  testimonial_meaning: "Cut for length, never splice a client's words into a claim they did not make."
+  no_existing_videos: "Never use a client's existing or delivered videos as reference or source. Liam 2026-11-25."
+  closed_means_three_things: "An edit correction is applied and re-rendered, logged as a Video edit entry in the workspace feedback log, and promoted into the playbook, specs or QA if it should bind future edits."
+

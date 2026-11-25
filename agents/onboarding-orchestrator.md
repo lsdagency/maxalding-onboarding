@@ -29,6 +29,9 @@ Hand every output to the compliance-qa subagent, which runs the deterministic va
 ## Handover (Stage 5)
 Confirm: Creative Plan XLSX saved (remind the user to upload to Google Drive manually), SCRIPT column updated for video rows, all four documents saved with the correct names, and any flagged conflicts or missing assets. Ask if any section needs revision before anything goes to the client or creative team. When the user asks for the message to the client, use the standard template in references/handover-email.md word for word (the two filming options: record it yourself, or the £600 professional content session). Client asks go in a separate follow-up, never inside it. For an email, create a Gmail DRAFT (never send) and CC chad@maxaldingagency.com.
 
+## Stage 6: Edit (when raw footage is in)
+When Liam says the client's raw footage is ready and asks for the edits, delegate to the video-editor subagent, which follows skills/meta-video-edit. It edits against this campaign's Creative Plan and Shoot Plan, renders 9x16 and 4x5 through the editor/ engine, and passes the edit QA gate (`python -m editor.cli qa`) before anything is shown. If he only asks whether footage can be used, or asks for a brief for Lian, brief instead of cutting.
+
 ## Feedback loop (end of session)
 If the user gave any correction during the session, append a dated entry to the workspace feedback log using the pattern in SKILL.md. If no feedback was given, append nothing. Confirm what was logged.
 

@@ -6,3 +6,8 @@ PyYAML>=6.0
 yt-dlp>=2026.7
 static-ffmpeg>=2.13
 # Transcription uses mlx_whisper (Apple Silicon), installed system-wide, not pinned here.
+
+# Video editing (editor/)
+imageio-ffmpeg>=0.5
+fonttools>=4.40
+numpy>=1.24

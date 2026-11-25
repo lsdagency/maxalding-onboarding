@@ -1,7 +1,7 @@
 {
   "name": "maxalding-onboarding",
-  "version": "0.42.1",
-  "description": "Maxalding Agency fitness client onboarding. An orchestrator plus specialist subagents that run the four-stage workflow, build the Creative Plan XLSX and four campaign documents, and gate every output through a deterministic QA validator.",
+  "version": "0.43.0",
+  "description": "Maxalding Agency fitness client onboarding. An orchestrator plus specialist subagents that run the four-stage workflow, build the Creative Plan XLSX and four campaign documents, and gate every output through a deterministic QA validator. Includes a video editing arm: raw footage to finished Meta ads through the editor/ engine and its own QA gate.",
   "author": {
     "name": "Maxalding Agency",
     "email": "liam@lsdagency.co.uk"
@@ -12,7 +12,8 @@
     "paid-social",
     "meta-ads",
     "copywriting",
-    "creative-plan"
+    "creative-plan",
+    "video-editing"
   ],
   "agents": "./agents",
   "skills": "./skills"

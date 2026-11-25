@@ -229,6 +229,11 @@ def main():
     failures += run_other_client_eval()
     print("Running version eval...")
     failures += run_version_eval()
+    from evals.edit_evals import run_unit_evals, run_render_eval
+    print("Running video edit evals...")
+    failures += run_unit_evals()
+    print("Running video edit render eval...")
+    failures += run_render_eval()
 
     if failures:
         print(f"\n{len(failures)} eval failure(s):")

@@ -15,6 +15,7 @@ An orchestrator agent runs the four-stage workflow and the approval gates. Speci
 - conversion-copy: the Landing Page.
 - lifecycle-crm: the CRM email and SMS copy.
 - compliance-qa: runs the validator and a Meta policy read before anything is delivered.
+- video-editor: turns a client's raw footage into finished Meta ads (9x16 and 4x5) through the editor/ engine and its edit QA gate (skills/meta-video-edit).
 
 ## Read-only package, writable workspace
 
@@ -125,3 +126,17 @@ scripts/install-hooks.sh     hook installer
 ## Provenance
 
 Behaviour is governed by the Maxalding Client Onboarding Agent System Prompt (the source of truth) and the Onboarding Feedback Log (live corrections). No rule in the System Prompt is changed here; it is implemented faithfully.
+
+## Video editing
+
+Raw footage to finished Meta ads. Needs ffmpeg (found on PATH, via $FFMPEG, or the imageio-ffmpeg binary), mlx-whisper for transcripts and fontTools for the brand font.
+
+```
+python -m editor.cli index "<footage folder>" --work "<campaign>/edit-work" --prompt "names, places, offer words"
+python -m editor.cli timeline plan.json
+python -m editor.cli build plan.json --out "<campaign>/edits/v1"
+python -m editor.cli qa "<campaign>/edits/v1"
+```
+
+The process, craft standard and plan format are in skills/meta-video-edit.
+

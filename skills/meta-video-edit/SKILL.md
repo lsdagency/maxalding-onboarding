@@ -1,0 +1,41 @@
+---
+name: meta-video-edit
+description: Edit a Maxalding client's raw footage into finished Meta video ads (Reels, Stories, Feed). Triggers include "raw footage is in", "edit the videos", "cut the ads", "edit these interviews", "footage for [client]", "make the edits", "re-cut", "feedback on the edit", or any request to turn filmed clips into paid social video. Produces 9x16 and 4x5 MP4s per ad through the edit engine (editor/), gated by the edit QA gate, and logs every correction so the editing improves client to client.
+---
+
+# Maxalding Meta Video Edit
+
+The editing arm of the agency. Raw footage in, finished paid social ads out, built against the campaign the onboarding produced. The craft is in `references/`; the mechanics are the `editor/` engine in this package (render, captions, loudness, QA). Liam set this up on 2026-11-25: "whenever a client's raw footage is ready we edit the videos in the best possible way for paid social", and the process must learn from his feedback over time.
+
+## Read first, every time
+1. The Onboarding Feedback Log in the workspace (`MAXALDING_WORKSPACE`), in full. Video edit entries are tagged "Video edit". The most recent feedback wins.
+2. `references/editing-playbook.md`: what makes a Meta ad edit work, per concept, plus the Learned from feedback section. This is the standard.
+3. `references/caption-style.md`, `references/specs-and-safe-zones.md`, `references/edit-plan-format.md`.
+4. The client's memory files (Brand, Audience, Marketing; the "How [name] talks" block) and Meta rules for this client (no weight figures, banned words, premium framing, youth safeguards).
+5. The campaign's Creative Plan (VIDEOS rows: concept, hook, clips, editing notes, file names) and the Shoot Plan or Video Ad Scripts. The edit is built against these: the concept, the hook, the CTA and the end card are already decided. Do not invent a new campaign in the edit.
+
+## The process
+1. **Ingest.** Footage goes in the campaign folder or stays where Liam put it (never copy 8 GB files without reason). Work folder: `clients/<Client>/<campaign>/edit-work/`. Run `python -m editor.cli index <footage> --work <edit-work> --prompt "<names, places, offer words>"`. This gives FOOTAGE LOG.md, frame strips and word-level transcripts. Look at the strips.
+2. **Log and select.** Read every transcript in full. For interviews, map each answer to the brief's questions and pull the lines that carry the concept: the strongest single line (the hook), who they are, why they started, what it is like, what changed, the line that hands over to the CTA. For scripted takes, pick the best take per line (fluency, energy, eye line, no stumbles). Write SELECTS.md in the work folder with timecodes and why each was chosen. Flag anything that breaks Meta or client rules (weight figures, body claims, health conditions, other coaches named in a way that confuses the offer) and leave it out.
+3. **Script evaluation and modular paper edit.** This is where the ad is won, so never skip it. (a) Score every candidate opening line (stops on its own, specific, pull, audience fit, Meta safe; out of 5 each) and pick the three strongest, from different hook angles (bold statement, curiosity, relatable inner voice, outcome, problem callout). Run the `ad-hooks` skill for the on-screen hook titles. (b) Cut the rest into modules: hook, credibility or intro, why, experience, result, push, CTA. (c) Each ad is a running order of modules. Three hook variants share one body, so the hook is the only variable (hook test). The hook module is never repeated in the body. (d) Write SCRIPT EVALUATION.md with the scores and choices, and a plan generator (build_plans.py) holding the modules, so a feedback note is a one-line change. Check the spoken story reads as a story with the questions removed.
+4. **Preview cut.** `python -m editor.cli timeline <plan>` to read the cut as text and check length, then `python -m editor.cli build <plan> --out <campaign>/edits/preview --preview`: a quick half-size 9x16 render with the same cut, captions and audio, plus the QA gate and contact sheets. Liam gives feedback on previews; every round of notes is a plan edit and another preview (Liam, 2026-11-25: "a preview render first, low quality to get a feel and I can feedback, then one high quality render for the final video only").
+5. **Watch it.** Read the contact sheet and the first frame for each format, and read the timeline transcript top to bottom as a viewer would. Run the craft checklist in `references/edit-qa-checklist.md`. Fix in the plan and rebuild until it passes. A passing QA gate is necessary, not sufficient.
+6. **QA gate.** `python -m editor.cli qa <edits folder>`: zero errors. Warnings are either fixed or explained in the review note.
+7. **Final render, once.** Only after Liam signs off the preview: `python -m editor.cli build <plan> --out <campaign>/edits/v<N>` renders the full-quality 9x16 and 4x5. The QA gate must pass with zero errors. Files are named as the Creative Plan says (for example `INT Kevin 9x16.mp4`, `INT Kevin 4x5.mp4`). Send Liam the files with a short note per ad: length, the hook line, what was cut and why, and anything flagged for his decision. Upload to Drive or ClickUp only when he asks, and to the folder he names.
+8. **Feedback loop.** Every note Liam gives on a cut is (a) applied to the plan and re-rendered, (b) logged as a dated "Video edit" entry in the workspace feedback log, and (c) if it should bind future edits, promoted into the playbook's Learned from feedback section, `editor/specs.py` or a QA check, with the version bumped and evals updated. A correction is not closed until all three happen (the closed-means-three-things rule).
+
+## Hard rules
+- Never change what a client meant. Cutting for length is fine; splicing words from different answers into a claim they did not make is not. Every testimonial line must be something they said, in the sense they said it.
+- Never fabricate: no invented results, no captions that say more than the audio.
+- Captions are checked word by word against the audio. Whisper mishears offer words (it heard Sergio's "three" as "free"); fix them with the plan's caption fixes, never leave a wrong word on screen.
+- The edit QA gate must pass before anything is shown to the client.
+- House font is TikTok Sans for all on-screen text: titles, CTA and end cards in Black, captions in Bold, matching the statics (Liam, 2026-11-25). The renderer fails QA if the font falls back.
+- Captions are clean: plain white with a soft shadow. Never boxed or karaoke word highlights (Liam: "AI slop").
+- Music only from a licensed or royalty-free library the agency holds (or added later in Ads Manager from Meta's Sound Collection). Never a commercial track.
+- No other client's name or footage in any edit.
+
+## Skills to use alongside
+- `ad-hooks` when choosing or writing the on-screen hook text.
+- `social-media-skills:captions-and-clipping`, `social-media-skills:capcut`, `social-media-skills:talking-head-and-piece-to-camera` and `social-media-skills:social-proof-and-testimonials` for craft reference.
+- `remotion:remotion-best-practices` only if an ad needs motion graphics beyond what the ffmpeg engine draws (animated charts, kinetic type); render those as clips and lay them in through the plan.
+- The plugin rules win over any skill on conflict.
