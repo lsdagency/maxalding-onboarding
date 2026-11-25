@@ -170,8 +170,10 @@ def check_manifest(man: dict, fmt: str, dur: float | None = None) -> list:
         out.append(Finding(WARN, "no-hook-text", "no on-screen hook text in the first half second (sound-off viewers get nothing)"))
     if words and not any(e["kind"] == "caption" for e in events):
         out.append(Finding(ERROR, "no-captions", "the ad has speech but no captions"))
-    if not any(e["kind"] in ("cta", "card") and e["end"] >= dur - 0.5 for e in events):
-        out.append(Finding(WARN, "no-cta", "no CTA text or end card in the closing seconds"))
+    # the offer lives in the ad copy and the CTA button; the video ends naturally
+    # (Liam, 2026-11-25), so a missing on-screen CTA is only flagged when the plan asks for one
+    if man.get("cta_required") and not any(e["kind"] in ("cta", "card") and e["end"] >= dur - 0.5 for e in events):
+        out.append(Finding(WARN, "no-cta", "the plan asks for an on-screen CTA and there is none at the close"))
 
     concept = (man.get("concept") or "default").lower()
     lo, hi = specs.LENGTH.get(concept, specs.LENGTH["default"])

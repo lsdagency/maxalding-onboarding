@@ -242,10 +242,11 @@ def timeline(plan: dict) -> list:
         if t_out is None:
             from . import tools
             t_out = tools.probe(src).duration
-        spans = tighten(words, t_in, t_out) if clip.get("tighten") and words else [(t_in, t_out)]
+        gap = float(plan.get("tighten_gap", specs.TIGHTEN_GAP))
+        spans = tighten(words, t_in, t_out, gap=gap) if clip.get("tighten") and words else [(t_in, t_out)]
         if clip.get("tighten") and plan.get("audio_tighten", True):
             try:
-                spans = split_on_silence(src, spans)
+                spans = split_on_silence(src, spans, gap=gap)
                 spans = snap_edges(src, spans)
             except Exception:
                 pass  # no audio or undecodable: keep the word-based spans
@@ -263,7 +264,7 @@ def timeline(plan: dict) -> list:
             if o >= min(0.03, 0.5 * (w["end"] - w["start"])):
                 best[wi] = j
         for j, (a, b) in enumerate(spans):
-            z = base_zoom * (punch if (punch and j % 2 == 1 and plan.get("layout", "auto") != "auto") else 1.0)
+            z = base_zoom * (punch if (punch and j % 2 == 1 and plan.get("layout", "fixed") != "auto") else 1.0)
             p = Piece(src=src, t_in=a, t_out=b, focus=clip.get("focus", (0.5, 0.5)),
                       zoom=z, role=clip.get("role", ""), mute=bool(clip.get("mute")), clip_i=ci)
             for wi, w in enumerate(words):
@@ -283,12 +284,22 @@ def timeline(plan: dict) -> list:
             if first:
                 w0 = first.words[0]["w"]
                 first.words[0]["w"] = w0[:1].upper() + w0[1:]
+    # a word after a full stop, question or exclamation starts a sentence: capitalise it
+    prev = None
+    for pc in pieces:
+        for w in pc.words:
+            if prev is not None and prev["w"].rstrip()[-1:] in ".?" + chr(33):
+                w["w"] = w["w"][:1].upper() + w["w"][1:]
+            prev = w
     for pc in pieces:
         for w in pc.words:
             low = w["w"].lower()
             if low.rstrip(specs.PUNCT) in ("i", "i'm", "i've", "i'll", "i'd"):
                 w["w"] = "I" + w["w"][1:]
-    if plan.get("layout", "auto") == "auto":
+    # Talking heads and interviews keep one framing (Liam, 2026-11-25: "the framing
+    # shouldn't change as this is a client interview"). The layout director only
+    # runs when a plan asks for it.
+    if plan.get("layout", "fixed") == "auto":
         direct(pieces, plan)
     return pieces
 

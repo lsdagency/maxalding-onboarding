@@ -263,7 +263,7 @@ def render_format(plan: dict, fmt: str, out_dir: str, pieces=None, preview: bool
         "pieces": [{"src": p.src, "in": p.t_in, "out": p.t_out, "dur": round(p.dur, 3), "role": p.role,
                     "card": p.card, "zoom": p.zoom, "layout": p.layout} for p in pieces],
         "events": events, "words": planmod.all_words(pieces),
-        "has_music": bool(m), "max_seconds": plan.get("max_seconds"),
+        "has_music": bool(m), "max_seconds": plan.get("max_seconds"), "cta_required": bool(plan.get("cta_required")),
         "fonts": font_report,
         "font_sources": {r: (f or {}).get("source") for r, f in prepared["faces"].items()},
     }

@@ -66,7 +66,8 @@ TITLE = {
 # Timing.
 HOOK_SPEECH_START_MAX = 0.7   # first spoken word by this many seconds
 DEAD_AIR_MAX = 0.8            # a silence longer than this mid-ad is a warning
-TIGHTEN_GAP = 0.35            # gaps between words longer than this get cut
+TIGHTEN_GAP = 0.6             # pauses longer than this get cut; shorter ones are the speaker's rhythm
+                              # (Liam, 2026-11-25: cuts mid-sentence broke the flow)
 TIGHTEN_PAD = 0.08            # breath kept either side of a cut
 
 # Length guidance by concept (seconds). Warnings, not errors: the plan can

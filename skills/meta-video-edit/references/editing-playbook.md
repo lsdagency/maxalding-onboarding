@@ -10,7 +10,7 @@ The standard every Maxalding edit is held to. Sources are listed at the end. The
 5. **Something changes every three to five seconds.** A cut, a punch-in, a B-roll insert or a caption beat. Long unbroken shots lose people.
 6. **B-roll shows what is being said.** When the speaker mentions training, the coach, the studio or a result, cut to footage of exactly that. Keep the voice running underneath. B-roll that does not match the words is wallpaper; leave it out.
 7. **One idea per ad.** Every line has to serve the concept in the Creative Plan. Good lines that belong to another concept go in that concept's cut.
-8. **Close on the offer.** Every ad ends on the CTA the campaign agreed: the coach's CTA line or the offer end card, with the CTA on screen. The viewer should know exactly what to tap and what happens next.
+8. **End on the strongest line, not a slate.** The ad ends naturally on a line that lands. The offer and the instruction live in the ad copy, the headline and the CTA button, which work together with the video.
 9. **Native, not produced.** Authentic beats polished on Reels. Light colour correction for consistency, clean audio, no flashy transitions, no stock swooshes, no other platform's watermark.
 10. **Audio is half the ad.** Voice clear and even, delivered at -14 LUFS with peaks under -1 dBTP. Music, if used, sits well under the voice (around -22 dB) and ducks when anyone speaks.
 11. **Both formats, framed for each.** 9x16 for Reels and Stories, 4x5 for Feed. Reframe per format with a focus point on the face; never letterbox. Keep all text inside the safe zone (specs-and-safe-zones.md).
@@ -58,6 +58,8 @@ The standard every Maxalding edit is held to. Sources are listed at the end. The
 
 ## Learned from feedback
 Dated entries promoted from the workspace feedback log. Newest first.
+
+- 2026-11-25 (Liam, preview round 4): (1) a stutter at the start came from splicing words out of the middle of the hook sentence; hooks are whole sentences. (2) No gradients behind text. (3) Talking heads keep one framing; no side reframes. (4) Cuts landed before sentences finished; modules are whole sentences and jump cuts only remove pauses over 0.6 s (TIGHTEN_GAP), so the speaker's rhythm stays. (5) No end card and no on-screen offer: let the video end on the client's best closing line and put the offer in the ad copy. When asked what is best for social, think about the whole ad (video, primary text, headline, CTA button), not the video alone.
 
 - 2026-11-25 (Liam): one finished ad per interview, built on the best hook from the scored script evaluation, not three hook variants (only make variants when asked for a hook test). The hook title is one font (TikTok Sans Black). Captions must interact with the video: the layout director reframes the subject off-centre and sets the captions in the open space, changing at sentence boundaries. The default close is the offer over a muted listening beat, not a solid end card.
 

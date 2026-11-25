@@ -408,7 +408,7 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                 events[-1]["box"] = box
                 events[-1]["layout"] = layout
                 events[-1]["max_lines"] = 4 if an in (4, 6) else 2  # side columns stack
-                if brand.get("scrims", True):
+                if brand.get("scrims", False):
                     strength = int(cfg.get("scrim", 0x57))
                     pad = H * 0.06
                     if an == 4:
@@ -434,11 +434,14 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
                                 fn = face(brand, role)
                                 ital = "\\i1" if role == "accent" else "\\i0"
                                 if shadow:
-                                    vis, show = "&HA0&", "&HFF&"
-                                    look = f"\\c&H000000&\\blur9"
+                                    vis, show = "&H50&", "&HFF&"
+                                    look = f"\\c&H000000&\\blur7"
                                 else:
                                     vis, show = "&H00&", "&HFF&"
+                                    ol = float(cfg.get("outline", 0))  # thin ink outline for light clothing or walls
                                     look = f"\\c{ass_color(brand['caption_color'])}\\blur0"
+                                    if ol:
+                                        look += f"\\bord{ol:g}\\3c{ass_color(brand.get('outline', '#181B1E'))}"
                                 if k < wi:
                                     a = f"\\alpha{vis}"
                                 elif k == wi:
@@ -523,7 +526,7 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
             box = box_for(wrapped, size, cx, y)
             events.append({"kind": t.get("style", "hook"), "text": t["text"], "start": float(t["start"]),
                            "end": float(t["end"]), "lines": wrapped, "size": size, "box": box})
-            if brand.get("scrims", True):
+            if brand.get("scrims", False):
                 if t.get("style", "hook") == "hook":
                     ry0, ry1 = -100, int(box[3] + H * 0.07)
                 else:
@@ -534,7 +537,7 @@ def build(plan: dict, pieces: list, fmt: str) -> tuple:
             body = "\\N".join(wrapped)
             fn = face(brand, "title")
             lines.append(f"Dialogue: 4,{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"
-                         f"{{\\an5\\pos({cx + 3:.0f},{y + 5:.0f})\\fn{fn}\\fs{size}\\c&H000000&\\alpha&HA0&\\blur10\\q2\\fad(0,120)}}{body}")
+                         f"{{\\an5\\pos({cx + 3:.0f},{y + 5:.0f})\\fn{fn}\\fs{size}\\c&H000000&\\alpha&H50&\\blur8\\q2\\fad(0,120)}}{body}")
             lines.append(f"Dialogue: 5,{ts(float(t['start']))},{ts(float(t['end']))},CapEd,,0,0,0,,"
                          f"{{\\an5\\pos({cx:.0f},{y:.0f})\\fn{fn}\\fs{size}\\c{ass_color(brand['caption_color'])}\\q2\\fad(0,120)}}{body}")
             continue

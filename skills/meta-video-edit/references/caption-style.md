@@ -25,21 +25,13 @@ From Liam's four caption references, 2026-11-25. They're saved in the workspace 
 - Fully up on frame one (no fade-in), for about 3 seconds through the first spoken line.
 - Eight words or fewer, from the `ad-hooks` skill. Two lines above the speaker's head (the largest size that fits two lines), over a soft dark gradient from the top of the frame.
 
-## Captions that move with the edit (layout director)
-What made Liam's references work is that the captions change position and interact with the shot, so the eye keeps getting pulled back. The engine's director gives each piece a layout at sentence or module boundaries, roughly every three to six seconds:
-- **centre:** subject centred, captions below the face.
-- **side:** the subject is reframed off-centre and the caption stacks big in the open space beside them, left or right aligned. The 4K source gives the room.
-- **punch:** a tighter crop, captions below.
-- The rhythm is side, centre, side, punch. The hook stays centred under the title.
-- Side text only goes where the background is dark enough for white type. The director samples the frame and never puts text on a bright wall or light pillar.
-- A phrase always breaks where the framing changes.
-- Inside a run of one layout, alternate pieces step the zoom by 6 percent, so jump cuts still read as cuts.
-- A plan can pin layouts with `layouts` or limit sides with `sides`.
+## Framing and caption position on talking heads
+- Client interviews and talking heads keep one framing (Liam, 2026-11-25: "the framing shouldn't change as this is a client interview and a talking head"). There are no lateral reframes or side layouts, which pushed the client towards the edge. The layout director stays in the engine (`layout: "auto"`) only for formats where moving the frame suits, such as B-roll-led ads, and only when Liam asks.
+- Variety comes from the type (editorial captions) and, later, from depth (text behind the subject), not from moving the crop.
 
-## CTA close (no end card by default)
-- The ad closes on a short muted beat of the client listening (2.5 to 3 seconds), with the offer set over the footage in the hook's plain TikTok Sans Black at the bottom of the safe zone (1 TO 360: "4 sessions for the price of 3"). The Meta CTA button and the primary text do the "tap below". A solid branded slate reads as an ad and invites the swipe, so use one only when Liam or the brief asks for it.
-- End card mirrors the static End card: brand accent background, the offer as the biggest thing on screen, a support line, then the CTA line (for 1 TO 360: "4 for 3", "Start with four sessions for the price of three.", "Tap below and Sergio will call you").
-- 2.5 to 4 seconds, long enough to read twice.
+## Contrast without gradients
+- No gradients or scrims behind text (Liam: "a weird gradient effect appears behind the text which just looks clunky"). Readability comes from a stronger soft shadow on every word.
+- When the background or clothing is light (client 2's grey hoodie), add a thin ink outline with `captions.outline` (about 3.5 px). Leave it off on dark shots.
 
-## Copy rules still apply
-On-screen text runs through the same validator as every other deliverable: no exclamation marks, em dashes or ellipses, no banned words, no weight figures, premium framing ("never free" for high-ticket clients).
+## Ending
+- No end card and no on-screen offer. The ad ends naturally on the client's strongest closing line. Most viewers have gone by then, and the offer belongs in the ad copy and the CTA button (Liam, 2026-11-25). Put an offer on screen only when a brief explicitly asks for it (`cta_required` in the plan turns the QA check back on).
