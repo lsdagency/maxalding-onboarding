@@ -216,7 +216,8 @@ def render_format(plan: dict, fmt: str, out_dir: str, pieces=None, preview: bool
         inputs += fast_in + ["-ss", f"{b_in:.3f}", "-t", f"{dur:.3f}", "-i", src]
         fx, fy = _focus(b, fmt)
         graph.append(f"[{idx}:v]{_reframe(W, H, float(b.get('zoom', 1.0)), fx, fy, src, fmt)},trim=duration={dur:.3f},setpts=PTS-STARTPTS+{at:.3f}/TB[b{j}]")
-        graph.append(f"[{vlast}][b{j}]overlay=enable='between(t,{at:.3f},{at + dur:.3f})':eof_action=pass[vb{j}]")
+        # repeat: hold the cutaway's last frame to the end of its window, so back-to-back cutaways never flash the face between them
+        graph.append(f"[{vlast}][b{j}]overlay=enable='between(t,{at:.3f},{at + dur:.3f})':eof_action=repeat[vb{j}]")
         vlast = f"vb{j}"
 
     ass_text, events = captions.build(plan, pieces, fmt)

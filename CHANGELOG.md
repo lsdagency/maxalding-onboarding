@@ -2,6 +2,14 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.44.2] - 2026-11-26
+
+### Fixed
+- render.py: B-roll overlays hold their last frame to the end of their window (eof_action repeat), so back-to-back cutaways no longer flash the interview for a frame between clips.
+
+### Changed
+- editing-playbook.md: B-roll runs back to back with cuts to the face only on key moments; lighter caption glow. From Liam's round 9 notes on the 1 TO 360 interviews.
+
 ## [0.44.1] - 2026-11-26
 
 ### Changed
