@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.44.3] - 2026-11-26
+
+### Fixed
+- render.py proxies: the half-second padding on a cached span stops at the end of the source, so a cutaway running to a clip's last second no longer fails as a cut-off span.
+
 ## [0.44.2] - 2026-11-26
 
 ### Fixed

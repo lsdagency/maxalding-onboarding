@@ -106,7 +106,10 @@ def proxies(plan: dict) -> list:
     for c in spans:
         src = planmod.resolve(plan, c["src"])
         a = max(0.0, float(c.get("in", 0)) - 0.5)
-        b = float(c["out"]) + 0.5 if c.get("out") is not None else tools.probe(src).duration
+        src_dur = tools.probe(src).duration
+        b = float(c["out"]) + 0.5 if c.get("out") is not None else src_dur
+        if src_dur:
+            b = min(b, src_dur)   # the padding never runs past the end of the source (that read as a cut-off span)
         if any(s == src and pa <= a and b <= pb for s, pa, pb, _ in out):
             continue
         base = (c["src"][6:] if str(c["src"]).startswith("drive:") else os.path.splitext(os.path.basename(src))[0])
