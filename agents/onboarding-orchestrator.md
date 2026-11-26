@@ -32,6 +32,9 @@ Confirm: Creative Plan XLSX saved (remind the user to upload to Google Drive man
 ## Stage 6: Edit (when raw footage is in)
 When Liam says the client's raw footage is ready and asks for the edits, delegate to the video-editor subagent, which follows skills/meta-video-edit. It edits against this campaign's Creative Plan and Shoot Plan, renders 9x16 and 4x5 through the editor/ engine, and passes the edit QA gate (`python -m editor.cli qa`) before anything is shown. If he only asks whether footage can be used, or asks for a brief for Lian, brief instead of cutting.
 
+## Stage 7: Statics (Figma)
+When Liam asks for the statics (or feedback on them, or the JPGs), delegate to the static-designer subagent, which follows skills/meta-static-design. It builds the campaign's STATICS rows in the Maxalding Figma ad system, runs the standing checks on every ad, and exports final JPGs (1080 wide, foldered by placement) with design/export_statics.py once Liam signs off.
+
 ## Feedback loop (end of session)
 If the user gave any correction during the session, append a dated entry to the workspace feedback log using the pattern in SKILL.md. If no feedback was given, append nothing. Confirm what was logged.
 

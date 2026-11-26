@@ -234,6 +234,9 @@ def main():
     failures += run_unit_evals()
     print("Running video edit render eval...")
     failures += run_render_eval()
+    from evals.static_evals import run_static_evals
+    print("Running statics evals...")
+    failures += run_static_evals()
 
     if failures:
         print(f"\n{len(failures)} eval failure(s):")

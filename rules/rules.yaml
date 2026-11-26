@@ -7,7 +7,7 @@
 #
 # Keep this file clean: no em dashes, en dashes, exclamation marks or ellipses.
 
-version: "0.43.0"
+version: "0.44.0"
 
 banned_characters:
   - id: em-dash
@@ -309,3 +309,11 @@ video_edit:
   no_existing_videos: "Never use a client's existing or delivered videos as reference or source. Liam 2026-11-25."
   closed_means_three_things: "An edit correction is applied and re-rendered, logged as a Video edit entry in the workspace feedback log, and promoted into the playbook, specs or QA if it should bind future edits."
 
+static_design:
+  note: "The statics arm (skills/meta-static-design, design/export_statics.py). The full standard is references/static-design-standard.md; this section records where the core rules came from."
+  feed_not_website: "No label kickers, icon bullets, drawn CTA buttons, logos or review counts. Liam 2026-11-24 (1 TO 360 rounds 1, 6, 7)."
+  scrim_and_shadow: "Scrim behind the text block only, about 60 percent peak, faded to about 25 percent below the CTA on 9:16; soft shadow on every line over a photo; dark photos lifted. Liam 2026-11-26: 'too dark and filled with too much black space', then 'still a bit too dark'."
+  no_photo_repeats: "One photo per ad across a set; the coach shown actually coaching on Meet the Coach. Liam 2026-11-26."
+  strikethrough: "Drawn 3px strike rules, never the font's strikethrough (too thick). Liam 2026-11-26."
+  export: "JPG quality 95, 1080 wide, from a 2x PNG, foldered 4x5 Feed / 9x16 Stories and Reels / 1x1 Carousel. Liam 2026-11-26."
+  closed_means_three_things: "A statics correction is applied in Figma (and re-exported), logged as a Statics entry in the workspace feedback log, and written into the standard if it should bind future statics."

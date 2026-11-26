@@ -2,6 +2,20 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.44.0] - 2026-11-26
+
+The statics arm. Liam, after 13 rounds on the 1 TO 360 Figma set: "can we save that whole process now for statics moving forwards".
+
+### Added
+- `skills/meta-static-design`: the process (client theme, photo mapping, build, fit, standing checks, export, feedback loop), `references/static-design-standard.md` (every rule from the pilot: feed not website, safe zones, type, scrim and text shadow, CTA, concepts, copy, export, standing checks) and `references/figma-system.md` (file, variables, templates, gotchas, scripts for the scrim, text shadow, photo swaps and exports).
+- `design/export_statics.py`: Figma 2x PNGs to 1080px JPGs at quality 95, full chroma, foldered by placement (4x5 Feed, 9x16 Stories and Reels, 1x1 Carousel), with size and aspect checks.
+- The `static-designer` agent and the orchestrator's Stage 7: Statics.
+- `evals/static_evals.py`: export naming, sizes, folders and refusals, and the standard's signed-off rules.
+- rules.yaml `static_design`.
+
+### Changed
+- Photo statics: the scrim sits behind the text block only at about 60 percent (was 86 to 94 percent over most of the frame), fades below the CTA on 9:16, with a soft shadow on text over photos and dark photos lifted. Myth Buster uses drawn 3px strike rules. Problem Solution's problem line is Bold.
+
 ## [0.43.0] - 2026-11-25
 
 The video editing arm. Liam: "whenever a client's raw footage is ready we edit the videos in the best possible way for paid social", and the process learns from feedback over time.

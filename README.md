@@ -16,6 +16,7 @@ An orchestrator agent runs the four-stage workflow and the approval gates. Speci
 - lifecycle-crm: the CRM email and SMS copy.
 - compliance-qa: runs the validator and a Meta policy read before anything is delivered.
 - video-editor: turns a client's raw footage into finished Meta ads (9x16 and 4x5) through the editor/ engine and its edit QA gate (skills/meta-video-edit).
+- static-designer: designs the campaign's Meta statics in the Maxalding Figma ad system and exports the final JPGs (skills/meta-static-design).
 
 ## Read-only package, writable workspace
 
@@ -140,3 +141,12 @@ python -m editor.cli qa "<campaign>/edits/v1"
 
 The process, craft standard and plan format are in skills/meta-video-edit.
 
+## Statics
+
+Static ads are designed in the Maxalding Figma ad system (file uI5CNyMcyOjnlTeUcReswu) against the static design standard, then exported as final JPGs. Export each ad from Figma at 2x PNG, then:
+
+```
+python -m design.export_statics "<png folder>" "<campaign folder>" --client 1TO360
+```
+
+That writes `STATICS FINAL JPG (<Mon-DD>)/` with 4x5 Feed, 9x16 Stories and Reels and 1x1 Carousel folders, every file 1080 wide at JPG quality 95. The process, standard and Figma scripts are in skills/meta-static-design.
