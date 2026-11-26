@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.44.1] - 2026-11-26
+
+### Changed
+- editing-playbook.md Learned from feedback: interview B-roll held 3.5 to 4 s and covering a third or more of the body, cutaway quality rules (no flashes, soft shots, repeated angles, other interviewees' sets, filler), and never grade the whole clip to fix caption contrast. From Liam's round 8 notes on the 1 TO 360 interviews.
+
 ## [0.44.0] - 2026-11-26
 
 The statics arm. Liam, after 13 rounds on the 1 TO 360 Figma set: "can we save that whole process now for statics moving forwards".
