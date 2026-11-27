@@ -79,6 +79,8 @@ A correction is not closed until three things are true, so state all three back 
 
 Fixing the client's file alone is the failure. It fixes one pack and teaches the system nothing.
 
+**A new validator rule only guards files built after it lands.** Deliverables already handed over are never re-scanned, so the same hole stays live in older packs (Feedback 2026-11-27, AMPWR Coaching: the crm-placeholder rule landed on 2026-11-10 and named AMPWR as an older pack with placeholders, yet the CRM copy reached GoHighLevel with three empty emails, and two more packs the sweep never listed were still carrying them). So whenever a correction adds a validator rule, run it across the whole workspace the same day (`python -m validator.cli <workspace>/clients`), fix every hit or put each one to the user by name, and only then call the correction closed.
+
 ## Reference files
 - references/writing-rules.md: global writing rules, banned characters, words, phrases, the positive-language rule.
 - references/meta-compliance.md: Meta advertising policy pass for all paid creative.

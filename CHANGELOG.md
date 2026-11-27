@@ -2,6 +2,11 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.44.4] - 2026-11-27
+
+### Changed
+- client-onboarding SKILL.md feedback loop: a correction that adds a validator rule is not closed until the rule has been run across the whole workspace and every existing hit is fixed or named to the user. From AMPWR Coaching, whose CRM reached GoHighLevel with three placeholder emails after the crm-placeholder rule had already listed the pack as outstanding. The same sweep found Max Potential Fitness (2) and Oliver Bird (3) still carrying them.
+
 ## [0.44.3] - 2026-11-26
 
 ### Fixed
