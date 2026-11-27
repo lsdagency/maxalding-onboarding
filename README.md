@@ -60,8 +60,10 @@ As a Claude Code plugin, load the repo as a plugin and the agents and the client
 The agents assemble a structured data dict (see evals/cases/sample_client.json for the shape) and call the build module. To build all five from a data file:
 
 ```
-python -m build.build_all "client-data.json" --out "/path/to/workspace/clients/<client>" --workspace "$MAXALDING_WORKSPACE"
+python -m build.build_all "client-data.json" --out "/path/to/workspace/clients/<Client>/campaigns/<Mon-DD-slug-campaign>/ideation" --workspace "$MAXALDING_WORKSPACE"
 ```
+
+Client folders follow a fixed layout (CLIENT.md, memory/, onboarding/, research/, campaigns/, performance/); see skills/client-onboarding/references/workspace-layout.md.
 
 One shared template module (build/template.py) defines the font (Helvetica Neue on every run), the no-date header, the logo insertion and all styling, so a brand change is a single edit. The generators implement every formatting and content rule in the System Prompt: the Creative Plan XLSX (three tabs, dropdowns, live formulas, freeze panes) and the four .docx documents.
 

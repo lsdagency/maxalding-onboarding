@@ -59,7 +59,7 @@ It enforces, with zero tolerance: no em or en dashes, exclamation marks or ellip
 ## Naming convention and saving
 MAXALDING - [Client Business Name] - [Campaign] - [Deliverable], with spaces and standard hyphens with a space either side. Include a short campaign name on every campaign-specific deliverable so the file is identifiable away from its folder; omit it only for genuinely client-wide files. Deliverables: Creative Plan (xlsx), Video Ad Scripts, VSL Script, Landing Page Copy, CRM Automation (docx).
 
-Save each campaign's deliverables into their own per-campaign subfolder in the workspace, workspace/clients/[Client]/[Mon-DD-descriptor-campaign]/ (for example Aug-01-anniversary-campaign). Never drop a new campaign's files into the client root or another campaign's folder. Client-wide reference (client profile, audits) stays at the client root.
+Save each campaign's deliverables into its own campaign folder, workspace/clients/[Client]/campaigns/[Mon-DD-descriptor-campaign]/ideation/ (for example campaigns/Aug-01-anniversary-campaign/ideation/), and finished creative into that campaign's production/. Never drop a new campaign's files into the client root or another campaign's folder. Memory goes in memory/, source documents and gate decisions in onboarding/, research in research/, audits and reviews in performance/reviews/. The full layout is in references/workspace-layout.md; keep CLIENT.md current.
 
 ## Feedback loop
 If the user gave any correction during the session, append a dated entry to the workspace feedback log:
@@ -82,6 +82,7 @@ Fixing the client's file alone is the failure. It fixes one pack and teaches the
 **A new validator rule only guards files built after it lands.** Deliverables already handed over are never re-scanned, so the same hole stays live in older packs (Feedback 2026-11-27, AMPWR Coaching: the crm-placeholder rule landed on 2026-11-10 and named AMPWR as an older pack with placeholders, yet the CRM copy reached GoHighLevel with three empty emails, and two more packs the sweep never listed were still carrying them). So whenever a correction adds a validator rule, run it across the whole workspace the same day (`python -m validator.cli <workspace>/clients`), fix every hit or put each one to the user by name, and only then call the correction closed.
 
 ## Reference files
+- references/workspace-layout.md: the fixed client folder layout every phase reads from and writes to.
 - references/writing-rules.md: global writing rules, banned characters, words, phrases, the positive-language rule.
 - references/meta-compliance.md: Meta advertising policy pass for all paid creative.
 - references/instagram-research.md: the compulsory Stage 1 Instagram scan (tooling, procedure, what feeds forward).

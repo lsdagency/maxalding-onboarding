@@ -2,6 +2,13 @@
 
 All notable changes to the Maxalding Onboarding plugin. Each rule change is traceable to the client and date it came from via rules/rules.yaml and the Onboarding Feedback Log.
 
+## [0.45.0] - 2026-11-27
+
+### Changed
+- Fixed client folder layout, set out in skills/client-onboarding/references/workspace-layout.md: CLIENT.md index, memory/, onboarding/, research/, campaigns/<Mon-DD-slug-campaign>/ (with ideation/ and production/), performance/, _build/, _archive/. Client memory now lives in the client folder, not the assistant's own memory store.
+- Campaign folders moved one level down into campaigns/. The intake-research agent, orchestrator, client-onboarding SKILL.md, meta-ad-copy, meta-lead-form, meta-video-edit and the README now save into the new paths.
+- Workspace tidied to match on the same day: 488 moves across 30 clients, nothing deleted, path references rewritten, undo script in workspace/Maxalding/_tidy/2026-11-27/.
+
 ## [0.44.4] - 2026-11-27
 
 ### Changed

@@ -10,7 +10,7 @@ Mirrors `editor/specs.py`. Change both together.
 
 - H.264 High, yuv420p, CRF 18, 30 fps, AAC 192 kbps 48 kHz, faststart.
 - Name: `<AD NAME> 9x16.mp4` and `<AD NAME> 4x5.mp4`, using the Creative Plan's file names (for example `INT Kevin`, `AA HOOK 1`).
-- Saved to `clients/<Client>/<campaign>/edits/v<N>/` with the `.render.json` manifest beside each file.
+- Saved to `clients/<Client>/campaigns/<campaign>/production/edits/v<N>/` with the `.render.json` manifest beside each file.
 
 ## Safe zones (fractions of the frame)
 | Format | Top | Bottom | Sides |
